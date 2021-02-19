@@ -1,0 +1,26 @@
+{
+  "name": "crosier-vue",
+  "version": "0.1.0",
+  "description": "Componentes Vue.js para o Crosier",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crosiersource/crosier-vue.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crosiersource/crosier-vue/issues"
+  },
+  "homepage": "https://github.com/crosiersource/crosier-vue#readme",
+  "dependencies": {
+    "primeflex": "^2.0.0",
+    "primeicons": "^4.1.0",
+    "primevue": "^3.1.1",
+    "vue": "^3.0.0",
+    "vuex": "^4.0.0-rc.2"
+  }
+}
