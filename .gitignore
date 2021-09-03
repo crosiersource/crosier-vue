@@ -1,6 +1,18 @@
 .DS_Store
-node_modules/
-/dist/
+node_modules
+/dist
+/resources
+/components
+package-lock.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
 
 # local env files
 .env.local
