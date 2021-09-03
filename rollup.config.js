@@ -9,27 +9,6 @@ let entries = [];
 
 let globalDependencies = {
     'vue': 'Vue',
-    // 'primevue/api': 'primevue.api',
-    // 'primevue/ripple': 'primevue.ripple',
-    // 'primevue/utils': 'primevue.utils',
-    // 'primevue/button': 'primevue.button',
-    // 'primevue/inputtext': 'primevue.inputtext',
-    // 'primevue/virtualscroller': 'primevue.virtualscroller',
-    // 'primevue/dialog': 'primevue.dialog',
-    // 'primevue/paginator': 'primevue.paginator',
-    // 'primevue/confirmationeventbus': 'primevue.confirmationeventbus',
-    // 'primevue/toasteventbus': 'primevue.toasteventbus',
-    // 'primevue/overlayeventbus': 'primevue.overlayeventbus',
-    // 'primevue/useconfirm': 'primevue.useconfirm',
-    // 'primevue/usetoast': 'primevue.usetoast',
-    // 'primevue/progressbar': 'primevue.progressbar',
-    // 'primevue/message': 'primevue.message',
-    // 'primevue/dropdown': 'primevue.dropdown',
-    // 'primevue/inputnumber': 'primevue.inputnumber',
-    // 'primevue/menu': 'primevue.menu',
-    // 'primevue/tieredmenu': 'primevue.tieredmenu',
-    // 'primevue/tree': 'primevue.tree',
-    // '@fullcalendar/core': 'FullCalendar'
 }
 
 function addEntry(folder, inFile, outFile) {
@@ -46,7 +25,7 @@ function addEntry(folder, inFile, outFile) {
             },
             {
                 format: 'iife',
-                name: 'primevue.' + folder,
+                name: 'crosier-vue.' + folder,
                 file: 'dist/' + folder + '/' + outFile + '.js',
                 globals: globalDependencies
             }
@@ -70,7 +49,7 @@ function addEntry(folder, inFile, outFile) {
             },
             {
                 format: 'iife',
-                name: 'primevue.' + folder,
+                name: 'crosier-vue.' + folder,
                 file: 'dist/' + folder + '/' + outFile + '.min.js',
                 globals: globalDependencies
             }
@@ -102,7 +81,7 @@ function addDirectives() {
 }
 
 function addConfig() {
-    // addEntry('config', 'PrimeVue.js', 'config');
+    
 }
 
 function addUtils() {

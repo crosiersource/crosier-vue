@@ -1,0 +1,9 @@
+{
+  "main": "./TestCompon.cjs.js",
+  "module": "./TestCompon.esm.js",
+  "unpkg": "./TestCompon.min.js",
+  "types": "./TestCompon.d.ts",
+  "browser": {
+    "./sfc": "./TestCompon.vue"
+  }
+}
