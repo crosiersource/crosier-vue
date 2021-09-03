@@ -1,7 +1,7 @@
 import HelloWorld from './components/HelloWorld.vue'
-import CrosierVueSample from './components/crosier-vue-sample/CrosierVueSample.vue'
+import HelloWorld2 from './components/HelloWorld2.vue'
 
 export default {
     HelloWorld,
-    CrosierVueSample,
+    HelloWorld2,
 }
