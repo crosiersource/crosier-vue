@@ -1,7 +1,7 @@
-// import { createApp } from 'vue'
-// import App from './App.vue'
-//
-// createApp(App).mount('#app')
-
 import HelloWorld from './components/HelloWorld.vue'
-export default HelloWorld
+import CrosierVueSample from './components/crosier-vue-sample/CrosierVueSample.vue'
+
+export default {
+    HelloWorld,
+    CrosierVueSample,
+}
