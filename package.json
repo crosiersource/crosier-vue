@@ -1,10 +1,9 @@
 {
   "name": "crosier-vue",
-  "version": "3.7.0",
-  "homepage": "https://www.primefaces.org/crosier-vue",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/primefaces/crosier-vue.git"
+    "url": "https://github.com/crosiersource/crosier-vue.git"
   },
   "license": "MIT",
   "scripts": {
