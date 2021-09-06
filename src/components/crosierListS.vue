@@ -119,7 +119,6 @@ import { mapMutations } from "vuex";
 import { fetchTableData } from "../services/ApiDataFetchService";
 import { deleteEntityData } from "../services/ApiDeleteService";
 import CrosierBlock from "./crosierBlock";
-import listSelectStore from "../store/listSelectStore";
 
 export default {
   name: "CrosierListS",
@@ -368,11 +367,6 @@ export default {
     exportCSV() {
       this.$refs.dt.exportCSV();
     },
-
-    // eslint-disable-next-line no-unused-vars
-    onSelectChange(e) {
-      listSelectStore.dispatch("updateSelectedRows", this.selectedItems);
-    },
   },
   computed: {
     computed: {
@@ -384,9 +378,6 @@ export default {
       return this.$store.getters[
         `get${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(1)}`
       ];
-    },
-    stored_selectedItems() {
-      return listSelectStore.state.selectedItems.length;
     },
     localStorageName() {
       return `filter-state_${this.apiResource}_${this.filtersStoreName}`;

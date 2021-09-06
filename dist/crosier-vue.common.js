@@ -8734,29 +8734,6 @@ module.exports = function (KEY, exec, FORCED, SHAM) {
 
 /***/ }),
 
-/***/ "d81d":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var $ = __webpack_require__("23e7");
-var $map = __webpack_require__("b727").map;
-var arrayMethodHasSpeciesSupport = __webpack_require__("1dde");
-
-var HAS_SPECIES_SUPPORT = arrayMethodHasSpeciesSupport('map');
-
-// `Array.prototype.map` method
-// https://tc39.es/ecma262/#sec-array.prototype.map
-// with adding support of @@species
-$({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT }, {
-  map: function map(callbackfn /* , thisArg */) {
-    return $map(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
-  }
-});
-
-
-/***/ }),
-
 /***/ "d925":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11873,62 +11850,62 @@ toast_esm_script.render = toast_esm_render;
 crosierFormSvue_type_script_lang_js.render = crosierFormSvue_type_template_id_1a90818d_render
 
 /* harmony default export */ var crosierFormS = (crosierFormSvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/crosierListS.vue?vue&type=template&id=0eba6646
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/crosierListS.vue?vue&type=template&id=1ba7c99a
 
-var crosierListSvue_type_template_id_0eba6646_hoisted_1 = {
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_1 = {
   class: "card",
   style: {
     "margin-bottom": "50px"
   }
 };
-var crosierListSvue_type_template_id_0eba6646_hoisted_2 = {
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_2 = {
   class: "card-header"
 };
-var crosierListSvue_type_template_id_0eba6646_hoisted_3 = {
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_3 = {
   class: "d-flex flex-wrap align-items-center"
 };
-var crosierListSvue_type_template_id_0eba6646_hoisted_4 = {
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_4 = {
   class: "mr-1"
 };
-var crosierListSvue_type_template_id_0eba6646_hoisted_5 = {
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_5 = {
   key: 0
 };
-var crosierListSvue_type_template_id_0eba6646_hoisted_6 = {
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_6 = {
   class: "d-sm-flex flex-nowrap ml-auto"
 };
-var crosierListSvue_type_template_id_0eba6646_hoisted_7 = ["href"];
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_7 = ["href"];
 
-var crosierListSvue_type_template_id_0eba6646_hoisted_8 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_8 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
   class: "fas fa-file",
   "aria-hidden": "true"
 }, null, -1);
 
-var crosierListSvue_type_template_id_0eba6646_hoisted_9 = [crosierListSvue_type_template_id_0eba6646_hoisted_8];
-var crosierListSvue_type_template_id_0eba6646_hoisted_10 = {
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_9 = [crosierListSvue_type_template_id_1ba7c99a_hoisted_8];
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_10 = {
   class: "card-body"
 };
 
-var crosierListSvue_type_template_id_0eba6646_hoisted_11 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "Filtrar", -1);
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_11 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "Filtrar", -1);
 
-var crosierListSvue_type_template_id_0eba6646_hoisted_12 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_12 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
   class: "pi pi-filter"
 }, null, -1);
 
-var crosierListSvue_type_template_id_0eba6646_hoisted_13 = {
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_13 = {
   class: "row mt-3"
 };
-var crosierListSvue_type_template_id_0eba6646_hoisted_14 = {
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_14 = {
   class: "col-3"
 };
-var crosierListSvue_type_template_id_0eba6646_hoisted_15 = {
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_15 = {
   class: "col text-right"
 };
-var crosierListSvue_type_template_id_0eba6646_hoisted_16 = {
+var crosierListSvue_type_template_id_1ba7c99a_hoisted_16 = {
   style: {
     "text-align": "right"
   }
 };
-function crosierListSvue_type_template_id_0eba6646_render(_ctx, _cache, $props, $setup, $data, $options) {
+function crosierListSvue_type_template_id_1ba7c99a_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_ConfirmDialog = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("ConfirmDialog");
@@ -11951,12 +11928,12 @@ function crosierListSvue_type_template_id_0eba6646_render(_ctx, _cache, $props, 
     group: "crosierListS_delete"
   }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])(this.containerClass)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_0eba6646_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_0eba6646_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_0eba6646_hoisted_3, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_0eba6646_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.titulo), 1), $props.subtitulo ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("h6", crosierListSvue_type_template_id_0eba6646_hoisted_5, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.subtitulo), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_0eba6646_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("a", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1ba7c99a_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1ba7c99a_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1ba7c99a_hoisted_3, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1ba7c99a_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.titulo), 1), $props.subtitulo ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("h6", crosierListSvue_type_template_id_1ba7c99a_hoisted_5, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.subtitulo), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1ba7c99a_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("a", {
     type: "button",
     class: "btn btn-info",
     href: this.formUrl,
     title: "Novo"
-  }, crosierListSvue_type_template_id_0eba6646_hoisted_9, 8, crosierListSvue_type_template_id_0eba6646_hoisted_7), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.formUrl]]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "headerButtons")])])]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_0eba6646_hoisted_10, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_CrosierBlock, {
+  }, crosierListSvue_type_template_id_1ba7c99a_hoisted_9, 8, crosierListSvue_type_template_id_1ba7c99a_hoisted_7), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.formUrl]]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "headerButtons")])])]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1ba7c99a_hoisted_10, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_CrosierBlock, {
     loading: this.loading
   }, null, 8, ["loading"]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Accordion, {
     multiple: true,
@@ -11965,7 +11942,7 @@ function crosierListSvue_type_template_id_0eba6646_render(_ctx, _cache, $props, 
     default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
       return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_AccordionTab, null, {
         header: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-          return [crosierListSvue_type_template_id_0eba6646_hoisted_11, crosierListSvue_type_template_id_0eba6646_hoisted_12];
+          return [crosierListSvue_type_template_id_1ba7c99a_hoisted_11, crosierListSvue_type_template_id_1ba7c99a_hoisted_12];
         }),
         default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
           return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("form", {
@@ -11973,14 +11950,14 @@ function crosierListSvue_type_template_id_0eba6646_render(_ctx, _cache, $props, 
               return _this.doFilter();
             }, ["prevent"])),
             class: "notSubmit"
-          }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "filter-fields"), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_0eba6646_hoisted_13, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_0eba6646_hoisted_14, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InlineMessage, {
+          }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "filter-fields"), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1ba7c99a_hoisted_13, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1ba7c99a_hoisted_14, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InlineMessage, {
             severity: "info"
           }, {
             default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
               return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.totalRecords) + " registro(s) encontrado(s).", 1)];
             }),
             _: 1
-          })]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_0eba6646_hoisted_15, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
+          })]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1ba7c99a_hoisted_15, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
             label: "Filtrar",
             type: "submit",
             icon: "fas fa-search",
@@ -12025,14 +12002,14 @@ function crosierListSvue_type_template_id_0eba6646_render(_ctx, _cache, $props, 
       return _this.selectedItems = $event;
     }),
     dataKey: "id",
-    onRowSelect: $options.onSelectChange,
-    onRowUnselect: $options.onSelectChange,
+    onRowSelect: _ctx.onSelectChange,
+    onRowUnselect: _ctx.onSelectChange,
     resizableColumns: true,
     columnResizeMode: "fit",
     responsiveLayout: "scroll"
   }, {
     footer: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_0eba6646_hoisted_16, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
+      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1ba7c99a_hoisted_16, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
         class: "p-button-rounded p-button-success p-button-text",
         icon: "pi pi-file-excel",
         label: "Exportar",
@@ -12049,7 +12026,7 @@ function crosierListSvue_type_template_id_0eba6646_render(_ctx, _cache, $props, 
     class: "mt-5"
   })], 64);
 }
-// CONCATENATED MODULE: ./src/components/crosierListS.vue?vue&type=template&id=0eba6646
+// CONCATENATED MODULE: ./src/components/crosierListS.vue?vue&type=template&id=1ba7c99a
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.keys.js
 var es_object_keys = __webpack_require__("b64b");
@@ -23254,79 +23231,7 @@ function _deleteEntityData() {
   }));
   return _deleteEntityData.apply(this, arguments);
 }
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.map.js
-var es_array_map = __webpack_require__("d81d");
-
-// CONCATENATED MODULE: ./src/store/listSelectStore.js
-
-
-
-
-var listSelectStore_store = {
-  namespaced: true,
-  state: function state() {
-    return {
-      selectedItems: [],
-      count: 0
-    };
-  },
-  actions: {
-    loadSelectedRows: function loadSelectedRows(context, localStoragePath) {
-      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-        var loadedSelected;
-        return regeneratorRuntime.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                console.log(localStoragePath);
-                _context.next = 3;
-                return localStorage.getItem(localStoragePath);
-
-              case 3:
-                loadedSelected = _context.sent;
-
-                if (loadedSelected) {
-                  context.dispatch("updateSelectedRows", JSON.parse(loadedSelected).selection);
-                }
-
-              case 5:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }))();
-    },
-    updateSelectedRows: function updateSelectedRows(context, selectedSet) {
-      var newSelectedSet = selectedSet.map(function (e) {
-        return e.id;
-      });
-      context.commit("setSelectedItems", newSelectedSet);
-      context.commit("setCount", newSelectedSet.length);
-    }
-  },
-  mutations: {
-    setSelectedItems: function setSelectedItems(state, newSelectedItems) {
-      state.selectedItems = newSelectedItems;
-    },
-    setCount: function setCount(state, newSelectedItems) {
-      state.count = newSelectedItems.length;
-    }
-  },
-  getters: {
-    // eslint-disable-next-line no-unused-vars
-    selectedItems: function selectedItems(state, getters) {
-      return state.selectedItems;
-    },
-    // eslint-disable-next-line no-unused-vars
-    countSelectedItems: function countSelectedItems(state, getters) {
-      return state.count;
-    }
-  }
-};
-/* harmony default export */ var listSelectStore = (new vuex_esm_browser.Store(listSelectStore_store));
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/crosierListS.vue?vue&type=script&lang=js
-
 
 
 
@@ -23732,10 +23637,6 @@ var listSelectStore_store = {
     },
     exportCSV: function exportCSV() {
       this.$refs.dt.exportCSV();
-    },
-    // eslint-disable-next-line no-unused-vars
-    onSelectChange: function onSelectChange(e) {
-      listSelectStore.dispatch("updateSelectedRows", this.selectedItems);
     }
   }),
   computed: {
@@ -23746,9 +23647,6 @@ var listSelectStore_store = {
     },
     filters: function filters() {
       return this.$store.getters["get".concat(this.filtersStoreName.charAt(0).toUpperCase()).concat(this.filtersStoreName.slice(1))];
-    },
-    stored_selectedItems: function stored_selectedItems() {
-      return listSelectStore.state.selectedItems.length;
     },
     localStorageName: function localStorageName() {
       return "filter-state_".concat(this.apiResource, "_").concat(this.filtersStoreName);
@@ -23767,7 +23665,7 @@ var listSelectStore_store = {
 
 
 
-crosierListSvue_type_script_lang_js.render = crosierListSvue_type_template_id_0eba6646_render
+crosierListSvue_type_script_lang_js.render = crosierListSvue_type_template_id_1ba7c99a_render
 
 /* harmony default export */ var crosierListS = (crosierListSvue_type_script_lang_js);
 // CONCATENATED MODULE: ./src/services/ApiPostService.js
