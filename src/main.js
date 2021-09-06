@@ -3,10 +3,7 @@ import CrosierBlock from "./components/crosierBlock.vue";
 import CrosierFormS from "./components/crosierFormS.vue";
 import CrosierListS from "./components/crosierListS.vue";
 
-import { fetchTableData } from "./services/ApiDataFetchService";
-import { deleteEntityData } from "./services/ApiDeleteService";
-import { postEntityData } from "./services/ApiPostService";
-import { putEntityData } from "./services/ApiPutService";
+import api from "./services/api";
 import { submitForm } from "./services/SubmitForm";
 import { validateFormData } from "./services/ValidateFormData";
 
@@ -15,10 +12,7 @@ export default {
   CrosierBlock,
   CrosierFormS,
   CrosierListS,
-  fetchTableData,
-  deleteEntityData,
-  postEntityData,
-  putEntityData,
+  api,
   submitForm,
   validateFormData,
 };

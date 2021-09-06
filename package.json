@@ -1,6 +1,6 @@
 {
     "name": "crosier-vue",
-    "version": "0.0.9",
+    "version": "0.1.0",
     "main": "./dist/crosier-vue.common.js",
     "scripts": {
         "serve": "vue-cli-service serve",
