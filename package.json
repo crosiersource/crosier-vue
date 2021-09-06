@@ -1,6 +1,6 @@
 {
     "name": "crosier-vue",
-    "version": "0.2.5",
+    "version": "0.2.6",
     "main": "./dist/crosier-vue.common.js",
     "scripts": {
         "serve": "vue-cli-service serve",
@@ -18,9 +18,7 @@
         "crosier-vue": "crosiersource/crosier-vue",
         "mitt": "^2.1.0",
         "moment": "^2.23.0",
-        "moment-timezone": "^0.5.33",
-        "primeflex": "^2.0.0",
-        "primeicons": "^4.1.0"
+        "moment-timezone": "^0.5.33"
     },
     "devDependencies": {
         "sass": "^1.32.4",
