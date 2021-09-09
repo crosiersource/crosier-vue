@@ -103,8 +103,6 @@
       </div>
     </div>
   </div>
-
-  <Toast class="mt-5" />
 </template>
 
 <script>
