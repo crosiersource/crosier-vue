@@ -77,7 +77,6 @@
 
 <script>
 import Button from "primevue/button";
-import Toast from "primevue/toast";
 import CrosierBlock from "./crosierBlock";
 
 export default {
@@ -85,7 +84,6 @@ export default {
   components: {
     CrosierBlock,
     Button,
-    Toast,
   },
   emits: ["submitForm"],
   props: {

@@ -112,7 +112,6 @@ import AccordionTab from "primevue/accordiontab";
 import Button from "primevue/button";
 import ConfirmDialog from "primevue/confirmdialog";
 import InlineMessage from "primevue/inlinemessage";
-import Toast from "primevue/toast";
 import { mapMutations } from "vuex";
 import { fetchTableData } from "../services/ApiDataFetchService";
 import { deleteEntityData } from "../services/ApiDeleteService";
@@ -128,8 +127,8 @@ export default {
     CrosierBlock,
     DataTable,
     InlineMessage,
-    Toast,
   },
+  emits: ["beforeFilter", "afterFilter"],
   props: {
     titulo: {
       type: String,
