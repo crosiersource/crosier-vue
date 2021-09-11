@@ -3450,6 +3450,23 @@ module.exports = collection('Map', function (init) {
 
 /***/ }),
 
+/***/ "4fad":
+/***/ (function(module, exports, __webpack_require__) {
+
+var $ = __webpack_require__("23e7");
+var $entries = __webpack_require__("6f53").entries;
+
+// `Object.entries` method
+// https://tc39.es/ecma262/#sec-object.entries
+$({ target: 'Object', stat: true }, {
+  entries: function entries(O) {
+    return $entries(O);
+  }
+});
+
+
+/***/ }),
+
 /***/ "50c4":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4442,6 +4459,45 @@ var TEMPLATE = String(String).split('String');
 })(Function.prototype, 'toString', function toString() {
   return typeof this == 'function' && getInternalState(this).source || inspectSource(this);
 });
+
+
+/***/ }),
+
+/***/ "6f53":
+/***/ (function(module, exports, __webpack_require__) {
+
+var DESCRIPTORS = __webpack_require__("83ab");
+var objectKeys = __webpack_require__("df75");
+var toIndexedObject = __webpack_require__("fc6a");
+var propertyIsEnumerable = __webpack_require__("d1e7").f;
+
+// `Object.{ entries, values }` methods implementation
+var createMethod = function (TO_ENTRIES) {
+  return function (it) {
+    var O = toIndexedObject(it);
+    var keys = objectKeys(O);
+    var length = keys.length;
+    var i = 0;
+    var result = [];
+    var key;
+    while (length > i) {
+      key = keys[i++];
+      if (!DESCRIPTORS || propertyIsEnumerable.call(O, key)) {
+        result.push(TO_ENTRIES ? [key, O[key]] : O[key]);
+      }
+    }
+    return result;
+  };
+};
+
+module.exports = {
+  // `Object.entries` method
+  // https://tc39.es/ecma262/#sec-object.entries
+  entries: createMethod(true),
+  // `Object.values` method
+  // https://tc39.es/ecma262/#sec-object.values
+  values: createMethod(false)
+};
 
 
 /***/ }),
@@ -7078,6 +7134,27 @@ hiddenKeys[HIDDEN] = true;
 
 /***/ }),
 
+/***/ "a630":
+/***/ (function(module, exports, __webpack_require__) {
+
+var $ = __webpack_require__("23e7");
+var from = __webpack_require__("4df4");
+var checkCorrectnessOfIteration = __webpack_require__("1c7e");
+
+var INCORRECT_ITERATION = !checkCorrectnessOfIteration(function (iterable) {
+  // eslint-disable-next-line es/no-array-from -- required for testing
+  Array.from(iterable);
+});
+
+// `Array.from` method
+// https://tc39.es/ecma262/#sec-array.from
+$({ target: 'Array', stat: true, forced: INCORRECT_ITERATION }, {
+  from: from
+});
+
+
+/***/ }),
+
 /***/ "a640":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7345,6 +7422,35 @@ var classof = __webpack_require__("f5df");
 module.exports = TO_STRING_TAG_SUPPORT ? {}.toString : function toString() {
   return '[object ' + classof(this) + ']';
 };
+
+
+/***/ }),
+
+/***/ "b0c0":
+/***/ (function(module, exports, __webpack_require__) {
+
+var DESCRIPTORS = __webpack_require__("83ab");
+var defineProperty = __webpack_require__("9bf2").f;
+
+var FunctionPrototype = Function.prototype;
+var FunctionPrototypeToString = FunctionPrototype.toString;
+var nameRE = /^\s*function ([^ (]*)/;
+var NAME = 'name';
+
+// Function instances `.name` property
+// https://tc39.es/ecma262/#sec-function-instances-name
+if (DESCRIPTORS && !(NAME in FunctionPrototype)) {
+  defineProperty(FunctionPrototype, NAME, {
+    configurable: true,
+    get: function () {
+      try {
+        return FunctionPrototypeToString.call(this).match(nameRE)[1];
+      } catch (error) {
+        return '';
+      }
+    }
+  });
+}
 
 
 /***/ }),
@@ -8591,6 +8697,18 @@ exports.f = NASHORN_BUG ? function propertyIsEnumerable(V) {
 
 /***/ }),
 
+/***/ "d28b":
+/***/ (function(module, exports, __webpack_require__) {
+
+var defineWellKnownSymbol = __webpack_require__("746f");
+
+// `Symbol.iterator` well-known symbol
+// https://tc39.es/ecma262/#sec-symbol.iterator
+defineWellKnownSymbol('iterator');
+
+
+/***/ }),
+
 /***/ "d2bb":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9203,6 +9321,64 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__("4362")))
+
+/***/ }),
+
+/***/ "e01a":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// `Symbol.prototype.description` getter
+// https://tc39.es/ecma262/#sec-symbol.prototype.description
+
+var $ = __webpack_require__("23e7");
+var DESCRIPTORS = __webpack_require__("83ab");
+var global = __webpack_require__("da84");
+var has = __webpack_require__("5135");
+var isObject = __webpack_require__("861d");
+var defineProperty = __webpack_require__("9bf2").f;
+var copyConstructorProperties = __webpack_require__("e893");
+
+var NativeSymbol = global.Symbol;
+
+if (DESCRIPTORS && typeof NativeSymbol == 'function' && (!('description' in NativeSymbol.prototype) ||
+  // Safari 12 bug
+  NativeSymbol().description !== undefined
+)) {
+  var EmptyStringDescriptionStore = {};
+  // wrap Symbol constructor for correct work with undefined description
+  var SymbolWrapper = function Symbol() {
+    var description = arguments.length < 1 || arguments[0] === undefined ? undefined : String(arguments[0]);
+    var result = this instanceof SymbolWrapper
+      ? new NativeSymbol(description)
+      // in Edge 13, String(Symbol(undefined)) === 'Symbol(undefined)'
+      : description === undefined ? NativeSymbol() : NativeSymbol(description);
+    if (description === '') EmptyStringDescriptionStore[result] = true;
+    return result;
+  };
+  copyConstructorProperties(SymbolWrapper, NativeSymbol);
+  var symbolPrototype = SymbolWrapper.prototype = NativeSymbol.prototype;
+  symbolPrototype.constructor = SymbolWrapper;
+
+  var symbolToString = symbolPrototype.toString;
+  var nativeSymbol = String(NativeSymbol('test')) == 'Symbol(test)';
+  var regexp = /^Symbol\((.*)\)[^)]+$/;
+  defineProperty(symbolPrototype, 'description', {
+    configurable: true,
+    get: function description() {
+      var symbol = isObject(this) ? this.valueOf() : this;
+      var string = symbolToString.call(symbol);
+      if (has(EmptyStringDescriptionStore, symbol)) return '';
+      var desc = nativeSymbol ? string.slice(7, -1) : string.replace(regexp, '$1');
+      return desc === '' ? undefined : desc;
+    }
+  });
+
+  $({ global: true, forced: true }, {
+    Symbol: SymbolWrapper
+  });
+}
+
 
 /***/ }),
 
@@ -11535,62 +11711,65 @@ button_esm_script.render = button_esm_render;
 crosierFormSvue_type_script_lang_js.render = crosierFormSvue_type_template_id_dc05d8e4_render
 
 /* harmony default export */ var crosierFormS = (crosierFormSvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/crosierListS.vue?vue&type=template&id=3c7b24e5
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/crosierListS.vue?vue&type=template&id=742a31ae
 
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_1 = {
+var crosierListSvue_type_template_id_742a31ae_hoisted_1 = {
   class: "card",
   style: {
     "margin-bottom": "50px"
   }
 };
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_2 = {
+var crosierListSvue_type_template_id_742a31ae_hoisted_2 = {
   class: "card-header"
 };
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_3 = {
+var crosierListSvue_type_template_id_742a31ae_hoisted_3 = {
   class: "d-flex flex-wrap align-items-center"
 };
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_4 = {
+var crosierListSvue_type_template_id_742a31ae_hoisted_4 = {
   class: "mr-1"
 };
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_5 = {
+var crosierListSvue_type_template_id_742a31ae_hoisted_5 = {
   key: 0
 };
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_6 = {
+var crosierListSvue_type_template_id_742a31ae_hoisted_6 = {
   class: "d-sm-flex flex-nowrap ml-auto"
 };
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_7 = ["href"];
+var crosierListSvue_type_template_id_742a31ae_hoisted_7 = ["href"];
 
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_8 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+var crosierListSvue_type_template_id_742a31ae_hoisted_8 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
   class: "fas fa-file",
   "aria-hidden": "true"
 }, null, -1);
 
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_9 = [crosierListSvue_type_template_id_3c7b24e5_hoisted_8];
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_10 = {
+var crosierListSvue_type_template_id_742a31ae_hoisted_9 = [crosierListSvue_type_template_id_742a31ae_hoisted_8];
+var crosierListSvue_type_template_id_742a31ae_hoisted_10 = {
   class: "card-body"
 };
 
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_11 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "Filtrar", -1);
+var crosierListSvue_type_template_id_742a31ae_hoisted_11 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "Filtros", -1);
 
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_12 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+var crosierListSvue_type_template_id_742a31ae_hoisted_12 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
   class: "pi pi-filter"
 }, null, -1);
 
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_13 = {
+var crosierListSvue_type_template_id_742a31ae_hoisted_13 = {
   class: "row mt-3"
 };
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_14 = {
-  class: "col-3"
+var crosierListSvue_type_template_id_742a31ae_hoisted_14 = {
+  class: "col-8"
 };
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_15 = {
-  class: "col text-right"
+
+var crosierListSvue_type_template_id_742a31ae_hoisted_15 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(". ");
+
+var crosierListSvue_type_template_id_742a31ae_hoisted_16 = {
+  class: "col-4 text-right"
 };
-var crosierListSvue_type_template_id_3c7b24e5_hoisted_16 = {
+var crosierListSvue_type_template_id_742a31ae_hoisted_17 = {
   style: {
     "text-align": "right"
   }
 };
-function crosierListSvue_type_template_id_3c7b24e5_render(_ctx, _cache, $props, $setup, $data, $options) {
+function crosierListSvue_type_template_id_742a31ae_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_ConfirmDialog = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("ConfirmDialog");
@@ -11611,21 +11790,20 @@ function crosierListSvue_type_template_id_3c7b24e5_render(_ctx, _cache, $props, 
     group: "crosierListS_delete"
   }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])(this.containerClass)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3c7b24e5_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3c7b24e5_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3c7b24e5_hoisted_3, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3c7b24e5_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.titulo), 1), $props.subtitulo ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("h6", crosierListSvue_type_template_id_3c7b24e5_hoisted_5, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.subtitulo), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3c7b24e5_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("a", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_742a31ae_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_742a31ae_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_742a31ae_hoisted_3, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_742a31ae_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.titulo), 1), $props.subtitulo ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("h6", crosierListSvue_type_template_id_742a31ae_hoisted_5, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.subtitulo), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_742a31ae_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("a", {
     type: "button",
     class: "btn btn-info",
     href: this.formUrl,
     title: "Novo"
-  }, crosierListSvue_type_template_id_3c7b24e5_hoisted_9, 8, crosierListSvue_type_template_id_3c7b24e5_hoisted_7), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.formUrl]]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "headerButtons")])])]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3c7b24e5_hoisted_10, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_CrosierBlock, {
+  }, crosierListSvue_type_template_id_742a31ae_hoisted_9, 8, crosierListSvue_type_template_id_742a31ae_hoisted_7), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.formUrl]]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "headerButtons")])])]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_742a31ae_hoisted_10, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_CrosierBlock, {
     loading: this.loading
   }, null, 8, ["loading"]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Accordion, {
-    multiple: true,
-    activeIndex: this.sempreMostrarFiltros || this.isFiltered ? '[0]' : null
+    activeIndex: this.accordionActiveIndex
   }, {
     default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
       return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_AccordionTab, null, {
         header: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-          return [crosierListSvue_type_template_id_3c7b24e5_hoisted_11, crosierListSvue_type_template_id_3c7b24e5_hoisted_12];
+          return [crosierListSvue_type_template_id_742a31ae_hoisted_11, crosierListSvue_type_template_id_742a31ae_hoisted_12];
         }),
         default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
           return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("form", {
@@ -11633,14 +11811,14 @@ function crosierListSvue_type_template_id_3c7b24e5_render(_ctx, _cache, $props, 
               return _this.doFilter();
             }, ["prevent"])),
             class: "notSubmit"
-          }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "filter-fields"), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3c7b24e5_hoisted_13, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3c7b24e5_hoisted_14, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InlineMessage, {
+          }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "filter-fields"), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_742a31ae_hoisted_13, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_742a31ae_hoisted_14, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InlineMessage, {
             severity: "info"
           }, {
             default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-              return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.totalRecords) + " registro(s) encontrado(s).", 1)];
+              return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("small", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.totalRecords) + " registro(s) encontrado(s) ", 1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "(com filtros aplicados)", 512), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], _this.isFiltering]]), crosierListSvue_type_template_id_742a31ae_hoisted_15])];
             }),
             _: 1
-          })]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3c7b24e5_hoisted_15, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
+          })]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_742a31ae_hoisted_16, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
             label: "Filtrar",
             type: "submit",
             icon: "fas fa-search",
@@ -11668,34 +11846,33 @@ function crosierListSvue_type_template_id_3c7b24e5_render(_ctx, _cache, $props, 
     paginator: true,
     rows: 10,
     onPage: _cache[3] || (_cache[3] = function ($event) {
-      return $options.onPage($event);
+      return $options.doFilter($event);
     }),
     onSort: _cache[4] || (_cache[4] = function ($event) {
-      return $options.onSort($event);
+      return $options.doFilter($event);
     }),
-    removableSort: "",
-    sortField: "id",
-    sortOrder: "1",
-    ref: "dt",
+    sortMode: "multiple",
+    multiSortMeta: $data.multiSortMeta,
+    "removable-sort": true,
     paginatorTemplate: "FirstPageLink PrevPageLink PageLinks NextPageLink\n           LastPageLink CurrentPageReport RowsPerPageDropdown",
-    rowsPerPageOptions: [5, 10, 25, 50, 1000],
+    rowsPerPageOptions: [5, 10, 25, 50, 200],
     currentPageReportTemplate: "{first}-{last} de {totalRecords}",
     selection: this.selectedItems,
     "onUpdate:selection": _cache[5] || (_cache[5] = function ($event) {
       return _this.selectedItems = $event;
     }),
     dataKey: "id",
-    onRowSelect: _ctx.onSelectChange,
-    onRowUnselect: _ctx.onSelectChange,
     resizableColumns: true,
     columnResizeMode: "fit",
-    responsiveLayout: "scroll"
+    responsiveLayout: "scroll",
+    first: $data.firstRecordIndex,
+    ref: "dt"
   }, {
     footer: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3c7b24e5_hoisted_16, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
+      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_742a31ae_hoisted_17, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
         class: "p-button-rounded p-button-success p-button-text",
         icon: "pi pi-file-excel",
-        label: "Exportar",
+        label: "Exportar para CSV",
         onClick: _cache[2] || (_cache[2] = function ($event) {
           return $options.exportCSV($event);
         })
@@ -11705,15 +11882,120 @@ function crosierListSvue_type_template_id_3c7b24e5_render(_ctx, _cache, $props, 
       return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "columns")];
     }),
     _: 3
-  }, 8, ["stateKey", "value", "totalRecords", "selection", "onRowSelect", "onRowUnselect"])])])], 2)], 64);
+  }, 8, ["stateKey", "value", "totalRecords", "multiSortMeta", "selection", "first"])])])], 2)], 64);
 }
-// CONCATENATED MODULE: ./src/components/crosierListS.vue?vue&type=template&id=3c7b24e5
+// CONCATENATED MODULE: ./src/components/crosierListS.vue?vue&type=template&id=742a31ae
 
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.keys.js
-var es_object_keys = __webpack_require__("b64b");
-
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.symbol.js
 var es_symbol = __webpack_require__("a4d3");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.symbol.description.js
+var es_symbol_description = __webpack_require__("e01a");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.to-string.js
+var es_object_to_string = __webpack_require__("d3b7");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.symbol.iterator.js
+var es_symbol_iterator = __webpack_require__("d28b");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.iterator.js
+var es_array_iterator = __webpack_require__("e260");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.iterator.js
+var es_string_iterator = __webpack_require__("3ca3");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom-collections.iterator.js
+var web_dom_collections_iterator = __webpack_require__("ddb0");
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js
+
+
+
+
+
+
+
+function _iterableToArrayLimit(arr, i) {
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+
+  if (_i == null) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+
+  var _s, _e;
+
+  try {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.slice.js
+var es_array_slice = __webpack_require__("fb6a");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.function.name.js
+var es_function_name = __webpack_require__("b0c0");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.from.js
+var es_array_from = __webpack_require__("a630");
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+
+
+
+
+
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js
+
+
+
+
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.keys.js
+var es_object_keys = __webpack_require__("b64b");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.filter.js
 var es_array_filter = __webpack_require__("4de4");
@@ -11788,9 +12070,6 @@ function _objectSpread2(target) {
 
   return target;
 }
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.to-string.js
-var es_object_to_string = __webpack_require__("d3b7");
-
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.promise.js
 var es_promise = __webpack_require__("e6cf");
 
@@ -11842,26 +12121,14 @@ var es_regexp_exec = __webpack_require__("ac1f");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.search.js
 var es_string_search = __webpack_require__("841c");
 
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.iterator.js
-var es_array_iterator = __webpack_require__("e260");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.iterator.js
-var es_string_iterator = __webpack_require__("3ca3");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom-collections.iterator.js
-var web_dom_collections_iterator = __webpack_require__("ddb0");
-
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.url.js
 var web_url = __webpack_require__("2b3d");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.map.js
-var es_map = __webpack_require__("4ec9");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.concat.js
 var es_array_concat = __webpack_require__("99af");
 
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.slice.js
-var es_array_slice = __webpack_require__("fb6a");
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.entries.js
+var es_object_entries = __webpack_require__("4fad");
 
 // CONCATENATED MODULE: ./node_modules/primevue/api/api.esm.js
 
@@ -22766,6 +23033,9 @@ var es_number_max_safe_integer = __webpack_require__("aff5");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.number.constructor.js
 var es_number_constructor = __webpack_require__("a9e3");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.map.js
+var es_map = __webpack_require__("4ec9");
+
 // EXTERNAL MODULE: ./node_modules/axios/index.js
 var axios = __webpack_require__("bc3a");
 var axios_default = /*#__PURE__*/__webpack_require__.n(axios);
@@ -22785,8 +23055,8 @@ var axios_default = /*#__PURE__*/__webpack_require__.n(axios);
 
 
 /**
-* @example 
-    export default {
+ * @example
+ export default {
       methods: {
         async changeCliente(event) {
           var theFilters = {
@@ -22840,11 +23110,18 @@ function _fetchTableData() {
             queryFilter = "";
 
             if (order) {
-              if (order instanceof Map) {
-                order === null || order === void 0 ? void 0 : order.forEach(function (value, key) {
+              if (order instanceof Array) {
+                // padrão primevue.datatable
+                order.forEach(function (v) {
+                  queryOrder += "&order[".concat(v.field, "]=").concat(v.order === 1 ? "ASC" : "DESC");
+                }, order);
+              } else if (order instanceof Map) {
+                // padrão map.set(field, sortOrder)
+                order.forEach(function (value, key) {
                   queryOrder += "&order[".concat(key, "]=").concat(value);
                 }, order);
               } else {
+                // padrão { field: sortOrder }
                 Object.keys(order).forEach(function (value) {
                   queryOrder += "&order[".concat(value, "]=").concat(order[value]);
                 }, order);
@@ -22880,6 +23157,74 @@ function _fetchTableData() {
   }));
   return _fetchTableData.apply(this, arguments);
 }
+// CONCATENATED MODULE: ./src/services/ApiPostService.js
+
+
+
+function postEntityData(_x, _x2) {
+  return _postEntityData.apply(this, arguments);
+}
+
+function _postEntityData() {
+  _postEntityData = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(apiResource, data) {
+    var params;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            params = {
+              headers: {
+                "Content-Type": "application/ld+json"
+              },
+              validateStatus: function validateStatus(status) {
+                return status < 500; // Resolve only if the status code is less than 500
+              }
+            };
+            return _context.abrupt("return", axios_default.a.post("".concat(apiResource), data, params));
+
+          case 2:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _postEntityData.apply(this, arguments);
+}
+// CONCATENATED MODULE: ./src/services/ApiPutService.js
+
+
+
+function putEntityData(_x, _x2) {
+  return _putEntityData.apply(this, arguments);
+}
+
+function _putEntityData() {
+  _putEntityData = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(apiResource, data) {
+    var params;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            params = {
+              headers: {
+                "Content-Type": "application/ld+json"
+              },
+              validateStatus: function validateStatus(status) {
+                return status < 500; // Resolve only if the status code is less than 500
+              }
+            };
+            return _context.abrupt("return", axios_default.a.put("".concat(apiResource), data, params));
+
+          case 2:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _putEntityData.apply(this, arguments);
+}
 // CONCATENATED MODULE: ./src/services/ApiDeleteService.js
 
 
@@ -22912,7 +23257,20 @@ function _deleteEntityData() {
   }));
   return _deleteEntityData.apply(this, arguments);
 }
+// CONCATENATED MODULE: ./src/services/api.js
+
+
+
+
+/* harmony default export */ var api = ({
+  get: fetchTableData,
+  post: postEntityData,
+  put: putEntityData,
+  delete: deleteEntityData
+});
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/crosierListS.vue?vue&type=script&lang=js
+
+
 
 
 
@@ -22984,26 +23342,28 @@ function _deleteEntityData() {
       required: false,
       default: false
     },
-    parentLoad: {
-      type: Boolean,
+    defaultOrder: {
+      type: Array,
       required: false,
-      default: false
+      default: null
     }
   },
   data: function data() {
     return {
       savedFilter: {},
-      isFiltered: false,
       totalRecords: 0,
       tableData: null,
-      selectedItems: []
+      selectedItems: [],
+      firstRecordIndex: 0,
+      multiSortMeta: [],
+      accordionActiveIndex: null
     };
   },
   mounted: function mounted() {
     var _this = this;
 
     return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-      var uri, params, filtersParsed, page, rows, order, lsItem, dtStateLS, sorterOrder, response;
+      var uri, params, filtersParsed;
       return regeneratorRuntime.wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
@@ -23012,7 +23372,7 @@ function _deleteEntityData() {
 
               uri = window.location.search.substring(1);
               params = new URLSearchParams(uri);
-              _this.savedFilter = params.get("filters") || localStorage.getItem(_this.localStorageName);
+              _this.savedFilter = params.get("filters") || localStorage.getItem(_this.filtersOnLocalStorage);
 
               if (_this.savedFilter) {
                 try {
@@ -23024,49 +23384,15 @@ function _deleteEntityData() {
                 }
               }
 
-              page = 1;
-              rows = 10;
-              order = new Map();
-              lsItem = localStorage.getItem(_this.dataTableStateKey);
+              _context.next = 7;
+              return _this.doFilter();
 
-              if (lsItem) {
-                dtStateLS = JSON.parse(lsItem);
-                page = Math.ceil((dtStateLS.first + 1) / dtStateLS.rows);
-                rows = dtStateLS.rows;
-                sorterOrder = {
-                  1: "ASC",
-                  "-1": "DESC"
-                };
-
-                if (dtStateLS !== null && dtStateLS !== void 0 && dtStateLS.sortOrder && sorterOrder[dtStateLS.sortOrder]) {
-                  order.set(dtStateLS.sortField, sorterOrder[dtStateLS.sortOrder]);
-                }
-              }
-
-              _this.$emit("beforeFilter"); // make request passing
-
-
-              _context.next = 13;
-              return _this.fetchTableData({
-                apiResource: _this.apiResource,
-                page: page,
-                rows: rows,
-                order: order,
-                filters: _this.filters
-              });
-
-            case 13:
-              response = _context.sent;
-              _this.totalRecords = response.data["hydra:totalItems"];
-              _this.tableData = response.data["hydra:member"];
-
-              _this.setFilters(_this.filters);
-
-              _this.$emit("afterFilter", _this.tableData);
+            case 7:
+              _this.accordionActiveIndex = _this.isFiltering ? 0 : null;
 
               _this.setLoading(false);
 
-            case 19:
+            case 9:
             case "end":
               return _context.stop();
           }
@@ -23075,47 +23401,75 @@ function _deleteEntityData() {
     }))();
   },
   methods: _objectSpread2(_objectSpread2({}, mapMutations(["setLoading"])), {}, {
-    fetchTableData: fetchTableData,
-    deleteEntityData: deleteEntityData,
     setFilters: function setFilters(filters) {
       this.$store.commit("set".concat(this.filtersStoreName.charAt(0).toUpperCase()).concat(this.filtersStoreName.slice(1)), filters);
     },
-    lazyFetch: function lazyFetch(event) {
+    redirectForm: function redirectForm() {
+      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+      window.location.href = "form".concat(id ? "?id=".concat(id) : "");
+    },
+    doFilter: function doFilter(event) {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
-        var page, rows, sorterOrder, order, response;
+        var _ref, _event$rows, _event$multiSortMeta, _dtStateLS$multiSortM;
+
+        var lsItem, dtStateLS, rows, page, apiOrder, response;
         return regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _this2.setLoading(true);
 
-                page = event ? Math.ceil((event.first + 1) / event.rows) : 1;
-                rows = event ? event.rows : 10;
-                sorterOrder = {
-                  1: "ASC",
-                  "-1": "DESC"
-                };
-                order = new Map();
-
-                if (sorterOrder[event.sortOrder]) {
-                  order.set(event.sortField, sorterOrder[event.sortOrder]);
-                }
-
                 _this2.$emit("beforeFilter");
 
-                _context2.next = 9;
-                return _this2.fetchTableData({
+                lsItem = localStorage.getItem(_this2.dataTableStateKey);
+                dtStateLS = lsItem ? JSON.parse(lsItem) : null;
+                rows = (_ref = (_event$rows = event === null || event === void 0 ? void 0 : event.rows) !== null && _event$rows !== void 0 ? _event$rows : dtStateLS === null || dtStateLS === void 0 ? void 0 : dtStateLS.rows) !== null && _ref !== void 0 ? _ref : 10;
+                page = 1;
+
+                if (event !== null && event !== void 0 && event.first) {
+                  page = Math.ceil((event.first + 1) / event.rows);
+                } else if (lsItem !== null && lsItem !== void 0 && lsItem.first) {
+                  page = Math.ceil((dtStateLS.first + 1) / dtStateLS.rows);
+                } else {
+                  page = 1;
+                }
+
+                apiOrder = null; // Prioridades:
+
+                if ((event === null || event === void 0 ? void 0 : (_event$multiSortMeta = event.multiSortMeta) === null || _event$multiSortMeta === void 0 ? void 0 : _event$multiSortMeta.length) > 0) {
+                  // 1- evento
+                  apiOrder = event.multiSortMeta;
+                } else if ((dtStateLS === null || dtStateLS === void 0 ? void 0 : (_dtStateLS$multiSortM = dtStateLS.multiSortMeta) === null || _dtStateLS$multiSortM === void 0 ? void 0 : _dtStateLS$multiSortM.length) > 0) {
+                  // 2- state do datatable
+                  apiOrder = dtStateLS.multiSortMeta;
+                } else if (_this2.defaultOrder) {
+                  // 3- defaultOrder
+                  _this2.multiSortMeta = [];
+                  Object.keys(_this2.defaultOrder).forEach(function (campo) {
+                    _this2.multiSortMeta.push({
+                      field: campo,
+                      order: _this2.defaultOrder[campo] === "ASC" ? 1 : -1
+                    });
+                  }, _this2);
+                }
+
+                _context2.next = 11;
+                return api.get({
                   apiResource: _this2.apiResource,
                   page: page,
                   rows: rows,
-                  order: order,
+                  order: apiOrder,
                   filters: _this2.filters
                 });
 
-              case 9:
+              case 11:
                 response = _context2.sent;
+                _this2.totalRecords = response.data["hydra:totalItems"];
+                _this2.tableData = response.data["hydra:member"]; // salva os filtros no localStorage
+
+                localStorage.setItem(_this2.filtersOnLocalStorage, JSON.stringify(_this2.filters));
                 _this2.totalRecords = response.data["hydra:totalItems"];
                 _this2.tableData = response.data["hydra:member"];
 
@@ -23125,7 +23479,7 @@ function _deleteEntityData() {
 
                 _this2.setLoading(false);
 
-              case 15:
+              case 20:
               case "end":
                 return _context2.stop();
             }
@@ -23133,154 +23487,77 @@ function _deleteEntityData() {
         }, _callee2);
       }))();
     },
-    redirectForm: function redirectForm() {
-      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
-      window.location.href = "form".concat(id ? "?id=".concat(id) : "");
+    doClearFilters: function doClearFilters() {
+      this.setFilters({});
+      localStorage.setItem(this.filtersOnLocalStorage, null);
+      this.$refs.dt.resetPage();
+      this.doFilter({
+        event: {
+          first: 0
+        }
+      });
     },
-    onPage: function onPage(event) {
+    delete: function _delete(event, id) {
       var _this3 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-        return regeneratorRuntime.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                _context3.next = 2;
-                return _this3.lazyFetch(event);
-
-              case 2:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3);
-      }))();
-    },
-    onSort: function onSort(event) {
-      var _this4 = this;
 
       return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
         return regeneratorRuntime.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
-                _context4.next = 2;
-                return _this4.lazyFetch(event);
-
-              case 2:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4);
-      }))();
-    },
-    doFilter: function doFilter() {
-      var _this5 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
-        var response;
-        return regeneratorRuntime.wrap(function _callee5$(_context5) {
-          while (1) {
-            switch (_context5.prev = _context5.next) {
-              case 0:
-                _this5.setLoading(true);
-
-                _this5.$emit("beforeFilter"); // get from api
-
-
-                _context5.next = 4;
-                return _this5.fetchTableData({
-                  apiResource: _this5.apiResource,
-                  filters: _this5.filters
-                });
-
-              case 4:
-                response = _context5.sent;
-                _this5.totalRecords = response.data["hydra:totalItems"];
-                _this5.tableData = response.data["hydra:member"]; // save filters on localstorage
-
-                localStorage.setItem(_this5.localStorageName, JSON.stringify(_this5.filters));
-
-                _this5.setFilters(_this5.filters);
-
-                _this5.$emit("afterFilter", _this5.tableData);
-
-                _this5.setLoading(false);
-
-              case 11:
-              case "end":
-                return _context5.stop();
-            }
-          }
-        }, _callee5);
-      }))();
-    },
-    doClearFilters: function doClearFilters() {
-      this.setFilters({});
-      this.doFilter();
-    },
-    delete: function _delete(event, id) {
-      var _this6 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee7() {
-        return regeneratorRuntime.wrap(function _callee7$(_context7) {
-          while (1) {
-            switch (_context7.prev = _context7.next) {
-              case 0:
-                _this6.$confirm.require({
+                _this3.$confirm.require({
                   group: "crosierListS_delete",
                   message: "Tem certeza que deseja deletar?",
                   icon: "pi pi-exclamation-triangle",
                   acceptLabel: "Sim",
                   rejectLabel: "Não",
                   accept: function () {
-                    var _accept = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee6() {
+                    var _accept = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
                       var response;
-                      return regeneratorRuntime.wrap(function _callee6$(_context6) {
+                      return regeneratorRuntime.wrap(function _callee3$(_context3) {
                         while (1) {
-                          switch (_context6.prev = _context6.next) {
+                          switch (_context3.prev = _context3.next) {
                             case 0:
-                              _context6.prev = 0;
+                              _context3.prev = 0;
 
-                              _this6.setLoading(true);
+                              _this3.setLoading(true);
 
-                              _context6.next = 4;
-                              return _this6.deleteEntityData({
-                                apiResource: "".concat(_this6.apiResource).concat(id)
+                              _context3.next = 4;
+                              return api.delete({
+                                apiResource: "".concat(_this3.apiResource).concat(id)
                               });
 
                             case 4:
-                              response = _context6.sent;
+                              response = _context3.sent;
 
                               if (response.status === 204) {
-                                _this6.showSuccess("Deletado com sucesso.");
+                                _this3.showSuccess("Deletado com sucesso.");
 
-                                document.location.reload(true);
+                                _this3.doFilter();
                               } else {
-                                _this6.showError("Erro ao deletar");
+                                _this3.showError("Erro ao deletar");
                               }
 
-                              _context6.next = 12;
+                              _context3.next = 12;
                               break;
 
                             case 8:
-                              _context6.prev = 8;
-                              _context6.t0 = _context6["catch"](0);
+                              _context3.prev = 8;
+                              _context3.t0 = _context3["catch"](0);
 
-                              _this6.showError("Erro ao deletar");
+                              _this3.showError("Erro ao deletar");
 
-                              console.error(_context6.t0);
+                              console.error(_context3.t0);
 
                             case 12:
-                              _this6.setLoading(false);
+                              _this3.setLoading(false);
 
                             case 13:
                             case "end":
-                              return _context6.stop();
+                              return _context3.stop();
                           }
                         }
-                      }, _callee6, null, [[0, 8]]);
+                      }, _callee3, null, [[0, 8]]);
                     }));
 
                     function accept() {
@@ -23293,10 +23570,10 @@ function _deleteEntityData() {
 
               case 1:
               case "end":
-                return _context7.stop();
+                return _context4.stop();
             }
           }
-        }, _callee7);
+        }, _callee4);
       }))();
     },
     showSuccess: function showSuccess(message) {
@@ -23320,22 +23597,36 @@ function _deleteEntityData() {
     }
   }),
   computed: {
-    computed: {
-      loading: function loading() {
-        return this.$store.state.loading || this.parentLoad;
-      }
-    },
     filters: function filters() {
       return this.$store.getters["get".concat(this.filtersStoreName.charAt(0).toUpperCase()).concat(this.filtersStoreName.slice(1))];
     },
-    localStorageName: function localStorageName() {
-      return "filter-state_".concat(this.apiResource, "_").concat(this.filtersStoreName);
+    filtersOnLocalStorage: function filtersOnLocalStorage() {
+      return "filters_".concat(this.apiResource, "_").concat(this.filtersStoreName);
     },
     dataTableStateKey: function dataTableStateKey() {
       return "dataTable-state".concat(this.apiResource);
     },
     loading: function loading() {
       return this.$store.getters.isLoading;
+    },
+    isFiltering: function isFiltering() {
+      if (this.sempreMostrarFiltros) {
+        return true;
+      }
+
+      if (this.filters && Object.keys(this.filters).length > 0) {
+        // eslint-disable-next-line no-restricted-syntax
+        for (var _i = 0, _Object$entries = Object.entries(this.filters); _i < _Object$entries.length; _i++) {
+          var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+              value = _Object$entries$_i[1];
+
+          if (value !== null && value !== void 0 ? value : false) {
+            return true;
+          }
+        }
+      }
+
+      return false;
     }
   }
 });
@@ -23345,88 +23636,9 @@ function _deleteEntityData() {
 
 
 
-crosierListSvue_type_script_lang_js.render = crosierListSvue_type_template_id_3c7b24e5_render
+crosierListSvue_type_script_lang_js.render = crosierListSvue_type_template_id_742a31ae_render
 
 /* harmony default export */ var crosierListS = (crosierListSvue_type_script_lang_js);
-// CONCATENATED MODULE: ./src/services/ApiPostService.js
-
-
-
-function postEntityData(_x, _x2) {
-  return _postEntityData.apply(this, arguments);
-}
-
-function _postEntityData() {
-  _postEntityData = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(apiResource, data) {
-    var params;
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            params = {
-              headers: {
-                "Content-Type": "application/ld+json"
-              },
-              validateStatus: function validateStatus(status) {
-                return status < 500; // Resolve only if the status code is less than 500
-              }
-            };
-            return _context.abrupt("return", axios_default.a.post("".concat(apiResource), data, params));
-
-          case 2:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return _postEntityData.apply(this, arguments);
-}
-// CONCATENATED MODULE: ./src/services/ApiPutService.js
-
-
-
-function putEntityData(_x, _x2) {
-  return _putEntityData.apply(this, arguments);
-}
-
-function _putEntityData() {
-  _putEntityData = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(apiResource, data) {
-    var params;
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            params = {
-              headers: {
-                "Content-Type": "application/ld+json"
-              },
-              validateStatus: function validateStatus(status) {
-                return status < 500; // Resolve only if the status code is less than 500
-              }
-            };
-            return _context.abrupt("return", axios_default.a.put("".concat(apiResource), data, params));
-
-          case 2:
-          case "end":
-            return _context.stop();
-        }
-      }
-    }, _callee);
-  }));
-  return _putEntityData.apply(this, arguments);
-}
-// CONCATENATED MODULE: ./src/services/api.js
-
-
-
-
-/* harmony default export */ var api = ({
-  get: fetchTableData,
-  post: postEntityData,
-  put: putEntityData,
-  delete: deleteEntityData
-});
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.includes.js
 var es_array_includes = __webpack_require__("caad");
 

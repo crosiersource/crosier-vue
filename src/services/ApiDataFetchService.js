@@ -1,8 +1,8 @@
 import axios from "axios";
 
 /**
-* @example 
-    export default {
+ * @example
+ export default {
       methods: {
         async changeCliente(event) {
           var theFilters = {
@@ -51,11 +51,18 @@ export async function fetchTableData({
   let queryFilter = "";
 
   if (order) {
-    if (order instanceof Map) {
-      order?.forEach((value, key) => {
+    if (order instanceof Array) {
+      // padrão primevue.datatable
+      order.forEach((v) => {
+        queryOrder += `&order[${v.field}]=${v.order === 1 ? "ASC" : "DESC"}`;
+      }, order);
+    } else if (order instanceof Map) {
+      // padrão map.set(field, sortOrder)
+      order.forEach((value, key) => {
         queryOrder += `&order[${key}]=${value}`;
       }, order);
     } else {
+      // padrão { field: sortOrder }
       Object.keys(order).forEach((value) => {
         queryOrder += `&order[${value}]=${order[value]}`;
       }, order);

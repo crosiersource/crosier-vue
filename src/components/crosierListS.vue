@@ -25,24 +25,24 @@
       <div class="card-body">
         <CrosierBlock :loading="this.loading" />
         <div>
-          <Accordion
-            :multiple="true"
-            :activeIndex="this.sempreMostrarFiltros || this.isFiltered ? '[0]' : null"
-          >
+          <Accordion :activeIndex="this.accordionActiveIndex">
             <AccordionTab>
               <template #header>
-                <span>Filtrar</span>
+                <span>Filtros</span>
                 <i class="pi pi-filter"></i>
               </template>
               <form @submit.prevent="this.doFilter()" class="notSubmit">
                 <slot name="filter-fields"></slot>
                 <div class="row mt-3">
-                  <div class="col-3">
-                    <InlineMessage severity="info">
-                      {{ totalRecords }} registro(s) encontrado(s).</InlineMessage
-                    >
+                  <div class="col-8">
+                    <InlineMessage severity="info"
+                      ><small>
+                        {{ totalRecords }} registro(s) encontrado(s)
+                        <span v-show="this.isFiltering">(com filtros aplicados)</span>.
+                      </small>
+                    </InlineMessage>
                   </div>
-                  <div class="col text-right">
+                  <div class="col-4 text-right">
                     <Button
                       label="Filtrar"
                       type="submit"
@@ -70,30 +70,29 @@
           :lazy="true"
           :paginator="true"
           :rows="10"
-          @page="onPage($event)"
-          @sort="onSort($event)"
-          removableSort
-          sortField="id"
-          sortOrder="1"
-          ref="dt"
+          @page="doFilter($event)"
+          @sort="doFilter($event)"
+          sortMode="multiple"
+          :multiSortMeta="multiSortMeta"
+          :removable-sort="true"
           paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink
            LastPageLink CurrentPageReport RowsPerPageDropdown"
-          :rowsPerPageOptions="[5, 10, 25, 50, 1000]"
+          :rowsPerPageOptions="[5, 10, 25, 50, 200]"
           currentPageReportTemplate="{first}-{last} de {totalRecords}"
           v-model:selection="this.selectedItems"
           dataKey="id"
-          @row-select="onSelectChange"
-          @row-unselect="onSelectChange"
           :resizableColumns="true"
           columnResizeMode="fit"
           responsiveLayout="scroll"
+          :first="firstRecordIndex"
+          ref="dt"
         >
           <template #footer>
             <div style="text-align: right">
               <Button
                 class="p-button-rounded p-button-success p-button-text"
                 icon="pi pi-file-excel"
-                label="Exportar"
+                label="Exportar para CSV"
                 @click="exportCSV($event)"
               />
             </div>
@@ -113,9 +112,8 @@ import Button from "primevue/button";
 import ConfirmDialog from "primevue/confirmdialog";
 import InlineMessage from "primevue/inlinemessage";
 import { mapMutations } from "vuex";
-import { fetchTableData } from "../services/ApiDataFetchService";
-import { deleteEntityData } from "../services/ApiDeleteService";
-import CrosierBlock from "./crosierBlock";
+import api from "../services/api";
+import CrosierBlock from "../components/crosierBlock";
 
 export default {
   name: "CrosierListS",
@@ -165,20 +163,22 @@ export default {
       required: false,
       default: false,
     },
-    parentLoad: {
-      type: Boolean,
+    defaultOrder: {
+      type: Array,
       required: false,
-      default: false,
+      default: null,
     },
   },
 
   data() {
     return {
       savedFilter: {},
-      isFiltered: false,
       totalRecords: 0,
       tableData: null,
       selectedItems: [],
+      firstRecordIndex: 0,
+      multiSortMeta: [],
+      accordionActiveIndex: null,
     };
   },
 
@@ -187,7 +187,7 @@ export default {
     const uri = window.location.search.substring(1);
     const params = new URLSearchParams(uri);
 
-    this.savedFilter = params.get("filters") || localStorage.getItem(this.localStorageName);
+    this.savedFilter = params.get("filters") || localStorage.getItem(this.filtersOnLocalStorage);
     if (this.savedFilter) {
       try {
         const filtersParsed = JSON.parse(this.savedFilter);
@@ -196,46 +196,14 @@ export default {
         console.error(`Não foi possível recuperar os filtros (${this.savedFilter})`);
       }
     }
-    let page = 1;
-    let rows = 10;
-    const order = new Map();
-    const lsItem = localStorage.getItem(this.dataTableStateKey);
-    if (lsItem) {
-      const dtStateLS = JSON.parse(lsItem);
-      page = Math.ceil((dtStateLS.first + 1) / dtStateLS.rows);
-      rows = dtStateLS.rows;
-      const sorterOrder = {
-        1: "ASC",
-        "-1": "DESC",
-      };
 
-      if (dtStateLS?.sortOrder && sorterOrder[dtStateLS.sortOrder]) {
-        order.set(dtStateLS.sortField, sorterOrder[dtStateLS.sortOrder]);
-      }
-    }
-
-    this.$emit("beforeFilter");
-
-    // make request passing
-    const response = await this.fetchTableData({
-      apiResource: this.apiResource,
-      page,
-      rows,
-      order,
-      filters: this.filters,
-    });
-
-    this.totalRecords = response.data["hydra:totalItems"];
-    this.tableData = response.data["hydra:member"];
-    this.setFilters(this.filters);
-    this.$emit("afterFilter", this.tableData);
+    await this.doFilter();
+    this.accordionActiveIndex = this.isFiltering ? 0 : null;
     this.setLoading(false);
   },
 
   methods: {
     ...mapMutations(["setLoading"]),
-    fetchTableData,
-    deleteEntityData,
 
     setFilters(filters) {
       this.$store.commit(
@@ -244,74 +212,77 @@ export default {
       );
     },
 
-    async lazyFetch(event) {
-      this.setLoading(true);
-      const page = event ? Math.ceil((event.first + 1) / event.rows) : 1;
-      const rows = event ? event.rows : 10;
-
-      const sorterOrder = {
-        1: "ASC",
-        "-1": "DESC",
-      };
-
-      const order = new Map();
-      if (sorterOrder[event.sortOrder]) {
-        order.set(event.sortField, sorterOrder[event.sortOrder]);
-      }
-
-      this.$emit("beforeFilter");
-
-      const response = await this.fetchTableData({
-        apiResource: this.apiResource,
-        page,
-        rows,
-        order,
-        filters: this.filters,
-      });
-
-      this.totalRecords = response.data["hydra:totalItems"];
-      this.tableData = response.data["hydra:member"];
-      this.setFilters(this.filters);
-      this.$emit("afterFilter", this.tableData);
-      this.setLoading(false);
-    },
-
     redirectForm(id = "") {
       window.location.href = `form${id ? `?id=${id}` : ""}`;
     },
 
-    async onPage(event) {
-      await this.lazyFetch(event);
-    },
-
-    async onSort(event) {
-      await this.lazyFetch(event);
-    },
-
-    async doFilter() {
+    async doFilter(event) {
       this.setLoading(true);
 
       this.$emit("beforeFilter");
 
-      // get from api
-      const response = await this.fetchTableData({
+      const lsItem = localStorage.getItem(this.dataTableStateKey);
+      const dtStateLS = lsItem ? JSON.parse(lsItem) : null;
+
+      const rows = event?.rows ?? dtStateLS?.rows ?? 10;
+
+      let page = 1;
+      if (event?.first) {
+        page = Math.ceil((event.first + 1) / event.rows);
+      } else if (lsItem?.first) {
+        page = Math.ceil((dtStateLS.first + 1) / dtStateLS.rows);
+      } else {
+        page = 1;
+      }
+
+      let apiOrder = null;
+
+      // Prioridades:
+      if (event?.multiSortMeta?.length > 0) {
+        // 1- evento
+        apiOrder = event.multiSortMeta;
+      } else if (dtStateLS?.multiSortMeta?.length > 0) {
+        // 2- state do datatable
+        apiOrder = dtStateLS.multiSortMeta;
+      } else if (this.defaultOrder) {
+        // 3- defaultOrder
+        this.multiSortMeta = [];
+        Object.keys(this.defaultOrder).forEach((campo) => {
+          this.multiSortMeta.push({
+            field: campo,
+            order: this.defaultOrder[campo] === "ASC" ? 1 : -1,
+          });
+        }, this);
+      }
+
+      const response = await api.get({
         apiResource: this.apiResource,
+        page,
+        rows,
+        order: apiOrder,
         filters: this.filters,
       });
 
       this.totalRecords = response.data["hydra:totalItems"];
       this.tableData = response.data["hydra:member"];
 
-      // save filters on localstorage
-      localStorage.setItem(this.localStorageName, JSON.stringify(this.filters));
+      // salva os filtros no localStorage
+      localStorage.setItem(this.filtersOnLocalStorage, JSON.stringify(this.filters));
+
+      this.totalRecords = response.data["hydra:totalItems"];
+      this.tableData = response.data["hydra:member"];
       this.setFilters(this.filters);
+
       this.$emit("afterFilter", this.tableData);
+
       this.setLoading(false);
     },
 
     doClearFilters() {
       this.setFilters({});
-      this.doFilter();
+      localStorage.setItem(this.filtersOnLocalStorage, null);
+      this.$refs.dt.resetPage();
+      this.doFilter({ event: { first: 0 } });
     },
 
     async delete(event, id) {
@@ -325,12 +296,12 @@ export default {
           try {
             this.setLoading(true);
 
-            const response = await this.deleteEntityData({
+            const response = await api.delete({
               apiResource: `${this.apiResource}${id}`,
             });
             if (response.status === 204) {
               this.showSuccess("Deletado com sucesso.");
-              document.location.reload(true);
+              this.doFilter();
             } else {
               this.showError("Erro ao deletar");
             }
@@ -366,24 +337,33 @@ export default {
     },
   },
   computed: {
-    computed: {
-      loading() {
-        return this.$store.state.loading || this.parentLoad;
-      },
-    },
     filters() {
       return this.$store.getters[
         `get${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(1)}`
       ];
     },
-    localStorageName() {
-      return `filter-state_${this.apiResource}_${this.filtersStoreName}`;
+    filtersOnLocalStorage() {
+      return `filters_${this.apiResource}_${this.filtersStoreName}`;
     },
     dataTableStateKey() {
       return `dataTable-state${this.apiResource}`;
     },
     loading() {
       return this.$store.getters.isLoading;
+    },
+    isFiltering() {
+      if (this.sempreMostrarFiltros) {
+        return true;
+      }
+      if (this.filters && Object.keys(this.filters).length > 0) {
+        // eslint-disable-next-line no-restricted-syntax
+        for (const [, value] of Object.entries(this.filters)) {
+          if (value ?? false) {
+            return true;
+          }
+        }
+      }
+      return false;
     },
   },
 };
