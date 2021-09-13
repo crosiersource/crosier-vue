@@ -79,8 +79,11 @@
            LastPageLink CurrentPageReport RowsPerPageDropdown"
           :rowsPerPageOptions="[5, 10, 25, 50, 200]"
           currentPageReportTemplate="{first}-{last} de {totalRecords}"
-          v-model:selection="this.selectedItems"
+          v-model:selection="this.selection"
+          :selectionMode="selectionMode"
           dataKey="id"
+          @rowSelect="this.onRowSelect"
+          @rowUnselect="this.onRowUnselect"
           :resizableColumns="true"
           columnResizeMode="fit"
           responsiveLayout="scroll"
@@ -126,7 +129,7 @@ export default {
     DataTable,
     InlineMessage,
   },
-  emits: ["beforeFilter", "afterFilter"],
+  emits: ["beforeFilter", "afterFilter", "onRowSelect", "onRowUnselect"],
   props: {
     titulo: {
       type: String,
@@ -168,6 +171,11 @@ export default {
       required: false,
       default: null,
     },
+    selectionMode: {
+      type: String,
+      required: false,
+      default: "single",
+    },
   },
 
   data() {
@@ -175,7 +183,7 @@ export default {
       savedFilter: {},
       totalRecords: 0,
       tableData: null,
-      selectedItems: [],
+      selection: [],
       firstRecordIndex: 0,
       multiSortMeta: [],
       accordionActiveIndex: null,
@@ -332,6 +340,14 @@ export default {
       });
     },
 
+    async onRowSelect(event) {
+      await this.$emit("onRowSelect", event);
+    },
+
+    async onRowUnselect(event) {
+      await this.$emit("onRowUnselect", event);
+    },
+
     exportCSV() {
       this.$refs.dt.exportCSV();
     },
@@ -342,15 +358,19 @@ export default {
         `get${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(1)}`
       ];
     },
+
     filtersOnLocalStorage() {
       return `filters_${this.apiResource}_${this.filtersStoreName}`;
     },
+
     dataTableStateKey() {
       return `dataTable-state${this.apiResource}`;
     },
+
     loading() {
       return this.$store.getters.isLoading;
     },
+
     isFiltering() {
       if (this.sempreMostrarFiltros) {
         return true;
