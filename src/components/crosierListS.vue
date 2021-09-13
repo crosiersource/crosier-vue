@@ -364,7 +364,7 @@ export default {
     },
 
     dataTableStateKey() {
-      return `dataTable-state${this.apiResource}`;
+      return `dt-state${this.apiResource}`;
     },
 
     loading() {
