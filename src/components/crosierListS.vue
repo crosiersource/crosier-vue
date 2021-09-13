@@ -360,7 +360,7 @@ export default {
     },
 
     filtersOnLocalStorage() {
-      return `filters_${this.apiResource}_${this.filtersStoreName}`;
+      return `filters${this.apiResource}_${this.filtersStoreName}`;
     },
 
     dataTableStateKey() {
