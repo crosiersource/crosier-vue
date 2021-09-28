@@ -13,6 +13,7 @@
         placeholder="Selecione"
         :disabled="this.disabled"
         :filter="true"
+        :showClear="true"
       />
       <small v-if="this.helpText" :id="this.fieldName + '_help'" class="form-text text-muted">{{
         this.helpText

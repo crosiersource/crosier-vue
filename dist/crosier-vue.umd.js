@@ -26459,26 +26459,26 @@ function CrosierCurrencyvue_type_template_id_227add3b_render(_ctx, _cache, $prop
 CrosierCurrencyvue_type_script_lang_js.render = CrosierCurrencyvue_type_template_id_227add3b_render
 
 /* harmony default export */ var CrosierCurrency = (CrosierCurrencyvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdown.vue?vue&type=template&id=5ce1d201
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdown.vue?vue&type=template&id=d7709660
 
-var CrosierDropdownvue_type_template_id_5ce1d201_hoisted_1 = {
+var CrosierDropdownvue_type_template_id_d7709660_hoisted_1 = {
   class: "form-group"
 };
-var CrosierDropdownvue_type_template_id_5ce1d201_hoisted_2 = ["for"];
-var CrosierDropdownvue_type_template_id_5ce1d201_hoisted_3 = ["id"];
-var CrosierDropdownvue_type_template_id_5ce1d201_hoisted_4 = {
+var CrosierDropdownvue_type_template_id_d7709660_hoisted_2 = ["for"];
+var CrosierDropdownvue_type_template_id_d7709660_hoisted_3 = ["id"];
+var CrosierDropdownvue_type_template_id_d7709660_hoisted_4 = {
   class: "invalid-feedback blink"
 };
-function CrosierDropdownvue_type_template_id_5ce1d201_render(_ctx, _cache, $props, $setup, $data, $options) {
+function CrosierDropdownvue_type_template_id_d7709660_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_Dropdown = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Dropdown");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownvue_type_template_id_5ce1d201_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownvue_type_template_id_d7709660_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
     for: this.fieldName
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierDropdownvue_type_template_id_5ce1d201_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Dropdown, {
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierDropdownvue_type_template_id_d7709660_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Dropdown, {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')),
     id: this.fieldName,
     inputId: this.fieldName,
@@ -26491,14 +26491,15 @@ function CrosierDropdownvue_type_template_id_5ce1d201_render(_ctx, _cache, $prop
     optionValue: this.optionValue,
     placeholder: "Selecione",
     disabled: this.disabled,
-    filter: true
+    filter: true,
+    showClear: true
   }, null, 8, ["class", "id", "inputId", "modelValue", "options", "optionLabel", "optionValue", "disabled"]), this.helpText ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("small", {
     key: 0,
     id: this.fieldName + '_help',
     class: "form-text text-muted"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierDropdownvue_type_template_id_5ce1d201_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownvue_type_template_id_5ce1d201_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.formErrors[this.fieldName]), 1)])], 2);
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierDropdownvue_type_template_id_d7709660_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownvue_type_template_id_d7709660_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.formErrors[this.fieldName]), 1)])], 2);
 }
-// CONCATENATED MODULE: ./src/components/fields/CrosierDropdown.vue?vue&type=template&id=5ce1d201
+// CONCATENATED MODULE: ./src/components/fields/CrosierDropdown.vue?vue&type=template&id=d7709660
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdown.vue?vue&type=script&lang=js
 
@@ -26578,29 +26579,29 @@ function CrosierDropdownvue_type_template_id_5ce1d201_render(_ctx, _cache, $prop
 
 
 
-CrosierDropdownvue_type_script_lang_js.render = CrosierDropdownvue_type_template_id_5ce1d201_render
+CrosierDropdownvue_type_script_lang_js.render = CrosierDropdownvue_type_template_id_d7709660_render
 
 /* harmony default export */ var CrosierDropdown = (CrosierDropdownvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdownBanco.vue?vue&type=template&id=2113def7
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdownBanco.vue?vue&type=template&id=83307b74
 
-var CrosierDropdownBancovue_type_template_id_2113def7_hoisted_1 = {
+var CrosierDropdownBancovue_type_template_id_83307b74_hoisted_1 = {
   class: "form-group"
 };
-var CrosierDropdownBancovue_type_template_id_2113def7_hoisted_2 = ["for"];
-var CrosierDropdownBancovue_type_template_id_2113def7_hoisted_3 = ["id"];
-var CrosierDropdownBancovue_type_template_id_2113def7_hoisted_4 = {
+var CrosierDropdownBancovue_type_template_id_83307b74_hoisted_2 = ["for"];
+var CrosierDropdownBancovue_type_template_id_83307b74_hoisted_3 = ["id"];
+var CrosierDropdownBancovue_type_template_id_83307b74_hoisted_4 = {
   class: "invalid-feedback blink"
 };
-function CrosierDropdownBancovue_type_template_id_2113def7_render(_ctx, _cache, $props, $setup, $data, $options) {
+function CrosierDropdownBancovue_type_template_id_83307b74_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_Dropdown = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Dropdown");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownBancovue_type_template_id_2113def7_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownBancovue_type_template_id_83307b74_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
     for: this.fieldName
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierDropdownBancovue_type_template_id_2113def7_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Dropdown, {
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierDropdownBancovue_type_template_id_83307b74_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Dropdown, {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')),
     id: this.fieldName,
     inputId: this.fieldName,
@@ -26613,14 +26614,15 @@ function CrosierDropdownBancovue_type_template_id_2113def7_render(_ctx, _cache, 
     optionValue: this.optionValue,
     placeholder: "Selecione",
     disabled: this.disabled,
-    filter: true
+    filter: true,
+    showClear: true
   }, null, 8, ["class", "id", "inputId", "modelValue", "options", "optionLabel", "optionValue", "disabled"]), this.helpText ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("small", {
     key: 0,
     id: this.fieldName + '_help',
     class: "form-text text-muted"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierDropdownBancovue_type_template_id_2113def7_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownBancovue_type_template_id_2113def7_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.formErrors[this.fieldName]), 1)])], 2);
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierDropdownBancovue_type_template_id_83307b74_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownBancovue_type_template_id_83307b74_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.formErrors[this.fieldName]), 1)])], 2);
 }
-// CONCATENATED MODULE: ./src/components/fields/CrosierDropdownBanco.vue?vue&type=template&id=2113def7
+// CONCATENATED MODULE: ./src/components/fields/CrosierDropdownBanco.vue?vue&type=template&id=83307b74
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdownBanco.vue?vue&type=script&lang=js
 
@@ -26750,29 +26752,29 @@ function CrosierDropdownBancovue_type_template_id_2113def7_render(_ctx, _cache, 
 
 
 
-CrosierDropdownBancovue_type_script_lang_js.render = CrosierDropdownBancovue_type_template_id_2113def7_render
+CrosierDropdownBancovue_type_script_lang_js.render = CrosierDropdownBancovue_type_template_id_83307b74_render
 
 /* harmony default export */ var CrosierDropdownBanco = (CrosierDropdownBancovue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdownEntity.vue?vue&type=template&id=3ef924b4
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdownEntity.vue?vue&type=template&id=1f045775
 
-var CrosierDropdownEntityvue_type_template_id_3ef924b4_hoisted_1 = {
+var CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_1 = {
   class: "form-group"
 };
-var CrosierDropdownEntityvue_type_template_id_3ef924b4_hoisted_2 = ["for"];
-var CrosierDropdownEntityvue_type_template_id_3ef924b4_hoisted_3 = ["id"];
-var CrosierDropdownEntityvue_type_template_id_3ef924b4_hoisted_4 = {
+var CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_2 = ["for"];
+var CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_3 = ["id"];
+var CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_4 = {
   class: "invalid-feedback blink"
 };
-function CrosierDropdownEntityvue_type_template_id_3ef924b4_render(_ctx, _cache, $props, $setup, $data, $options) {
+function CrosierDropdownEntityvue_type_template_id_1f045775_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_Dropdown = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Dropdown");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownEntityvue_type_template_id_3ef924b4_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
     for: this.fieldName
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierDropdownEntityvue_type_template_id_3ef924b4_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Dropdown, {
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Dropdown, {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')),
     id: this.fieldName,
     inputId: this.fieldName,
@@ -26785,14 +26787,15 @@ function CrosierDropdownEntityvue_type_template_id_3ef924b4_render(_ctx, _cache,
     optionValue: this.optionValue,
     placeholder: "Selecione",
     disabled: this.disabled,
-    filter: true
+    filter: true,
+    showClear: true
   }, null, 8, ["class", "id", "inputId", "modelValue", "options", "optionLabel", "optionValue", "disabled"]), this.helpText ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("small", {
     key: 0,
     id: this.fieldName + '_help',
     class: "form-text text-muted"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierDropdownEntityvue_type_template_id_3ef924b4_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownEntityvue_type_template_id_3ef924b4_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.formErrors[this.fieldName]), 1)])], 2);
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.formErrors[this.fieldName]), 1)])], 2);
 }
-// CONCATENATED MODULE: ./src/components/fields/CrosierDropdownEntity.vue?vue&type=template&id=3ef924b4
+// CONCATENATED MODULE: ./src/components/fields/CrosierDropdownEntity.vue?vue&type=template&id=1f045775
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdownEntity.vue?vue&type=script&lang=js
 
@@ -26927,7 +26930,7 @@ function CrosierDropdownEntityvue_type_template_id_3ef924b4_render(_ctx, _cache,
 
 
 
-CrosierDropdownEntityvue_type_script_lang_js.render = CrosierDropdownEntityvue_type_template_id_3ef924b4_render
+CrosierDropdownEntityvue_type_script_lang_js.render = CrosierDropdownEntityvue_type_template_id_1f045775_render
 
 /* harmony default export */ var CrosierDropdownEntity = (CrosierDropdownEntityvue_type_script_lang_js);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputText.vue?vue&type=template&id=510d15d8
