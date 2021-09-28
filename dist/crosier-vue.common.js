@@ -27083,6 +27083,8 @@ function submitForm(_x) {
 
 function _submitForm() {
   _submitForm = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(_ref) {
+    var _response;
+
     var apiResource, $store, formDataStateName, schemaValidator, _ref$setUrlId, setUrlId, _ref$fnBeforeSave, fnBeforeSave, _ref$fnAfterGet, fnAfterGet, _ref$$toast, $toast, getter, formData, commitFormData, response, errMsg;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -27122,7 +27124,7 @@ function _submitForm() {
             }
 
             if (!formData["@id"]) {
-              _context.next = 23;
+              _context.next = 25;
               break;
             }
 
@@ -27132,38 +27134,59 @@ function _submitForm() {
 
           case 14:
             response = _context.sent;
-            _context.next = 21;
+            _context.next = 23;
             break;
 
           case 17:
             _context.prev = 17;
             _context.t0 = _context["catch"](11);
+
+            if ($toast) {
+              $toast.add({
+                severity: "error",
+                summary: "Erro",
+                detail: "Erro ao efetuar a requisição PUT",
+                life: 5000
+              });
+            }
+
             console.error("Erro ao efetuar a requisição PUT");
             console.error(_context.t0);
-
-          case 21:
-            _context.next = 33;
-            break;
+            return _context.abrupt("return", false);
 
           case 23:
-            _context.prev = 23;
-            _context.next = 26;
-            return postEntityData(apiResource, JSON.stringify(formData));
-
-          case 26:
-            response = _context.sent;
-            _context.next = 33;
+            _context.next = 36;
             break;
 
-          case 29:
-            _context.prev = 29;
-            _context.t1 = _context["catch"](23);
+          case 25:
+            _context.prev = 25;
+            _context.next = 28;
+            return postEntityData(apiResource, JSON.stringify(formData));
+
+          case 28:
+            response = _context.sent;
+            _context.next = 36;
+            break;
+
+          case 31:
+            _context.prev = 31;
+            _context.t1 = _context["catch"](25);
+
+            if ($toast) {
+              $toast.add({
+                severity: "error",
+                summary: "Erro",
+                detail: "Erro ao efetuar a requisição POST",
+                life: 5000
+              });
+            }
+
             console.error("Erro ao efetuar a requisição POST");
             console.error(_context.t1);
 
-          case 33:
-            if (![200, 201].includes(response.status)) {
-              _context.next = 40;
+          case 36:
+            if (!((_response = response) !== null && _response !== void 0 && _response.status && [200, 201].includes(response.status))) {
+              _context.next = 43;
               break;
             }
 
@@ -27189,11 +27212,9 @@ function _submitForm() {
             $store.commit(commitFormData, formData);
             return _context.abrupt("return", true);
 
-          case 40:
-            // if (response.status >= 400 && response.status < 500) {
-            errMsg = response.data["hydra:description"] || "Ocorreu um erro ao salvar!"; // }
+          case 43:
             // else...
-
+            errMsg = response.data["hydra:description"] || "Ocorreu um erro ao salvar!";
             console.error("Ocorreu um erro salvar!");
 
             if ($toast) {
@@ -27207,12 +27228,12 @@ function _submitForm() {
 
             return _context.abrupt("return", false);
 
-          case 44:
+          case 47:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[11, 17], [23, 29]]);
+    }, _callee, null, [[11, 17], [25, 31]]);
   }));
   return _submitForm.apply(this, arguments);
 }
