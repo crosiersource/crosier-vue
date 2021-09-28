@@ -22,32 +22,54 @@ export async function submitForm({
   const commitFormData = `set${formDataStateName.charAt(0).toUpperCase()}${formDataStateName.slice(
     1
   )}`;
+
   if (
     schemaValidator &&
     !validateFormData({ $store, formDataStateName, schemaValidator, $toast })
   ) {
     return false;
   }
+
   let response;
+
   if (fnBeforeSave) {
     fnBeforeSave(formData);
   }
+
   if (formData["@id"]) {
     try {
       response = await putEntityData(formData["@id"], JSON.stringify(formData));
     } catch (e) {
+      if ($toast) {
+        $toast.add({
+          severity: "error",
+          summary: "Erro",
+          detail: "Erro ao efetuar a requisição PUT",
+          life: 5000,
+        });
+      }
       console.error("Erro ao efetuar a requisição PUT");
       console.error(e);
+      return false;
     }
   } else {
     try {
       response = await postEntityData(apiResource, JSON.stringify(formData));
     } catch (e) {
+      if ($toast) {
+        $toast.add({
+          severity: "error",
+          summary: "Erro",
+          detail: "Erro ao efetuar a requisição POST",
+          life: 5000,
+        });
+      }
       console.error("Erro ao efetuar a requisição POST");
       console.error(e);
     }
   }
-  if ([200, 201].includes(response.status)) {
+
+  if (response?.status && [200, 201].includes(response.status)) {
     formData = response.data;
     if (fnAfterGet) {
       formData = fnAfterGet(formData);
@@ -67,11 +89,10 @@ export async function submitForm({
     $store.commit(commitFormData, formData);
     return true;
   }
-  // if (response.status >= 400 && response.status < 500) {
-  const errMsg = response.data["hydra:description"] || "Ocorreu um erro ao salvar!";
-  // }
-
   // else...
+
+  const errMsg = response.data["hydra:description"] || "Ocorreu um erro ao salvar!";
+
   console.error("Ocorreu um erro salvar!");
 
   if ($toast) {
