@@ -36,15 +36,15 @@ export async function submitForm({
     try {
       response = await putEntityData(formData["@id"], JSON.stringify(formData));
     } catch (e) {
-      console.err("Erro ao efetuar a requisição PUT");
-      console.err(e);
+      console.error("Erro ao efetuar a requisição PUT");
+      console.error(e);
     }
   } else {
     try {
       response = await postEntityData(apiResource, JSON.stringify(formData));
     } catch (e) {
-      console.err("Erro ao efetuar a requisição POST");
-      console.err(e);
+      console.error("Erro ao efetuar a requisição POST");
+      console.error(e);
     }
   }
   if ([200, 201].includes(response.status)) {
