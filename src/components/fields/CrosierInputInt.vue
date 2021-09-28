@@ -2,10 +2,10 @@
   <div :class="'col-md-' + this.col">
     <div class="form-group">
       <label :for="this.fieldName">{{ label }}</label>
-      <InputText
+      <InputNumber
         :class="'form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')"
+        inputClass="text-right"
         :id="this.fieldName"
-        type="text"
         v-model="this.fields[this.fieldName]"
         :disabled="this.disabled"
       />
@@ -20,11 +20,11 @@
 </template>
 
 <script>
-import InputText from "primevue/inputtext";
+import InputNumber from "primevue/inputnumber";
 
 export default {
   components: {
-    InputText,
+    InputNumber,
   },
 
   props: {

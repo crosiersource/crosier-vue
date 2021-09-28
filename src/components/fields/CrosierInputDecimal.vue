@@ -2,10 +2,12 @@
   <div :class="'col-md-' + this.col">
     <div class="form-group">
       <label :for="this.fieldName">{{ label }}</label>
-      <InputText
+      <InputNumber
         :class="'form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')"
-        :id="this.fieldName"
-        type="text"
+        inputClass="text-right"
+        mode="decimal"
+        :minFractionDigits="this.decimais"
+        :maxFractionDigits="this.decimais"
         v-model="this.fields[this.fieldName]"
         :disabled="this.disabled"
       />
@@ -20,11 +22,11 @@
 </template>
 
 <script>
-import InputText from "primevue/inputtext";
+import InputNumber from "primevue/inputnumber";
 
 export default {
   components: {
-    InputText,
+    InputNumber,
   },
 
   props: {
@@ -46,6 +48,11 @@ export default {
       type: String,
       required: false,
       default: "12",
+    },
+    decimais: {
+      type: Number,
+      required: false,
+      default: 2,
     },
     label: {
       type: String,
