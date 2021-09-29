@@ -1,17 +1,18 @@
 <template>
   <div :class="'col-md-' + this.col">
     <div class="form-group">
-      <label :for="this.fieldName">{{ label }}</label>
+      <label :for="this.id">{{ label }}</label>
       <InputNumber
         :class="'form-control ' + (this.error ? 'is-invalid' : '')"
         inputClass="text-right"
         mode="decimal"
         :minFractionDigits="this.decimais"
         :maxFractionDigits="this.decimais"
-        v-model="this.field"
+        :modelValue="modelValue"
+        @input="$emit('update:modelValue', $event.value)"
         :disabled="this.disabled"
       />
-      <small v-if="this.helpText" :id="this.fieldName + '_help'" class="form-text text-muted">{{
+      <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
         this.helpText
       }}</small>
       <div class="invalid-feedback blink">
@@ -29,30 +30,25 @@ export default {
     InputNumber,
   },
 
+  emits: ["update:modelValue"],
+
   props: {
-    fieldName: {
+    modelValue: {
+      type: Number,
+    },
+    id: {
       type: String,
       required: true,
     },
-    storeFieldsName: {
+    error: {
       type: String,
       required: false,
-      default: "getFields",
-    },
-    storeFieldsErrorsName: {
-      type: String,
-      required: false,
-      default: "getFieldsErrors",
+      default: null,
     },
     col: {
       type: String,
       required: false,
       default: "12",
-    },
-    decimais: {
-      type: Number,
-      required: false,
-      default: 2,
     },
     label: {
       type: String,
@@ -66,36 +62,6 @@ export default {
     helpText: {
       type: String,
       required: false,
-    },
-  },
-
-  methods: {
-    getRef(ref) {
-      const ns = this.fieldName.split(".");
-      for (let i = 0; i < ns.length; i++) {
-        if (!ref[ns[i]]) {
-          ref[ns[i]] = i + 1 === ns.length ? null : {};
-        }
-        ref = ref[ns[i]];
-      }
-      return ref;
-    },
-  },
-
-  computed: {
-    fields() {
-      return this.$store.getters[this.storeFieldsName];
-    },
-    formErrors() {
-      return this.$store.getters[this.storeFieldsErrorsName];
-    },
-    field() {
-      return this.fieldName.includes(".") ? this.getRef(this.fields) : this.fields[this.fieldName];
-    },
-    error() {
-      return this.fieldName.includes(".")
-        ? this.getRef(this.formErrors)
-        : this.formErrors[this.fieldName];
     },
   },
 };

@@ -10,7 +10,6 @@ export const store = {
   },
   actions: {
     async loadSelectedRows(context, localStoragePath) {
-      console.log(localStoragePath);
       const loadedSelected = await localStorage.getItem(localStoragePath);
       if (loadedSelected) {
         context.dispatch("updateSelectedRows", JSON.parse(loadedSelected).selection);

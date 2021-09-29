@@ -1,12 +1,15 @@
 <template>
   <div :class="'col-md-' + this.col">
     <div class="form-group">
-      <label :for="this.fieldName">{{ this.label }}</label>
+      <label :for="this.id">{{ this.label }}</label>
       <Calendar
-        :id="this.fieldName"
+        :id="this.id"
         :inputClass="this.inputClass"
         :class="'form-control ' + (this.error ? 'is-invalid' : '')"
-        v-model="this.field"
+        :modelValue="modelValue"
+        ref="refCalendar"
+        @input="this.onInput"
+        @date-select="$emit('update:modelValue', $event)"
         dateFormat="dd/mm/yy"
         :showTime="['crsr-datetime', 'crsr-datetime-nseg'].includes(this.inputClass)"
         :showSeconds="['crsr-datetime'].includes(this.inputClass)"
@@ -15,7 +18,7 @@
         :showOnFocus="false"
         :disabled="this.disabled"
       />
-      <small v-if="this.helpText" :id="this.fieldName + '_help'" class="form-text text-muted">{{
+      <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
         this.helpText
       }}</small>
       <div class="invalid-feedback blink">
@@ -33,25 +36,25 @@ export default {
     Calendar,
   },
 
+  emits: ["update:modelValue"],
+
   props: {
-    fieldName: {
+    modelValue: {
+      type: Date,
+    },
+    id: {
       type: String,
       required: true,
+    },
+    error: {
+      type: String,
+      required: false,
+      default: null,
     },
     inputClass: {
       type: String,
       required: false,
       default: "crsr-date",
-    },
-    storeFieldsName: {
-      type: String,
-      required: false,
-      default: "getFields",
-    },
-    storeFieldsErrorsName: {
-      type: String,
-      required: false,
-      default: "getFieldsErrors",
     },
     col: {
       type: String,
@@ -74,32 +77,48 @@ export default {
   },
 
   methods: {
-    getRef(ref) {
-      const ns = this.fieldName.split(".");
-      for (let i = 0; i < ns.length; i++) {
-        if (!ref[ns[i]]) {
-          ref[ns[i]] = i + 1 === ns.length ? null : {};
-        }
-        ref = ref[ns[i]];
+    onInput($event) {
+      const dtStr = $event.target.value;
+      let dateParser = null;
+      let date = null;
+      let match = null;
+      if (dtStr.length === 10 && this.inputClass === "crsr-date") {
+        dateParser = /(\d{2})\/(\d{2})\/(\d{4})/;
+        match = dtStr.match(dateParser);
+        date = new Date(
+          match[3], // year
+          match[2] - 1, // monthIndex
+          match[1] // day
+          // match[4],  // hours
+          // match[5],  // minutes
+          // match[6]  //seconds
+        );
+      } else if (dtStr.length === 16 && this.inputClass === "crsr-datetime-nseg") {
+        dateParser = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/;
+        match = dtStr.match(dateParser);
+        date = new Date(
+          match[3], // year
+          match[2] - 1, // monthIndex
+          match[1], // day
+          match[4], // hours
+          match[5] // minutes
+          // match[6]  //seconds
+        );
+      } else if (dtStr.length === 19 && this.inputClass === "crsr-datetime") {
+        dateParser = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2})/;
+        match = dtStr.match(dateParser);
+        date = new Date(
+          match[3], // year
+          match[2] - 1, // monthIndex
+          match[1], // day
+          match[4], // hours
+          match[5], // minutes
+          match[6] // seconds
+        );
       }
-      return ref;
-    },
-  },
-
-  computed: {
-    fields() {
-      return this.$store.getters[this.storeFieldsName];
-    },
-    formErrors() {
-      return this.$store.getters[this.storeFieldsErrorsName];
-    },
-    field() {
-      return this.fieldName.includes(".") ? this.getRef(this.fields) : this.fields[this.fieldName];
-    },
-    error() {
-      return this.fieldName.includes(".")
-        ? this.getRef(this.formErrors)
-        : this.formErrors[this.fieldName];
+      if (date) {
+        this.$emit("update:modelValue", date);
+      }
     },
   },
 };

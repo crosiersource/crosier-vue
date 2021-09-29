@@ -8,12 +8,11 @@ export function validateFormData({ $store, formDataStateName, schemaValidator, $
     schemaValidator.validateSync(formData, { abortEarly: false });
   } catch (err) {
     if (err?.inner) {
-      console.log(err);
+      console.error(err);
       const formErrors = {};
 
       err.inner?.forEach((element) => {
         if (element?.path) {
-          console.log(`elementpath: ${element.path}`);
           const msg = element.message || "Valor inválido";
           formErrors[element.path] = msg;
           console.error(msg);
