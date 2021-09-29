@@ -9,6 +9,7 @@
         <InputNumber
           :class="'form-control ' + (this.error ? 'is-invalid' : '')"
           inputClass="text-right"
+          :id="this.id"
           mode="decimal"
           :minFractionDigits="2"
           :maxFractionDigits="2"

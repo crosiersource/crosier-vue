@@ -5,7 +5,6 @@
       <Dropdown
         :class="'form-control ' + (this.error ? 'is-invalid' : '')"
         :id="this.id"
-        :inputId="this.id"
         :modelValue="modelValue"
         @change="$emit('update:modelValue', $event.value)"
         :options="this.options"

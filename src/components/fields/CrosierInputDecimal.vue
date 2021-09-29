@@ -4,6 +4,7 @@
       <label :for="this.id">{{ label }}</label>
       <InputNumber
         :class="'form-control ' + (this.error ? 'is-invalid' : '')"
+        :id="this.id"
         inputClass="text-right"
         mode="decimal"
         :minFractionDigits="this.decimais"
