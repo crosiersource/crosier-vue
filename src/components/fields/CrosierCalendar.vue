@@ -5,8 +5,8 @@
       <Calendar
         :id="this.fieldName"
         :inputClass="this.inputClass"
-        :class="'form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')"
-        v-model="this.fields[this.fieldName]"
+        :class="'form-control ' + (this.error ? 'is-invalid' : '')"
+        v-model="this.field"
         dateFormat="dd/mm/yy"
         :showTime="['crsr-datetime', 'crsr-datetime-nseg'].includes(this.inputClass)"
         :showSeconds="['crsr-datetime'].includes(this.inputClass)"
@@ -19,7 +19,7 @@
         this.helpText
       }}</small>
       <div class="invalid-feedback blink">
-        {{ this.formErrors[this.fieldName] }}
+        {{ this.error }}
       </div>
     </div>
   </div>
@@ -73,12 +73,33 @@ export default {
     },
   },
 
+  methods: {
+    getRef(ref) {
+      const ns = this.fieldName.split(".");
+      for (let i = 0; i < ns.length; i++) {
+        if (!ref[ns[i]]) {
+          ref[ns[i]] = i + 1 === ns.length ? null : {};
+        }
+        ref = ref[ns[i]];
+      }
+      return ref;
+    },
+  },
+
   computed: {
     fields() {
       return this.$store.getters[this.storeFieldsName];
     },
     formErrors() {
       return this.$store.getters[this.storeFieldsErrorsName];
+    },
+    field() {
+      return this.fieldName.includes(".") ? this.getRef(this.fields) : this.fields[this.fieldName];
+    },
+    error() {
+      return this.fieldName.includes(".")
+        ? this.getRef(this.formErrors)
+        : this.fields[this.fieldName];
     },
   },
 };

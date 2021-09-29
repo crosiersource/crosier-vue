@@ -7,12 +7,12 @@
           <span class="input-group-text">R$ </span>
         </div>
         <InputNumber
-          :class="'form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')"
+          :class="'form-control ' + (this.error ? 'is-invalid' : '')"
           inputClass="text-right"
           mode="decimal"
           :minFractionDigits="2"
           :maxFractionDigits="2"
-          v-model="this.fields[this.fieldName]"
+          v-model="this.field"
           placeholder="0,00"
           :disabled="this.disabled"
         />
@@ -20,8 +20,8 @@
       <small v-if="this.helpText" :id="this.fieldName + '_help'" class="form-text text-muted">{{
         this.helpText
       }}</small>
-      <div class="invalid-feedback blink" v-show="this.formErrors[this.fieldName]">
-        {{ this.formErrors[this.fieldName] }}
+      <div class="invalid-feedback blink" v-show="this.error">
+        {{ this.error }}
       </div>
     </div>
   </div>
@@ -70,12 +70,33 @@ export default {
     },
   },
 
+  methods: {
+    getRef(ref) {
+      const ns = this.fieldName.split(".");
+      for (let i = 0; i < ns.length; i++) {
+        if (!ref[ns[i]]) {
+          ref[ns[i]] = i + 1 === ns.length ? null : {};
+        }
+        ref = ref[ns[i]];
+      }
+      return ref;
+    },
+  },
+
   computed: {
     fields() {
       return this.$store.getters[this.storeFieldsName];
     },
     formErrors() {
       return this.$store.getters[this.storeFieldsErrorsName];
+    },
+    field() {
+      return this.fieldName.includes(".") ? this.getRef(this.fields) : this.fields[this.fieldName];
+    },
+    error() {
+      return this.fieldName.includes(".")
+        ? this.getRef(this.formErrors)
+        : this.fields[this.fieldName];
     },
   },
 };

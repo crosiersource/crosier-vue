@@ -494,6 +494,162 @@ module.exports = fails(function () {
 
 /***/ }),
 
+/***/ "1276":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var fixRegExpWellKnownSymbolLogic = __webpack_require__("d784");
+var isRegExp = __webpack_require__("44e7");
+var anObject = __webpack_require__("825a");
+var requireObjectCoercible = __webpack_require__("1d80");
+var speciesConstructor = __webpack_require__("4840");
+var advanceStringIndex = __webpack_require__("8aa5");
+var toLength = __webpack_require__("50c4");
+var toString = __webpack_require__("577e");
+var callRegExpExec = __webpack_require__("14c3");
+var regexpExec = __webpack_require__("9263");
+var stickyHelpers = __webpack_require__("9f7f");
+var fails = __webpack_require__("d039");
+
+var UNSUPPORTED_Y = stickyHelpers.UNSUPPORTED_Y;
+var arrayPush = [].push;
+var min = Math.min;
+var MAX_UINT32 = 0xFFFFFFFF;
+
+// Chrome 51 has a buggy "split" implementation when RegExp#exec !== nativeExec
+// Weex JS has frozen built-in prototypes, so use try / catch wrapper
+var SPLIT_WORKS_WITH_OVERWRITTEN_EXEC = !fails(function () {
+  // eslint-disable-next-line regexp/no-empty-group -- required for testing
+  var re = /(?:)/;
+  var originalExec = re.exec;
+  re.exec = function () { return originalExec.apply(this, arguments); };
+  var result = 'ab'.split(re);
+  return result.length !== 2 || result[0] !== 'a' || result[1] !== 'b';
+});
+
+// @@split logic
+fixRegExpWellKnownSymbolLogic('split', function (SPLIT, nativeSplit, maybeCallNative) {
+  var internalSplit;
+  if (
+    'abbc'.split(/(b)*/)[1] == 'c' ||
+    // eslint-disable-next-line regexp/no-empty-group -- required for testing
+    'test'.split(/(?:)/, -1).length != 4 ||
+    'ab'.split(/(?:ab)*/).length != 2 ||
+    '.'.split(/(.?)(.?)/).length != 4 ||
+    // eslint-disable-next-line regexp/no-empty-capturing-group, regexp/no-empty-group -- required for testing
+    '.'.split(/()()/).length > 1 ||
+    ''.split(/.?/).length
+  ) {
+    // based on es5-shim implementation, need to rework it
+    internalSplit = function (separator, limit) {
+      var string = toString(requireObjectCoercible(this));
+      var lim = limit === undefined ? MAX_UINT32 : limit >>> 0;
+      if (lim === 0) return [];
+      if (separator === undefined) return [string];
+      // If `separator` is not a regex, use native split
+      if (!isRegExp(separator)) {
+        return nativeSplit.call(string, separator, lim);
+      }
+      var output = [];
+      var flags = (separator.ignoreCase ? 'i' : '') +
+                  (separator.multiline ? 'm' : '') +
+                  (separator.unicode ? 'u' : '') +
+                  (separator.sticky ? 'y' : '');
+      var lastLastIndex = 0;
+      // Make `global` and avoid `lastIndex` issues by working with a copy
+      var separatorCopy = new RegExp(separator.source, flags + 'g');
+      var match, lastIndex, lastLength;
+      while (match = regexpExec.call(separatorCopy, string)) {
+        lastIndex = separatorCopy.lastIndex;
+        if (lastIndex > lastLastIndex) {
+          output.push(string.slice(lastLastIndex, match.index));
+          if (match.length > 1 && match.index < string.length) arrayPush.apply(output, match.slice(1));
+          lastLength = match[0].length;
+          lastLastIndex = lastIndex;
+          if (output.length >= lim) break;
+        }
+        if (separatorCopy.lastIndex === match.index) separatorCopy.lastIndex++; // Avoid an infinite loop
+      }
+      if (lastLastIndex === string.length) {
+        if (lastLength || !separatorCopy.test('')) output.push('');
+      } else output.push(string.slice(lastLastIndex));
+      return output.length > lim ? output.slice(0, lim) : output;
+    };
+  // Chakra, V8
+  } else if ('0'.split(undefined, 0).length) {
+    internalSplit = function (separator, limit) {
+      return separator === undefined && limit === 0 ? [] : nativeSplit.call(this, separator, limit);
+    };
+  } else internalSplit = nativeSplit;
+
+  return [
+    // `String.prototype.split` method
+    // https://tc39.es/ecma262/#sec-string.prototype.split
+    function split(separator, limit) {
+      var O = requireObjectCoercible(this);
+      var splitter = separator == undefined ? undefined : separator[SPLIT];
+      return splitter !== undefined
+        ? splitter.call(separator, O, limit)
+        : internalSplit.call(toString(O), separator, limit);
+    },
+    // `RegExp.prototype[@@split]` method
+    // https://tc39.es/ecma262/#sec-regexp.prototype-@@split
+    //
+    // NOTE: This cannot be properly polyfilled in engines that don't support
+    // the 'y' flag.
+    function (string, limit) {
+      var rx = anObject(this);
+      var S = toString(string);
+      var res = maybeCallNative(internalSplit, rx, S, limit, internalSplit !== nativeSplit);
+
+      if (res.done) return res.value;
+
+      var C = speciesConstructor(rx, RegExp);
+
+      var unicodeMatching = rx.unicode;
+      var flags = (rx.ignoreCase ? 'i' : '') +
+                  (rx.multiline ? 'm' : '') +
+                  (rx.unicode ? 'u' : '') +
+                  (UNSUPPORTED_Y ? 'g' : 'y');
+
+      // ^(? + rx + ) is needed, in combination with some S slicing, to
+      // simulate the 'y' flag.
+      var splitter = new C(UNSUPPORTED_Y ? '^(?:' + rx.source + ')' : rx, flags);
+      var lim = limit === undefined ? MAX_UINT32 : limit >>> 0;
+      if (lim === 0) return [];
+      if (S.length === 0) return callRegExpExec(splitter, S) === null ? [S] : [];
+      var p = 0;
+      var q = 0;
+      var A = [];
+      while (q < S.length) {
+        splitter.lastIndex = UNSUPPORTED_Y ? 0 : q;
+        var z = callRegExpExec(splitter, UNSUPPORTED_Y ? S.slice(q) : S);
+        var e;
+        if (
+          z === null ||
+          (e = min(toLength(splitter.lastIndex + (UNSUPPORTED_Y ? q : 0)), S.length)) === p
+        ) {
+          q = advanceStringIndex(S, q, unicodeMatching);
+        } else {
+          A.push(S.slice(p, q));
+          if (A.length === lim) return A;
+          for (var i = 1; i <= z.length - 1; i++) {
+            A.push(z[i]);
+            if (A.length === lim) return A;
+          }
+          q = p = e;
+        }
+      }
+      A.push(S.slice(p));
+      return A;
+    }
+  ];
+}, !SPLIT_WORKS_WITH_OVERWRITTEN_EXEC, UNSUPPORTED_Y);
+
+
+/***/ }),
+
 /***/ "129f":
 /***/ (function(module, exports) {
 
@@ -1130,6 +1286,29 @@ function toComment(sourceMap) {
   var data = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(base64);
   return "/*# ".concat(data, " */");
 }
+
+/***/ }),
+
+/***/ "2532":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__("23e7");
+var notARegExp = __webpack_require__("5a34");
+var requireObjectCoercible = __webpack_require__("1d80");
+var toString = __webpack_require__("577e");
+var correctIsRegExpLogic = __webpack_require__("ab13");
+
+// `String.prototype.includes` method
+// https://tc39.es/ecma262/#sec-string.prototype.includes
+$({ target: 'String', proto: true, forced: !correctIsRegExpLogic('includes') }, {
+  includes: function includes(searchString /* , position = 0 */) {
+    return !!~toString(requireObjectCoercible(this))
+      .indexOf(toString(notARegExp(searchString)), arguments.length > 1 ? arguments[1] : undefined);
+  }
+});
+
 
 /***/ }),
 
@@ -2871,6 +3050,25 @@ module.exports = function (a, b) {
 
 /***/ }),
 
+/***/ "44e7":
+/***/ (function(module, exports, __webpack_require__) {
+
+var isObject = __webpack_require__("861d");
+var classof = __webpack_require__("c6b6");
+var wellKnownSymbol = __webpack_require__("b622");
+
+var MATCH = wellKnownSymbol('match');
+
+// `IsRegExp` abstract operation
+// https://tc39.es/ecma262/#sec-isregexp
+module.exports = function (it) {
+  var isRegExp;
+  return isObject(it) && ((isRegExp = it[MATCH]) !== undefined ? !!isRegExp : classof(it) == 'RegExp');
+};
+
+
+/***/ }),
+
 /***/ "467f":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3685,6 +3883,20 @@ module.exports = {
   // `String.prototype.trim` method
   // https://tc39.es/ecma262/#sec-string.prototype.trim
   trim: createMethod(3)
+};
+
+
+/***/ }),
+
+/***/ "5a34":
+/***/ (function(module, exports, __webpack_require__) {
+
+var isRegExp = __webpack_require__("44e7");
+
+module.exports = function (it) {
+  if (isRegExp(it)) {
+    throw TypeError("The method doesn't accept regular expressions");
+  } return it;
 };
 
 
@@ -5221,6 +5433,22 @@ if (typeof store.inspectSource != 'function') {
 }
 
 module.exports = store.inspectSource;
+
+
+/***/ }),
+
+/***/ "8aa5":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var charAt = __webpack_require__("6547").charAt;
+
+// `AdvanceStringIndex` abstract operation
+// https://tc39.es/ecma262/#sec-advancestringindex
+module.exports = function (S, index, unicode) {
+  return index + (unicode ? charAt(S, index).length : 1);
+};
 
 
 /***/ }),
@@ -7283,6 +7511,28 @@ if (isForced(NUMBER, !NativeNumber(' 0o1') || !NativeNumber('0b1') || NativeNumb
   NumberPrototype.constructor = NumberWrapper;
   redefine(global, NUMBER, NumberWrapper);
 }
+
+
+/***/ }),
+
+/***/ "ab13":
+/***/ (function(module, exports, __webpack_require__) {
+
+var wellKnownSymbol = __webpack_require__("b622");
+
+var MATCH = wellKnownSymbol('match');
+
+module.exports = function (METHOD_NAME) {
+  var regexp = /./;
+  try {
+    '/./'[METHOD_NAME](regexp);
+  } catch (error1) {
+    try {
+      regexp[MATCH] = false;
+      return '/./'[METHOD_NAME](regexp);
+    } catch (error2) { /* empty */ }
+  } return false;
+};
 
 
 /***/ }),
@@ -23697,33 +23947,33 @@ crosierListSvue_type_script_lang_js.render = crosierListSvue_type_template_id_79
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.includes.js
 var es_array_includes = __webpack_require__("caad");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierCalendar.vue?vue&type=template&id=d28be562
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierCalendar.vue?vue&type=template&id=53b2ea94
 
 
-var CrosierCalendarvue_type_template_id_d28be562_hoisted_1 = {
+var CrosierCalendarvue_type_template_id_53b2ea94_hoisted_1 = {
   class: "form-group"
 };
-var CrosierCalendarvue_type_template_id_d28be562_hoisted_2 = ["for"];
-var CrosierCalendarvue_type_template_id_d28be562_hoisted_3 = ["id"];
-var CrosierCalendarvue_type_template_id_d28be562_hoisted_4 = {
+var CrosierCalendarvue_type_template_id_53b2ea94_hoisted_2 = ["for"];
+var CrosierCalendarvue_type_template_id_53b2ea94_hoisted_3 = ["id"];
+var CrosierCalendarvue_type_template_id_53b2ea94_hoisted_4 = {
   class: "invalid-feedback blink"
 };
-function CrosierCalendarvue_type_template_id_d28be562_render(_ctx, _cache, $props, $setup, $data, $options) {
+function CrosierCalendarvue_type_template_id_53b2ea94_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_Calendar = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Calendar");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierCalendarvue_type_template_id_d28be562_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierCalendarvue_type_template_id_53b2ea94_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
     for: this.fieldName
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.label), 9, CrosierCalendarvue_type_template_id_d28be562_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Calendar, {
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.label), 9, CrosierCalendarvue_type_template_id_53b2ea94_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Calendar, {
     id: this.fieldName,
     inputClass: this.inputClass,
-    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')),
-    modelValue: this.fields[this.fieldName],
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid' : '')),
+    modelValue: this.field,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return _this.fields[_this.fieldName] = $event;
+      return _this.field = $event;
     }),
     dateFormat: "dd/mm/yy",
     showTime: ['crsr-datetime', 'crsr-datetime-nseg'].includes(this.inputClass),
@@ -23736,9 +23986,15 @@ function CrosierCalendarvue_type_template_id_d28be562_render(_ctx, _cache, $prop
     key: 0,
     id: this.fieldName + '_help',
     class: "form-text text-muted"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierCalendarvue_type_template_id_d28be562_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierCalendarvue_type_template_id_d28be562_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.formErrors[this.fieldName]), 1)])], 2);
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierCalendarvue_type_template_id_53b2ea94_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierCalendarvue_type_template_id_53b2ea94_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 1)])], 2);
 }
-// CONCATENATED MODULE: ./src/components/fields/CrosierCalendar.vue?vue&type=template&id=d28be562
+// CONCATENATED MODULE: ./src/components/fields/CrosierCalendar.vue?vue&type=template&id=53b2ea94
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.split.js
+var es_string_split = __webpack_require__("1276");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.includes.js
+var es_string_includes = __webpack_require__("2532");
 
 // CONCATENATED MODULE: ./node_modules/primevue/calendar/calendar.esm.js
 
@@ -26292,6 +26548,10 @@ calendar_esm_script.render = calendar_esm_render;
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierCalendar.vue?vue&type=script&lang=js
 
+
+
+
+
 /* harmony default export */ var CrosierCalendarvue_type_script_lang_js = ({
   components: {
     Calendar: calendar_esm
@@ -26335,12 +26595,33 @@ calendar_esm_script.render = calendar_esm_render;
       required: false
     }
   },
+  methods: {
+    getRef: function getRef(ref) {
+      var ns = this.fieldName.split(".");
+
+      for (var i = 0; i < ns.length; i++) {
+        if (!ref[ns[i]]) {
+          ref[ns[i]] = i + 1 === ns.length ? null : {};
+        }
+
+        ref = ref[ns[i]];
+      }
+
+      return ref;
+    }
+  },
   computed: {
     fields: function fields() {
       return this.$store.getters[this.storeFieldsName];
     },
     formErrors: function formErrors() {
       return this.$store.getters[this.storeFieldsErrorsName];
+    },
+    field: function field() {
+      return this.fieldName.includes(".") ? this.getRef(this.fields) : this.fields[this.fieldName];
+    },
+    error: function error() {
+      return this.fieldName.includes(".") ? this.getRef(this.formErrors) : this.fields[this.fieldName];
     }
   }
 });
@@ -26350,44 +26631,44 @@ calendar_esm_script.render = calendar_esm_render;
 
 
 
-CrosierCalendarvue_type_script_lang_js.render = CrosierCalendarvue_type_template_id_d28be562_render
+CrosierCalendarvue_type_script_lang_js.render = CrosierCalendarvue_type_template_id_53b2ea94_render
 
 /* harmony default export */ var CrosierCalendar = (CrosierCalendarvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierCurrency.vue?vue&type=template&id=227add3b
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierCurrency.vue?vue&type=template&id=5283c4a2
 
-var CrosierCurrencyvue_type_template_id_227add3b_hoisted_1 = {
+var CrosierCurrencyvue_type_template_id_5283c4a2_hoisted_1 = {
   class: "form-group"
 };
-var CrosierCurrencyvue_type_template_id_227add3b_hoisted_2 = ["for"];
-var CrosierCurrencyvue_type_template_id_227add3b_hoisted_3 = {
+var CrosierCurrencyvue_type_template_id_5283c4a2_hoisted_2 = ["for"];
+var CrosierCurrencyvue_type_template_id_5283c4a2_hoisted_3 = {
   class: "input-group"
 };
 
-var CrosierCurrencyvue_type_template_id_227add3b_hoisted_4 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+var CrosierCurrencyvue_type_template_id_5283c4a2_hoisted_4 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
   class: "input-group-prepend"
 }, [/*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", {
   class: "input-group-text"
 }, "R$ ")], -1);
 
-var CrosierCurrencyvue_type_template_id_227add3b_hoisted_5 = ["id"];
-function CrosierCurrencyvue_type_template_id_227add3b_render(_ctx, _cache, $props, $setup, $data, $options) {
+var CrosierCurrencyvue_type_template_id_5283c4a2_hoisted_5 = ["id"];
+function CrosierCurrencyvue_type_template_id_5283c4a2_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_InputNumber = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("InputNumber");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierCurrencyvue_type_template_id_227add3b_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierCurrencyvue_type_template_id_5283c4a2_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
     for: this.fieldName
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierCurrencyvue_type_template_id_227add3b_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierCurrencyvue_type_template_id_227add3b_hoisted_3, [CrosierCurrencyvue_type_template_id_227add3b_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InputNumber, {
-    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')),
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierCurrencyvue_type_template_id_5283c4a2_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierCurrencyvue_type_template_id_5283c4a2_hoisted_3, [CrosierCurrencyvue_type_template_id_5283c4a2_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InputNumber, {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid' : '')),
     inputClass: "text-right",
     mode: "decimal",
     minFractionDigits: 2,
     maxFractionDigits: 2,
-    modelValue: this.fields[this.fieldName],
+    modelValue: this.field,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return _this.fields[_this.fieldName] = $event;
+      return _this.field = $event;
     }),
     placeholder: "0,00",
     disabled: this.disabled
@@ -26395,13 +26676,17 @@ function CrosierCurrencyvue_type_template_id_227add3b_render(_ctx, _cache, $prop
     key: 0,
     id: this.fieldName + '_help',
     class: "form-text text-muted"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierCurrencyvue_type_template_id_227add3b_hoisted_5)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierCurrencyvue_type_template_id_5283c4a2_hoisted_5)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
     class: "invalid-feedback blink"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.formErrors[this.fieldName]), 513), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.formErrors[this.fieldName]]])])], 2);
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 513), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.error]])])], 2);
 }
-// CONCATENATED MODULE: ./src/components/fields/CrosierCurrency.vue?vue&type=template&id=227add3b
+// CONCATENATED MODULE: ./src/components/fields/CrosierCurrency.vue?vue&type=template&id=5283c4a2
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierCurrency.vue?vue&type=script&lang=js
+
+
+
+
 
 /* harmony default export */ var CrosierCurrencyvue_type_script_lang_js = ({
   components: {
@@ -26441,12 +26726,33 @@ function CrosierCurrencyvue_type_template_id_227add3b_render(_ctx, _cache, $prop
       required: false
     }
   },
+  methods: {
+    getRef: function getRef(ref) {
+      var ns = this.fieldName.split(".");
+
+      for (var i = 0; i < ns.length; i++) {
+        if (!ref[ns[i]]) {
+          ref[ns[i]] = i + 1 === ns.length ? null : {};
+        }
+
+        ref = ref[ns[i]];
+      }
+
+      return ref;
+    }
+  },
   computed: {
     fields: function fields() {
       return this.$store.getters[this.storeFieldsName];
     },
     formErrors: function formErrors() {
       return this.$store.getters[this.storeFieldsErrorsName];
+    },
+    field: function field() {
+      return this.fieldName.includes(".") ? this.getRef(this.fields) : this.fields[this.fieldName];
+    },
+    error: function error() {
+      return this.fieldName.includes(".") ? this.getRef(this.formErrors) : this.fields[this.fieldName];
     }
   }
 });
@@ -26456,35 +26762,35 @@ function CrosierCurrencyvue_type_template_id_227add3b_render(_ctx, _cache, $prop
 
 
 
-CrosierCurrencyvue_type_script_lang_js.render = CrosierCurrencyvue_type_template_id_227add3b_render
+CrosierCurrencyvue_type_script_lang_js.render = CrosierCurrencyvue_type_template_id_5283c4a2_render
 
 /* harmony default export */ var CrosierCurrency = (CrosierCurrencyvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdown.vue?vue&type=template&id=d7709660
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdown.vue?vue&type=template&id=d8cdc332
 
-var CrosierDropdownvue_type_template_id_d7709660_hoisted_1 = {
+var CrosierDropdownvue_type_template_id_d8cdc332_hoisted_1 = {
   class: "form-group"
 };
-var CrosierDropdownvue_type_template_id_d7709660_hoisted_2 = ["for"];
-var CrosierDropdownvue_type_template_id_d7709660_hoisted_3 = ["id"];
-var CrosierDropdownvue_type_template_id_d7709660_hoisted_4 = {
+var CrosierDropdownvue_type_template_id_d8cdc332_hoisted_2 = ["for"];
+var CrosierDropdownvue_type_template_id_d8cdc332_hoisted_3 = ["id"];
+var CrosierDropdownvue_type_template_id_d8cdc332_hoisted_4 = {
   class: "invalid-feedback blink"
 };
-function CrosierDropdownvue_type_template_id_d7709660_render(_ctx, _cache, $props, $setup, $data, $options) {
+function CrosierDropdownvue_type_template_id_d8cdc332_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_Dropdown = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Dropdown");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownvue_type_template_id_d7709660_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownvue_type_template_id_d8cdc332_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
     for: this.fieldName
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierDropdownvue_type_template_id_d7709660_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Dropdown, {
-    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')),
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierDropdownvue_type_template_id_d8cdc332_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Dropdown, {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid' : '')),
     id: this.fieldName,
     inputId: this.fieldName,
-    modelValue: this.fields[this.fieldName],
+    modelValue: this.field,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return _this.fields[_this.fieldName] = $event;
+      return _this.field = $event;
     }),
     options: this.options,
     optionLabel: this.optionLabel,
@@ -26497,11 +26803,15 @@ function CrosierDropdownvue_type_template_id_d7709660_render(_ctx, _cache, $prop
     key: 0,
     id: this.fieldName + '_help',
     class: "form-text text-muted"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierDropdownvue_type_template_id_d7709660_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownvue_type_template_id_d7709660_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.formErrors[this.fieldName]), 1)])], 2);
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierDropdownvue_type_template_id_d8cdc332_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownvue_type_template_id_d8cdc332_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 1)])], 2);
 }
-// CONCATENATED MODULE: ./src/components/fields/CrosierDropdown.vue?vue&type=template&id=d7709660
+// CONCATENATED MODULE: ./src/components/fields/CrosierDropdown.vue?vue&type=template&id=d8cdc332
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdown.vue?vue&type=script&lang=js
+
+
+
+
 
 /* harmony default export */ var CrosierDropdownvue_type_script_lang_js = ({
   components: {
@@ -26564,12 +26874,33 @@ function CrosierDropdownvue_type_template_id_d7709660_render(_ctx, _cache, $prop
       required: false
     }
   },
+  methods: {
+    getRef: function getRef(ref) {
+      var ns = this.fieldName.split(".");
+
+      for (var i = 0; i < ns.length; i++) {
+        if (!ref[ns[i]]) {
+          ref[ns[i]] = i + 1 === ns.length ? null : {};
+        }
+
+        ref = ref[ns[i]];
+      }
+
+      return ref;
+    }
+  },
   computed: {
     fields: function fields() {
       return this.$store.getters[this.storeFieldsName];
     },
     formErrors: function formErrors() {
       return this.$store.getters[this.storeFieldsErrorsName];
+    },
+    field: function field() {
+      return this.fieldName.includes(".") ? this.getRef(this.fields) : this.fields[this.fieldName];
+    },
+    error: function error() {
+      return this.fieldName.includes(".") ? this.getRef(this.formErrors) : this.fields[this.fieldName];
     }
   }
 });
@@ -26579,35 +26910,35 @@ function CrosierDropdownvue_type_template_id_d7709660_render(_ctx, _cache, $prop
 
 
 
-CrosierDropdownvue_type_script_lang_js.render = CrosierDropdownvue_type_template_id_d7709660_render
+CrosierDropdownvue_type_script_lang_js.render = CrosierDropdownvue_type_template_id_d8cdc332_render
 
 /* harmony default export */ var CrosierDropdown = (CrosierDropdownvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdownBanco.vue?vue&type=template&id=83307b74
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdownBanco.vue?vue&type=template&id=f4ee893e
 
-var CrosierDropdownBancovue_type_template_id_83307b74_hoisted_1 = {
+var CrosierDropdownBancovue_type_template_id_f4ee893e_hoisted_1 = {
   class: "form-group"
 };
-var CrosierDropdownBancovue_type_template_id_83307b74_hoisted_2 = ["for"];
-var CrosierDropdownBancovue_type_template_id_83307b74_hoisted_3 = ["id"];
-var CrosierDropdownBancovue_type_template_id_83307b74_hoisted_4 = {
+var CrosierDropdownBancovue_type_template_id_f4ee893e_hoisted_2 = ["for"];
+var CrosierDropdownBancovue_type_template_id_f4ee893e_hoisted_3 = ["id"];
+var CrosierDropdownBancovue_type_template_id_f4ee893e_hoisted_4 = {
   class: "invalid-feedback blink"
 };
-function CrosierDropdownBancovue_type_template_id_83307b74_render(_ctx, _cache, $props, $setup, $data, $options) {
+function CrosierDropdownBancovue_type_template_id_f4ee893e_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_Dropdown = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Dropdown");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownBancovue_type_template_id_83307b74_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownBancovue_type_template_id_f4ee893e_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
     for: this.fieldName
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierDropdownBancovue_type_template_id_83307b74_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Dropdown, {
-    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')),
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierDropdownBancovue_type_template_id_f4ee893e_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Dropdown, {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid' : '')),
     id: this.fieldName,
     inputId: this.fieldName,
-    modelValue: this.fields[this.fieldName],
+    modelValue: this.field,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return _this.fields[_this.fieldName] = $event;
+      return _this.field = $event;
     }),
     options: this.options,
     optionLabel: this.optionLabel,
@@ -26620,11 +26951,15 @@ function CrosierDropdownBancovue_type_template_id_83307b74_render(_ctx, _cache, 
     key: 0,
     id: this.fieldName + '_help',
     class: "form-text text-muted"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierDropdownBancovue_type_template_id_83307b74_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownBancovue_type_template_id_83307b74_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.formErrors[this.fieldName]), 1)])], 2);
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierDropdownBancovue_type_template_id_f4ee893e_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownBancovue_type_template_id_f4ee893e_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 1)])], 2);
 }
-// CONCATENATED MODULE: ./src/components/fields/CrosierDropdownBanco.vue?vue&type=template&id=83307b74
+// CONCATENATED MODULE: ./src/components/fields/CrosierDropdownBanco.vue?vue&type=template&id=f4ee893e
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdownBanco.vue?vue&type=script&lang=js
+
+
+
+
 
 
 
@@ -26736,13 +27071,33 @@ function CrosierDropdownBancovue_type_template_id_83307b74_render(_ctx, _cache, 
       }, _callee, null, [[1, 8]]);
     }))();
   },
-  methods: _objectSpread2({}, mapMutations(["setLoading"])),
+  methods: _objectSpread2(_objectSpread2({}, mapMutations(["setLoading"])), {}, {
+    getRef: function getRef(ref) {
+      var ns = this.fieldName.split(".");
+
+      for (var i = 0; i < ns.length; i++) {
+        if (!ref[ns[i]]) {
+          ref[ns[i]] = i + 1 === ns.length ? null : {};
+        }
+
+        ref = ref[ns[i]];
+      }
+
+      return ref;
+    }
+  }),
   computed: {
     fields: function fields() {
       return this.$store.getters[this.storeFieldsName];
     },
     formErrors: function formErrors() {
       return this.$store.getters[this.storeFieldsErrorsName];
+    },
+    field: function field() {
+      return this.fieldName.includes(".") ? this.getRef(this.fields) : this.fields[this.fieldName];
+    },
+    error: function error() {
+      return this.fieldName.includes(".") ? this.getRef(this.formErrors) : this.fields[this.fieldName];
     }
   }
 });
@@ -26752,35 +27107,35 @@ function CrosierDropdownBancovue_type_template_id_83307b74_render(_ctx, _cache, 
 
 
 
-CrosierDropdownBancovue_type_script_lang_js.render = CrosierDropdownBancovue_type_template_id_83307b74_render
+CrosierDropdownBancovue_type_script_lang_js.render = CrosierDropdownBancovue_type_template_id_f4ee893e_render
 
 /* harmony default export */ var CrosierDropdownBanco = (CrosierDropdownBancovue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdownEntity.vue?vue&type=template&id=1f045775
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdownEntity.vue?vue&type=template&id=7421ed3a
 
-var CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_1 = {
+var CrosierDropdownEntityvue_type_template_id_7421ed3a_hoisted_1 = {
   class: "form-group"
 };
-var CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_2 = ["for"];
-var CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_3 = ["id"];
-var CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_4 = {
+var CrosierDropdownEntityvue_type_template_id_7421ed3a_hoisted_2 = ["for"];
+var CrosierDropdownEntityvue_type_template_id_7421ed3a_hoisted_3 = ["id"];
+var CrosierDropdownEntityvue_type_template_id_7421ed3a_hoisted_4 = {
   class: "invalid-feedback blink"
 };
-function CrosierDropdownEntityvue_type_template_id_1f045775_render(_ctx, _cache, $props, $setup, $data, $options) {
+function CrosierDropdownEntityvue_type_template_id_7421ed3a_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_Dropdown = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Dropdown");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownEntityvue_type_template_id_7421ed3a_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
     for: this.fieldName
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Dropdown, {
-    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')),
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierDropdownEntityvue_type_template_id_7421ed3a_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Dropdown, {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid' : '')),
     id: this.fieldName,
     inputId: this.fieldName,
-    modelValue: this.fields[this.fieldName],
+    modelValue: this.field,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return _this.fields[_this.fieldName] = $event;
+      return _this.field = $event;
     }),
     options: this.options,
     optionLabel: this.optionLabel,
@@ -26793,11 +27148,15 @@ function CrosierDropdownEntityvue_type_template_id_1f045775_render(_ctx, _cache,
     key: 0,
     id: this.fieldName + '_help',
     class: "form-text text-muted"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownEntityvue_type_template_id_1f045775_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.formErrors[this.fieldName]), 1)])], 2);
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierDropdownEntityvue_type_template_id_7421ed3a_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierDropdownEntityvue_type_template_id_7421ed3a_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 1)])], 2);
 }
-// CONCATENATED MODULE: ./src/components/fields/CrosierDropdownEntity.vue?vue&type=template&id=1f045775
+// CONCATENATED MODULE: ./src/components/fields/CrosierDropdownEntity.vue?vue&type=template&id=7421ed3a
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierDropdownEntity.vue?vue&type=script&lang=js
+
+
+
+
 
 
 
@@ -26914,13 +27273,33 @@ function CrosierDropdownEntityvue_type_template_id_1f045775_render(_ctx, _cache,
       }, _callee, null, [[1, 8]]);
     }))();
   },
-  methods: _objectSpread2({}, mapMutations(["setLoading"])),
+  methods: _objectSpread2(_objectSpread2({}, mapMutations(["setLoading"])), {}, {
+    getRef: function getRef(ref) {
+      var ns = this.fieldName.split(".");
+
+      for (var i = 0; i < ns.length; i++) {
+        if (!ref[ns[i]]) {
+          ref[ns[i]] = i + 1 === ns.length ? null : {};
+        }
+
+        ref = ref[ns[i]];
+      }
+
+      return ref;
+    }
+  }),
   computed: {
     fields: function fields() {
       return this.$store.getters[this.storeFieldsName];
     },
     formErrors: function formErrors() {
       return this.$store.getters[this.storeFieldsErrorsName];
+    },
+    field: function field() {
+      return this.fieldName.includes(".") ? this.getRef(this.fields) : this.fields[this.fieldName];
+    },
+    error: function error() {
+      return this.fieldName.includes(".") ? this.getRef(this.formErrors) : this.fields[this.fieldName];
     }
   }
 });
@@ -26930,46 +27309,50 @@ function CrosierDropdownEntityvue_type_template_id_1f045775_render(_ctx, _cache,
 
 
 
-CrosierDropdownEntityvue_type_script_lang_js.render = CrosierDropdownEntityvue_type_template_id_1f045775_render
+CrosierDropdownEntityvue_type_script_lang_js.render = CrosierDropdownEntityvue_type_template_id_7421ed3a_render
 
 /* harmony default export */ var CrosierDropdownEntity = (CrosierDropdownEntityvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputText.vue?vue&type=template&id=25f73fc4
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputText.vue?vue&type=template&id=2f8d5c4e
 
-var CrosierInputTextvue_type_template_id_25f73fc4_hoisted_1 = {
+var CrosierInputTextvue_type_template_id_2f8d5c4e_hoisted_1 = {
   class: "form-group"
 };
-var CrosierInputTextvue_type_template_id_25f73fc4_hoisted_2 = ["for"];
-var CrosierInputTextvue_type_template_id_25f73fc4_hoisted_3 = ["id"];
-var CrosierInputTextvue_type_template_id_25f73fc4_hoisted_4 = {
+var CrosierInputTextvue_type_template_id_2f8d5c4e_hoisted_2 = ["for"];
+var CrosierInputTextvue_type_template_id_2f8d5c4e_hoisted_3 = ["id"];
+var CrosierInputTextvue_type_template_id_2f8d5c4e_hoisted_4 = {
   class: "invalid-feedback blink"
 };
-function CrosierInputTextvue_type_template_id_25f73fc4_render(_ctx, _cache, $props, $setup, $data, $options) {
+function CrosierInputTextvue_type_template_id_2f8d5c4e_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_InputText = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("InputText");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputTextvue_type_template_id_25f73fc4_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputTextvue_type_template_id_2f8d5c4e_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
     for: this.fieldName
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierInputTextvue_type_template_id_25f73fc4_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InputText, {
-    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')),
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierInputTextvue_type_template_id_2f8d5c4e_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InputText, {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid' : '')),
     id: this.fieldName,
     type: "text",
-    modelValue: this.fields[this.fieldName],
+    modelValue: this.field,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return _this.fields[_this.fieldName] = $event;
+      return _this.field = $event;
     }),
     disabled: this.disabled
   }, null, 8, ["class", "id", "modelValue", "disabled"]), this.helpText ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("small", {
     key: 0,
     id: this.fieldName + '_help',
     class: "form-text text-muted"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierInputTextvue_type_template_id_25f73fc4_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputTextvue_type_template_id_25f73fc4_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.formErrors[this.fieldName]), 1)])], 2);
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierInputTextvue_type_template_id_2f8d5c4e_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputTextvue_type_template_id_2f8d5c4e_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 1)])], 2);
 }
-// CONCATENATED MODULE: ./src/components/fields/CrosierInputText.vue?vue&type=template&id=25f73fc4
+// CONCATENATED MODULE: ./src/components/fields/CrosierInputText.vue?vue&type=template&id=2f8d5c4e
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputText.vue?vue&type=script&lang=js
+
+
+
+
 
 /* harmony default export */ var CrosierInputTextvue_type_script_lang_js = ({
   components: {
@@ -27009,12 +27392,33 @@ function CrosierInputTextvue_type_template_id_25f73fc4_render(_ctx, _cache, $pro
       required: false
     }
   },
+  methods: {
+    getRef: function getRef(ref) {
+      var ns = this.fieldName.split(".");
+
+      for (var i = 0; i < ns.length; i++) {
+        if (!ref[ns[i]]) {
+          ref[ns[i]] = i + 1 === ns.length ? null : {};
+        }
+
+        ref = ref[ns[i]];
+      }
+
+      return ref;
+    }
+  },
   computed: {
     fields: function fields() {
       return this.$store.getters[this.storeFieldsName];
     },
     formErrors: function formErrors() {
       return this.$store.getters[this.storeFieldsErrorsName];
+    },
+    field: function field() {
+      return this.fieldName.includes(".") ? this.getRef(this.fields) : this.fields[this.fieldName];
+    },
+    error: function error() {
+      return this.fieldName.includes(".") ? this.getRef(this.formErrors) : this.fields[this.fieldName];
     }
   }
 });
@@ -27024,46 +27428,50 @@ function CrosierInputTextvue_type_template_id_25f73fc4_render(_ctx, _cache, $pro
 
 
 
-CrosierInputTextvue_type_script_lang_js.render = CrosierInputTextvue_type_template_id_25f73fc4_render
+CrosierInputTextvue_type_script_lang_js.render = CrosierInputTextvue_type_template_id_2f8d5c4e_render
 
 /* harmony default export */ var CrosierInputText = (CrosierInputTextvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputInt.vue?vue&type=template&id=0a6bbd4a
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputInt.vue?vue&type=template&id=686b4ed4
 
-var CrosierInputIntvue_type_template_id_0a6bbd4a_hoisted_1 = {
+var CrosierInputIntvue_type_template_id_686b4ed4_hoisted_1 = {
   class: "form-group"
 };
-var CrosierInputIntvue_type_template_id_0a6bbd4a_hoisted_2 = ["for"];
-var CrosierInputIntvue_type_template_id_0a6bbd4a_hoisted_3 = ["id"];
-var CrosierInputIntvue_type_template_id_0a6bbd4a_hoisted_4 = {
+var CrosierInputIntvue_type_template_id_686b4ed4_hoisted_2 = ["for"];
+var CrosierInputIntvue_type_template_id_686b4ed4_hoisted_3 = ["id"];
+var CrosierInputIntvue_type_template_id_686b4ed4_hoisted_4 = {
   class: "invalid-feedback blink"
 };
-function CrosierInputIntvue_type_template_id_0a6bbd4a_render(_ctx, _cache, $props, $setup, $data, $options) {
+function CrosierInputIntvue_type_template_id_686b4ed4_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_InputNumber = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("InputNumber");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputIntvue_type_template_id_0a6bbd4a_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputIntvue_type_template_id_686b4ed4_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
     for: this.fieldName
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierInputIntvue_type_template_id_0a6bbd4a_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InputNumber, {
-    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')),
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierInputIntvue_type_template_id_686b4ed4_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InputNumber, {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid' : '')),
     inputClass: "text-right",
     id: this.fieldName,
-    modelValue: this.fields[this.fieldName],
+    modelValue: this.field,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return _this.fields[_this.fieldName] = $event;
+      return _this.field = $event;
     }),
     disabled: this.disabled
   }, null, 8, ["class", "id", "modelValue", "disabled"]), this.helpText ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("small", {
     key: 0,
     id: this.fieldName + '_help',
     class: "form-text text-muted"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierInputIntvue_type_template_id_0a6bbd4a_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputIntvue_type_template_id_0a6bbd4a_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.formErrors[this.fieldName]), 1)])], 2);
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierInputIntvue_type_template_id_686b4ed4_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputIntvue_type_template_id_686b4ed4_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 1)])], 2);
 }
-// CONCATENATED MODULE: ./src/components/fields/CrosierInputInt.vue?vue&type=template&id=0a6bbd4a
+// CONCATENATED MODULE: ./src/components/fields/CrosierInputInt.vue?vue&type=template&id=686b4ed4
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputInt.vue?vue&type=script&lang=js
+
+
+
+
 
 /* harmony default export */ var CrosierInputIntvue_type_script_lang_js = ({
   components: {
@@ -27103,12 +27511,33 @@ function CrosierInputIntvue_type_template_id_0a6bbd4a_render(_ctx, _cache, $prop
       required: false
     }
   },
+  methods: {
+    getRef: function getRef(ref) {
+      var ns = this.fieldName.split(".");
+
+      for (var i = 0; i < ns.length; i++) {
+        if (!ref[ns[i]]) {
+          ref[ns[i]] = i + 1 === ns.length ? null : {};
+        }
+
+        ref = ref[ns[i]];
+      }
+
+      return ref;
+    }
+  },
   computed: {
     fields: function fields() {
       return this.$store.getters[this.storeFieldsName];
     },
     formErrors: function formErrors() {
       return this.$store.getters[this.storeFieldsErrorsName];
+    },
+    field: function field() {
+      return this.fieldName.includes(".") ? this.getRef(this.fields) : this.fields[this.fieldName];
+    },
+    error: function error() {
+      return this.fieldName.includes(".") ? this.getRef(this.formErrors) : this.fields[this.fieldName];
     }
   }
 });
@@ -27118,48 +27547,52 @@ function CrosierInputIntvue_type_template_id_0a6bbd4a_render(_ctx, _cache, $prop
 
 
 
-CrosierInputIntvue_type_script_lang_js.render = CrosierInputIntvue_type_template_id_0a6bbd4a_render
+CrosierInputIntvue_type_script_lang_js.render = CrosierInputIntvue_type_template_id_686b4ed4_render
 
 /* harmony default export */ var CrosierInputInt = (CrosierInputIntvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputDecimal.vue?vue&type=template&id=5726686c
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputDecimal.vue?vue&type=template&id=99b8d8fe
 
-var CrosierInputDecimalvue_type_template_id_5726686c_hoisted_1 = {
+var CrosierInputDecimalvue_type_template_id_99b8d8fe_hoisted_1 = {
   class: "form-group"
 };
-var CrosierInputDecimalvue_type_template_id_5726686c_hoisted_2 = ["for"];
-var CrosierInputDecimalvue_type_template_id_5726686c_hoisted_3 = ["id"];
-var CrosierInputDecimalvue_type_template_id_5726686c_hoisted_4 = {
+var CrosierInputDecimalvue_type_template_id_99b8d8fe_hoisted_2 = ["for"];
+var CrosierInputDecimalvue_type_template_id_99b8d8fe_hoisted_3 = ["id"];
+var CrosierInputDecimalvue_type_template_id_99b8d8fe_hoisted_4 = {
   class: "invalid-feedback blink"
 };
-function CrosierInputDecimalvue_type_template_id_5726686c_render(_ctx, _cache, $props, $setup, $data, $options) {
+function CrosierInputDecimalvue_type_template_id_99b8d8fe_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_InputNumber = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("InputNumber");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputDecimalvue_type_template_id_5726686c_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputDecimalvue_type_template_id_99b8d8fe_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
     for: this.fieldName
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierInputDecimalvue_type_template_id_5726686c_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InputNumber, {
-    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.formErrors[this.fieldName] ? 'is-invalid' : '')),
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierInputDecimalvue_type_template_id_99b8d8fe_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InputNumber, {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid' : '')),
     inputClass: "text-right",
     mode: "decimal",
     minFractionDigits: this.decimais,
     maxFractionDigits: this.decimais,
-    modelValue: this.fields[this.fieldName],
+    modelValue: this.field,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return _this.fields[_this.fieldName] = $event;
+      return _this.field = $event;
     }),
     disabled: this.disabled
   }, null, 8, ["class", "minFractionDigits", "maxFractionDigits", "modelValue", "disabled"]), this.helpText ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("small", {
     key: 0,
     id: this.fieldName + '_help',
     class: "form-text text-muted"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierInputDecimalvue_type_template_id_5726686c_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputDecimalvue_type_template_id_5726686c_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.formErrors[this.fieldName]), 1)])], 2);
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierInputDecimalvue_type_template_id_99b8d8fe_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputDecimalvue_type_template_id_99b8d8fe_hoisted_4, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 1)])], 2);
 }
-// CONCATENATED MODULE: ./src/components/fields/CrosierInputDecimal.vue?vue&type=template&id=5726686c
+// CONCATENATED MODULE: ./src/components/fields/CrosierInputDecimal.vue?vue&type=template&id=99b8d8fe
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputDecimal.vue?vue&type=script&lang=js
+
+
+
+
 
 
 /* harmony default export */ var CrosierInputDecimalvue_type_script_lang_js = ({
@@ -27205,12 +27638,33 @@ function CrosierInputDecimalvue_type_template_id_5726686c_render(_ctx, _cache, $
       required: false
     }
   },
+  methods: {
+    getRef: function getRef(ref) {
+      var ns = this.fieldName.split(".");
+
+      for (var i = 0; i < ns.length; i++) {
+        if (!ref[ns[i]]) {
+          ref[ns[i]] = i + 1 === ns.length ? null : {};
+        }
+
+        ref = ref[ns[i]];
+      }
+
+      return ref;
+    }
+  },
   computed: {
     fields: function fields() {
       return this.$store.getters[this.storeFieldsName];
     },
     formErrors: function formErrors() {
       return this.$store.getters[this.storeFieldsErrorsName];
+    },
+    field: function field() {
+      return this.fieldName.includes(".") ? this.getRef(this.fields) : this.fields[this.fieldName];
+    },
+    error: function error() {
+      return this.fieldName.includes(".") ? this.getRef(this.formErrors) : this.fields[this.fieldName];
     }
   }
 });
@@ -27220,7 +27674,7 @@ function CrosierInputDecimalvue_type_template_id_5726686c_render(_ctx, _cache, $
 
 
 
-CrosierInputDecimalvue_type_script_lang_js.render = CrosierInputDecimalvue_type_template_id_5726686c_render
+CrosierInputDecimalvue_type_script_lang_js.render = CrosierInputDecimalvue_type_template_id_99b8d8fe_render
 
 /* harmony default export */ var CrosierInputDecimal = (CrosierInputDecimalvue_type_script_lang_js);
 // CONCATENATED MODULE: ./src/services/ValidateFormData.js
