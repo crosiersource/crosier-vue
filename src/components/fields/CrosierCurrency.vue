@@ -21,7 +21,7 @@
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
         this.helpText
       }}</small>
-      <div class="invalid-feedback blink" v-show="this.error">
+      <div class="invalid-feedbackk blink" v-show="this.error">
         {{ this.error }}
       </div>
     </div>
@@ -72,3 +72,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+.invalid-feedbackk {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 80%;
+  color: #e55353;
+}
+</style>
