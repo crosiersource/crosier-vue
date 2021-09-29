@@ -141,7 +141,7 @@ export default {
     error() {
       return this.fieldName.includes(".")
         ? this.getRef(this.formErrors)
-        : this.errors[this.fieldName];
+        : this.formErrors[this.fieldName];
     },
   },
 };
