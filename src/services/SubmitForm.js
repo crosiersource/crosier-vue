@@ -13,7 +13,10 @@ export async function submitForm({
   $toast = null,
 }) {
   const getter = `get${formDataStateName.charAt(0).toUpperCase()}${formDataStateName.slice(1)}`;
-  let formData = $store.getters[getter] ? $store.getters[getter] : $store.state[formDataStateName];
+  const formDataOrig = $store.getters[getter]
+    ? $store.getters[getter]
+    : $store.state[formDataStateName];
+  let formData = { ...formDataOrig };
 
   if (!formData) {
     console.error(`$store.state[${formDataStateName}] n/d`);
