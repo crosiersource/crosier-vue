@@ -27707,6 +27707,7 @@ function validateFormData(_ref) {
 
 
 
+
 function submitForm(_x) {
   return _submitForm.apply(this, arguments);
 }
@@ -27715,7 +27716,7 @@ function _submitForm() {
   _submitForm = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(_ref) {
     var _response;
 
-    var apiResource, $store, formDataStateName, schemaValidator, _ref$setUrlId, setUrlId, _ref$fnBeforeSave, fnBeforeSave, _ref$fnAfterGet, fnAfterGet, _ref$$toast, $toast, getter, formData, commitFormData, response, errMsg;
+    var apiResource, $store, formDataStateName, schemaValidator, _ref$setUrlId, setUrlId, _ref$fnBeforeSave, fnBeforeSave, _ref$fnAfterGet, fnAfterGet, _ref$$toast, $toast, getter, formDataOrig, formData, commitFormData, response, errMsg;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
@@ -27723,17 +27724,18 @@ function _submitForm() {
           case 0:
             apiResource = _ref.apiResource, $store = _ref.$store, formDataStateName = _ref.formDataStateName, schemaValidator = _ref.schemaValidator, _ref$setUrlId = _ref.setUrlId, setUrlId = _ref$setUrlId === void 0 ? true : _ref$setUrlId, _ref$fnBeforeSave = _ref.fnBeforeSave, fnBeforeSave = _ref$fnBeforeSave === void 0 ? null : _ref$fnBeforeSave, _ref$fnAfterGet = _ref.fnAfterGet, fnAfterGet = _ref$fnAfterGet === void 0 ? null : _ref$fnAfterGet, _ref$$toast = _ref.$toast, $toast = _ref$$toast === void 0 ? null : _ref$$toast;
             getter = "get".concat(formDataStateName.charAt(0).toUpperCase()).concat(formDataStateName.slice(1));
-            formData = $store.getters[getter] ? $store.getters[getter] : $store.state[formDataStateName];
+            formDataOrig = $store.getters[getter] ? $store.getters[getter] : $store.state[formDataStateName];
+            formData = _objectSpread2({}, formDataOrig);
 
             if (formData) {
-              _context.next = 6;
+              _context.next = 7;
               break;
             }
 
             console.error("$store.state[".concat(formDataStateName, "] n/d"));
             return _context.abrupt("return", false);
 
-          case 6:
+          case 7:
             commitFormData = "set".concat(formDataStateName.charAt(0).toUpperCase()).concat(formDataStateName.slice(1));
 
             if (!(schemaValidator && !validateFormData({
@@ -27742,34 +27744,34 @@ function _submitForm() {
               schemaValidator: schemaValidator,
               $toast: $toast
             }))) {
-              _context.next = 9;
+              _context.next = 10;
               break;
             }
 
             return _context.abrupt("return", false);
 
-          case 9:
+          case 10:
             if (fnBeforeSave) {
               fnBeforeSave(formData);
             }
 
             if (!formData["@id"]) {
-              _context.next = 25;
+              _context.next = 26;
               break;
             }
 
-            _context.prev = 11;
-            _context.next = 14;
+            _context.prev = 12;
+            _context.next = 15;
             return putEntityData(formData["@id"], JSON.stringify(formData));
 
-          case 14:
+          case 15:
             response = _context.sent;
-            _context.next = 23;
+            _context.next = 24;
             break;
 
-          case 17:
-            _context.prev = 17;
-            _context.t0 = _context["catch"](11);
+          case 18:
+            _context.prev = 18;
+            _context.t0 = _context["catch"](12);
 
             if ($toast) {
               $toast.add({
@@ -27784,23 +27786,23 @@ function _submitForm() {
             console.error(_context.t0);
             return _context.abrupt("return", false);
 
-          case 23:
-            _context.next = 36;
+          case 24:
+            _context.next = 37;
             break;
 
-          case 25:
-            _context.prev = 25;
-            _context.next = 28;
+          case 26:
+            _context.prev = 26;
+            _context.next = 29;
             return postEntityData(apiResource, JSON.stringify(formData));
 
-          case 28:
+          case 29:
             response = _context.sent;
-            _context.next = 36;
+            _context.next = 37;
             break;
 
-          case 31:
-            _context.prev = 31;
-            _context.t1 = _context["catch"](25);
+          case 32:
+            _context.prev = 32;
+            _context.t1 = _context["catch"](26);
 
             if ($toast) {
               $toast.add({
@@ -27814,9 +27816,9 @@ function _submitForm() {
             console.error("Erro ao efetuar a requisição POST");
             console.error(_context.t1);
 
-          case 36:
+          case 37:
             if (!((_response = response) !== null && _response !== void 0 && _response.status && [200, 201].includes(response.status))) {
-              _context.next = 43;
+              _context.next = 44;
               break;
             }
 
@@ -27842,7 +27844,7 @@ function _submitForm() {
             $store.commit(commitFormData, formData);
             return _context.abrupt("return", true);
 
-          case 43:
+          case 44:
             // else...
             errMsg = response.data["hydra:description"] || "Ocorreu um erro ao salvar!";
             console.error("Ocorreu um erro salvar!");
@@ -27858,12 +27860,12 @@ function _submitForm() {
 
             return _context.abrupt("return", false);
 
-          case 47:
+          case 48:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[11, 17], [25, 31]]);
+    }, _callee, null, [[12, 18], [26, 32]]);
   }));
   return _submitForm.apply(this, arguments);
 }
