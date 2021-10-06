@@ -27655,21 +27655,33 @@ function validateFormData(_ref) {
       abortEarly: false
     });
   } catch (err) {
+    console.error(err);
+
     if (err !== null && err !== void 0 && err.inner) {
       var _err$inner;
 
-      console.error(err);
+      console.error(err.inner);
       var formErrors = {};
       (_err$inner = err.inner) === null || _err$inner === void 0 ? void 0 : _err$inner.forEach(function (element) {
         if (element !== null && element !== void 0 && element.path) {
           var msg = element.message || "Valor inválido";
           formErrors[element.path] = msg;
           console.error(msg);
+
+          if ($toast) {
+            $toast.add({
+              severity: "error",
+              summary: "Erro",
+              detail: msg,
+              life: 5000
+            });
+          }
         }
       });
       $store.commit(commitFormErrors, formErrors);
     } else {
       var msgGl = (err === null || err === void 0 ? void 0 : err.inner) || "Erro ao validar dados";
+      console.error(msgGl);
 
       if ($toast) {
         $toast.add({
@@ -27678,8 +27690,6 @@ function validateFormData(_ref) {
           detail: msgGl,
           life: 5000
         });
-      } else {
-        console.error(msgGl);
       }
     }
 
