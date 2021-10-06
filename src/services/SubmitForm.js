@@ -90,7 +90,7 @@ export async function submitForm({
       });
     }
     $store.commit(commitFormData, formData);
-    return true;
+    return response;
   }
   // else...
 

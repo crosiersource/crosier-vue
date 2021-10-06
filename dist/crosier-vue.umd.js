@@ -27851,7 +27851,7 @@ function _submitForm() {
             }
 
             $store.commit(commitFormData, formData);
-            return _context.abrupt("return", true);
+            return _context.abrupt("return", response);
 
           case 44:
             // else...
