@@ -12,8 +12,8 @@
         @input="this.onInput"
         @date-select="$emit('update:modelValue', $event)"
         dateFormat="dd/mm/yy"
-        :showTime="['crsr-datetime', 'crsr-datetime-nseg'].includes(this.inputClass)"
-        :showSeconds="['crsr-datetime'].includes(this.inputClass)"
+        :showTime="this.showTime"
+        :showSeconds="this.showSeconds"
         :showButtonBar="true"
         :showIcon="true"
         :showOnFocus="false"
@@ -41,7 +41,7 @@ export default {
 
   props: {
     modelValue: {
-      type: Date,
+      required: false,
     },
     id: {
       type: String,
@@ -52,11 +52,6 @@ export default {
       required: false,
       default: null,
     },
-    inputClass: {
-      type: String,
-      required: false,
-      default: "crsr-date",
-    },
     col: {
       type: String,
       required: false,
@@ -65,6 +60,16 @@ export default {
     label: {
       type: String,
       required: true,
+    },
+    showTime: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    showSeconds: {
+      type: Boolean,
+      required: false,
+      default: false,
     },
     disabled: {
       type: Boolean,
@@ -82,12 +87,33 @@ export default {
     },
   },
 
+  data() {
+    return {
+      inputClass: null,
+    };
+  },
+
+  mounted() {
+    if (this.selectionMode === "range") {
+      this.inputClass = "crsr-date-periodo text-center";
+    } else if (this.showSeconds) {
+      this.inputClass = "crsr-datetime";
+    } else if (this.showTime) {
+      this.inputClass = "crsr-datetime-nseg";
+    } else {
+      this.inputClass = "crsr-date";
+    }
+  },
+
   methods: {
     onInput($event) {
       const dtStr = $event.target.value;
       let dateParser = null;
       let date = null;
       let match = null;
+      let dtIni = null;
+      let dtFim = null;
+
       if (dtStr.length === 10 && this.inputClass === "crsr-date") {
         dateParser = /(\d{2})\/(\d{2})\/(\d{4})/;
         match = dtStr.match(dateParser);
@@ -121,7 +147,25 @@ export default {
           match[5], // minutes
           match[6] // seconds
         );
+      } else if (dtStr.length === 23 && this.selectionMode === "range") {
+        dateParser = /(\d{2})\/(\d{2})\/(\d{4}) - (\d{2})\/(\d{2})\/(\d{4})/;
+        match = dtStr.match(dateParser);
+        dtIni = new Date(
+          match[3], // year
+          match[2] - 1, // monthIndex
+          match[1] // day
+        );
+        dtFim = new Date(
+          match[6], // year
+          match[5] - 1, // monthIndex
+          match[4] // day
+        );
+        if (dtIni && dtFim) {
+          const dts = [dtIni, dtFim];
+          this.$emit("update:modelValue", dts);
+        }
       }
+
       if (date) {
         this.$emit("update:modelValue", date);
       }

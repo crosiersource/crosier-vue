@@ -1259,20 +1259,6 @@ module.exports = function (iterator, kind, value) {
 
 /***/ }),
 
-/***/ "2b22":
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, ".invalid-feedbackk[data-v-3796c5a9]{width:100%;margin-top:.25rem;font-size:80%;color:#e55353}", ""]);
-// Exports
-module.exports = exports;
-
-
-/***/ }),
-
 /***/ "2b3d":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3872,6 +3858,22 @@ module.exports = {
 
 /***/ }),
 
+/***/ "5c19":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("6ed3");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("06a7a996", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
 /***/ "5c6c":
 /***/ (function(module, exports) {
 
@@ -4422,17 +4424,6 @@ module.exports = function (originalArray, length) {
 
 /***/ }),
 
-/***/ "66d6":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierCalendar_vue_vue_type_style_index_0_id_3796c5a9_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("f8b6");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierCalendar_vue_vue_type_style_index_0_id_3796c5a9_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierCalendar_vue_vue_type_style_index_0_id_3796c5a9_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
-
-
-/***/ }),
-
 /***/ "69f3":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4614,6 +4605,20 @@ module.exports = function (CONSTRUCTOR_NAME, wrapper, common) {
 
   return Constructor;
 };
+
+
+/***/ }),
+
+/***/ "6ed3":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".invalid-feedbackk[data-v-5fd0ff0a]{width:100%;margin-top:.25rem;font-size:80%;color:#e55353}", ""]);
+// Exports
+module.exports = exports;
 
 
 /***/ }),
@@ -7535,6 +7540,17 @@ if (isForced(NUMBER, !NativeNumber(' 0o1') || !NativeNumber('0b1') || NativeNumb
   NumberPrototype.constructor = NumberWrapper;
   redefine(global, NUMBER, NumberWrapper);
 }
+
+
+/***/ }),
+
+/***/ "abbc":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierCalendar_vue_vue_type_style_index_0_id_5fd0ff0a_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("5c19");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierCalendar_vue_vue_type_style_index_0_id_5fd0ff0a_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierCalendar_vue_vue_type_style_index_0_id_5fd0ff0a_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
 
 
 /***/ }),
@@ -10628,22 +10644,6 @@ exports.push([module.i, ".block[data-v-feb93160]{z-index:999999;height:100%;widt
 // Exports
 module.exports = exports;
 
-
-/***/ }),
-
-/***/ "f8b6":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("2b22");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("260be359", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -24063,31 +24063,27 @@ function _deleteEntityData() {
 crosierListSvue_type_script_lang_js.render = crosierListSvue_type_template_id_79f47d42_render
 
 /* harmony default export */ var crosierListS = (crosierListSvue_type_script_lang_js);
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.includes.js
-var es_array_includes = __webpack_require__("caad");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierCalendar.vue?vue&type=template&id=3796c5a9&scoped=true
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierCalendar.vue?vue&type=template&id=5fd0ff0a&scoped=true
 
 
+Object(external_commonjs_vue_commonjs2_vue_root_Vue_["pushScopeId"])("data-v-5fd0ff0a");
 
-Object(external_commonjs_vue_commonjs2_vue_root_Vue_["pushScopeId"])("data-v-3796c5a9");
-
-var CrosierCalendarvue_type_template_id_3796c5a9_scoped_true_hoisted_1 = {
+var CrosierCalendarvue_type_template_id_5fd0ff0a_scoped_true_hoisted_1 = {
   class: "form-group"
 };
-var CrosierCalendarvue_type_template_id_3796c5a9_scoped_true_hoisted_2 = ["for"];
-var CrosierCalendarvue_type_template_id_3796c5a9_scoped_true_hoisted_3 = ["id"];
+var CrosierCalendarvue_type_template_id_5fd0ff0a_scoped_true_hoisted_2 = ["for"];
+var CrosierCalendarvue_type_template_id_5fd0ff0a_scoped_true_hoisted_3 = ["id"];
 
 Object(external_commonjs_vue_commonjs2_vue_root_Vue_["popScopeId"])();
 
-function CrosierCalendarvue_type_template_id_3796c5a9_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+function CrosierCalendarvue_type_template_id_5fd0ff0a_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Calendar = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Calendar");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierCalendarvue_type_template_id_3796c5a9_scoped_true_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierCalendarvue_type_template_id_5fd0ff0a_scoped_true_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
     for: this.id
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.label), 9, CrosierCalendarvue_type_template_id_3796c5a9_scoped_true_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Calendar, {
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.label), 9, CrosierCalendarvue_type_template_id_5fd0ff0a_scoped_true_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Calendar, {
     id: this.id,
     inputClass: this.inputClass,
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid' : '')),
@@ -24099,8 +24095,8 @@ function CrosierCalendarvue_type_template_id_3796c5a9_scoped_true_render(_ctx, _
       return _ctx.$emit('update:modelValue', $event);
     }),
     dateFormat: "dd/mm/yy",
-    showTime: ['crsr-datetime', 'crsr-datetime-nseg'].includes(this.inputClass),
-    showSeconds: ['crsr-datetime'].includes(this.inputClass),
+    showTime: this.showTime,
+    showSeconds: this.showSeconds,
     showButtonBar: true,
     showIcon: true,
     showOnFocus: false,
@@ -24109,11 +24105,11 @@ function CrosierCalendarvue_type_template_id_3796c5a9_scoped_true_render(_ctx, _
     key: 0,
     id: this.id + '_help',
     class: "form-text text-muted"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierCalendarvue_type_template_id_3796c5a9_scoped_true_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierCalendarvue_type_template_id_5fd0ff0a_scoped_true_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
     class: "invalid-feedbackk blink"
   }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 513), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.error]])])], 2);
 }
-// CONCATENATED MODULE: ./src/components/fields/CrosierCalendar.vue?vue&type=template&id=3796c5a9&scoped=true
+// CONCATENATED MODULE: ./src/components/fields/CrosierCalendar.vue?vue&type=template&id=5fd0ff0a&scoped=true
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.match.js
 var es_string_match = __webpack_require__("466d");
@@ -26679,7 +26675,7 @@ calendar_esm_script.render = calendar_esm_render;
   emits: ["update:modelValue"],
   props: {
     modelValue: {
-      type: Date
+      required: false
     },
     id: {
       type: String,
@@ -26690,11 +26686,6 @@ calendar_esm_script.render = calendar_esm_render;
       required: false,
       default: null
     },
-    inputClass: {
-      type: String,
-      required: false,
-      default: "crsr-date"
-    },
     col: {
       type: String,
       required: false,
@@ -26703,6 +26694,16 @@ calendar_esm_script.render = calendar_esm_render;
     label: {
       type: String,
       required: true
+    },
+    showTime: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    showSeconds: {
+      type: Boolean,
+      required: false,
+      default: false
     },
     disabled: {
       type: Boolean,
@@ -26719,12 +26720,30 @@ calendar_esm_script.render = calendar_esm_render;
       default: "single"
     }
   },
+  data: function data() {
+    return {
+      inputClass: null
+    };
+  },
+  mounted: function mounted() {
+    if (this.selectionMode === "range") {
+      this.inputClass = "crsr-date-periodo text-center";
+    } else if (this.showSeconds) {
+      this.inputClass = "crsr-datetime";
+    } else if (this.showTime) {
+      this.inputClass = "crsr-datetime-nseg";
+    } else {
+      this.inputClass = "crsr-date";
+    }
+  },
   methods: {
     onInput: function onInput($event) {
       var dtStr = $event.target.value;
       var dateParser = null;
       var date = null;
       var match = null;
+      var dtIni = null;
+      var dtFim = null;
 
       if (dtStr.length === 10 && this.inputClass === "crsr-date") {
         dateParser = /(\d{2})\/(\d{2})\/(\d{4})/;
@@ -26756,6 +26775,22 @@ calendar_esm_script.render = calendar_esm_render;
         match[5], // minutes
         match[6] // seconds
         );
+      } else if (dtStr.length === 23 && this.selectionMode === "range") {
+        dateParser = /(\d{2})\/(\d{2})\/(\d{4}) - (\d{2})\/(\d{2})\/(\d{4})/;
+        match = dtStr.match(dateParser);
+        dtIni = new Date(match[3], // year
+        match[2] - 1, // monthIndex
+        match[1] // day
+        );
+        dtFim = new Date(match[6], // year
+        match[5] - 1, // monthIndex
+        match[4] // day
+        );
+
+        if (dtIni && dtFim) {
+          var dts = [dtIni, dtFim];
+          this.$emit("update:modelValue", dts);
+        }
       }
 
       if (date) {
@@ -26766,8 +26801,8 @@ calendar_esm_script.render = calendar_esm_render;
 });
 // CONCATENATED MODULE: ./src/components/fields/CrosierCalendar.vue?vue&type=script&lang=js
  
-// EXTERNAL MODULE: ./src/components/fields/CrosierCalendar.vue?vue&type=style&index=0&id=3796c5a9&scoped=true&lang=css
-var CrosierCalendarvue_type_style_index_0_id_3796c5a9_scoped_true_lang_css = __webpack_require__("66d6");
+// EXTERNAL MODULE: ./src/components/fields/CrosierCalendar.vue?vue&type=style&index=0&id=5fd0ff0a&scoped=true&lang=css
+var CrosierCalendarvue_type_style_index_0_id_5fd0ff0a_scoped_true_lang_css = __webpack_require__("abbc");
 
 // CONCATENATED MODULE: ./src/components/fields/CrosierCalendar.vue
 
@@ -26775,8 +26810,8 @@ var CrosierCalendarvue_type_style_index_0_id_3796c5a9_scoped_true_lang_css = __w
 
 
 
-CrosierCalendarvue_type_script_lang_js.render = CrosierCalendarvue_type_template_id_3796c5a9_scoped_true_render
-CrosierCalendarvue_type_script_lang_js.__scopeId = "data-v-3796c5a9"
+CrosierCalendarvue_type_script_lang_js.render = CrosierCalendarvue_type_template_id_5fd0ff0a_scoped_true_render
+CrosierCalendarvue_type_script_lang_js.__scopeId = "data-v-5fd0ff0a"
 
 /* harmony default export */ var CrosierCalendar = (CrosierCalendarvue_type_script_lang_js);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierCurrency.vue?vue&type=template&id=205d4cc7&scoped=true
@@ -27651,6 +27686,9 @@ CrosierInputDecimalvue_type_script_lang_js.render = CrosierInputDecimalvue_type_
 CrosierInputDecimalvue_type_script_lang_js.__scopeId = "data-v-0e447a62"
 
 /* harmony default export */ var CrosierInputDecimal = (CrosierInputDecimalvue_type_script_lang_js);
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.includes.js
+var es_array_includes = __webpack_require__("caad");
+
 // CONCATENATED MODULE: ./src/services/ValidateFormData.js
 
 
