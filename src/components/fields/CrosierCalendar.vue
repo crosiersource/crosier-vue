@@ -7,6 +7,7 @@
         :inputClass="this.inputClass"
         :class="'form-control ' + (this.error ? 'is-invalid' : '')"
         :modelValue="modelValue"
+        :selectionMode="this.selectionMode"
         ref="refCalendar"
         @input="this.onInput"
         @date-select="$emit('update:modelValue', $event)"
@@ -73,6 +74,11 @@ export default {
     helpText: {
       type: String,
       required: false,
+    },
+    selectionMode: {
+      type: String,
+      required: false,
+      default: "single",
     },
   },
 
