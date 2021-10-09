@@ -5,6 +5,7 @@
       <Dropdown
         :class="'form-control ' + (this.error ? 'is-invalid' : '')"
         :id="this.id"
+        :appendTo="this.appendTo"
         :modelValue="modelValue"
         @change="$emit('update:modelValue', $event.value)"
         :options="this.options"
@@ -81,6 +82,11 @@ export default {
     helpText: {
       type: String,
       required: false,
+    },
+    appendTo: {
+      type: String,
+      required: false,
+      default: "body",
     },
   },
 };
