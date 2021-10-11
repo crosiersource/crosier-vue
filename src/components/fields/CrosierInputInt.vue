@@ -7,7 +7,7 @@
         inputClass="text-right"
         :id="this.id"
         :modelValue="modelValue"
-        @input="$emit('update:modelValue', $event.value)"
+        @input="this.onInput"
         :disabled="this.disabled"
       />
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
@@ -28,7 +28,7 @@ export default {
     InputNumber,
   },
 
-  emits: ["update:modelValue"],
+  emits: ["update:modelValue", "input"],
 
   props: {
     modelValue: {
@@ -60,6 +60,13 @@ export default {
     helpText: {
       type: String,
       required: false,
+    },
+  },
+
+  methods: {
+    onInput($event) {
+      this.$emit("update:modelValue", $event.value);
+      this.$emit("input", $event);
     },
   },
 };

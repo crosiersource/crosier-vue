@@ -7,7 +7,7 @@
         :id="this.id"
         :appendTo="this.appendTo"
         :modelValue="modelValue"
-        @change="$emit('update:modelValue', $event.value)"
+        @change="this.onChange"
         :options="this.options"
         :optionLabel="this.optionLabel"
         :optionValue="this.optionValue"
@@ -33,6 +33,8 @@ export default {
   components: {
     Dropdown,
   },
+
+  emits: ["update:modelValue", "change"],
 
   props: {
     modelValue: {
@@ -87,6 +89,13 @@ export default {
       type: String,
       required: false,
       default: "body",
+    },
+  },
+
+  methods: {
+    onChange($event) {
+      this.$emit("change", $event);
+      this.$emit("update:modelValue", $event.value);
     },
   },
 };

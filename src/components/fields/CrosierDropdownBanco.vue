@@ -6,7 +6,7 @@
         :class="'form-control ' + (this.error ? 'is-invalid' : '')"
         :id="this.id"
         :modelValue="modelValue"
-        @change="$emit('update:modelValue', $event.value)"
+        @change="this.onChange"
         :options="this.options"
         :optionLabel="this.optionLabel"
         :optionValue="this.optionValue"
@@ -34,6 +34,8 @@ export default {
   components: {
     Dropdown,
   },
+
+  emits: ["update:modelValue", "change"],
 
   props: {
     modelValue: {
@@ -112,6 +114,11 @@ export default {
 
   methods: {
     ...mapMutations(["setLoading"]),
+
+    onChange($event) {
+      this.$emit("change", $event);
+      this.$emit("update:modelValue", $event.value);
+    },
   },
 };
 </script>

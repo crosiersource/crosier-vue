@@ -10,7 +10,7 @@
         :minFractionDigits="this.decimais"
         :maxFractionDigits="this.decimais"
         :modelValue="modelValue"
-        @input="$emit('update:modelValue', $event.value)"
+        @input="this.onInput"
         :disabled="this.disabled"
       />
       <div class="invalid-feedbackk blink" v-show="this.error">
@@ -31,7 +31,7 @@ export default {
     InputNumber,
   },
 
-  emits: ["update:modelValue"],
+  emits: ["update:modelValue", "input"],
 
   props: {
     modelValue: {
@@ -68,6 +68,13 @@ export default {
     helpText: {
       type: String,
       required: false,
+    },
+  },
+
+  methods: {
+    onInput($event) {
+      this.$emit("update:modelValue", $event.value);
+      this.$emit("input", $event);
     },
   },
 };

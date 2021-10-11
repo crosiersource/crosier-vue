@@ -34,7 +34,9 @@ export default {
   components: {
     Dropdown,
   },
+
   emits: ["update:modelValue", "change"],
+
   props: {
     modelValue: {
       type: String,

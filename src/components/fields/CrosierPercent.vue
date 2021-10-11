@@ -11,7 +11,7 @@
           :minFractionDigits="this.decimais"
           :maxFractionDigits="this.decimais"
           :modelValue="modelValue"
-          @input="$emit('update:modelValue', $event.value)"
+          @input="this.onInput"
           placeholder="0,00"
           :disabled="this.disabled"
         />
@@ -37,7 +37,7 @@ export default {
     InputNumber,
   },
 
-  emits: ["update:modelValue"],
+  emits: ["update:modelValue", "input"],
 
   props: {
     modelValue: {
@@ -74,6 +74,13 @@ export default {
       type: Number,
       required: false,
       default: 2,
+    },
+  },
+
+  methods: {
+    onInput($event) {
+      this.$emit("update:modelValue", $event.value);
+      this.$emit("input", $event);
     },
   },
 };

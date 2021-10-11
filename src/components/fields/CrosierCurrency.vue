@@ -14,7 +14,7 @@
           :minFractionDigits="2"
           :maxFractionDigits="2"
           :modelValue="modelValue"
-          @input="$emit('update:modelValue', $event.value)"
+          @input="this.onInput"
           placeholder="0,00"
           :disabled="this.disabled"
         />
@@ -37,7 +37,7 @@ export default {
     InputNumber,
   },
 
-  emits: ["update:modelValue"],
+  emits: ["update:modelValue", "input"],
 
   props: {
     modelValue: {
@@ -69,6 +69,13 @@ export default {
     helpText: {
       type: String,
       required: false,
+    },
+  },
+
+  methods: {
+    onInput($event) {
+      this.$emit("update:modelValue", $event.value);
+      this.$emit("input", $event);
     },
   },
 };
