@@ -81,6 +81,7 @@
           currentPageReportTemplate="{first}-{last} de {totalRecords}"
           v-model:selection="this.selection"
           :selectionMode="selectionMode"
+          :metaKeySelection="false"
           dataKey="id"
           @rowSelect="this.onRowSelect"
           @rowUnselect="this.onRowUnselect"
