@@ -607,6 +607,22 @@ for (var COLLECTION_NAME in DOMIterables) {
 
 /***/ }),
 
+/***/ "1676":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("9039");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("2892242b", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
 /***/ "17c2":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5561,6 +5577,20 @@ var update = add("139f6caf", content, true, {"sourceMap":false,"shadowMode":fals
 
 /***/ }),
 
+/***/ "9039":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".invalid-feedbackk[data-v-f3d95b5e]{width:100%;margin-top:.25rem;font-size:80%;color:#e55353}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "90e3":
 /***/ (function(module, exports) {
 
@@ -5597,6 +5627,17 @@ module.exports = DESCRIPTORS ? function (object, key, value) {
 "use strict";
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_crosierBlock_vue_vue_type_style_index_0_id_feb93160_lang_scss_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("b575");
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_crosierBlock_vue_vue_type_style_index_0_id_feb93160_lang_scss_scoped_true__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_crosierBlock_vue_vue_type_style_index_0_id_feb93160_lang_scss_scoped_true__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
+/***/ "9236":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierPercent_vue_vue_type_style_index_0_id_f3d95b5e_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("1676");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierPercent_vue_vue_type_style_index_0_id_f3d95b5e_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierPercent_vue_vue_type_style_index_0_id_f3d95b5e_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
 
 
@@ -27684,6 +27725,120 @@ CrosierInputDecimalvue_type_script_lang_js.render = CrosierInputDecimalvue_type_
 CrosierInputDecimalvue_type_script_lang_js.__scopeId = "data-v-0e447a62"
 
 /* harmony default export */ var CrosierInputDecimal = (CrosierInputDecimalvue_type_script_lang_js);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierPercent.vue?vue&type=template&id=f3d95b5e&scoped=true
+
+
+Object(external_commonjs_vue_commonjs2_vue_root_Vue_["pushScopeId"])("data-v-f3d95b5e");
+
+var CrosierPercentvue_type_template_id_f3d95b5e_scoped_true_hoisted_1 = {
+  class: "form-group"
+};
+var CrosierPercentvue_type_template_id_f3d95b5e_scoped_true_hoisted_2 = ["for"];
+var CrosierPercentvue_type_template_id_f3d95b5e_scoped_true_hoisted_3 = {
+  class: "input-group"
+};
+
+var CrosierPercentvue_type_template_id_f3d95b5e_scoped_true_hoisted_4 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+  class: "input-group-append"
+}, [/*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", {
+  class: "input-group-text"
+}, "%")], -1);
+
+var CrosierPercentvue_type_template_id_f3d95b5e_scoped_true_hoisted_5 = ["id"];
+
+Object(external_commonjs_vue_commonjs2_vue_root_Vue_["popScopeId"])();
+
+function CrosierPercentvue_type_template_id_f3d95b5e_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_InputNumber = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("InputNumber");
+
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierPercentvue_type_template_id_f3d95b5e_scoped_true_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+    for: this.id
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierPercentvue_type_template_id_f3d95b5e_scoped_true_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierPercentvue_type_template_id_f3d95b5e_scoped_true_hoisted_3, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InputNumber, {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid' : '')),
+    inputClass: "text-right",
+    id: this.id,
+    mode: "decimal",
+    minFractionDigits: this.decimais,
+    maxFractionDigits: this.decimais,
+    modelValue: $props.modelValue,
+    onInput: _cache[0] || (_cache[0] = function ($event) {
+      return _ctx.$emit('update:modelValue', $event.value);
+    }),
+    placeholder: "0,00",
+    disabled: this.disabled
+  }, null, 8, ["class", "id", "minFractionDigits", "maxFractionDigits", "modelValue", "disabled"]), CrosierPercentvue_type_template_id_f3d95b5e_scoped_true_hoisted_4]), this.helpText ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("small", {
+    key: 0,
+    id: this.id + '_help',
+    class: "form-text text-muted"
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierPercentvue_type_template_id_f3d95b5e_scoped_true_hoisted_5)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+    class: "invalid-feedbackk blink"
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 513), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.error]])])], 2);
+}
+// CONCATENATED MODULE: ./src/components/fields/CrosierPercent.vue?vue&type=template&id=f3d95b5e&scoped=true
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierPercent.vue?vue&type=script&lang=js
+
+
+/* harmony default export */ var CrosierPercentvue_type_script_lang_js = ({
+  components: {
+    InputNumber: inputnumber_esm
+  },
+  emits: ["update:modelValue"],
+  props: {
+    modelValue: {
+      type: Number
+    },
+    id: {
+      type: String,
+      required: true
+    },
+    error: {
+      type: String,
+      required: false,
+      default: null
+    },
+    col: {
+      type: String,
+      required: false,
+      default: "12"
+    },
+    label: {
+      type: String,
+      required: true
+    },
+    disabled: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    helpText: {
+      type: String,
+      required: false
+    },
+    decimais: {
+      type: Number,
+      required: false,
+      default: 2
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/fields/CrosierPercent.vue?vue&type=script&lang=js
+ 
+// EXTERNAL MODULE: ./src/components/fields/CrosierPercent.vue?vue&type=style&index=0&id=f3d95b5e&scoped=true&lang=css
+var CrosierPercentvue_type_style_index_0_id_f3d95b5e_scoped_true_lang_css = __webpack_require__("9236");
+
+// CONCATENATED MODULE: ./src/components/fields/CrosierPercent.vue
+
+
+
+
+
+CrosierPercentvue_type_script_lang_js.render = CrosierPercentvue_type_template_id_f3d95b5e_scoped_true_render
+CrosierPercentvue_type_script_lang_js.__scopeId = "data-v-f3d95b5e"
+
+/* harmony default export */ var CrosierPercent = (CrosierPercentvue_type_script_lang_js);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.includes.js
 var es_array_includes = __webpack_require__("caad");
 
@@ -27936,6 +28091,7 @@ function _submitForm() {
 
 
 
+
 /* harmony default export */ var main = ({
   HelloWorld: HelloWorld,
   CrosierBlock: crosierBlock,
@@ -27951,7 +28107,8 @@ function _submitForm() {
   CrosierDropdownEntity: CrosierDropdownEntity,
   CrosierInputText: CrosierInputText,
   CrosierInputInt: CrosierInputInt,
-  CrosierInputDecimal: CrosierInputDecimal
+  CrosierInputDecimal: CrosierInputDecimal,
+  CrosierPercent: CrosierPercent
 });
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 

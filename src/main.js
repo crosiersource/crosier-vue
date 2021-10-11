@@ -11,6 +11,7 @@ import CrosierDropdownEntity from "./components/fields/CrosierDropdownEntity";
 import CrosierInputText from "./components/fields/CrosierInputText";
 import CrosierInputInt from "./components/fields/CrosierInputInt";
 import CrosierInputDecimal from "./components/fields/CrosierInputDecimal";
+import CrosierPercent from "./components/fields/CrosierPercent";
 
 import api from "./services/api";
 import { submitForm } from "./services/SubmitForm";
@@ -33,4 +34,5 @@ export default {
   CrosierInputText,
   CrosierInputInt,
   CrosierInputDecimal,
+  CrosierPercent,
 };
