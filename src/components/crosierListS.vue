@@ -174,7 +174,7 @@ export default {
     selectionMode: {
       type: String,
       required: false,
-      default: "single",
+      default: "multiple",
     },
   },
 
