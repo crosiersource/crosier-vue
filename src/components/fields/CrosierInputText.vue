@@ -65,7 +65,7 @@ export default {
 
   methods: {
     onInput($event) {
-      this.$emit("update:modelValue", $event.value);
+      this.$emit("update:modelValue", $event.target.value);
       this.$emit("input", $event);
     },
   },
