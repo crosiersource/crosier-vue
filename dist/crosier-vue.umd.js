@@ -12142,65 +12142,65 @@ button_esm_script.render = button_esm_render;
 crosierFormSvue_type_script_lang_js.render = crosierFormSvue_type_template_id_dc05d8e4_render
 
 /* harmony default export */ var crosierFormS = (crosierFormSvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/crosierListS.vue?vue&type=template&id=abf30cd8
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/crosierListS.vue?vue&type=template&id=024e1523
 
-var crosierListSvue_type_template_id_abf30cd8_hoisted_1 = {
+var crosierListSvue_type_template_id_024e1523_hoisted_1 = {
   class: "card",
   style: {
     "margin-bottom": "50px"
   }
 };
-var crosierListSvue_type_template_id_abf30cd8_hoisted_2 = {
+var crosierListSvue_type_template_id_024e1523_hoisted_2 = {
   class: "card-header"
 };
-var crosierListSvue_type_template_id_abf30cd8_hoisted_3 = {
+var crosierListSvue_type_template_id_024e1523_hoisted_3 = {
   class: "d-flex flex-wrap align-items-center"
 };
-var crosierListSvue_type_template_id_abf30cd8_hoisted_4 = {
+var crosierListSvue_type_template_id_024e1523_hoisted_4 = {
   class: "mr-1"
 };
-var crosierListSvue_type_template_id_abf30cd8_hoisted_5 = {
+var crosierListSvue_type_template_id_024e1523_hoisted_5 = {
   key: 0
 };
-var crosierListSvue_type_template_id_abf30cd8_hoisted_6 = {
+var crosierListSvue_type_template_id_024e1523_hoisted_6 = {
   class: "d-sm-flex flex-nowrap ml-auto"
 };
-var crosierListSvue_type_template_id_abf30cd8_hoisted_7 = ["href"];
+var crosierListSvue_type_template_id_024e1523_hoisted_7 = ["href"];
 
-var crosierListSvue_type_template_id_abf30cd8_hoisted_8 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+var crosierListSvue_type_template_id_024e1523_hoisted_8 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
   class: "fas fa-file",
   "aria-hidden": "true"
 }, null, -1);
 
-var crosierListSvue_type_template_id_abf30cd8_hoisted_9 = [crosierListSvue_type_template_id_abf30cd8_hoisted_8];
-var crosierListSvue_type_template_id_abf30cd8_hoisted_10 = {
+var crosierListSvue_type_template_id_024e1523_hoisted_9 = [crosierListSvue_type_template_id_024e1523_hoisted_8];
+var crosierListSvue_type_template_id_024e1523_hoisted_10 = {
   class: "card-body"
 };
 
-var crosierListSvue_type_template_id_abf30cd8_hoisted_11 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "Filtros", -1);
+var crosierListSvue_type_template_id_024e1523_hoisted_11 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "Filtros", -1);
 
-var crosierListSvue_type_template_id_abf30cd8_hoisted_12 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+var crosierListSvue_type_template_id_024e1523_hoisted_12 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
   class: "pi pi-filter"
 }, null, -1);
 
-var crosierListSvue_type_template_id_abf30cd8_hoisted_13 = {
+var crosierListSvue_type_template_id_024e1523_hoisted_13 = {
   class: "row mt-3"
 };
-var crosierListSvue_type_template_id_abf30cd8_hoisted_14 = {
+var crosierListSvue_type_template_id_024e1523_hoisted_14 = {
   class: "col-8"
 };
 
-var crosierListSvue_type_template_id_abf30cd8_hoisted_15 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(". ");
+var crosierListSvue_type_template_id_024e1523_hoisted_15 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(". ");
 
-var crosierListSvue_type_template_id_abf30cd8_hoisted_16 = {
+var crosierListSvue_type_template_id_024e1523_hoisted_16 = {
   class: "col-4 text-right"
 };
-var crosierListSvue_type_template_id_abf30cd8_hoisted_17 = {
+var crosierListSvue_type_template_id_024e1523_hoisted_17 = {
   style: {
     "text-align": "right"
   }
 };
-function crosierListSvue_type_template_id_abf30cd8_render(_ctx, _cache, $props, $setup, $data, $options) {
+function crosierListSvue_type_template_id_024e1523_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_ConfirmDialog = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("ConfirmDialog");
@@ -12221,12 +12221,12 @@ function crosierListSvue_type_template_id_abf30cd8_render(_ctx, _cache, $props, 
     group: "crosierListS_delete"
   }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])(this.containerClass)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_abf30cd8_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_abf30cd8_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_abf30cd8_hoisted_3, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_abf30cd8_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.titulo), 1), $props.subtitulo ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("h6", crosierListSvue_type_template_id_abf30cd8_hoisted_5, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.subtitulo), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_abf30cd8_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("a", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_024e1523_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_024e1523_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_024e1523_hoisted_3, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_024e1523_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.titulo), 1), $props.subtitulo ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("h6", crosierListSvue_type_template_id_024e1523_hoisted_5, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.subtitulo), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_024e1523_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("a", {
     type: "button",
     class: "btn btn-info",
     href: this.formUrl,
     title: "Novo"
-  }, crosierListSvue_type_template_id_abf30cd8_hoisted_9, 8, crosierListSvue_type_template_id_abf30cd8_hoisted_7), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.formUrl]]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "headerButtons")])])]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_abf30cd8_hoisted_10, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_CrosierBlock, {
+  }, crosierListSvue_type_template_id_024e1523_hoisted_9, 8, crosierListSvue_type_template_id_024e1523_hoisted_7), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.formUrl]]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "headerButtons")])])]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_024e1523_hoisted_10, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_CrosierBlock, {
     loading: this.loading
   }, null, 8, ["loading"]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Accordion, {
     activeIndex: this.accordionActiveIndex
@@ -12234,7 +12234,7 @@ function crosierListSvue_type_template_id_abf30cd8_render(_ctx, _cache, $props, 
     default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
       return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_AccordionTab, null, {
         header: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-          return [crosierListSvue_type_template_id_abf30cd8_hoisted_11, crosierListSvue_type_template_id_abf30cd8_hoisted_12];
+          return [crosierListSvue_type_template_id_024e1523_hoisted_11, crosierListSvue_type_template_id_024e1523_hoisted_12];
         }),
         default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
           return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("form", {
@@ -12242,14 +12242,14 @@ function crosierListSvue_type_template_id_abf30cd8_render(_ctx, _cache, $props, 
               return _this.doFilter();
             }, ["prevent"])),
             class: "notSubmit"
-          }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "filter-fields"), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_abf30cd8_hoisted_13, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_abf30cd8_hoisted_14, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InlineMessage, {
+          }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "filter-fields"), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_024e1523_hoisted_13, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_024e1523_hoisted_14, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InlineMessage, {
             severity: "info"
           }, {
             default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-              return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("small", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.totalRecords) + " registro(s) encontrado(s) ", 1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "(com filtros aplicados)", 512), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], _this.isFiltering]]), crosierListSvue_type_template_id_abf30cd8_hoisted_15])];
+              return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("small", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.totalRecords) + " registro(s) encontrado(s) ", 1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "(com filtros aplicados)", 512), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], _this.isFiltering]]), crosierListSvue_type_template_id_024e1523_hoisted_15])];
             }),
             _: 1
-          })]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_abf30cd8_hoisted_16, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
+          })]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_024e1523_hoisted_16, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
             label: "Filtrar",
             type: "submit",
             icon: "fas fa-search",
@@ -12304,7 +12304,7 @@ function crosierListSvue_type_template_id_abf30cd8_render(_ctx, _cache, $props, 
     ref: "dt"
   }, {
     footer: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_abf30cd8_hoisted_17, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
+      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_024e1523_hoisted_17, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
         class: "p-button-rounded p-button-success p-button-text",
         icon: "pi pi-file-excel",
         label: "Exportar para CSV",
@@ -12319,7 +12319,7 @@ function crosierListSvue_type_template_id_abf30cd8_render(_ctx, _cache, $props, 
     _: 3
   }, 8, ["stateKey", "value", "totalRecords", "multiSortMeta", "selection", "selectionMode", "onRowSelect", "onRowUnselect", "first"])])])], 2)], 64);
 }
-// CONCATENATED MODULE: ./src/components/crosierListS.vue?vue&type=template&id=abf30cd8
+// CONCATENATED MODULE: ./src/components/crosierListS.vue?vue&type=template&id=024e1523
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
 function _arrayWithHoles(arr) {
@@ -23527,13 +23527,13 @@ function fetchTableData(_x) {
 
 function _fetchTableData() {
   _fetchTableData = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(_ref) {
-    var apiResource, _ref$page, page, _ref$rows, rows, _ref$order, order, _ref$filters, filters, _ref$allRows, allRows, _ref$complement, complement, params, queryPage, queryRows, queryOrder, queryFilter, _loop, key;
+    var apiResource, _ref$page, page, _ref$rows, rows, _ref$order, order, _ref$filters, filters, _ref$defaultFilters, defaultFilters, _ref$allRows, allRows, _ref$complement, complement, params, queryPage, queryRows, queryOrder, queryFilter, _loop, key, _loop2, _key;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            apiResource = _ref.apiResource, _ref$page = _ref.page, page = _ref$page === void 0 ? 1 : _ref$page, _ref$rows = _ref.rows, rows = _ref$rows === void 0 ? 10 : _ref$rows, _ref$order = _ref.order, order = _ref$order === void 0 ? {} : _ref$order, _ref$filters = _ref.filters, filters = _ref$filters === void 0 ? {} : _ref$filters, _ref$allRows = _ref.allRows, allRows = _ref$allRows === void 0 ? false : _ref$allRows, _ref$complement = _ref.complement, complement = _ref$complement === void 0 ? "" : _ref$complement;
+            apiResource = _ref.apiResource, _ref$page = _ref.page, page = _ref$page === void 0 ? 1 : _ref$page, _ref$rows = _ref.rows, rows = _ref$rows === void 0 ? 10 : _ref$rows, _ref$order = _ref.order, order = _ref$order === void 0 ? {} : _ref$order, _ref$filters = _ref.filters, filters = _ref$filters === void 0 ? {} : _ref$filters, _ref$defaultFilters = _ref.defaultFilters, defaultFilters = _ref$defaultFilters === void 0 ? {} : _ref$defaultFilters, _ref$allRows = _ref.allRows, allRows = _ref$allRows === void 0 ? false : _ref$allRows, _ref$complement = _ref.complement, complement = _ref$complement === void 0 ? "" : _ref$complement;
             params = {
               headers: {
                 "Content-Type": "application/json;charset=UTF-8"
@@ -23579,11 +23579,29 @@ function _fetchTableData() {
 
             for (key in filters) {
               _loop(key);
+            } // eslint-disable-next-line no-restricted-syntax
+
+
+            _loop2 = function _loop2(_key) {
+              if (defaultFilters[_key] !== null && defaultFilters[_key] !== "") {
+                if (!Array.isArray(defaultFilters[_key])) {
+                  queryFilter += "&".concat(_key, "=").concat(defaultFilters[_key]);
+                } else {
+                  // eslint-disable-next-line no-loop-func
+                  defaultFilters[_key].forEach(function iterate(item) {
+                    queryFilter += "&".concat(_key, "[]=").concat(item);
+                  });
+                }
+              }
+            };
+
+            for (_key in defaultFilters) {
+              _loop2(_key);
             }
 
             return _context.abrupt("return", axios_default.a.get("".concat(apiResource).concat(queryPage).concat(queryRows).concat(queryFilter).concat(queryOrder).concat(complement), params));
 
-          case 10:
+          case 12:
           case "end":
             return _context.stop();
         }
@@ -23901,7 +23919,8 @@ function _deleteEntityData() {
                   page: page,
                   rows: rows,
                   order: apiOrder,
-                  filters: _this2.filters
+                  filters: _this2.filters,
+                  defaultFilters: _this2.defaultFilters
                 });
 
               case 11:
@@ -24078,6 +24097,9 @@ function _deleteEntityData() {
     filters: function filters() {
       return this.$store.getters["get".concat(this.filtersStoreName.charAt(0).toUpperCase()).concat(this.filtersStoreName.slice(1))];
     },
+    defaultFilters: function defaultFilters() {
+      return this.$store.getters.getDefaultFilters;
+    },
     filtersOnLocalStorage: function filtersOnLocalStorage() {
       return "filters".concat(this.apiResource, "_").concat(this.filtersStoreName);
     },
@@ -24114,7 +24136,7 @@ function _deleteEntityData() {
 
 
 
-crosierListSvue_type_script_lang_js.render = crosierListSvue_type_template_id_abf30cd8_render
+crosierListSvue_type_script_lang_js.render = crosierListSvue_type_template_id_024e1523_render
 
 /* harmony default export */ var crosierListS = (crosierListSvue_type_script_lang_js);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierCalendar.vue?vue&type=template&id=5fd0ff0a&scoped=true

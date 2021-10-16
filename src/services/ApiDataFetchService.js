@@ -37,6 +37,7 @@ export async function fetchTableData({
   rows = 10,
   order = {},
   filters = {},
+  defaultFilters = {},
   allRows = false,
   complement = "",
 }) {
@@ -77,6 +78,20 @@ export async function fetchTableData({
       } else {
         // eslint-disable-next-line no-loop-func
         filters[key].forEach(function iterate(item) {
+          queryFilter += `&${key}[]=${item}`;
+        });
+      }
+    }
+  }
+
+  // eslint-disable-next-line no-restricted-syntax
+  for (const key in defaultFilters) {
+    if (defaultFilters[key] !== null && defaultFilters[key] !== "") {
+      if (!Array.isArray(defaultFilters[key])) {
+        queryFilter += `&${key}=${defaultFilters[key]}`;
+      } else {
+        // eslint-disable-next-line no-loop-func
+        defaultFilters[key].forEach(function iterate(item) {
           queryFilter += `&${key}[]=${item}`;
         });
       }
