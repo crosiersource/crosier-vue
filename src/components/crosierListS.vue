@@ -290,6 +290,7 @@ export default {
         rows,
         order: apiOrder,
         filters: this.filters,
+        defaultFilters: this.defaultFilters,
       });
 
       this.totalRecords = response.data["hydra:totalItems"];
@@ -352,12 +353,20 @@ export default {
       ];
     },
 
+    defaultFilters() {
+      return this.$store.getters[
+        `getDefault${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(
+          1
+        )}`
+      ];
+    },
+
     filtersOnLocalStorage() {
       return `filters${this.apiResource}_${this.filtersStoreName}`;
     },
 
     dataTableStateKey() {
-      return `dt-state${this.dtStateName ?? this.apiResource}`;
+      return `dt-state_${this.dtStateName ?? this.apiResource}`;
     },
 
     loading() {
