@@ -122,6 +122,7 @@ import CrosierBlock from "../components/crosierBlock";
 
 export default {
   name: "CrosierListS",
+
   components: {
     Accordion,
     AccordionTab,
@@ -131,7 +132,9 @@ export default {
     DataTable,
     InlineMessage,
   },
+
   emits: ["beforeFilter", "afterFilter", "onRowSelect", "onRowUnselect"],
+
   props: {
     titulo: {
       type: String,
@@ -333,6 +336,7 @@ export default {
       this.$refs.dt.exportCSV();
     },
   },
+
   computed: {
     filters() {
       return this.$store.getters[

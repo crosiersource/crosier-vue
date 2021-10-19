@@ -11077,35 +11077,35 @@ function crosierFormSvue_type_template_id_dc05d8e4_render(_ctx, _cache, $props, 
 // CONCATENATED MODULE: ./src/components/crosierFormS.vue?vue&type=template&id=dc05d8e4
 
 // CONCATENATED MODULE: ./node_modules/primevue/utils/utils.esm.js
-class DomHandler {
+var DomHandler = {
 
-    static innerWidth(el) {
+    innerWidth(el) {
         let width = el.offsetWidth;
         let style = getComputedStyle(el);
 
         width += parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
         return width;
-    }
+    },
 
-    static width(el) {
+    width(el) {
         let width = el.offsetWidth;
         let style = getComputedStyle(el);
 
         width -= parseFloat(style.paddingLeft) + parseFloat(style.paddingRight);
         return width;
-    }
+    },
 
-    static getWindowScrollTop() {
+    getWindowScrollTop() {
         let doc = document.documentElement;
         return (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
-    }
+    },
 
-    static getWindowScrollLeft() {
+    getWindowScrollLeft() {
         let doc = document.documentElement;
         return (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
-    }
+    },
 
-    static getOuterWidth(el, margin) {
+    getOuterWidth(el, margin) {
         if (el) {
             let width = el.offsetWidth;
 
@@ -11119,9 +11119,9 @@ class DomHandler {
         else {
             return 0;
         }
-    }
+    },
 
-    static getOuterHeight(el, margin) {
+    getOuterHeight(el, margin) {
         if (el) {
             let height = el.offsetHeight;
 
@@ -11135,9 +11135,9 @@ class DomHandler {
         else {
             return 0;
         }
-    }
+    },
 
-    static getClientHeight(el, margin) {
+    getClientHeight(el, margin) {
         if (el) {
             let height = el.clientHeight;
 
@@ -11150,9 +11150,9 @@ class DomHandler {
         } else {
             return 0;
         }
-    }
+    },
 
-    static getViewport() {
+    getViewport() {
         let win = window,
             d = document,
             e = d.documentElement,
@@ -11161,18 +11161,18 @@ class DomHandler {
             h = win.innerHeight || e.clientHeight || g.clientHeight;
 
         return {width: w, height: h};
-    }
+    },
 
-    static getOffset(el) {
+    getOffset(el) {
         var rect = el.getBoundingClientRect();
 
         return {
             top: rect.top + (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0),
             left: rect.left + (window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0),
         };
-    }
+    },
 
-    static index(element) {
+    index(element) {
         let children = element.parentNode.childNodes;
         let num = 0;
         for (var i = 0; i < children.length; i++) {
@@ -11180,9 +11180,9 @@ class DomHandler {
             if (children[i].nodeType === 1) num++;
         }
         return -1;
-    }
+    },
 
-    static addMultipleClasses(element, className) {
+    addMultipleClasses(element, className) {
         if (element.classList) {
             let styles = className.split(' ');
             for (let i = 0; i < styles.length; i++) {
@@ -11196,23 +11196,23 @@ class DomHandler {
                 element.className += ' ' + styles[i];
             }
         }
-    }
+    },
 
-    static addClass(element, className) {
+    addClass(element, className) {
         if (element.classList)
             element.classList.add(className);
         else
             element.className += ' ' + className;
-    }
+    },
 
-    static removeClass(element, className) {
+    removeClass(element, className) {
         if (element.classList)
             element.classList.remove(className);
         else
             element.className = element.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-    }
+    },
 
-    static hasClass(element, className) {
+    hasClass(element, className) {
         if (element) {
             if (element.classList)
                 return element.classList.contains(className);
@@ -11221,35 +11221,35 @@ class DomHandler {
         }
 
         return false;
-    }
+    },
 
-    static find(element, selector) {
+    find(element, selector) {
         return element.querySelectorAll(selector);
-    }
+    },
 
-    static findSingle(element, selector) {
+    findSingle(element, selector) {
         return element.querySelector(selector);
-    }
+    },
 
-    static getHeight(el) {
+    getHeight(el) {
         let height = el.offsetHeight;
         let style = getComputedStyle(el);
 
         height -= parseFloat(style.paddingTop) + parseFloat(style.paddingBottom) + parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth);
 
         return height;
-    }
+    },
 
-    static getWidth(el) {
+    getWidth(el) {
         let width = el.offsetWidth;
         let style = getComputedStyle(el);
 
         width -= parseFloat(style.paddingLeft) + parseFloat(style.paddingRight) + parseFloat(style.borderLeftWidth) + parseFloat(style.borderRightWidth);
 
         return width;
-    }
+    },
 
-    static absolutePosition(element, target) {
+    absolutePosition(element, target) {
         let elementDimensions = element.offsetParent ? { width: element.offsetWidth, height: element.offsetHeight } : this.getHiddenElementDimensions(element);
         let elementOuterHeight = elementDimensions.height;
         let elementOuterWidth = elementDimensions.width;
@@ -11281,9 +11281,9 @@ class DomHandler {
 
         element.style.top = top + 'px';
         element.style.left = left + 'px';
-    }
+    },
 
-    static relativePosition(element, target) {
+    relativePosition(element, target) {
         let elementDimensions = element.offsetParent ? { width: element.offsetWidth, height: element.offsetHeight } : this.getHiddenElementDimensions(element);
         const targetHeight = target.offsetHeight;
         const targetOffset = target.getBoundingClientRect();
@@ -11317,13 +11317,13 @@ class DomHandler {
 
         element.style.top = top + 'px';
         element.style.left = left + 'px';
-    }
+    },
 
-    static getParents(element, parents = []) {
+    getParents(element, parents = []) {
         return element['parentNode'] === null ? parents : this.getParents(element.parentNode, parents.concat([element.parentNode]));
-    }
+    },
 
-    static getScrollableParents(element) {
+    getScrollableParents(element) {
         let scrollableParents = [];
 
         if (element) {
@@ -11353,9 +11353,9 @@ class DomHandler {
         }
 
         return scrollableParents;
-    }
+    },
 
-    static getHiddenElementOuterHeight(element) {
+    getHiddenElementOuterHeight(element) {
         element.style.visibility = 'hidden';
         element.style.display = 'block';
         let elementHeight = element.offsetHeight;
@@ -11363,9 +11363,9 @@ class DomHandler {
         element.style.visibility = 'visible';
 
         return elementHeight;
-    }
+    },
 
-    static getHiddenElementOuterWidth(element) {
+    getHiddenElementOuterWidth(element) {
         element.style.visibility = 'hidden';
         element.style.display = 'block';
         let elementWidth = element.offsetWidth;
@@ -11373,9 +11373,9 @@ class DomHandler {
         element.style.visibility = 'visible';
 
         return elementWidth;
-    }
+    },
 
-    static getHiddenElementDimensions(element) {
+    getHiddenElementDimensions(element) {
         var dimensions = {};
         element.style.visibility = 'hidden';
         element.style.display = 'block';
@@ -11385,9 +11385,9 @@ class DomHandler {
         element.style.visibility = 'visible';
 
         return dimensions;
-    }
+    },
 
-    static fadeIn(element, duration) {
+    fadeIn(element, duration) {
         element.style.opacity = 0;
 
         var last = +new Date();
@@ -11403,9 +11403,9 @@ class DomHandler {
         };
 
         tick();
-    }
+    },
 
-    static fadeOut(element, ms) {
+    fadeOut(element, ms) {
         var opacity = 1,
             interval = 50,
             duration = ms,
@@ -11421,22 +11421,22 @@ class DomHandler {
 
             element.style.opacity = opacity;
         }, interval);
-    }
+    },
 
-    static getUserAgent() {
+    getUserAgent() {
         return navigator.userAgent;
-    }
+    },
 
-    static appendChild(element, target) {
+    appendChild(element, target) {
         if(this.isElement(target))
             target.appendChild(element);
         else if(target.el && target.elElement)
             target.elElement.appendChild(element);
         else
             throw new Error('Cannot append ' + target + ' to ' + element);
-    }
+    },
 
-    static scrollInView(container, item) {
+    scrollInView(container, item) {
         let borderTopValue = getComputedStyle(container).getPropertyValue('borderTopWidth');
         let borderTop = borderTopValue ? parseFloat(borderTopValue) : 0;
         let paddingTopValue = getComputedStyle(container).getPropertyValue('paddingTop');
@@ -11454,9 +11454,9 @@ class DomHandler {
         else if ((offset + itemHeight) > elementHeight) {
             container.scrollTop = scroll + offset - elementHeight + itemHeight;
         }
-    }
+    },
 
-    static clearSelection() {
+    clearSelection() {
         if(window.getSelection) {
             if(window.getSelection().empty) {
                 window.getSelection().empty();
@@ -11471,9 +11471,9 @@ class DomHandler {
                 //ignore IE bug
             }
         }
-    }
+    },
 
-    static calculateScrollbarWidth() {
+    calculateScrollbarWidth() {
         if(this.calculatedScrollbarWidth != null)
             return this.calculatedScrollbarWidth;
 
@@ -11487,9 +11487,9 @@ class DomHandler {
         this.calculatedScrollbarWidth = scrollbarWidth;
 
         return scrollbarWidth;
-    }
+    },
 
-    static getBrowser() {
+    getBrowser() {
         if(!this.browser) {
             let matched = this.resolveUserAgent();
             this.browser = {};
@@ -11507,9 +11507,9 @@ class DomHandler {
         }
 
         return this.browser;
-    }
+    },
 
-    static resolveUserAgent() {
+    resolveUserAgent() {
         let ua = navigator.userAgent.toLowerCase();
         let match = /(chrome)[ ]([\w.]+)/.exec(ua) ||
             /(webkit)[ ]([\w.]+)/.exec(ua) ||
@@ -11522,18 +11522,18 @@ class DomHandler {
             browser: match[1] || "",
             version: match[2] || "0"
         };
-    }
+    },
 
-    static isVisible(element) {
+    isVisible(element) {
         return element.offsetParent != null;
-    }
+    },
 
-    static invokeElementMethod(element, methodName, args) {
+    invokeElementMethod(element, methodName, args) {
         (element)[methodName].apply(element, args);
-    }
+    },
 
-    static getFocusableElements(element) {
-        let focusableElements = DomHandler.find(element, `button:not([tabindex = "-1"]):not([disabled]):not([style*="display:none"]):not([hidden]),
+    getFocusableElements(element) {
+        let focusableElements = this.find(element, `button:not([tabindex = "-1"]):not([disabled]):not([style*="display:none"]):not([hidden]),
                 [href][clientHeight][clientWidth]:not([tabindex = "-1"]):not([disabled]):not([style*="display:none"]):not([hidden]),
                 input:not([tabindex = "-1"]):not([disabled]):not([style*="display:none"]):not([hidden]), select:not([tabindex = "-1"]):not([disabled]):not([style*="display:none"]):not([hidden]),
                 textarea:not([tabindex = "-1"]):not([disabled]):not([style*="display:none"]):not([hidden]), [tabIndex]:not([tabIndex = "-1"]):not([disabled]):not([style*="display:none"]):not([hidden]),
@@ -11547,9 +11547,14 @@ class DomHandler {
         }
 
         return visibleFocusableElements;
-    }
+    },
 
-    static isClickable(element) {
+    getFirstFocusableElement(element) {
+        const focusableElements = this.getFocusableElements(element);
+        return focusableElements.length > 0 ? focusableElements[0] : null;
+    },
+
+    isClickable(element) {
         const targetNode = element.nodeName;
         const parentNode = element.parentElement && element.parentElement.nodeName;
 
@@ -11558,9 +11563,9 @@ class DomHandler {
                 this.hasClass(element, 'p-button') || this.hasClass(element.parentElement, 'p-button') ||
                 this.hasClass(element.parentElement, 'p-checkbox') || this.hasClass(element.parentElement, 'p-radiobutton')
         );
-    }
+    },
 
-    static applyStyle(element, style) {
+    applyStyle(element, style) {
         if (typeof style === 'string') {
             element.style.cssText = this.style;
         }
@@ -11569,20 +11574,20 @@ class DomHandler {
                 element.style[prop] = style[prop];
             }
         }
-    }
+    },
 
-    static isIOS() {
+    isIOS() {
         return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window['MSStream'];
-    }
+    },
 
-    static isAndroid() {
+    isAndroid() {
         return /(android)/i.test(navigator.userAgent);
-    }
+    },
 
-    static isTouchDevice() {
+    isTouchDevice() {
         return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
     }
-}
+};
 
 class ConnectedOverlayScrollHandler {
 
@@ -11614,16 +11619,16 @@ class ConnectedOverlayScrollHandler {
     }
 }
 
-class ObjectUtils {
+var ObjectUtils = {
 
-    static equals(obj1, obj2, field) {
+    equals(obj1, obj2, field) {
         if (field)
             return (this.resolveFieldData(obj1, field) === this.resolveFieldData(obj2, field));
         else
             return this.deepEquals(obj1, obj2);
-    }
+    },
 
-    static deepEquals(a, b) {
+    deepEquals(a, b) {
         if (a === b) return true;
 
         if (a && b && typeof a == 'object' && typeof b == 'object') {
@@ -11671,9 +11676,9 @@ class ObjectUtils {
         }
 
         return a !== a && b !== b;
-    }
+    },
 
-    static resolveFieldData(data, field) {
+    resolveFieldData(data, field) {
         if (data && Object.keys(data).length && field) {
             if (this.isFunction(field)) {
                 return field(data);
@@ -11696,13 +11701,13 @@ class ObjectUtils {
         else {
             return null;
         }
-    }
+    },
 
-    static isFunction(obj) {
+    isFunction(obj) {
         return !!(obj && obj.constructor && obj.call && obj.apply);
-    }
+    },
 
-    static filter(value, fields, filterValue) {
+    filter(value, fields, filterValue) {
         var filteredItems = [];
 
         if (value) {
@@ -11717,9 +11722,9 @@ class ObjectUtils {
         }
 
         return filteredItems;
-    }
+    },
 
-    static reorderArray(value, from, to) {
+    reorderArray(value, from, to) {
         let target;
         if (value && (from !== to)) {
             if (to >= value.length) {
@@ -11730,9 +11735,9 @@ class ObjectUtils {
             }
             value.splice(to, 0, value.splice(from, 1)[0]);
         }
-    }
+    },
 
-    static findIndexInList(value, list) {
+    findIndexInList(value, list) {
         let index = -1;
 
         if (list) {
@@ -11745,9 +11750,9 @@ class ObjectUtils {
         }
 
         return index;
-    }
+    },
 
-    static contains(value, list) {
+    contains(value, list) {
         if (value != null && list && list.length) {
             for (let val of list) {
                 if (this.equals(value, val))
@@ -11756,9 +11761,9 @@ class ObjectUtils {
         }
 
         return false;
-    }
+    },
 
-    static insertIntoOrderedArray(item, index, arr, sourceArr) {
+    insertIntoOrderedArray(item, index, arr, sourceArr) {
         if (arr.length > 0) {
             let injected = false;
             for (let i = 0; i < arr.length; i++) {
@@ -11777,9 +11782,9 @@ class ObjectUtils {
         else {
             arr.push(item);
         }
-    }
+    },
 
-    static removeAccents(str) {
+    removeAccents(str) {
         if (str && str.search(/[\xC0-\xFF]/g) > -1) {
             str = str
                     .replace(/[\xC0-\xC5]/g, "A")
@@ -11806,8 +11811,21 @@ class ObjectUtils {
         }
 
         return str;
-    }
-}
+    },
+
+    getVNodeProp(vnode, prop) {
+        let props = vnode.props;
+        if (props) {
+            let kebapProp = prop.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+            let propName = Object.prototype.hasOwnProperty.call(props, kebapProp) ? kebapProp : prop;
+
+            return ((vnode.type.props[prop].type === Boolean && props[propName] === '') ? true : props[propName]);            
+        }
+
+        return null;
+    }  
+
+};
 
 function handler() {
     let zIndexes = [];
@@ -12142,65 +12160,65 @@ button_esm_script.render = button_esm_render;
 crosierFormSvue_type_script_lang_js.render = crosierFormSvue_type_template_id_dc05d8e4_render
 
 /* harmony default export */ var crosierFormS = (crosierFormSvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/crosierListS.vue?vue&type=template&id=5eacb3d1
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/crosierListS.vue?vue&type=template&id=210e2055
 
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_1 = {
+var crosierListSvue_type_template_id_210e2055_hoisted_1 = {
   class: "card",
   style: {
     "margin-bottom": "50px"
   }
 };
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_2 = {
+var crosierListSvue_type_template_id_210e2055_hoisted_2 = {
   class: "card-header"
 };
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_3 = {
+var crosierListSvue_type_template_id_210e2055_hoisted_3 = {
   class: "d-flex flex-wrap align-items-center"
 };
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_4 = {
+var crosierListSvue_type_template_id_210e2055_hoisted_4 = {
   class: "mr-1"
 };
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_5 = {
+var crosierListSvue_type_template_id_210e2055_hoisted_5 = {
   key: 0
 };
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_6 = {
+var crosierListSvue_type_template_id_210e2055_hoisted_6 = {
   class: "d-sm-flex flex-nowrap ml-auto"
 };
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_7 = ["href"];
+var crosierListSvue_type_template_id_210e2055_hoisted_7 = ["href"];
 
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_8 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+var crosierListSvue_type_template_id_210e2055_hoisted_8 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
   class: "fas fa-file",
   "aria-hidden": "true"
 }, null, -1);
 
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_9 = [crosierListSvue_type_template_id_5eacb3d1_hoisted_8];
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_10 = {
+var crosierListSvue_type_template_id_210e2055_hoisted_9 = [crosierListSvue_type_template_id_210e2055_hoisted_8];
+var crosierListSvue_type_template_id_210e2055_hoisted_10 = {
   class: "card-body"
 };
 
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_11 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "Filtros", -1);
+var crosierListSvue_type_template_id_210e2055_hoisted_11 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "Filtros", -1);
 
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_12 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+var crosierListSvue_type_template_id_210e2055_hoisted_12 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
   class: "pi pi-filter"
 }, null, -1);
 
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_13 = {
+var crosierListSvue_type_template_id_210e2055_hoisted_13 = {
   class: "row mt-3"
 };
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_14 = {
+var crosierListSvue_type_template_id_210e2055_hoisted_14 = {
   class: "col-8"
 };
 
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_15 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(". ");
+var crosierListSvue_type_template_id_210e2055_hoisted_15 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(". ");
 
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_16 = {
+var crosierListSvue_type_template_id_210e2055_hoisted_16 = {
   class: "col-4 text-right"
 };
-var crosierListSvue_type_template_id_5eacb3d1_hoisted_17 = {
+var crosierListSvue_type_template_id_210e2055_hoisted_17 = {
   style: {
     "text-align": "right"
   }
 };
-function crosierListSvue_type_template_id_5eacb3d1_render(_ctx, _cache, $props, $setup, $data, $options) {
+function crosierListSvue_type_template_id_210e2055_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_ConfirmDialog = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("ConfirmDialog");
@@ -12221,12 +12239,12 @@ function crosierListSvue_type_template_id_5eacb3d1_render(_ctx, _cache, $props, 
     group: "crosierListS_delete"
   }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])(this.containerClass)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_5eacb3d1_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_5eacb3d1_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_5eacb3d1_hoisted_3, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_5eacb3d1_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.titulo), 1), $props.subtitulo ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("h6", crosierListSvue_type_template_id_5eacb3d1_hoisted_5, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.subtitulo), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_5eacb3d1_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("a", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_210e2055_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_210e2055_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_210e2055_hoisted_3, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_210e2055_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.titulo), 1), $props.subtitulo ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("h6", crosierListSvue_type_template_id_210e2055_hoisted_5, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.subtitulo), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_210e2055_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("a", {
     type: "button",
     class: "btn btn-info",
     href: this.formUrl,
     title: "Novo"
-  }, crosierListSvue_type_template_id_5eacb3d1_hoisted_9, 8, crosierListSvue_type_template_id_5eacb3d1_hoisted_7), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.formUrl]]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "headerButtons")])])]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_5eacb3d1_hoisted_10, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_CrosierBlock, {
+  }, crosierListSvue_type_template_id_210e2055_hoisted_9, 8, crosierListSvue_type_template_id_210e2055_hoisted_7), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.formUrl]]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "headerButtons")])])]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_210e2055_hoisted_10, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_CrosierBlock, {
     loading: this.loading
   }, null, 8, ["loading"]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Accordion, {
     activeIndex: this.accordionActiveIndex
@@ -12234,7 +12252,7 @@ function crosierListSvue_type_template_id_5eacb3d1_render(_ctx, _cache, $props, 
     default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
       return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_AccordionTab, null, {
         header: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-          return [crosierListSvue_type_template_id_5eacb3d1_hoisted_11, crosierListSvue_type_template_id_5eacb3d1_hoisted_12];
+          return [crosierListSvue_type_template_id_210e2055_hoisted_11, crosierListSvue_type_template_id_210e2055_hoisted_12];
         }),
         default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
           return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("form", {
@@ -12242,14 +12260,14 @@ function crosierListSvue_type_template_id_5eacb3d1_render(_ctx, _cache, $props, 
               return _this.doFilter();
             }, ["prevent"])),
             class: "notSubmit"
-          }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "filter-fields"), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_5eacb3d1_hoisted_13, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_5eacb3d1_hoisted_14, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InlineMessage, {
+          }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "filter-fields"), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_210e2055_hoisted_13, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_210e2055_hoisted_14, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InlineMessage, {
             severity: "info"
           }, {
             default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-              return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("small", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.totalRecords) + " registro(s) encontrado(s) ", 1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "(com filtros aplicados)", 512), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], _this.isFiltering]]), crosierListSvue_type_template_id_5eacb3d1_hoisted_15])];
+              return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("small", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.totalRecords) + " registro(s) encontrado(s) ", 1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "(com filtros aplicados)", 512), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], _this.isFiltering]]), crosierListSvue_type_template_id_210e2055_hoisted_15])];
             }),
             _: 1
-          })]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_5eacb3d1_hoisted_16, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
+          })]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_210e2055_hoisted_16, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
             label: "Filtrar",
             type: "submit",
             icon: "fas fa-search",
@@ -12304,7 +12322,7 @@ function crosierListSvue_type_template_id_5eacb3d1_render(_ctx, _cache, $props, 
     ref: "dt"
   }, {
     footer: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_5eacb3d1_hoisted_17, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
+      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_210e2055_hoisted_17, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
         class: "p-button-rounded p-button-success p-button-text",
         icon: "pi pi-file-excel",
         label: "Exportar para CSV",
@@ -12319,7 +12337,7 @@ function crosierListSvue_type_template_id_5eacb3d1_render(_ctx, _cache, $props, 
     _: 3
   }, 8, ["stateKey", "value", "totalRecords", "multiSortMeta", "selection", "selectionMode", "onRowSelect", "onRowUnselect", "first"])])])], 2)], 64);
 }
-// CONCATENATED MODULE: ./src/components/crosierListS.vue?vue&type=template&id=5eacb3d1
+// CONCATENATED MODULE: ./src/components/crosierListS.vue?vue&type=template&id=210e2055
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
 function _arrayWithHoles(arr) {
@@ -13419,7 +13437,7 @@ var virtualscroller_esm_script = {
                     isHorizontal ? scrollTo(calculateCoord(newFirst, itemSize, contentPadding.left), 0) : scrollTo(0, calculateCoord(newFirst, itemSize, contentPadding.top));
                 }
 
-                this.first = newFirst.index;
+                this.first = newFirst;
             }
         },
         scrollInView(index, to, behavior = 'auto') {
@@ -13778,20 +13796,20 @@ var dropdown_esm_script = {
         },
         getSelectedOption() {
             let index = this.getSelectedOptionIndex();
-            return index !== -1 ? (this.optionGroupLabel ? this.getOptionGroupChildren(this.options[index.group])[index.option]: this.options[index]) : null;
+            return index !== -1 ? (this.optionGroupLabel ? this.getOptionGroupChildren(this.visibleOptions[index.group])[index.option]: this.visibleOptions[index]) : null;
         },
         getSelectedOptionIndex() {
-            if (this.modelValue != null && this.options) {
+            if (this.modelValue != null && this.visibleOptions) {
                 if (this.optionGroupLabel) {
-                    for (let i = 0; i < this.options.length; i++) {
-                        let selectedOptionIndex = this.findOptionIndexInList(this.modelValue, this.getOptionGroupChildren(this.options[i]));
+                    for (let i = 0; i < this.visibleOptions.length; i++) {
+                        let selectedOptionIndex = this.findOptionIndexInList(this.modelValue, this.getOptionGroupChildren(this.visibleOptions[i]));
                         if (selectedOptionIndex !== -1) {
                             return {group: i, option: selectedOptionIndex};
                         }
                     }
                 }
                 else {
-                    return this.findOptionIndexInList(this.modelValue, this.options);
+                    return this.findOptionIndexInList(this.modelValue, this.visibleOptions);
                 }
             }
 
@@ -14177,6 +14195,8 @@ var dropdown_esm_script = {
         },
         onFilterChange(event) {
             this.$emit('filter', {originalEvent: event, value: event.target.value});
+        },
+        onFilterUpdated() {
             if (this.overlayVisible) {
                 this.alignOverlay();
             }
@@ -14326,7 +14346,7 @@ function dropdown_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
   return (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", {
     ref: "container",
     class: $options.containerClass,
-    onClick: _cache[12] || (_cache[12] = $event => ($options.onClick($event)))
+    onClick: _cache[13] || (_cache[13] = $event => ($options.onClick($event)))
   }, [
     Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", dropdown_esm_hoisted_1, [
       Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("input", {
@@ -14405,7 +14425,7 @@ function dropdown_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
                 key: 0,
                 ref: $options.overlayRef,
                 class: $options.panelStyleClass,
-                onClick: _cache[11] || (_cache[11] = (...args) => ($options.onOverlayClick && $options.onOverlayClick(...args)))
+                onClick: _cache[12] || (_cache[12] = (...args) => ($options.onOverlayClick && $options.onOverlayClick(...args)))
               }, [
                 Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "header", {
                   value: $props.modelValue,
@@ -14418,11 +14438,12 @@ function dropdown_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
                           type: "text",
                           ref: "filterInput",
                           "onUpdate:modelValue": _cache[8] || (_cache[8] = $event => ($data.filterValue = $event)),
+                          onVnodeUpdated: _cache[9] || (_cache[9] = (...args) => ($options.onFilterUpdated && $options.onFilterUpdated(...args))),
                           autoComplete: "off",
                           class: "p-dropdown-filter p-inputtext p-component",
                           placeholder: $props.filterPlaceholder,
-                          onKeydown: _cache[9] || (_cache[9] = (...args) => ($options.onFilterKeyDown && $options.onFilterKeyDown(...args))),
-                          onInput: _cache[10] || (_cache[10] = (...args) => ($options.onFilterChange && $options.onFilterChange(...args)))
+                          onKeydown: _cache[10] || (_cache[10] = (...args) => ($options.onFilterKeyDown && $options.onFilterKeyDown(...args))),
+                          onInput: _cache[11] || (_cache[11] = (...args) => ($options.onFilterChange && $options.onFilterChange(...args)))
                         }, null, 40, ["placeholder"]), [
                           [external_commonjs_vue_commonjs2_vue_root_Vue_["vModelText"], $data.filterValue]
                         ]),
@@ -14780,10 +14801,10 @@ var inputnumber_esm_script = {
             const numerals = [...new Intl.NumberFormat(this.locale, {useGrouping: false}).format(9876543210)].reverse();
             const index = new Map(numerals.map((d, i) => [d, i]));
             this._numeral = new RegExp(`[${numerals.join('')}]`, 'g');
-            this._decimal = this.getDecimalExpression();
             this._group = this.getGroupingExpression();
             this._minusSign = this.getMinusSignExpression();
             this._currency = this.getCurrencyExpression();
+            this._decimal = this.getDecimalExpression();
             this._suffix = this.getSuffixExpression();
             this._prefix = this.getPrefixExpression();
             this._index = d => index.get(d);
@@ -14797,8 +14818,8 @@ var inputnumber_esm_script = {
             return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
         },
         getDecimalExpression() {
-            const formatter = new Intl.NumberFormat(this.locale, {useGrouping: false});
-            return new RegExp(`[${formatter.format(1.1).trim().replace(this._numeral, '')}]`, 'g');
+            const formatter = new Intl.NumberFormat(this.locale, {...this.getOptions(), useGrouping: false});
+            return new RegExp(`[${formatter.format(1.1).replace(this._currency, '').trim().replace(this._numeral, '')}]`, 'g');
         },
         getGroupingExpression() {
             const formatter = new Intl.NumberFormat(this.locale, {useGrouping: true});
@@ -14811,8 +14832,9 @@ var inputnumber_esm_script = {
         },
         getCurrencyExpression() {
             if (this.currency) {
-                const formatter = new Intl.NumberFormat(this.locale, {style: 'currency', currency: this.currency, currencyDisplay: this.currencyDisplay});
-                return new RegExp(`[${formatter.format(1).replace(/\s/g, '').replace(this._numeral, '').replace(this._decimal, '').replace(this._group, '')}]`, 'g');
+                const formatter = new Intl.NumberFormat(this.locale, {style: 'currency', currency: this.currency, currencyDisplay: this.currencyDisplay,
+                    minimumFractionDigits: 0, maximumFractionDigits: 0});
+                return new RegExp(`[${formatter.format(1).replace(/\s/g, '').replace(this._numeral, '').replace(this._group, '')}]`, 'g');
             }
 
             return new RegExp(`[]`,'g');
@@ -15073,7 +15095,7 @@ var inputnumber_esm_script = {
                     event.preventDefault();
 
                     if (selectionStart === selectionEnd) {
-                        let deleteChar = inputValue.charAt(selectionStart);
+                        const deleteChar = inputValue.charAt(selectionStart);
                         const { decimalCharIndex, decimalCharIndexWithoutPrefix } = this.getDecimalCharIndexes(inputValue);
 
                         if (this.isNumeralChar(deleteChar)) {
@@ -15140,7 +15162,7 @@ var inputnumber_esm_script = {
             return this.min === null || this.min < 0;
         },
         isMinusSign(char) {
-            if (this._minusSign.test(char)) {
+            if (this._minusSign.test(char) || char === '-') {
                 this._minusSign.lastIndex = 0;
                 return true;
             }
@@ -15275,9 +15297,14 @@ var inputnumber_esm_script = {
             let valueLength = inputValue.length;
             let index = null;
 
+            // remove prefix
+            let prefixLength = (this.prefixChar || '').length;
+            inputValue = inputValue.replace(this._prefix, '');
+            selectionStart = selectionStart - prefixLength;
+
             let char = inputValue.charAt(selectionStart);
             if (this.isNumeralChar(char)) {
-                return;
+                return selectionStart + prefixLength;
             }
 
             //left
@@ -15285,7 +15312,7 @@ var inputnumber_esm_script = {
             while (i >= 0) {
                 char = inputValue.charAt(i);
                 if (this.isNumeralChar(char)) {
-                    index = i;
+                    index = i + prefixLength;
                     break;
                 }
                 else {
@@ -15297,11 +15324,11 @@ var inputnumber_esm_script = {
                 this.$refs.input.$el.setSelectionRange(index + 1, index + 1);
             }
             else {
-                i = selectionStart + 1;
+                i = selectionStart;
                 while (i < valueLength) {
                     char = inputValue.charAt(i);
                     if (this.isNumeralChar(char)) {
-                        index = i;
+                        index = i + prefixLength;
                         break;
                     }
                     else {
@@ -15313,6 +15340,8 @@ var inputnumber_esm_script = {
                     this.$refs.input.$el.setSelectionRange(index, index);
                 }
             }
+
+            return index || 0;
         },
         onInputClick() {
             this.initCursor();
@@ -15361,16 +15390,16 @@ var inputnumber_esm_script = {
             return false;
         },
         validateValue(value) {
+            if (value === '-' || value == null) {
+                return null;
+            }
+
             if (this.min != null && value < this.min) {
                 return this.min;
             }
 
             if (this.max != null && value > this.max) {
                 return this.max;
-            }
-
-            if (value === '-') { // Minus sign
-                return null;
             }
 
             return value;
@@ -15389,9 +15418,8 @@ var inputnumber_esm_script = {
             if (currentLength === 0) {
                 this.$refs.input.$el.value = newValue;
                 this.$refs.input.$el.setSelectionRange(0, 0);
-                this.initCursor();
-                const prefixLength = (this.prefixChar || '').length;
-                const selectionEnd = prefixLength + insertedValueStr.length;
+                const index = this.initCursor();
+                const selectionEnd = index + insertedValueStr.length;
                 this.$refs.input.$el.setSelectionRange(selectionEnd, selectionEnd);
             }
             else {
@@ -15438,6 +15466,12 @@ var inputnumber_esm_script = {
                     this._group.lastIndex = 0;
                     this.$refs.input.$el.setSelectionRange(selectionEnd, selectionEnd);
                 }
+                else if (inputValue === '-' && operation === 'insert') {
+                    this.$refs.input.$el.setSelectionRange(0, 0);
+                    const index = this.initCursor();
+                    const selectionEnd = index + insertedValueStr.length + 1;
+                    this.$refs.input.$el.setSelectionRange(selectionEnd, selectionEnd);
+                }
                 else {
                     selectionEnd = selectionEnd + (newLength - currentLength);
                     this.$refs.input.$el.setSelectionRange(selectionEnd, selectionEnd);
@@ -15451,7 +15485,7 @@ var inputnumber_esm_script = {
                 let decimalCharIndex = val2.search(this._decimal);
                 this._decimal.lastIndex = 0;
 
-                return val1.split(this._decimal)[0] + (decimalCharIndex !== -1 ? val2.slice(decimalCharIndex) : '');
+                return decimalCharIndex !== -1 ? (val1.split(this._decimal)[0] + val2.slice(decimalCharIndex)) : val1;
             }
 
             return val1;
@@ -15531,6 +15565,9 @@ var inputnumber_esm_script = {
         formattedValue() {
             const val = !this.modelValue && !this.allowEmpty ? 0 : this.modelValue;
             return this.formatValue(val);
+        },
+        getFormatter() {
+            return this.numberFormat;
         }
     },
     components: {
@@ -15653,6 +15690,10 @@ var script$9 = {
                 type: Number,
                 default: 0
             },
+            currentPage: {
+                type: Number,
+                default: 0
+            },
             page: {
                 type: Number,
                 default: 0
@@ -15677,7 +15718,7 @@ var script$9 = {
 		computed: {
             text() {
                 let text = this.template
-                    .replace("{currentPage}", this.pageCount > 0 ? this.page + 1 : 0)
+                    .replace("{currentPage}", this.currentPage)
                     .replace("{totalPages}", this.pageCount)
                     .replace("{first}", this.pageCount > 0 ? this.first + 1 : 0)
                     .replace("{last}", Math.min(this.first + this.rows, this.totalRecords))
@@ -15966,7 +16007,7 @@ var script$1 = {
     },
     methods: {
         onChange(value) {
-            this.$emit('page-change', value);
+            this.$emit('page-change', value - 1);
         }
     },
     components: {
@@ -16147,6 +16188,9 @@ var paginator_esm_script = {
         },
         empty() {
             return this.pageCount === 0;
+        },
+        currentPage() {
+            return this.pageCount > 0 ? this.page + 1 : 0;
         }
     },
     components: {
@@ -16230,12 +16274,13 @@ function paginator_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
                         ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_CurrentPageReport, {
                             key: 5,
                             template: $props.currentPageReportTemplate,
+                            currentPage: $options.currentPage,
                             page: $options.page,
                             pageCount: $options.pageCount,
                             first: $data.d_first,
                             rows: $data.d_rows,
                             totalRecords: $props.totalRecords
-                          }, null, 8, ["template", "page", "pageCount", "first", "rows", "totalRecords"]))
+                          }, null, 8, ["template", "currentPage", "page", "pageCount", "first", "rows", "totalRecords"]))
                         : (item === 'RowsPerPageDropdown' && $props.rowsPerPageOptions)
                           ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_RowsPerPageDropdown, {
                               key: 6,
@@ -16255,7 +16300,7 @@ function paginator_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
                             : (item === 'JumpToPageInput')
                               ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_JumpToPageInput, {
                                   key: 8,
-                                  page: $options.page,
+                                  page: $options.currentPage,
                                   onPageChange: _cache[8] || (_cache[8] = $event => ($options.changePage($event))),
                                   disabled: $options.empty
                                 }, null, 8, ["page", "disabled"]))
@@ -16753,7 +16798,7 @@ var datatable_esm_script$9 = {
         },
         overlayClass() {
             return [this.filterMenuClass, {
-                'p-column-filter-overlay p-component p-fluid': true, 
+                'p-column-filter-overlay p-component p-fluid': true,
                 'p-column-filter-overlay-menu': this.display === 'menu',
                 'p-input-filled': this.$primevue.config.inputStyle === 'filled',
                 'p-ripple-disabled': this.$primevue.config.ripple === false
@@ -16864,7 +16909,7 @@ function datatable_esm_render$9(_ctx, _cache, $props, $setup, $data, $options) {
           _hoisted_2$6
         ], 42, ["aria-expanded"]))
       : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true),
-    ($options.showMenuButton && $props.display === 'row')
+    ($props.showClearButton && $props.display === 'row')
       ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("button", {
           key: 2,
           class: [{'p-hidden-space': !$options.hasRowFilter()}, "p-column-filter-clear-button p-link"],
@@ -16984,7 +17029,7 @@ function datatable_esm_render$9(_ctx, _cache, $props, $setup, $data, $options) {
                           ]))
                         : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true),
                       Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", datatable_esm_hoisted_9, [
-                        (!$props.filterClearTemplate)
+                        (!$props.filterClearTemplate && $props.showClearButton)
                           ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_CFButton, {
                               key: 0,
                               type: "button",
@@ -17114,7 +17159,7 @@ var datatable_esm_script$8 = {
     },
     methods: {
         columnProp(prop) {
-            return this.column.props ? ((this.column.type.props[prop].type === Boolean && this.column.props[prop] === '') ? true : this.column.props[prop]) : null;
+            return ObjectUtils.getVNodeProp(this.column, prop);
         },
         onClick(event) {
             this.$emit('column-click', {originalEvent: event, column: this.column});
@@ -17420,7 +17465,7 @@ var datatable_esm_script$7 = {
     },
     methods: {
         columnProp(col, prop) {
-            return col.props ? ((col.type.props[prop].type === Boolean && col.props[prop] === '') ? true : col.props[prop]) : null;
+            return ObjectUtils.getVNodeProp(col, prop);
         },
         getFilterColumnHeaderClass(column) {
             return ['p-filter-column', this.columnProp(column, 'filterHeaderClass'), this.columnProp(column, 'class'), {
@@ -17503,7 +17548,7 @@ function datatable_esm_render$7(_ctx, _cache, $props, $setup, $data, $options) {
                   return (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], {
                     key: $options.columnProp(col, 'columnKey')||$options.columnProp(col, 'field')||i
                   }, [
-                    (!$options.columnProp(col, 'hidden'))
+                    (!$options.columnProp(col, 'hidden') && ($props.rowGroupMode !== 'subheader' || ($props.groupRowsBy !== $options.columnProp(col, 'field'))))
                       ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("th", {
                           key: 0,
                           style: $options.getFilterColumnHeaderStyle(col),
@@ -17716,8 +17761,8 @@ datatable_esm_script$5.render = datatable_esm_render$5;
 
 var datatable_esm_script$4 = {
     name: 'BodyCell',
-    emits: ['cell-edit-init', 'cell-edit-complete', 'cell-edit-cancel', 'row-edit-init', 'row-edit-save', 'row-edit-cancel', 'editing-cell-change',
-            'row-toggle', 'radio-change', 'checkbox-change'],
+    emits: ['cell-edit-init', 'cell-edit-complete', 'cell-edit-cancel', 'row-edit-init', 'row-edit-save', 'row-edit-cancel',
+            'row-toggle', 'radio-change', 'checkbox-change', 'editing-meta-change'],
     props: {
         rowData: {
             type: Object,
@@ -17751,6 +17796,10 @@ var datatable_esm_script$4 = {
             type: Boolean,
             default: false
         },
+        editingMeta: {
+            type: Object,
+            default: null
+        },
         editMode: {
             type: String,
             default: null
@@ -17772,6 +17821,9 @@ var datatable_esm_script$4 = {
     watch: {
         editing(newValue) {
             this.d_editing = newValue;
+        },
+        '$data.d_editing': function(newValue) {
+            this.$emit('editing-meta-change', {data: this.rowData, field: (this.field || `field_${this.index}`), index: this.rowIndex, editing: newValue});
         }
     },
     mounted() {
@@ -17783,6 +17835,11 @@ var datatable_esm_script$4 = {
         if (this.columnProp('frozen')) {
             this.updateStickyPosition();
         }
+
+        if (this.d_editing && (this.editMode === 'cell' || (this.editMode === 'row' && this.columnProp('rowEditor')))) {
+            const focusableEl = DomHandler.getFirstFocusableElement(this.$el);
+            focusableEl && focusableEl.focus();
+        }
     },
     beforeUnmount() {
         if (this.overlayEventListener) {
@@ -17792,10 +17849,10 @@ var datatable_esm_script$4 = {
     },
     methods: {
         columnProp(prop) {
-            return this.column.props ? ((this.column.type.props[prop].type === Boolean && this.column.props[prop] === '') ? true : this.column.props[prop]) : null;
+            return ObjectUtils.getVNodeProp(this.column, prop);
         },
         resolveFieldData() {
-            return ObjectUtils.resolveFieldData(this.rowData, this.columnProp('field'));
+            return ObjectUtils.resolveFieldData(this.rowData, this.field);
         },
         toggleRow(event) {
             this.$emit('row-toggle', {
@@ -17834,7 +17891,6 @@ var datatable_esm_script$4 = {
         switchCellToViewMode() {
             this.d_editing = false;
             this.unbindDocumentEditListener();
-            this.$emit('editing-cell-change', {rowIndex: this.rowIndex, cellIndex: this.index, editing: false});
             overlayeventbus_esm.off('overlay-click', this.overlayEventListener);
             this.overlayEventListener = null;
         },
@@ -17845,8 +17901,7 @@ var datatable_esm_script$4 = {
                 if (!this.d_editing) {
                     this.d_editing = true;
                     this.bindDocumentEditListener();
-                    this.$emit('cell-edit-init', {originalEvent: event, data: this.rowData, field: this.columnProp('field'), index: this.rowIndex});
-                    this.$emit('editing-cell-change', {rowIndex: this.rowIndex, cellIndex: this.index, editing: true});
+                    this.$emit('cell-edit-init', {originalEvent: event, data: this.rowData, field: this.field, index: this.rowIndex});
 
                     this.overlayEventListener = (e) => {
                         if (this.$el && this.$el.contains(e.target)) {
@@ -17858,10 +17913,13 @@ var datatable_esm_script$4 = {
             }
         },
         completeEdit(event, type) {
-            let completeEvent = {
+            const completeEvent = {
                 originalEvent: event,
                 data: this.rowData,
-                field: this.columnProp('field'),
+                newData: this.editingRowData,
+                value: this.rowData[this.field],
+                newValue: this.editingRowData[this.field],
+                field: this.field,
                 index: this.rowIndex,
                 type: type,
                 defaultPrevented: false,
@@ -17885,7 +17943,7 @@ var datatable_esm_script$4 = {
 
                     case 27:
                         this.switchCellToViewMode();
-                        this.$emit('cell-edit-cancel', {originalEvent: event, data: this.rowData, field: this.columnProp('field'), index: this.rowIndex});
+                        this.$emit('cell-edit-cancel', {originalEvent: event, data: this.rowData, field: this.field, index: this.rowIndex});
                     break;
 
                     case 9:
@@ -17974,13 +18032,13 @@ var datatable_esm_script$4 = {
             return (DomHandler.find(this.$el, '.p-invalid').length === 0);
         },
         onRowEditInit(event) {
-            this.$emit('row-edit-init', {originalEvent: event, data: this.rowData, field: this.columnProp('field'), index: this.rowIndex});
+            this.$emit('row-edit-init', {originalEvent: event, data: this.rowData, newData: this.editingRowData, field: this.field, index: this.rowIndex});
         },
         onRowEditSave(event) {
-            this.$emit('row-edit-save', {originalEvent: event, data: this.rowData, field: this.columnProp('field'), index: this.rowIndex});
+            this.$emit('row-edit-save', {originalEvent: event, data: this.rowData, newData: this.editingRowData, field: this.field, index: this.rowIndex});
         },
         onRowEditCancel(event) {
-            this.$emit('row-edit-cancel', {originalEvent: event, data: this.rowData, field: this.columnProp('field'), index: this.rowIndex});
+            this.$emit('row-edit-cancel', {originalEvent: event, data: this.rowData, newData: this.editingRowData, field: this.field, index: this.rowIndex});
         },
         updateStickyPosition() {
             if (this.columnProp('frozen')) {
@@ -18005,6 +18063,12 @@ var datatable_esm_script$4 = {
         }
     },
     computed: {
+        editingRowData() {
+            return this.editingMeta[this.rowIndex] ? this.editingMeta[this.rowIndex].data : this.rowData;
+        },
+        field() {
+            return this.columnProp('field');
+        },
         containerClass() {
             return [this.columnProp('bodyClass'), this.columnProp('class'), {
                 'p-selection-column': this.columnProp('selectionMode') != null,
@@ -18057,27 +18121,29 @@ function datatable_esm_render$4(_ctx, _cache, $props, $setup, $data, $options) {
           key: 1,
           data: $props.rowData,
           column: $props.column,
+          field: $options.field,
           index: $props.rowIndex,
           frozenRow: $props.frozenRow
-        }, null, 8, ["data", "column", "index", "frozenRow"]))
+        }, null, 8, ["data", "column", "field", "index", "frozenRow"]))
       : ($props.column.children && $props.column.children.editor && $data.d_editing)
         ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveDynamicComponent"])($props.column.children.editor), {
             key: 2,
-            data: $props.rowData,
+            data: $options.editingRowData,
             column: $props.column,
+            field: $options.field,
             index: $props.rowIndex,
             frozenRow: $props.frozenRow
-          }, null, 8, ["data", "column", "index", "frozenRow"]))
+          }, null, 8, ["data", "column", "field", "index", "frozenRow"]))
         : ($options.columnProp('selectionMode'))
           ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], { key: 3 }, [
-              ($props.column.props.selectionMode === 'single')
+              ($options.columnProp('selectionMode') === 'single')
                 ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_DTRadioButton, {
                     key: 0,
                     value: $props.rowData,
                     checked: $props.selected,
                     onChange: $options.toggleRowWithRadio
                   }, null, 8, ["value", "checked", "onChange"]))
-                : ($props.column.props.selectionMode ==='multiple')
+                : ($options.columnProp('selectionMode') ==='multiple')
                   ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_DTCheckbox, {
                       key: 1,
                       value: $props.rowData,
@@ -18154,7 +18220,7 @@ var datatable_esm_script$3 = {
     emits: ['rowgroup-toggle', 'row-click', 'row-dblclick', 'row-rightclick', 'row-touchend', 'row-keydown', 'row-mousedown',
         'row-dragstart', 'row-dragover', 'row-dragleave', 'row-dragend', 'row-drop', 'row-toggle',
         'radio-change', 'checkbox-change', 'cell-edit-init', 'cell-edit-complete', 'cell-edit-cancel',
-        'row-edit-init', 'row-edit-save', 'row-edit-cancel', 'editing-cell-change'],
+        'row-edit-init', 'row-edit-save', 'row-edit-cancel', 'editing-meta-change'],
     props: {
         value: {
             type: Array,
@@ -18248,6 +18314,10 @@ var datatable_esm_script$3 = {
             type: null,
             default: null
         },
+        editingMeta: {
+            type: Object,
+            default: null
+        },
         loading: {
             type: Boolean,
             default: false
@@ -18290,7 +18360,7 @@ var datatable_esm_script$3 = {
     },
     methods: {
         columnProp(col, prop) {
-            return col.props ? ((col.type.props[prop].type === Boolean && col.props[prop] === '') ? true : col.props[prop]) : null;
+            return ObjectUtils.getVNodeProp(col, prop);
         },
         shouldRenderRowGroupHeader(value, rowData, i) {
             let currentRowFieldData = ObjectUtils.resolveFieldData(rowData, this.groupRowsBy);
@@ -18549,8 +18619,8 @@ var datatable_esm_script$3 = {
         onRowEditCancel(event) {
             this.$emit('row-edit-cancel', event);
         },
-        onEditingCellChange(event) {
-            this.$emit('editing-cell-change', event);
+        onEditingMetaChange(event) {
+            this.$emit('editing-meta-change', event);
         },
         updateFrozenRowStickyPosition() {
             this.$el.style.top = DomHandler.getOuterHeight(this.$el.previousElementSibling) + 'px';
@@ -18632,15 +18702,15 @@ function datatable_esm_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                   onClick: $event => ($options.onRowClick($event, rowData, index)),
                   onDblclick: $event => ($options.onRowDblClick($event, rowData, index)),
                   onContextmenu: $event => ($options.onRowRightClick($event, rowData, index)),
-                  onTouchend: _cache[11] || (_cache[11] = $event => ($options.onRowTouchEnd($event))),
+                  onTouchend: _cache[10] || (_cache[10] = $event => ($options.onRowTouchEnd($event))),
                   onKeydown: $event => ($options.onRowKeyDown($event, rowData, index)),
                   tabindex: $props.selectionMode || $props.contextMenu ? '0' : null,
-                  onMousedown: _cache[12] || (_cache[12] = $event => ($options.onRowMouseDown($event))),
+                  onMousedown: _cache[11] || (_cache[11] = $event => ($options.onRowMouseDown($event))),
                   onDragstart: $event => ($options.onRowDragStart($event, index)),
                   onDragover: $event => ($options.onRowDragOver($event,index)),
-                  onDragleave: _cache[13] || (_cache[13] = $event => ($options.onRowDragLeave($event))),
-                  onDragend: _cache[14] || (_cache[14] = $event => ($options.onRowDragEnd($event))),
-                  onDrop: _cache[15] || (_cache[15] = $event => ($options.onRowDrop($event))),
+                  onDragleave: _cache[12] || (_cache[12] = $event => ($options.onRowDragLeave($event))),
+                  onDragend: _cache[13] || (_cache[13] = $event => ($options.onRowDragEnd($event))),
+                  onDrop: _cache[14] || (_cache[14] = $event => ($options.onRowDrop($event))),
                   role: "row"
                 }, [
                   (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])($props.columns, (col, i) => {
@@ -18670,8 +18740,9 @@ function datatable_esm_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                             onRowEditInit: _cache[7] || (_cache[7] = $event => ($options.onRowEditInit($event))),
                             onRowEditSave: _cache[8] || (_cache[8] = $event => ($options.onRowEditSave($event))),
                             onRowEditCancel: _cache[9] || (_cache[9] = $event => ($options.onRowEditCancel($event))),
-                            onEditingCellChange: _cache[10] || (_cache[10] = $event => ($options.onEditingCellChange($event)))
-                          }, null, 8, ["rowData", "column", "rowIndex", "index", "selected", "rowTogglerIcon", "frozenRow", "rowspan", "editMode", "editing", "responsiveLayout"]))
+                            editingMeta: $props.editingMeta,
+                            onEditingMetaChange: $options.onEditingMetaChange
+                          }, null, 8, ["rowData", "column", "rowIndex", "index", "selected", "rowTogglerIcon", "frozenRow", "rowspan", "editMode", "editing", "responsiveLayout", "editingMeta", "onEditingMetaChange"]))
                         : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)
                     ], 64))
                   }), 128))
@@ -18745,7 +18816,7 @@ var datatable_esm_script$2 = {
     },
     methods: {
         columnProp(prop) {
-            return this.column.props ? ((this.column.type.props[prop].type === Boolean && this.column.props[prop] === '') ? true : this.column.props[prop]) : null;
+            return ObjectUtils.getVNodeProp(this.column, prop);
         },
         updateStickyPosition() {
             if (this.columnProp('frozen')) {
@@ -18818,7 +18889,7 @@ var datatable_esm_script$1 = {
     },
     methods: {
         columnProp(col, prop) {
-            return col.props ? ((col.type.props[prop].type === Boolean && col.props[prop] === '') ? true : col.props[prop]) : null;
+            return ObjectUtils.getVNodeProp(col, prop);
         }
     },
     computed: {
@@ -18906,7 +18977,7 @@ var datatable_esm_script = {
         'update:selection', 'row-select', 'row-unselect', 'update:contextMenuSelection', 'row-contextmenu', 'row-unselect-all', 'row-select-all',
         'column-resize-end', 'column-reorder', 'row-reorder', 'update:expandedRows', 'row-collapse', 'row-expand',
         'update:expandedRowGroups', 'rowgroup-collapse', 'rowgroup-expand', 'update:filters', 'state-restore', 'state-save',
-        'cell-edit-init', 'cell-edit-complete', 'cell-edit-cancel', 'update:editingRows', 'row-edit-init', 'row-edit-save', 'row-edit-cancel', 'editing-cell-change'],
+        'cell-edit-init', 'cell-edit-complete', 'cell-edit-cancel', 'update:editingRows', 'row-edit-init', 'row-edit-save', 'row-edit-cancel'],
     props: {
         value: {
             type: Array,
@@ -19157,8 +19228,8 @@ var datatable_esm_script = {
             d_expandedRowKeys: null,
             d_columnOrder: null,
             d_editingRowKeys: null,
-            d_filters: this.cloneFilters(this.filters),
-            d_editingCells: []
+            d_editingMeta: {},
+            d_filters: this.cloneFilters(this.filters)
         };
     },
     rowTouched: false,
@@ -19225,9 +19296,7 @@ var datatable_esm_script = {
         }
     },
     mounted() {
-        if (this.scrollable && (this.scrollDirection !== 'vertical' || this.rowGroupMode === 'subheader' || !this.resizableColumns)) {
-            this.updateScrollWidth();
-        }
+        this.$el.setAttribute(this.attributeSelector, '');
 
         if (this.responsiveLayout === 'stack' && !this.scrollable) {
             this.createResponsiveStyle();
@@ -19236,9 +19305,14 @@ var datatable_esm_script = {
         if (this.isStateful() && this.resizableColumns) {
             this.restoreColumnWidths();
         }
+
+        if (this.editMode === 'row' && this.dataKey && !this.d_editingRowKeys) {
+            this.updateEditingRowKeys(this.editingRows);
+        }
     },
     beforeUnmount() {
         this.unbindColumnResizeEvents();
+        this.destroyStyleElement();
         this.destroyResponsiveStyle();
     },
     updated() {
@@ -19246,15 +19320,17 @@ var datatable_esm_script = {
             this.saveState();
         }
 
-        if (this.scrollable && (this.scrollDirection !== 'vertical' || this.rowGroupMode === 'subheader')) {
-            this.updateScrollWidth();
+        if (this.editMode === 'row' && this.dataKey && !this.d_editingRowKeys) {
+            this.updateEditingRowKeys(this.editingRows);
         }
     },
     methods: {
         columnProp(col, prop) {
-            return col.props ? ((col.type.props[prop].type === Boolean && col.props[prop] === '') ? true : col.props[prop]) : null;
+            return ObjectUtils.getVNodeProp(col, prop);
         },
         onPage(event) {
+            this.clearEditingMetaData();
+
             this.d_first = event.first;
             this.d_rows = event.rows;
 
@@ -19314,6 +19390,8 @@ var datatable_esm_script = {
             }
         },
         sortSingle(value) {
+            this.clearEditingMetaData();
+
             if (this.groupRowsBy && this.groupRowsBy === this.sortField) {
                 this.d_multiSortMeta = [
                     {field: this.sortField, order: this.sortOrder || this.defaultSortOrder},
@@ -19348,6 +19426,8 @@ var datatable_esm_script = {
             return data;
         },
         sortMultiple(value) {
+            this.clearEditingMetaData();
+
             if (this.groupRowsBy && (this.d_groupRowsSortMeta || (this.d_multiSortMeta.length && this.groupRowsBy === this.d_multiSortMeta[0].field))) {
                 const firstSortMeta = this.d_multiSortMeta[0];
                 !this.d_groupRowsSortMeta && (this.d_groupRowsSortMeta = firstSortMeta);
@@ -19404,6 +19484,8 @@ var datatable_esm_script = {
             if (!data) {
                 return;
             }
+
+            this.clearEditingMetaData();
 
             let globalFilterFieldsArray;
             if (this.filters['global']) {
@@ -19913,7 +19995,9 @@ var datatable_esm_script = {
                     }
                 }
                 else if (this.columnResizeMode === 'expand') {
-                    this.$refs.table.style.width = this.$refs.table.offsetWidth + delta + 'px';
+                    const tableWidth = this.$refs.table.offsetWidth + delta + 'px';
+                    this.$refs.table.style.width = tableWidth;
+                    this.$refs.table.style.minWidth = tableWidth;
 
                     if (!this.scrollable)
                         this.resizeColumnElement.style.width = newColumnWidth + 'px';
@@ -19939,22 +20023,27 @@ var datatable_esm_script = {
         },
         resizeTableCells(newColumnWidth, nextColumnWidth) {
             let colIndex = DomHandler.index(this.resizeColumnElement);
-            let children = this.$refs.table.children;
-            for (let child of children) {
-                for (let row of child.children) {
-                    let resizeCell = row.children[colIndex];
-                    if (resizeCell) {
-                        resizeCell.style.flex = '0 0 ' + newColumnWidth + 'px';
+            let widths = [];
+            let headers = DomHandler.find(this.$refs.table, '.p-datatable-thead > tr > th');
+            headers.forEach(header => widths.push(DomHandler.getOuterWidth(header)));
 
-                        if (this.columnResizeMode === 'fit') {
-                            let nextCell = resizeCell.nextElementSibling;
-                            if (nextCell) {
-                                nextCell.style.flex = '0 0 ' + nextColumnWidth + 'px';
-                            }
-                        }
+            this.destroyStyleElement();
+            this.createStyleElement();
+
+            let innerHTML = '';
+            widths.forEach((width,index) => {
+                let colWidth = index === colIndex ? newColumnWidth : (nextColumnWidth && index === colIndex + 1) ? nextColumnWidth : width;
+                innerHTML += `
+                    .p-datatable[${this.attributeSelector}] .p-datatable-thead > tr > th:nth-child(${index+1}) {
+                        flex: 0 0 ${colWidth}px !important;
                     }
-                }
-            }
+
+                    .p-datatable[${this.attributeSelector}] .p-datatable-tbody > tr > td:nth-child(${index+1}) {
+                        flex: 0 0 ${colWidth}px !important;
+                    }
+                `;
+            });
+            this.styleElement.innerHTML = innerHTML;
         },
         bindColumnResizeEvents() {
             if (!this.documentColumnResizeListener) {
@@ -20363,7 +20452,7 @@ var datatable_esm_script = {
             state.columnWidths = widths.join(',');
 
             if (this.columnResizeMode === 'expand') {
-                state.tableWidth =  DomHandler.getOuterWidth(this.$refs.table) + 'px';
+                state.tableWidth = DomHandler.getOuterWidth(this.$refs.table) + 'px';
             }
         },
         restoreColumnWidths() {
@@ -20372,10 +20461,31 @@ var datatable_esm_script = {
 
                 if (this.columnResizeMode === 'expand' && this.tableWidthState) {
                     this.$refs.table.style.width = this.tableWidthState;
+                    this.$refs.table.style.minWidth = this.tableWidthState;
                     this.$el.style.width = this.tableWidthState;
                 }
 
-                DomHandler.find(this.$refs.table, '.p-datatable-thead > tr > th').forEach((header, index) => header.style.width = widths[index] + 'px');
+                this.createStyleElement();
+
+                if (this.scrollable && widths && widths.length > 0) {
+                    let innerHTML = '';
+                    widths.forEach((width,index) => {
+                        innerHTML += `
+                            .p-datatable[${this.attributeSelector}] .p-datatable-thead > tr > th:nth-child(${index+1}) {
+                                flex: 0 0 ${width}px;
+                            }
+
+                            .p-datatable[${this.attributeSelector}] .p-datatable-tbody > tr > td:nth-child(${index+1}) {
+                                flex: 0 0 ${width}px;
+                            }
+                        `;
+                    });
+
+                    this.styleElement.innerHTML = innerHTML;
+                }
+                else {
+                    DomHandler.find(this.$refs.table, '.p-datatable-thead > tr > th').forEach((header, index) => header.style.width = widths[index] + 'px');
+                }
             }
         },
         onCellEditInit(event) {
@@ -20386,18 +20496,6 @@ var datatable_esm_script = {
         },
         onCellEditCancel(event) {
             this.$emit('cell-edit-cancel', event);
-        },
-        onEditingCellChange(event) {
-            let { rowIndex, cellIndex, editing } = event;
-            let _editingCells = [...this.d_editingCells];
-
-            if (editing)
-                _editingCells.push({ rowIndex, cellIndex });
-            else
-                _editingCells = _editingCells.filter(cell => !(cell.rowIndex === rowIndex && cell.cellIndex === cellIndex));
-
-            this.d_editingCells = _editingCells;
-            this.$emit('value-change', this.processedData);
         },
         onRowEditInit(event) {
             let _editingRows = this.editingRows ? [...this.editingRows] : [];
@@ -20416,6 +20514,24 @@ var datatable_esm_script = {
             _editingRows.splice(this.findIndex(event.data, _editingRows), 1);
             this.$emit('update:editingRows', _editingRows);
             this.$emit('row-edit-cancel', event);
+        },
+        onEditingMetaChange(event) {
+            let { data, field, index, editing } = event;
+            let meta = this.d_editingMeta[index];
+
+            if (editing) {
+                !meta && (meta = this.d_editingMeta[index] = { data: { ...data }, fields: [] });
+                meta['fields'].push(field);
+            }
+            else if (meta) {
+                const fields = meta['fields'].filter(f => f !== field);
+                !fields.length ? (delete this.d_editingMeta[index]) : (meta['fields'] = fields);
+            }
+        },
+        clearEditingMetaData() {
+            if (this.editMode) {
+                this.d_editingMeta = {};
+            }
         },
         createLazyLoadEvent(event) {
             return {
@@ -20461,22 +20577,16 @@ var datatable_esm_script = {
             this.columns.forEach(col => columnOrder.push(this.columnProp(col, 'columnKey')||this.columnProp(col, 'field')));
             this.d_columnOrder = columnOrder;
         },
-        updateScrollWidth() {
-            let parentElementHeight = DomHandler.width(this.$refs.table.parentElement);
-
-            if (this.$refs.table.scrollWidth > parentElementHeight) {
-                this.$refs.table.style.width = this.$refs.table.scrollWidth + 'px';
-            }
-            else {
-                this.$refs.table.style.width = parentElementHeight - DomHandler.calculateScrollbarWidth() + 'px';
-            }
+        createStyleElement() {
+            this.styleElement = document.createElement('style');
+            this.styleElement.type = 'text/css';
+            document.head.appendChild(this.styleElement);
         },
         createResponsiveStyle() {
-			if (!this.styleElement) {
-                this.$el.setAttribute(this.attributeSelector, '');
-				this.styleElement = document.createElement('style');
-				this.styleElement.type = 'text/css';
-				document.head.appendChild(this.styleElement);
+			if (!this.responsiveStyleElement) {
+				this.responsiveStyleElement = document.createElement('style');
+				this.responsiveStyleElement.type = 'text/css';
+				document.head.appendChild(this.responsiveStyleElement);
 
                 let innerHTML = `
 @media screen and (max-width: ${this.breakpoint}) {
@@ -20508,10 +20618,16 @@ var datatable_esm_script = {
 }
 `;
 
-                this.styleElement.innerHTML = innerHTML;
+                this.responsiveStyleElement.innerHTML = innerHTML;
 			}
 		},
         destroyResponsiveStyle() {
+            if (this.responsiveStyleElement) {
+                document.head.removeChild(this.responsiveStyleElement);
+                this.responsiveStyleElement = null;
+            }
+        },
+        destroyStyleElement() {
             if (this.styleElement) {
                 document.head.removeChild(this.styleElement);
                 this.styleElement = null;
@@ -20596,23 +20712,20 @@ var datatable_esm_script = {
         hasFilters() {
             return this.filters && Object.keys(this.filters).length > 0 && this.filters.constructor === Object;
         },
-        hasEditingCell() {
-            return this.d_editingCells && this.d_editingCells.length !== 0;
-        },
         processedData() {
             let data = this.value || [];
 
-            if (!this.lazy && !this.hasEditingCell) {
+            if (!this.lazy) {
                 if (data && data.length) {
+                    if (this.hasFilters) {
+                        data = this.filter(data);
+                    }
+
                     if (this.sorted) {
                         if(this.sortMode === 'single')
                             data = this.sortSingle(data);
                         else if(this.sortMode === 'multiple')
                             data = this.sortMultiple(data);
-                    }
-
-                    if (this.hasFilters) {
-                        data = this.filter(data);
                     }
                 }
             }
@@ -20846,8 +20959,9 @@ function datatable_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
               onRowEditInit: _cache[24] || (_cache[24] = $event => ($options.onRowEditInit($event))),
               onRowEditSave: _cache[25] || (_cache[25] = $event => ($options.onRowEditSave($event))),
               onRowEditCancel: _cache[26] || (_cache[26] = $event => ($options.onRowEditCancel($event))),
-              onEditingCellChange: _cache[27] || (_cache[27] = $event => ($options.onEditingCellChange($event)))
-            }, null, 8, ["value", "columns", "dataKey", "selection", "selectionKeys", "selectionMode", "contextMenu", "contextMenuSelection", "rowGroupMode", "groupRowsBy", "expandableRowGroups", "rowClass", "editMode", "compareSelectionBy", "scrollable", "expandedRowIcon", "collapsedRowIcon", "expandedRows", "expandedRowKeys", "expandedRowGroups", "editingRows", "editingRowKeys", "templates", "loading", "responsiveLayout", "onRowgroupToggle", "onRowTouchend", "onRowKeydown", "onRowMousedown"]))
+              editingMeta: $data.d_editingMeta,
+              onEditingMetaChange: $options.onEditingMetaChange
+            }, null, 8, ["value", "columns", "dataKey", "selection", "selectionKeys", "selectionMode", "contextMenu", "contextMenuSelection", "rowGroupMode", "groupRowsBy", "expandableRowGroups", "rowClass", "editMode", "compareSelectionBy", "scrollable", "expandedRowIcon", "collapsedRowIcon", "expandedRows", "expandedRowKeys", "expandedRowGroups", "editingRows", "editingRowKeys", "templates", "loading", "responsiveLayout", "onRowgroupToggle", "onRowTouchend", "onRowKeydown", "onRowMousedown", "editingMeta", "onEditingMetaChange"]))
           : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true),
         Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_DTTableBody, {
           value: $options.dataToRender,
@@ -20877,28 +20991,29 @@ function datatable_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
           loading: $props.loading,
           responsiveLayout: $props.responsiveLayout,
           onRowgroupToggle: $options.toggleRowGroup,
-          onRowClick: _cache[28] || (_cache[28] = $event => ($options.onRowClick($event))),
-          onRowDblclick: _cache[29] || (_cache[29] = $event => ($options.onRowDblClick($event))),
-          onRowRightclick: _cache[30] || (_cache[30] = $event => ($options.onRowRightClick($event))),
+          onRowClick: _cache[27] || (_cache[27] = $event => ($options.onRowClick($event))),
+          onRowDblclick: _cache[28] || (_cache[28] = $event => ($options.onRowDblClick($event))),
+          onRowRightclick: _cache[29] || (_cache[29] = $event => ($options.onRowRightClick($event))),
           onRowTouchend: $options.onRowTouchEnd,
           onRowKeydown: $options.onRowKeyDown,
           onRowMousedown: $options.onRowMouseDown,
-          onRowDragstart: _cache[31] || (_cache[31] = $event => ($options.onRowDragStart($event))),
-          onRowDragover: _cache[32] || (_cache[32] = $event => ($options.onRowDragOver($event))),
-          onRowDragleave: _cache[33] || (_cache[33] = $event => ($options.onRowDragLeave($event))),
-          onRowDragend: _cache[34] || (_cache[34] = $event => ($options.onRowDragEnd($event))),
-          onRowDrop: _cache[35] || (_cache[35] = $event => ($options.onRowDrop($event))),
-          onRowToggle: _cache[36] || (_cache[36] = $event => ($options.toggleRow($event))),
-          onRadioChange: _cache[37] || (_cache[37] = $event => ($options.toggleRowWithRadio($event))),
-          onCheckboxChange: _cache[38] || (_cache[38] = $event => ($options.toggleRowWithCheckbox($event))),
-          onCellEditInit: _cache[39] || (_cache[39] = $event => ($options.onCellEditInit($event))),
-          onCellEditComplete: _cache[40] || (_cache[40] = $event => ($options.onCellEditComplete($event))),
-          onCellEditCancel: _cache[41] || (_cache[41] = $event => ($options.onCellEditCancel($event))),
-          onRowEditInit: _cache[42] || (_cache[42] = $event => ($options.onRowEditInit($event))),
-          onRowEditSave: _cache[43] || (_cache[43] = $event => ($options.onRowEditSave($event))),
-          onRowEditCancel: _cache[44] || (_cache[44] = $event => ($options.onRowEditCancel($event))),
-          onEditingCellChange: _cache[45] || (_cache[45] = $event => ($options.onEditingCellChange($event)))
-        }, null, 8, ["value", "columns", "empty", "dataKey", "selection", "selectionKeys", "selectionMode", "contextMenu", "contextMenuSelection", "rowGroupMode", "groupRowsBy", "expandableRowGroups", "rowClass", "editMode", "compareSelectionBy", "scrollable", "expandedRowIcon", "collapsedRowIcon", "expandedRows", "expandedRowKeys", "expandedRowGroups", "editingRows", "editingRowKeys", "templates", "loading", "responsiveLayout", "onRowgroupToggle", "onRowTouchend", "onRowKeydown", "onRowMousedown"]),
+          onRowDragstart: _cache[30] || (_cache[30] = $event => ($options.onRowDragStart($event))),
+          onRowDragover: _cache[31] || (_cache[31] = $event => ($options.onRowDragOver($event))),
+          onRowDragleave: _cache[32] || (_cache[32] = $event => ($options.onRowDragLeave($event))),
+          onRowDragend: _cache[33] || (_cache[33] = $event => ($options.onRowDragEnd($event))),
+          onRowDrop: _cache[34] || (_cache[34] = $event => ($options.onRowDrop($event))),
+          onRowToggle: _cache[35] || (_cache[35] = $event => ($options.toggleRow($event))),
+          onRadioChange: _cache[36] || (_cache[36] = $event => ($options.toggleRowWithRadio($event))),
+          onCheckboxChange: _cache[37] || (_cache[37] = $event => ($options.toggleRowWithCheckbox($event))),
+          onCellEditInit: _cache[38] || (_cache[38] = $event => ($options.onCellEditInit($event))),
+          onCellEditComplete: _cache[39] || (_cache[39] = $event => ($options.onCellEditComplete($event))),
+          onCellEditCancel: _cache[40] || (_cache[40] = $event => ($options.onCellEditCancel($event))),
+          onRowEditInit: _cache[41] || (_cache[41] = $event => ($options.onRowEditInit($event))),
+          onRowEditSave: _cache[42] || (_cache[42] = $event => ($options.onRowEditSave($event))),
+          onRowEditCancel: _cache[43] || (_cache[43] = $event => ($options.onRowEditCancel($event))),
+          editingMeta: $data.d_editingMeta,
+          onEditingMetaChange: $options.onEditingMetaChange
+        }, null, 8, ["value", "columns", "empty", "dataKey", "selection", "selectionKeys", "selectionMode", "contextMenu", "contextMenuSelection", "rowGroupMode", "groupRowsBy", "expandableRowGroups", "rowClass", "editMode", "compareSelectionBy", "scrollable", "expandedRowIcon", "collapsedRowIcon", "expandedRows", "expandedRowKeys", "expandedRowGroups", "editingRows", "editingRowKeys", "templates", "loading", "responsiveLayout", "onRowgroupToggle", "onRowTouchend", "onRowKeydown", "onRowMousedown", "editingMeta", "onEditingMetaChange"]),
         Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_DTTableFooter, {
           columnGroup: $options.footerColumnGroup,
           columns: $options.columns
@@ -20916,7 +21031,7 @@ function datatable_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
           rowsPerPageOptions: $props.rowsPerPageOptions,
           currentPageReportTemplate: $props.currentPageReportTemplate,
           class: "p-paginator-bottom",
-          onPage: _cache[46] || (_cache[46] = $event => ($options.onPage($event))),
+          onPage: _cache[44] || (_cache[44] = $event => ($options.onPage($event))),
           alwaysShow: $props.alwaysShowPaginator
         }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createSlots"])({ _: 2 }, [
           (_ctx.$slots.paginatorLeft)
@@ -20979,7 +21094,7 @@ function datatable_esm_styleInject(css, ref) {
   }
 }
 
-var datatable_esm_css_248z = "\n.p-datatable {\n    position: relative;\n}\n.p-datatable table {\n    border-collapse: collapse;\n    width: 100%;\n    table-layout: fixed;\n}\n.p-datatable .p-sortable-column {\n    cursor: pointer;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n}\n.p-datatable .p-sortable-column .p-column-title,\n.p-datatable .p-sortable-column .p-sortable-column-icon,\n.p-datatable .p-sortable-column .p-sortable-column-badge {\n    vertical-align: middle;\n}\n.p-datatable .p-sortable-column .p-sortable-column-badge {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.p-datatable-responsive-scroll > .p-datatable-wrapper {\n    overflow-x: auto;\n}\n.p-datatable-responsive-scroll > .p-datatable-wrapper > table,\n.p-datatable-auto-layout > .p-datatable-wrapper > table {\n    table-layout: auto;\n}\n.p-datatable-hoverable-rows .p-selectable-row {\n    cursor: pointer;\n}\n\n/* Scrollable */\n.p-datatable-scrollable .p-datatable-wrapper {\n    position: relative;\n    overflow: auto;\n}\n.p-datatable-scrollable .p-datatable-table {\n    display: block;\n}\n.p-datatable-scrollable .p-datatable-thead,\n.p-datatable-scrollable .p-datatable-tbody,\n.p-datatable-scrollable .p-datatable-tfoot {\n    display: block;\n}\n.p-datatable-scrollable .p-datatable-thead > tr,\n.p-datatable-scrollable .p-datatable-tbody > tr,\n.p-datatable-scrollable .p-datatable-tfoot > tr {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: nowrap;\n        flex-wrap: nowrap;\n    width: 100%;\n}\n.p-datatable-scrollable .p-datatable-thead > tr > th,\n.p-datatable-scrollable .p-datatable-tbody > tr > td,\n.p-datatable-scrollable .p-datatable-tfoot > tr > td {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 0px;\n            flex: 1 1 0;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.p-datatable-scrollable .p-datatable-thead {\n    position: sticky;\n    top: 0;\n    z-index: 1;\n}\n.p-datatable-scrollable .p-datatable-frozen-tbody {\n    position: sticky;\n    z-index: 1;\n}\n.p-datatable-scrollable .p-datatable-tfoot {\n    position: sticky;\n    bottom: 0;\n    z-index: 1;\n}\n.p-datatable-scrollable .p-frozen-column {\n    position: sticky;\n    background: inherit;\n}\n.p-datatable-scrollable th.p-frozen-column {\n    z-index: 1;\n}\n.p-datatable-scrollable-both .p-datatable-thead > tr > th,\n.p-datatable-scrollable-both .p-datatable-tbody > tr > td,\n.p-datatable-scrollable-both .p-datatable-tfoot > tr > td,\n.p-datatable-scrollable-horizontal .p-datatable-thead > tr > th\n.p-datatable-scrollable-horizontal .p-datatable-tbody > tr > td,\n.p-datatable-scrollable-horizontal .p-datatable-tfoot > tr > td {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 auto;\n            flex: 0 0 auto;\n}\n.p-datatable-flex-scrollable {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    height: 100%;\n}\n.p-datatable-flex-scrollable .p-datatable-wrapper {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    height: 100%;\n}\n.p-datatable-scrollable .p-rowgroup-header {\n    position: sticky;\n    z-index: 1;\n}\n.p-datatable-scrollable.p-datatable-grouped-header .p-datatable-thead,\n.p-datatable-scrollable.p-datatable-grouped-footer .p-datatable-tfoot {\n    display: table;\n    border-collapse: collapse;\n    width: 100%;\n    table-layout: fixed;\n}\n.p-datatable-scrollable.p-datatable-grouped-header .p-datatable-thead > tr,\n.p-datatable-scrollable.p-datatable-grouped-footer .p-datatable-tfoot > tr {\n    display: table-row;\n}\n.p-datatable-scrollable.p-datatable-grouped-header .p-datatable-thead > tr > th,\n.p-datatable-scrollable.p-datatable-grouped-footer .p-datatable-tfoot > tr > td {\n    display: table-cell;\n}\n\n/* Resizable */\n.p-datatable-resizable > .p-datatable-wrapper {\n    overflow-x: auto;\n}\n.p-datatable-resizable .p-datatable-thead > tr > th,\n.p-datatable-resizable .p-datatable-tfoot > tr > td,\n.p-datatable-resizable .p-datatable-tbody > tr > td {\n    overflow: hidden;\n    white-space: nowrap;\n}\n.p-datatable-resizable .p-resizable-column {\n    background-clip: padding-box;\n    position: relative;\n}\n.p-datatable-resizable-fit .p-resizable-column:last-child .p-column-resizer {\n    display: none;\n}\n.p-datatable .p-column-resizer {\n    display: block;\n    position: absolute !important;\n    top: 0;\n    right: 0;\n    margin: 0;\n    width: .5rem;\n    height: 100%;\n    padding: 0px;\n    cursor:col-resize;\n    border: 1px solid transparent;\n}\n.p-datatable .p-column-header-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.p-datatable .p-column-resizer-helper {\n    width: 1px;\n    position: absolute;\n    z-index: 10;\n    display: none;\n}\n.p-datatable .p-row-editor-init,\n.p-datatable .p-row-editor-save,\n.p-datatable .p-row-editor-cancel {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    overflow: hidden;\n    position: relative;\n}\n\n/* Expand */\n.p-datatable .p-row-toggler {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    overflow: hidden;\n    position: relative;\n}\n\n/* Reorder */\n.p-datatable-reorder-indicator-up,\n.p-datatable-reorder-indicator-down {\n    position: absolute;\n    display: none;\n}\n\n/* Loader */\n.p-datatable .p-datatable-loading-overlay {\n    position: absolute;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    z-index: 2;\n}\n\n/* Filter */\n.p-column-filter-row {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    width: 100%;\n}\n.p-column-filter-menu {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    margin-left: auto;\n}\n.p-column-filter-row .p-column-filter-element {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto;\n    width: 1%;\n}\n.p-column-filter-menu-button,\n.p-column-filter-clear-button {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    cursor: pointer;\n    text-decoration: none;\n    overflow: hidden;\n    position: relative;\n}\n.p-column-filter-overlay {\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.p-column-filter-row-items {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}\n.p-column-filter-row-item {\n    cursor: pointer;\n}\n.p-column-filter-add-button,\n.p-column-filter-remove-button {\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.p-column-filter-add-button .p-button-label,\n.p-column-filter-remove-button .p-button-label {\n    -webkit-box-flex: 0;\n        -ms-flex-positive: 0;\n            flex-grow: 0;\n}\n.p-column-filter-buttonbar {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n.p-column-filter-buttonbar .p-button:not(.p-button-icon-only) {\n    width: auto;\n}\n\n/* Responsive */\n.p-datatable .p-datatable-tbody > tr > td > .p-column-title {\n    display: none;\n}\n";
+var datatable_esm_css_248z = "\n.p-datatable {\n    position: relative;\n}\n.p-datatable table {\n    border-collapse: collapse;\n    min-width: 100%;\n    table-layout: fixed;\n}\n.p-datatable .p-sortable-column {\n    cursor: pointer;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n}\n.p-datatable .p-sortable-column .p-column-title,\n.p-datatable .p-sortable-column .p-sortable-column-icon,\n.p-datatable .p-sortable-column .p-sortable-column-badge {\n    vertical-align: middle;\n}\n.p-datatable .p-sortable-column .p-sortable-column-badge {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.p-datatable-responsive-scroll > .p-datatable-wrapper {\n    overflow-x: auto;\n}\n.p-datatable-responsive-scroll > .p-datatable-wrapper > table,\n.p-datatable-auto-layout > .p-datatable-wrapper > table {\n    table-layout: auto;\n}\n.p-datatable-hoverable-rows .p-selectable-row {\n    cursor: pointer;\n}\n\n/* Scrollable */\n.p-datatable-scrollable .p-datatable-wrapper {\n    position: relative;\n    overflow: auto;\n}\n.p-datatable-scrollable .p-datatable-thead,\n.p-datatable-scrollable .p-datatable-tbody,\n.p-datatable-scrollable .p-datatable-tfoot {\n    display: block;\n}\n.p-datatable-scrollable .p-datatable-thead > tr,\n.p-datatable-scrollable .p-datatable-tbody > tr,\n.p-datatable-scrollable .p-datatable-tfoot > tr {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-wrap: nowrap;\n        flex-wrap: nowrap;\n    width: 100%;\n}\n.p-datatable-scrollable .p-datatable-thead > tr > th,\n.p-datatable-scrollable .p-datatable-tbody > tr > td,\n.p-datatable-scrollable .p-datatable-tfoot > tr > td {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 0px;\n            flex: 1 1 0;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.p-datatable-scrollable .p-datatable-thead {\n    position: sticky;\n    top: 0;\n    z-index: 1;\n}\n.p-datatable-scrollable .p-datatable-frozen-tbody {\n    position: sticky;\n    z-index: 1;\n}\n.p-datatable-scrollable .p-datatable-tfoot {\n    position: sticky;\n    bottom: 0;\n    z-index: 1;\n}\n.p-datatable-scrollable .p-frozen-column {\n    position: sticky;\n    background: inherit;\n}\n.p-datatable-scrollable th.p-frozen-column {\n    z-index: 1;\n}\n.p-datatable-scrollable-both .p-datatable-thead > tr > th,\n.p-datatable-scrollable-both .p-datatable-tbody > tr > td,\n.p-datatable-scrollable-both .p-datatable-tfoot > tr > td,\n.p-datatable-scrollable-horizontal .p-datatable-thead > tr > th\n.p-datatable-scrollable-horizontal .p-datatable-tbody > tr > td,\n.p-datatable-scrollable-horizontal .p-datatable-tfoot > tr > td {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 auto;\n            flex: 0 0 auto;\n}\n.p-datatable-flex-scrollable {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    height: 100%;\n}\n.p-datatable-flex-scrollable .p-datatable-wrapper {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n        -ms-flex-direction: column;\n            flex-direction: column;\n    -webkit-box-flex: 1;\n        -ms-flex: 1;\n            flex: 1;\n    height: 100%;\n}\n.p-datatable-scrollable .p-rowgroup-header {\n    position: sticky;\n    z-index: 1;\n}\n.p-datatable-scrollable.p-datatable-grouped-header .p-datatable-thead,\n.p-datatable-scrollable.p-datatable-grouped-footer .p-datatable-tfoot {\n    display: table;\n    border-collapse: collapse;\n    width: 100%;\n    table-layout: fixed;\n}\n.p-datatable-scrollable.p-datatable-grouped-header .p-datatable-thead > tr,\n.p-datatable-scrollable.p-datatable-grouped-footer .p-datatable-tfoot > tr {\n    display: table-row;\n}\n.p-datatable-scrollable.p-datatable-grouped-header .p-datatable-thead > tr > th,\n.p-datatable-scrollable.p-datatable-grouped-footer .p-datatable-tfoot > tr > td {\n    display: table-cell;\n}\n\n/* Resizable */\n.p-datatable-resizable > .p-datatable-wrapper {\n    overflow-x: auto;\n}\n.p-datatable-resizable .p-datatable-thead > tr > th,\n.p-datatable-resizable .p-datatable-tfoot > tr > td,\n.p-datatable-resizable .p-datatable-tbody > tr > td {\n    overflow: hidden;\n    white-space: nowrap;\n}\n.p-datatable-resizable .p-resizable-column {\n    background-clip: padding-box;\n    position: relative;\n}\n.p-datatable-resizable-fit .p-resizable-column:last-child .p-column-resizer {\n    display: none;\n}\n.p-datatable .p-column-resizer {\n    display: block;\n    position: absolute !important;\n    top: 0;\n    right: 0;\n    margin: 0;\n    width: .5rem;\n    height: 100%;\n    padding: 0px;\n    cursor:col-resize;\n    border: 1px solid transparent;\n}\n.p-datatable .p-column-header-content {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n}\n.p-datatable .p-column-resizer-helper {\n    width: 1px;\n    position: absolute;\n    z-index: 10;\n    display: none;\n}\n.p-datatable .p-row-editor-init,\n.p-datatable .p-row-editor-save,\n.p-datatable .p-row-editor-cancel {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    overflow: hidden;\n    position: relative;\n}\n\n/* Expand */\n.p-datatable .p-row-toggler {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    overflow: hidden;\n    position: relative;\n}\n\n/* Reorder */\n.p-datatable-reorder-indicator-up,\n.p-datatable-reorder-indicator-down {\n    position: absolute;\n    display: none;\n}\n\n/* Loader */\n.p-datatable .p-datatable-loading-overlay {\n    position: absolute;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    z-index: 2;\n}\n\n/* Filter */\n.p-column-filter-row {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    width: 100%;\n}\n.p-column-filter-menu {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    margin-left: auto;\n}\n.p-column-filter-row .p-column-filter-element {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto;\n    width: 1%;\n}\n.p-column-filter-menu-button,\n.p-column-filter-clear-button {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    cursor: pointer;\n    text-decoration: none;\n    overflow: hidden;\n    position: relative;\n}\n.p-column-filter-overlay {\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.p-column-filter-row-items {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n}\n.p-column-filter-row-item {\n    cursor: pointer;\n}\n.p-column-filter-add-button,\n.p-column-filter-remove-button {\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.p-column-filter-add-button .p-button-label,\n.p-column-filter-remove-button .p-button-label {\n    -webkit-box-flex: 0;\n        -ms-flex-positive: 0;\n            flex-grow: 0;\n}\n.p-column-filter-buttonbar {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n.p-column-filter-buttonbar .p-button:not(.p-button-icon-only) {\n    width: auto;\n}\n\n/* Responsive */\n.p-datatable .p-datatable-tbody > tr > td > .p-column-title {\n    display: none;\n}\n";
 datatable_esm_styleInject(datatable_esm_css_248z);
 
 datatable_esm_script.render = datatable_esm_render;
@@ -24063,7 +24178,7 @@ function _deleteEntityData() {
 
 
 
-crosierListSvue_type_script_lang_js.render = crosierListSvue_type_template_id_5eacb3d1_render
+crosierListSvue_type_script_lang_js.render = crosierListSvue_type_template_id_210e2055_render
 
 /* harmony default export */ var crosierListS = (crosierListSvue_type_script_lang_js);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierCalendar.vue?vue&type=template&id=5fd0ff0a&scoped=true
