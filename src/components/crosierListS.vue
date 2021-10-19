@@ -177,6 +177,11 @@ export default {
       required: false,
       default: "multiple",
     },
+    dtStateName: {
+      type: String,
+      required: false,
+      default: null,
+    },
   },
 
   data() {
@@ -219,10 +224,6 @@ export default {
         `set${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(1)}`,
         filters
       );
-    },
-
-    redirectForm(id = "") {
-      window.location.href = `form${id ? `?id=${id}` : ""}`;
     },
 
     async doFilter(event) {
@@ -270,7 +271,6 @@ export default {
         rows,
         order: apiOrder,
         filters: this.filters,
-        defaultFilters: this.defaultFilters,
       });
 
       this.totalRecords = response.data["hydra:totalItems"];
@@ -293,35 +293,6 @@ export default {
       localStorage.setItem(this.filtersOnLocalStorage, null);
       this.$refs.dt.resetPage();
       this.doFilter({ event: { first: 0 } });
-    },
-
-    async delete(event, id) {
-      this.$confirm.require({
-        group: "crosierListS_delete",
-        message: "Tem certeza que deseja deletar?",
-        icon: "pi pi-exclamation-triangle",
-        acceptLabel: "Sim",
-        rejectLabel: "Não",
-        accept: async () => {
-          try {
-            this.setLoading(true);
-
-            const response = await api.delete({
-              apiResource: `${this.apiResource}${id}`,
-            });
-            if (response.status === 204) {
-              this.showSuccess("Deletado com sucesso.");
-              this.doFilter();
-            } else {
-              this.showError("Erro ao deletar");
-            }
-          } catch (err) {
-            this.showError("Erro ao deletar");
-            console.error(err);
-          }
-          this.setLoading(false);
-        },
-      });
     },
 
     showSuccess(message) {
@@ -361,16 +332,12 @@ export default {
       ];
     },
 
-    defaultFilters() {
-      return this.$store.getters.getDefaultFilters;
-    },
-
     filtersOnLocalStorage() {
       return `filters${this.apiResource}_${this.filtersStoreName}`;
     },
 
     dataTableStateKey() {
-      return `dt-state${this.apiResource}`;
+      return `dt-state${this.dtStateName ?? this.apiResource}`;
     },
 
     loading() {
