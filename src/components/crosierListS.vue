@@ -133,7 +133,7 @@ export default {
     InlineMessage,
   },
 
-  emits: ["beforeFilter", "afterFilter", "onRowSelect", "onRowUnselect"],
+  emits: ["beforeFilter", "afterFilter", "onRowSelect", "onRowUnselect", "update:selection"],
 
   props: {
     titulo: {
