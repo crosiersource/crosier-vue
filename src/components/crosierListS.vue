@@ -79,7 +79,8 @@
            LastPageLink CurrentPageReport RowsPerPageDropdown"
           :rowsPerPageOptions="[5, 10, 25, 50, 200]"
           currentPageReportTemplate="{first}-{last} de {totalRecords}"
-          v-model:selection="this.selection"
+          :selection="this.selection"
+          @update:selection="this.$emit('update:selection', $event)"
           :selectionMode="selectionMode"
           :metaKeySelection="false"
           dataKey="id"
@@ -172,6 +173,10 @@ export default {
       required: false,
       default: null,
     },
+    selection: {
+      type: [Array, Object],
+      default: null,
+    },
     selectionMode: {
       type: String,
       required: false,
@@ -189,7 +194,6 @@ export default {
       savedFilter: {},
       totalRecords: 0,
       tableData: null,
-      selection: [],
       firstRecordIndex: 0,
       multiSortMeta: [],
       accordionActiveIndex: null,
@@ -220,10 +224,14 @@ export default {
     ...mapMutations(["setLoading"]),
 
     setFilters(filters) {
-      this.$store.commit(
-        `set${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(1)}`,
-        filters
-      );
+      try {
+        this.$store.commit(
+          `set${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(1)}`,
+          filters
+        );
+      } catch (e) {
+        console.error("crosierListS: setFilters n/d");
+      }
     },
 
     async doFilter(event) {
