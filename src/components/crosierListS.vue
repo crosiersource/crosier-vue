@@ -82,6 +82,7 @@
           :selection="this.selection"
           @update:selection="this.$emit('update:selection', $event)"
           :selectionMode="selectionMode"
+          @row-unselect-all="this.$emit('row-unselect-all', { originalEvent: $event })"
           :metaKeySelection="false"
           dataKey="id"
           @rowSelect="this.onRowSelect"
@@ -133,7 +134,14 @@ export default {
     InlineMessage,
   },
 
-  emits: ["beforeFilter", "afterFilter", "onRowSelect", "onRowUnselect", "update:selection"],
+  emits: [
+    "beforeFilter",
+    "afterFilter",
+    "onRowSelect",
+    "onRowUnselect",
+    "update:selection",
+    "row-unselect-all",
+  ],
 
   props: {
     titulo: {
