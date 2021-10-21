@@ -39,7 +39,7 @@ export default {
     Calendar,
   },
 
-  emits: ["update:modelValue", "input", "date-select"],
+  emits: ["update:modelValue", "date-select"],
 
   props: {
     modelValue: {},
@@ -108,24 +108,29 @@ export default {
 
   methods: {
     onInput($event) {
-      const dtStr = $event.target.value;
+      const dtStr = $event?.target?.value ?? $event;
+
       let dateParser = null;
       let date = null;
       let match = null;
       let dtIni = null;
       let dtFim = null;
 
-      if (dtStr.length === 10 && this.inputClass === "crsr-date") {
-        dateParser = /(\d{2})\/(\d{2})\/(\d{4})/;
-        match = dtStr.match(dateParser);
-        date = new Date(
-          match[3], // year
-          match[2] - 1, // monthIndex
-          match[1] // day
-          // match[4],  // hours
-          // match[5],  // minutes
-          // match[6]  //seconds
-        );
+      if (dtStr instanceof Date) {
+        date = dtStr;
+      } else if (this.inputClass === "crsr-date") {
+        if (dtStr.length === 10) {
+          dateParser = /(\d{2})\/(\d{2})\/(\d{4})/;
+          match = dtStr.match(dateParser);
+          date = new Date(
+            match[3], // year
+            match[2] - 1, // monthIndex
+            match[1] // day
+            // match[4],  // hours
+            // match[5],  // minutes
+            // match[6]  //seconds
+          );
+        }
       } else if (dtStr.length === 16 && this.inputClass === "crsr-datetime-nseg") {
         dateParser = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/;
         match = dtStr.match(dateParser);
@@ -166,10 +171,8 @@ export default {
           this.$emit("update:modelValue", dts);
         }
       }
-
       if (date) {
         this.$emit("update:modelValue", date);
-        this.$emit("input", $event);
         this.$emit("select-date", $event);
       }
     },
