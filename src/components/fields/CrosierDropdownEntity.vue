@@ -47,12 +47,10 @@ export default {
     },
     error: {
       type: String,
-      required: false,
       default: null,
     },
     col: {
       type: String,
-      required: false,
       default: "12",
     },
     label: {
@@ -65,17 +63,14 @@ export default {
     },
     optionValue: {
       type: String,
-      required: false,
       default: "@id",
     },
     disabled: {
       type: Boolean,
-      required: false,
       default: false,
     },
     helpText: {
       type: String,
-      required: false,
     },
     entityUri: {
       type: String,
@@ -83,11 +78,9 @@ export default {
     },
     filters: {
       type: Object,
-      required: false,
     },
     orderBy: {
       type: Object,
-      required: false,
     },
   },
 

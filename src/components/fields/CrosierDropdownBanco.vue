@@ -47,37 +47,30 @@ export default {
     },
     error: {
       type: String,
-      required: false,
       default: null,
     },
     col: {
       type: String,
-      required: false,
       default: "12",
     },
     label: {
       type: String,
-      required: false,
       default: "Banco",
     },
     optionLabel: {
       type: String,
-      required: false,
       default: "descricaoMontada",
     },
     optionValue: {
       type: String,
-      required: false,
       default: "@id",
     },
     disabled: {
       type: Boolean,
-      required: false,
       default: false,
     },
     helpText: {
       type: String,
-      required: false,
     },
   },
 

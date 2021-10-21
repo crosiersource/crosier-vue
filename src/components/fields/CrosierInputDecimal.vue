@@ -43,17 +43,14 @@ export default {
     },
     decimais: {
       type: Number,
-      required: false,
       default: 2,
     },
     error: {
       type: String,
-      required: false,
       default: null,
     },
     col: {
       type: String,
-      required: false,
       default: "12",
     },
     label: {
@@ -62,12 +59,10 @@ export default {
     },
     disabled: {
       type: Boolean,
-      required: false,
       default: false,
     },
     helpText: {
       type: String,
-      required: false,
     },
   },
 

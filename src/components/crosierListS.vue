@@ -150,15 +150,12 @@ export default {
     },
     subtitulo: {
       type: String,
-      required: false,
     },
     formUrl: {
       type: String,
-      required: false,
     },
     pesquisar: {
       type: String,
-      required: false,
     },
     apiResource: {
       type: String,
@@ -166,22 +163,22 @@ export default {
     },
     filtersStoreName: {
       type: String,
-      required: false,
+
       default: "filters",
     },
     containerClass: {
       type: String,
-      required: false,
+
       default: "container-fluid",
     },
     sempreMostrarFiltros: {
       type: Boolean,
-      required: false,
+
       default: false,
     },
     defaultOrder: {
       type: Array,
-      required: false,
+
       default: null,
     },
     selection: {
@@ -190,12 +187,12 @@ export default {
     },
     selectionMode: {
       type: String,
-      required: false,
+
       default: "multiple",
     },
     dtStateName: {
       type: String,
-      required: false,
+
       default: null,
     },
   },

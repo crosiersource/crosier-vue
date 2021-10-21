@@ -46,12 +46,10 @@ export default {
     },
     col: {
       type: String,
-      required: false,
       default: "12",
     },
     error: {
       type: String,
-      required: false,
       default: null,
     },
     label: {
@@ -60,17 +58,14 @@ export default {
     },
     optionLabel: {
       type: String,
-      required: false,
       default: "name",
     },
     optionValue: {
       type: String,
-      required: false,
       default: "value",
     },
     options: {
       type: Array,
-      required: false,
       default: () => [
         { name: "Sim", value: true },
         { name: "Não", value: false },
@@ -78,16 +73,13 @@ export default {
     },
     disabled: {
       type: Boolean,
-      required: false,
       default: false,
     },
     helpText: {
       type: String,
-      required: false,
     },
     appendTo: {
       type: String,
-      required: false,
       default: "body",
     },
   },

@@ -10,7 +10,7 @@
         :selectionMode="this.selectionMode"
         ref="refCalendar"
         @input="this.onInput"
-        @date-select="$emit('update:modelValue', $event)"
+        @date-select="this.onInput"
         dateFormat="dd/mm/yy"
         :showTime="this.showTime"
         :showSeconds="this.showSeconds"
@@ -18,6 +18,8 @@
         :showIcon="true"
         :showOnFocus="false"
         :disabled="this.disabled"
+        :autoZIndex="this.autoZIndex"
+        :baseZIndex="this.baseZIndex"
       />
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
         this.helpText
@@ -37,24 +39,20 @@ export default {
     Calendar,
   },
 
-  emits: ["update:modelValue"],
+  emits: ["update:modelValue", "input", "date-select"],
 
   props: {
-    modelValue: {
-      required: false,
-    },
+    modelValue: {},
     id: {
       type: String,
       required: true,
     },
     error: {
       type: String,
-      required: false,
       default: null,
     },
     col: {
       type: String,
-      required: false,
       default: "12",
     },
     label: {
@@ -63,27 +61,30 @@ export default {
     },
     showTime: {
       type: Boolean,
-      required: false,
       default: false,
     },
     showSeconds: {
       type: Boolean,
-      required: false,
       default: false,
     },
     disabled: {
       type: Boolean,
-      required: false,
       default: false,
     },
     helpText: {
       type: String,
-      required: false,
     },
     selectionMode: {
       type: String,
-      required: false,
       default: "single",
+    },
+    autoZIndex: {
+      type: Boolean,
+      default: true,
+    },
+    baseZIndex: {
+      type: Number,
+      default: 0,
     },
   },
 
@@ -168,6 +169,8 @@ export default {
 
       if (date) {
         this.$emit("update:modelValue", date);
+        this.$emit("input", $event);
+        this.$emit("select-date", $event);
       }
     },
   },

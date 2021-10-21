@@ -89,38 +89,34 @@ export default {
   props: {
     titulo: {
       type: String,
-      required: false,
     },
     subtitulo: {
       type: String,
-      required: false,
     },
     listUrl: {
       type: String,
-      required: false,
     },
     formUrl: {
       type: String,
-      required: false,
     },
     withoutCard: {
       type: Boolean,
-      required: false,
+
       default: false,
     },
     semBotaoSalvar: {
       type: Boolean,
-      required: false,
+
       default: false,
     },
     disabledSubmit: {
       type: Boolean,
-      required: false,
+
       default: false,
     },
     parentLoad: {
       type: Boolean,
-      required: false,
+
       default: false,
     },
   },
