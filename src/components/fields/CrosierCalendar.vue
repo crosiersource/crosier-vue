@@ -106,75 +106,121 @@ export default {
     }
   },
 
+  updated() {
+    document.querySelectorAll(".crsr-date").forEach(function format(el) {
+      // eslint-disable-next-line no-new,no-undef
+      new Cleave(el, {
+        date: true,
+        delimiter: "/",
+        datePattern: ["d", "m", "Y"],
+      });
+    });
+
+    document.querySelectorAll(".crsr-datetime").forEach(function format(el) {
+      el.maxLength = 19; // 01/02/1903 12:34:56
+      // eslint-disable-next-line no-new,no-undef
+      new Cleave(el, {
+        numeralPositiveOnly: true,
+        delimiters: ["/", "/", " ", ":"],
+        blocks: [2, 2, 4, 2, 2, 2],
+      });
+    });
+
+    document.querySelectorAll(".crsr-datetime-nseg").forEach(function format(el) {
+      el.maxLength = 17; // 01/02/1903 12:34
+      // eslint-disable-next-line no-new,no-undef
+      new Cleave(el, {
+        numeralPositiveOnly: true,
+        delimiters: ["/", "/", " ", ":"],
+        blocks: [2, 2, 4, 2, 2],
+      });
+    });
+
+    document.querySelectorAll(".crsr-date-periodo").forEach(function format(el) {
+      el.maxLength = 23; // 01/02/1903 12:34:56
+      // eslint-disable-next-line no-new,no-undef
+      new Cleave(el, {
+        numeralPositiveOnly: true,
+        delimiters: ["/", "/", " - ", "/", "/"],
+        blocks: [2, 2, 4, 2, 2, 4],
+      });
+    });
+  },
+
   methods: {
     onInput($event) {
-      const dtStr = $event?.target?.value ?? $event;
+      this.$nextTick(() => {
+        const dtStr = $event?.target?.value ?? $event;
 
-      let dateParser = null;
-      let date = null;
-      let match = null;
-      let dtIni = null;
-      let dtFim = null;
+        let dateParser = null;
+        let date = null;
+        let match = null;
+        let dtIni = null;
+        let dtFim = null;
 
-      if (dtStr instanceof Date) {
-        date = dtStr;
-      } else if (this.inputClass === "crsr-date") {
-        if (dtStr.length === 10) {
-          dateParser = /(\d{2})\/(\d{2})\/(\d{4})/;
+        if (dtStr instanceof Date) {
+          date = dtStr;
+        } else if (this.inputClass === "crsr-date") {
+          if (dtStr.length === 10) {
+            dateParser = /(\d{2})\/(\d{2})\/(\d{4})/;
+            match = dtStr.match(dateParser);
+            date = new Date(
+              match[3], // year
+              match[2] - 1, // monthIndex
+              match[1] // day
+              // match[4],  // hours
+              // match[5],  // minutes
+              // match[6]  //seconds
+            );
+          }
+        } else if (dtStr.length === 16 && this.inputClass === "crsr-datetime-nseg") {
+          dateParser = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/;
           match = dtStr.match(dateParser);
           date = new Date(
             match[3], // year
             match[2] - 1, // monthIndex
-            match[1] // day
-            // match[4],  // hours
-            // match[5],  // minutes
+            match[1], // day
+            match[4], // hours
+            match[5] // minutes
             // match[6]  //seconds
           );
+        } else if (dtStr.length === 19 && this.inputClass === "crsr-datetime") {
+          dateParser = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2})/;
+          match = dtStr.match(dateParser);
+          date = new Date(
+            match[3], // year
+            match[2] - 1, // monthIndex
+            match[1], // day
+            match[4], // hours
+            match[5], // minutes
+            match[6] // seconds
+          );
+        } else if (dtStr.length === 23 && this.selectionMode === "range") {
+          dateParser = /(\d{2})\/(\d{2})\/(\d{4}) - (\d{2})\/(\d{2})\/(\d{4})/;
+          match = dtStr.match(dateParser);
+          dtIni = new Date(
+            match[3], // year
+            match[2] - 1, // monthIndex
+            match[1] // day
+          );
+          dtFim = new Date(
+            match[6], // year
+            match[5] - 1, // monthIndex
+            match[4] // day
+          );
+          if (dtIni && dtFim) {
+            const dts = [dtIni, dtFim];
+            this.$emit("update:modelValue", dts);
+          }
         }
-      } else if (dtStr.length === 16 && this.inputClass === "crsr-datetime-nseg") {
-        dateParser = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/;
-        match = dtStr.match(dateParser);
-        date = new Date(
-          match[3], // year
-          match[2] - 1, // monthIndex
-          match[1], // day
-          match[4], // hours
-          match[5] // minutes
-          // match[6]  //seconds
-        );
-      } else if (dtStr.length === 19 && this.inputClass === "crsr-datetime") {
-        dateParser = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2})/;
-        match = dtStr.match(dateParser);
-        date = new Date(
-          match[3], // year
-          match[2] - 1, // monthIndex
-          match[1], // day
-          match[4], // hours
-          match[5], // minutes
-          match[6] // seconds
-        );
-      } else if (dtStr.length === 23 && this.selectionMode === "range") {
-        dateParser = /(\d{2})\/(\d{2})\/(\d{4}) - (\d{2})\/(\d{2})\/(\d{4})/;
-        match = dtStr.match(dateParser);
-        dtIni = new Date(
-          match[3], // year
-          match[2] - 1, // monthIndex
-          match[1] // day
-        );
-        dtFim = new Date(
-          match[6], // year
-          match[5] - 1, // monthIndex
-          match[4] // day
-        );
-        if (dtIni && dtFim) {
-          const dts = [dtIni, dtFim];
-          this.$emit("update:modelValue", dts);
+        if (date) {
+          this.$emit("update:modelValue", date);
+          this.$emit("select-date", $event);
+        } else {
+          this.$emit("update:modelValue", "");
+          this.$emit("select-date", "");
         }
-      }
-      if (date) {
-        this.$emit("update:modelValue", date);
-        this.$emit("select-date", $event);
-      }
+      });
     },
   },
 };
