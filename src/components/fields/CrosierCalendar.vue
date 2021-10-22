@@ -128,7 +128,7 @@ export default {
 
     document.querySelectorAll(".crsr-datetime-nseg").forEach(function format(el) {
       el.maxLength = 17; // 01/02/1903 12:34
-      // eslint-disable-next-line no-new,no-undef
+      // eslint-disable-next-line no-new, no-undef
       new Cleave(el, {
         numeralPositiveOnly: true,
         delimiters: ["/", "/", " ", ":"],
@@ -213,12 +213,12 @@ export default {
             this.$emit("update:modelValue", dts);
           }
         }
+
         if (date) {
           this.$emit("update:modelValue", date);
-          this.$emit("select-date", $event);
+          this.$emit("date-select", $event);
         } else {
-          this.$emit("update:modelValue", "");
-          this.$emit("select-date", "");
+          this.$emit("update:modelValue", dtStr);
         }
       });
     },
