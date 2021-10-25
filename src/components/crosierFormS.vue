@@ -101,22 +101,18 @@ export default {
     },
     withoutCard: {
       type: Boolean,
-
       default: false,
     },
     semBotaoSalvar: {
       type: Boolean,
-
       default: false,
     },
     disabledSubmit: {
       type: Boolean,
-
       default: false,
     },
     parentLoad: {
       type: Boolean,
-
       default: false,
     },
   },

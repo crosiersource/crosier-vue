@@ -83,7 +83,7 @@
           @update:selection="this.$emit('update:selection', $event)"
           :selectionMode="selectionMode"
           @row-unselect-all="this.$emit('row-unselect-all', { originalEvent: $event })"
-          :metaKeySelection="false"
+          :metaKeySelection="this.metaKeySelection"
           dataKey="id"
           @rowSelect="this.onRowSelect"
           @rowUnselect="this.onRowUnselect"
@@ -163,22 +163,18 @@ export default {
     },
     filtersStoreName: {
       type: String,
-
       default: "filters",
     },
     containerClass: {
       type: String,
-
       default: "container-fluid",
     },
     sempreMostrarFiltros: {
       type: Boolean,
-
       default: false,
     },
     defaultOrder: {
       type: Array,
-
       default: null,
     },
     selection: {
@@ -187,12 +183,14 @@ export default {
     },
     selectionMode: {
       type: String,
-
       default: "multiple",
+    },
+    metaKeySelection: {
+      type: Boolean,
+      default: false,
     },
     dtStateName: {
       type: String,
-
       default: null,
     },
   },
