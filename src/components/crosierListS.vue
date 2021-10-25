@@ -82,7 +82,8 @@
           :selection="this.selection"
           @update:selection="this.$emit('update:selection', $event)"
           :selectionMode="selectionMode"
-          @row-unselect-all="this.$emit('row-unselect-all', { originalEvent: $event })"
+          @row-select="this.onUpdateSelection"
+          @row-unselect="this.onUpdateSelection"
           :metaKeySelection="this.metaKeySelection"
           dataKey="id"
           @rowSelect="this.onRowSelect"
@@ -103,6 +104,21 @@
               />
             </div>
           </template>
+
+          <Column field="id" :sortable="true" v-if="this.ativarSelecao">
+            <template #header>
+              <Checkbox
+                :binary="true"
+                @change="this.tudoSelecionadoClick()"
+                v-model="this.tudoSelecionado"
+                onIcon="pi pi-check"
+                offIcon="pi pi-times"
+              />&nbsp; Id
+            </template>
+            <template #body="r">
+              {{ r.data.id }}
+            </template>
+          </Column>
           <slot name="columns"></slot>
         </DataTable>
       </div>
@@ -111,13 +127,15 @@
 </template>
 
 <script>
+import Checkbox from "primevue/checkbox";
 import DataTable from "primevue/datatable";
+import Column from "primevue/column";
 import Accordion from "primevue/accordion";
 import AccordionTab from "primevue/accordiontab";
 import Button from "primevue/button";
 import ConfirmDialog from "primevue/confirmdialog";
 import InlineMessage from "primevue/inlinemessage";
-import { mapMutations } from "vuex";
+import { mapMutations, mapGetters } from "vuex";
 import api from "../services/api";
 import CrosierBlock from "../components/crosierBlock";
 
@@ -127,10 +145,12 @@ export default {
   components: {
     Accordion,
     AccordionTab,
+    Checkbox,
     Button,
     ConfirmDialog,
     CrosierBlock,
     DataTable,
+    Column,
     InlineMessage,
   },
 
@@ -140,7 +160,7 @@ export default {
     "onRowSelect",
     "onRowUnselect",
     "update:selection",
-    "row-unselect-all",
+    "tudoSelecionadoClick",
   ],
 
   props: {
@@ -181,6 +201,10 @@ export default {
       type: [Array, Object],
       default: null,
     },
+    ativarSelecao: {
+      type: Boolean,
+      default: false,
+    },
     selectionMode: {
       type: String,
       default: "multiple",
@@ -203,6 +227,7 @@ export default {
       firstRecordIndex: 0,
       multiSortMeta: [],
       accordionActiveIndex: null,
+      tudoSelecionado: false,
     };
   },
 
@@ -227,7 +252,7 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["setLoading"]),
+    ...mapMutations(["setLoading", "setTudoSelecionado"]),
 
     setFilters(filters) {
       try {
@@ -299,7 +324,7 @@ export default {
       this.setFilters(this.filters);
 
       this.$emit("afterFilter", this.tableData);
-
+      this.onUpdateSelection();
       this.setLoading(false);
     },
 
@@ -310,21 +335,16 @@ export default {
       this.doFilter({ event: { first: 0 } });
     },
 
-    showSuccess(message) {
-      this.$toast.add({
-        severity: "success",
-        summary: "Mensagem de sucesso",
-        detail: message,
-        life: 3000,
-      });
+    tudoSelecionadoClick() {
+      this.$emit("tudoSelecionadoClick", this.tudoSelecionado ? [...this.tableData] : null);
     },
 
-    showError(message) {
-      this.$toast.add({
-        severity: "error",
-        summary: "Mensagem de erro",
-        detail: message,
-        life: 3000,
+    onUpdateSelection() {
+      this.$nextTick(() => {
+        const selectionIds = this.selection.map((e) => e.id).sort();
+        const values = this.tableData;
+        const valuesIds = values.map((e) => e.id).sort();
+        this.tudoSelecionado = JSON.stringify(selectionIds) === JSON.stringify(valuesIds);
       });
     },
 
@@ -342,6 +362,11 @@ export default {
   },
 
   computed: {
+    ...mapGetters({
+      loading: "isLoading",
+      tudoSelecionado: "getTudoSelecionado",
+    }),
+
     filters() {
       return this.$store.getters[
         `get${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(1)}`
@@ -362,10 +387,6 @@ export default {
 
     dataTableStateKey() {
       return `dt-state_${this.dtStateName ?? this.apiResource}`;
-    },
-
-    loading() {
-      return this.$store.getters.isLoading;
     },
 
     isFiltering() {
