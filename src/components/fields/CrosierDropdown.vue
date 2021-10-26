@@ -11,10 +11,10 @@
         :options="this.options"
         :optionLabel="this.optionLabel"
         :optionValue="this.optionValue"
-        placeholder="Selecione"
+        :placeholder="this.showClear ? 'Selecione' : null"
+        :showClear="this.showClear"
         :disabled="this.disabled"
         :filter="true"
-        :showClear="true"
       />
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
         this.helpText
@@ -74,6 +74,10 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
+    },
+    showClear: {
+      type: Boolean,
+      default: true,
     },
     helpText: {
       type: String,
