@@ -138,6 +138,7 @@ import InlineMessage from "primevue/inlinemessage";
 import { mapMutations, mapGetters } from "vuex";
 import api from "../services/api";
 import CrosierBlock from "../components/crosierBlock";
+// import { api, CrosierBlock } from "crosier-vue";
 
 export default {
   name: "CrosierListS",
@@ -243,6 +244,7 @@ export default {
         this.setFilters(filtersParsed);
       } catch (e) {
         console.error(`Não foi possível recuperar os filtros (${this.savedFilter})`);
+        console.error(e);
       }
     }
 
@@ -252,23 +254,24 @@ export default {
   },
 
   methods: {
-    ...mapMutations(["setLoading", "setTudoSelecionado"]),
+    ...mapMutations(["setLoading"]),
 
     setFilters(filters) {
+      const mutationName = `set${this.filtersStoreName
+        .charAt(0)
+        .toUpperCase()}${this.filtersStoreName.slice(1)}`;
       try {
-        this.$store.commit(
-          `set${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(1)}`,
-          filters
-        );
+        this.$store.commit(mutationName, filters);
       } catch (e) {
-        console.error("crosierListS: setFilters n/d");
+        console.error(`crosierListS: |${mutationName}| n/d`);
+        console.error(e);
       }
     },
 
     async doFilter(event) {
       this.setLoading(true);
 
-      this.$emit("beforeFilter");
+      await this.$emit("beforeFilter");
 
       const lsItem = localStorage.getItem(this.dataTableStateKey);
       const dtStateLS = lsItem ? JSON.parse(lsItem) : null;
@@ -364,7 +367,6 @@ export default {
   computed: {
     ...mapGetters({
       loading: "isLoading",
-      tudoSelecionado: "getTudoSelecionado",
     }),
 
     filters() {

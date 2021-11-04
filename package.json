@@ -1,6 +1,6 @@
 {
     "name": "crosier-vue",
-    "version": "0.4.35",
+    "version": "0.4.36",
     "author": "carlospauluk@gmail.com",
     "license": "MIT",
     "main": "./dist/crosier-vue.common.js",
@@ -13,7 +13,7 @@
     "devDependencies": {
         "@babel/plugin-proposal-optional-chaining": "^7.12.7",
         "@babel/preset-typescript": "^7.0.0",
-        "@symfony/webpack-encore": "^0.33.0",
+        "@symfony/webpack-encore": "^1.6.1",
         "@vue/cli-plugin-babel": "^4.5.10",
         "@vue/cli-plugin-eslint": "~4.5.0",
         "@vue/cli-plugin-vuex": "~4.5.0",
