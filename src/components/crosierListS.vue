@@ -344,10 +344,17 @@ export default {
 
     onUpdateSelection() {
       this.$nextTick(() => {
-        const selectionIds = this.selection.map((e) => e.id).sort();
-        const values = this.tableData;
-        const valuesIds = values.map((e) => e.id).sort();
-        this.tudoSelecionado = JSON.stringify(selectionIds) === JSON.stringify(valuesIds);
+        if (this.selection && this.tableData) {
+          try {
+            const selectionIds = this.selection.map((e) => e.id).sort();
+            const values = this.tableData;
+            const valuesIds = values.map((e) => e.id).sort();
+            this.tudoSelecionado = JSON.stringify(selectionIds) === JSON.stringify(valuesIds);
+          } catch (e) {
+            console.error("Erro - onUpdateSelection");
+            console.error(e);
+          }
+        }
       });
     },
 
