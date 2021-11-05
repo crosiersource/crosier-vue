@@ -1,5 +1,5 @@
 <template>
-  <ConfirmDialog />
+  <ConfirmDialog group="confirmDialog_crosierListS" />
   <Toast group="toast_crosierListS" class="mb-5" />
   <div :class="this.containerClass">
     <div class="card" style="margin-bottom: 50px">
@@ -388,6 +388,7 @@ export default {
             console.log(rsDelete);
             if (rsDelete?.status === 204) {
               this.$toast.add({
+                group: "toast_crosierListS",
                 severity: "success",
                 summary: "Success",
                 detail: "Registro deletado com sucesso",
@@ -404,6 +405,7 @@ export default {
           } catch (e) {
             console.error(e);
             this.$toast.add({
+              group: "toast_crosierListS",
               severity: "error",
               summary: "Erro",
               detail: "Ocorreu um erro ao efetuar a operação",
