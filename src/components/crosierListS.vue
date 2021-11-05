@@ -140,6 +140,7 @@ import InlineMessage from "primevue/inlinemessage";
 import { mapMutations, mapGetters } from "vuex";
 import api from "../services/api";
 import CrosierBlock from "../components/crosierBlock";
+
 // import { api, CrosierBlock } from "crosier-vue";
 
 export default {
@@ -373,7 +374,7 @@ export default {
       this.$refs.dt.exportCSV();
     },
 
-    deletar(id, $toast) {
+    deletar(id) {
       this.$confirm.require({
         acceptLabel: "Sim",
         rejectLabel: "Não",
@@ -386,7 +387,7 @@ export default {
             const rsDelete = await api.delete(`${this.apiResource}${id}`);
             console.log(rsDelete);
             if (rsDelete?.status === 204) {
-              $toast.add({
+              this.$toast.add({
                 severity: "success",
                 summary: "Success",
                 detail: "Registro deletado com sucesso",
@@ -402,7 +403,7 @@ export default {
             await this.doFilter();
           } catch (e) {
             console.error(e);
-            $toast.add({
+            this.$toast.add({
               severity: "error",
               summary: "Erro",
               detail: "Ocorreu um erro ao efetuar a operação",
