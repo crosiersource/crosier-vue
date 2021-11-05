@@ -374,44 +374,6 @@ export default {
       this.$refs.dt.exportCSV();
     },
 
-    testToast2() {
-      this.$toast.add({
-        severity: "success",
-        summary: "Success",
-        detail: "yuioyoiyioyioRegistro deletado com sucesso",
-        life: 5000,
-      });
-    },
-
-    testToast3($toast) {
-      $toast.add({
-        severity: "success",
-        summary: "Success",
-        detail: "ioyioyuiouyuioRegistro deletado com sucesso",
-        life: 5000,
-      });
-    },
-
-    testToast4($toast, group) {
-      $toast.add({
-        group,
-        severity: "success",
-        summary: "Success",
-        detail: "ioyioyuiouyuioRegistro deletado com sucesso",
-        life: 5000,
-      });
-    },
-
-    testToast5(group) {
-      this.$toast.add({
-        group,
-        severity: "success",
-        summary: "Success",
-        detail: "ioyioyuiouyuioRegistro deletado com sucesso",
-        life: 5000,
-      });
-    },
-
     deletar(id) {
       this.$confirm.require({
         acceptLabel: "Sim",
@@ -426,7 +388,7 @@ export default {
             console.log(rsDelete);
             if (rsDelete?.status === 204) {
               this.$toast.add({
-                group: "toast_crosierListS",
+                group: "mainToast",
                 severity: "success",
                 summary: "Success",
                 detail: "Registro deletado com sucesso",
@@ -443,7 +405,7 @@ export default {
           } catch (e) {
             console.error(e);
             this.$toast.add({
-              group: "toast_crosierListS",
+              group: "mainToast",
               severity: "error",
               summary: "Erro",
               detail: "Ocorreu um erro ao efetuar a operação",
