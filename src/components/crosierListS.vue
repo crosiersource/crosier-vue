@@ -370,8 +370,8 @@ export default {
       this.$refs.dt.exportCSV();
     },
 
-    deletar(id) {
-      this.$confirm.require({
+    deletar(id, $confirm) {
+      $confirm.require({
         group: "crosierListS_delete",
         acceptLabel: "Sim",
         rejectLabel: "Não",
