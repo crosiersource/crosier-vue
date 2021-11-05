@@ -1,5 +1,6 @@
 <template>
   <ConfirmDialog />
+  <Toast position="bottom-right" class="mb-5" />
   <div :class="this.containerClass">
     <div class="card" style="margin-bottom: 50px">
       <div class="card-header">
@@ -130,6 +131,7 @@
 import Checkbox from "primevue/checkbox";
 import DataTable from "primevue/datatable";
 import Column from "primevue/column";
+import Toast from "primevue/toast";
 import Accordion from "primevue/accordion";
 import AccordionTab from "primevue/accordiontab";
 import Button from "primevue/button";
@@ -153,6 +155,7 @@ export default {
     DataTable,
     Column,
     InlineMessage,
+    Toast,
   },
 
   emits: [
