@@ -373,7 +373,7 @@ export default {
       this.$refs.dt.exportCSV();
     },
 
-    deletar(id) {
+    deletar(id, $toast) {
       this.$confirm.require({
         acceptLabel: "Sim",
         rejectLabel: "Não",
@@ -383,10 +383,10 @@ export default {
         accept: async () => {
           this.setLoading(true);
           try {
-            const rsDelete = await api.delete(`/api/clin/secretaria/${id}`);
+            const rsDelete = await api.delete(`${this.apiResource}${id}`);
             console.log(rsDelete);
             if (rsDelete?.status === 204) {
-              this.$toast.add({
+              $toast.add({
                 severity: "success",
                 summary: "Success",
                 detail: "Registro deletado com sucesso",
@@ -399,10 +399,10 @@ export default {
               console.error(rsDelete?.statusText);
               throw new Error("Não foi possível deletar o registro");
             }
-            this.doFilter();
+            await this.doFilter();
           } catch (e) {
             console.error(e);
-            this.$toast.add({
+            $toast.add({
               severity: "error",
               summary: "Erro",
               detail: "Ocorreu um erro ao efetuar a operação",
