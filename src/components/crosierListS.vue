@@ -374,6 +374,44 @@ export default {
       this.$refs.dt.exportCSV();
     },
 
+    testToast2() {
+      this.$toast.add({
+        severity: "success",
+        summary: "Success",
+        detail: "yuioyoiyioyioRegistro deletado com sucesso",
+        life: 5000,
+      });
+    },
+
+    testToast3($toast) {
+      $toast.add({
+        severity: "success",
+        summary: "Success",
+        detail: "ioyioyuiouyuioRegistro deletado com sucesso",
+        life: 5000,
+      });
+    },
+
+    testToast4($toast, group) {
+      $toast.add({
+        group,
+        severity: "success",
+        summary: "Success",
+        detail: "ioyioyuiouyuioRegistro deletado com sucesso",
+        life: 5000,
+      });
+    },
+
+    testToast5(group) {
+      this.$toast.add({
+        group,
+        severity: "success",
+        summary: "Success",
+        detail: "ioyioyuiouyuioRegistro deletado com sucesso",
+        life: 5000,
+      });
+    },
+
     deletar(id) {
       this.$confirm.require({
         acceptLabel: "Sim",
