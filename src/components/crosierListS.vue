@@ -1,5 +1,5 @@
 <template>
-  <ConfirmDialog group="crosierListS_delete"></ConfirmDialog>
+  <ConfirmDialog />
   <div :class="this.containerClass">
     <div class="card" style="margin-bottom: 50px">
       <div class="card-header">
@@ -370,9 +370,8 @@ export default {
       this.$refs.dt.exportCSV();
     },
 
-    deletar(id, $confirm) {
-      $confirm.require({
-        group: "crosierListS_delete",
+    deletar(id) {
+      this.$confirm.require({
         acceptLabel: "Sim",
         rejectLabel: "Não",
         message: "Confirmar a operação?",
