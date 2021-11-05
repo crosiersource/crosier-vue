@@ -362,6 +362,48 @@ export default {
     exportCSV() {
       this.$refs.dt.exportCSV();
     },
+
+    async deletar(id) {
+      this.$confirm.require({
+        group: "crosierListS_delete",
+        acceptLabel: "Sim",
+        rejectLabel: "Não",
+        message: "Confirmar a operação?",
+        header: "Atenção!",
+        icon: "pi pi-exclamation-triangle",
+        accept: async () => {
+          this.setLoading(true);
+          try {
+            const rsDelete = await api.delete(`/api/clin/secretaria/${id}`);
+            console.log(rsDelete);
+            if (rsDelete?.status === 204) {
+              this.$toast.add({
+                severity: "success",
+                summary: "Success",
+                detail: "Registro deletado com sucesso",
+                life: 5000,
+              });
+            } else {
+              if (rsDelete?.data["hydra:description"]) {
+                console.error(rsDelete?.data["hydra:description"]);
+              }
+              console.error(rsDelete?.statusText);
+              throw new Error("Não foi possível deletar o registro");
+            }
+            this.doFilter();
+          } catch (e) {
+            console.error(e);
+            this.$toast.add({
+              severity: "error",
+              summary: "Erro",
+              detail: "Ocorreu um erro ao efetuar a operação",
+              life: 5000,
+            });
+          }
+          this.setLoading(false);
+        },
+      });
+    },
   },
 
   computed: {
