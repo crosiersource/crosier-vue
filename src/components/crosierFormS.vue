@@ -81,11 +81,14 @@ import CrosierBlock from "./crosierBlock";
 
 export default {
   name: "CrosierFormS",
+
   components: {
     CrosierBlock,
     Button,
   },
+
   emits: ["submitForm"],
+
   props: {
     titulo: {
       type: String,
@@ -116,6 +119,7 @@ export default {
       default: false,
     },
   },
+
   computed: {
     loading() {
       return this.$store.getters.isLoading || this.parentLoad;

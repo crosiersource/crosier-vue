@@ -24,6 +24,8 @@
 import InputNumber from "primevue/inputnumber";
 
 export default {
+  name: "CrosierInputInt",
+
   components: {
     InputNumber,
   },

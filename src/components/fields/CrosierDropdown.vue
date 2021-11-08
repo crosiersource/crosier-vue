@@ -30,6 +30,8 @@
 import Dropdown from "primevue/dropdown";
 
 export default {
+  name: "CrosierDropdown",
+
   components: {
     Dropdown,
   },
@@ -38,6 +40,7 @@ export default {
 
   props: {
     modelValue: {
+      type: [String, Object],
       default: null,
     },
     id: {

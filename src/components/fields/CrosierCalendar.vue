@@ -35,6 +35,8 @@
 import Calendar from "primevue/calendar";
 
 export default {
+  name: "CrosierCalendar",
+
   components: {
     Calendar,
   },

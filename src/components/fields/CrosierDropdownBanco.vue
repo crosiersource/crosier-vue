@@ -31,6 +31,8 @@ import { mapMutations } from "vuex";
 import api from "../../services/api";
 
 export default {
+  name: "CrosierDropdownBanco",
+
   components: {
     Dropdown,
   },
@@ -40,6 +42,7 @@ export default {
   props: {
     modelValue: {
       type: String,
+      default: null,
     },
     id: {
       type: String,

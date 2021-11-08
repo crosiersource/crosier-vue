@@ -33,6 +33,8 @@
 import InputNumber from "primevue/inputnumber";
 
 export default {
+  name: "CrosierPercent",
+
   components: {
     InputNumber,
   },

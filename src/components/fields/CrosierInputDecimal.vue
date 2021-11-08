@@ -27,6 +27,8 @@
 import InputNumber from "primevue/inputnumber";
 
 export default {
+  name: "CrosierInputDecimal",
+
   components: {
     InputNumber,
   },

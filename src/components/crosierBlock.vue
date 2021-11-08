@@ -7,9 +7,12 @@
 import ProgressBar from "primevue/progressbar";
 
 export default {
+  name: "CrosierBlock",
+
   components: {
     ProgressBar,
   },
+
   props: {
     loading: {
       type: Boolean,

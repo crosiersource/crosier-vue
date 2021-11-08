@@ -29,8 +29,11 @@
 import Dropdown from "primevue/dropdown";
 import { mapMutations } from "vuex";
 import api from "../../services/api";
+// import { api } from "crosier-vue";
 
 export default {
+  name: "CrosierDropdownEntity",
+
   components: {
     Dropdown,
   },
@@ -39,7 +42,8 @@ export default {
 
   props: {
     modelValue: {
-      type: String,
+      default: null,
+      type: [String, Object],
     },
     id: {
       type: String,
