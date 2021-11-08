@@ -63,7 +63,7 @@
           </Accordion>
         </div>
         <DataTable
-          stateStorage="local"
+          :stateStorage="this.stateStorage"
           class="p-datatable-sm p-datatable-striped"
           :stateKey="this.dataTableStateKey"
           :value="tableData"
@@ -81,10 +81,10 @@
           :rowsPerPageOptions="[5, 10, 25, 50, 200]"
           currentPageReportTemplate="{first}-{last} de {totalRecords}"
           :selection="this.selection"
-          @update:selection="this.$emit('update:selection', $event)"
+          @update:selection="this.onUpdateSelection($event)"
           :selectionMode="selectionMode"
-          @row-select="this.onUpdateSelection"
-          @row-unselect="this.onUpdateSelection"
+          @row-select="this.onRowSelect"
+          @row-unselect="this.onRowUnselect"
           :metaKeySelection="this.metaKeySelection"
           dataKey="id"
           @rowSelect="this.onRowSelect"
@@ -140,7 +140,6 @@ import InlineMessage from "primevue/inlinemessage";
 import { mapMutations, mapGetters } from "vuex";
 import api from "../services/api";
 import CrosierBlock from "../components/crosierBlock";
-
 // import { api, CrosierBlock } from "crosier-vue";
 
 export default {
@@ -162,8 +161,8 @@ export default {
   emits: [
     "beforeFilter",
     "afterFilter",
-    "onRowSelect",
-    "onRowUnselect",
+    "row-select",
+    "row-unselect",
     "update:selection",
     "tudoSelecionadoClick",
   ],
@@ -210,6 +209,11 @@ export default {
       type: Boolean,
       default: false,
     },
+    preselecao: {
+      // se for preselecao, então a seleção será fornecida
+      type: Boolean,
+      default: false,
+    },
     selectionMode: {
       type: String,
       default: "multiple",
@@ -221,6 +225,10 @@ export default {
     dtStateName: {
       type: String,
       default: null,
+    },
+    stateStorage: {
+      type: String,
+      default: "local",
     },
   },
 
@@ -236,21 +244,31 @@ export default {
     };
   },
 
+  created() {
+    if (this.preselecao) {
+      localStorage.removeItem(this.dataTableStateKey);
+    }
+  },
+
   async mounted() {
     this.setLoading(true);
     const uri = window.location.search.substring(1);
     const params = new URLSearchParams(uri);
 
-    this.savedFilter = params.get("filters") || localStorage.getItem(this.filtersOnLocalStorage);
-    if (this.savedFilter) {
-      try {
-        const filtersParsed = JSON.parse(this.savedFilter);
-        this.setFilters(filtersParsed);
-      } catch (e) {
-        console.error(`Não foi possível recuperar os filtros (${this.savedFilter})`);
-        console.error(e);
+    if (this.filtersStoreName) {
+      this.savedFilter = params.get("filters") || localStorage.getItem(this.filtersOnLocalStorage);
+      if (this.savedFilter) {
+        try {
+          const filtersParsed = JSON.parse(this.savedFilter);
+          this.setFilters(filtersParsed);
+        } catch (e) {
+          console.error(`Não foi possível recuperar os filtros (${this.savedFilter})`);
+          console.error(e);
+        }
       }
     }
+
+    localStorage.removeItem(this.dataTableStateKey);
 
     await this.doFilter();
     this.accordionActiveIndex = this.isFiltering ? 0 : null;
@@ -261,14 +279,16 @@ export default {
     ...mapMutations(["setLoading"]),
 
     setFilters(filters) {
-      const mutationName = `set${this.filtersStoreName
-        .charAt(0)
-        .toUpperCase()}${this.filtersStoreName.slice(1)}`;
-      try {
-        this.$store.commit(mutationName, filters);
-      } catch (e) {
-        console.error(`crosierListS: |${mutationName}| n/d`);
-        console.error(e);
+      if (this.filtersStoreName) {
+        const mutationName = `set${this.filtersStoreName
+          .charAt(0)
+          .toUpperCase()}${this.filtersStoreName.slice(1)}`;
+        try {
+          this.$store.commit(mutationName, filters);
+        } catch (e) {
+          console.error(`crosierListS: |${mutationName}| n/d`);
+          console.error(e);
+        }
       }
     },
 
@@ -331,7 +351,7 @@ export default {
       this.setFilters(this.filters);
 
       this.$emit("afterFilter", this.tableData);
-      this.onUpdateSelection();
+      this.handleTudoSelecionado();
       this.setLoading(false);
     },
 
@@ -343,10 +363,15 @@ export default {
     },
 
     tudoSelecionadoClick() {
-      this.$emit("tudoSelecionadoClick", this.tudoSelecionado ? [...this.tableData] : null);
+      this.$emit("update:selection", this.tudoSelecionado ? [...this.tableData] : null);
     },
 
-    onUpdateSelection() {
+    onUpdateSelection($event) {
+      this.handleTudoSelecionado();
+      this.$emit("update:selection", $event);
+    },
+
+    handleTudoSelecionado() {
       this.$nextTick(() => {
         if (this.selection && this.tableData) {
           try {
@@ -355,61 +380,25 @@ export default {
             const valuesIds = values.map((e) => e.id).sort();
             this.tudoSelecionado = JSON.stringify(selectionIds) === JSON.stringify(valuesIds);
           } catch (e) {
-            console.error("Erro - onUpdateSelection");
+            console.error("Erro - handleTudoSelecionado");
             console.error(e);
           }
         }
       });
     },
 
-    async onRowSelect(event) {
-      await this.$emit("onRowSelect", event);
+    onRowSelect($event) {
+      this.$emit("row-select", $event);
+      this.handleTudoSelecionado();
     },
 
-    async onRowUnselect(event) {
-      await this.$emit("onRowUnselect", event);
+    onRowUnselect($event) {
+      this.$emit("row-unselect", $event);
+      this.handleTudoSelecionado();
     },
 
     exportCSV() {
       this.$refs.dt.exportCSV();
-    },
-
-    testToast2() {
-      this.$toast.add({
-        severity: "success",
-        summary: "Success",
-        detail: "yuioyoiyioyioRegistro deletado com sucesso",
-        life: 5000,
-      });
-    },
-
-    testToast3($toast) {
-      $toast.add({
-        severity: "success",
-        summary: "Success",
-        detail: "ioyioyuiouyuioRegistro deletado com sucesso",
-        life: 5000,
-      });
-    },
-
-    testToast4($toast, group) {
-      $toast.add({
-        group,
-        severity: "success",
-        summary: "Success",
-        detail: "ioyioyuiouyuioRegistro deletado com sucesso",
-        life: 5000,
-      });
-    },
-
-    testToast5(group) {
-      this.$toast.add({
-        group,
-        severity: "success",
-        summary: "Success",
-        detail: "ioyioyuiouyuioRegistro deletado com sucesso",
-        life: 5000,
-      });
     },
 
     deletar(id) {
@@ -423,7 +412,6 @@ export default {
           this.setLoading(true);
           try {
             const rsDelete = await api.delete(`${this.apiResource}${id}`);
-            console.log(rsDelete);
             if (rsDelete?.status === 204) {
               this.$toast.add({
                 group: "mainToast",
@@ -462,17 +450,23 @@ export default {
     }),
 
     filters() {
-      return this.$store.getters[
-        `get${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(1)}`
-      ];
+      if (this.filtersStoreName) {
+        return this.$store.getters[
+          `get${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(1)}`
+        ];
+      }
+      return null;
     },
 
     defaultFilters() {
-      return this.$store.getters[
-        `getDefault${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(
-          1
-        )}`
-      ];
+      if (this.filtersStoreName) {
+        return this.$store.getters[
+          `getDefault${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(
+            1
+          )}`
+        ];
+      }
+      return null;
     },
 
     filtersOnLocalStorage() {

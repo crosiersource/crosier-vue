@@ -11510,68 +11510,68 @@ button_esm_script.render = button_esm_render;
 const crosierFormS_exports_ = /*#__PURE__*/exportHelper_default()(crosierFormSvue_type_script_lang_js, [['render',crosierFormSvue_type_template_id_c29a72c8_render]])
 
 /* harmony default export */ var crosierFormS = (crosierFormS_exports_);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/crosierListS.vue?vue&type=template&id=1f662374
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/crosierListS.vue?vue&type=template&id=3d8cd21c
 
-var crosierListSvue_type_template_id_1f662374_hoisted_1 = {
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_1 = {
   class: "card",
   style: {
     "margin-bottom": "50px"
   }
 };
-var crosierListSvue_type_template_id_1f662374_hoisted_2 = {
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_2 = {
   class: "card-header"
 };
-var crosierListSvue_type_template_id_1f662374_hoisted_3 = {
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_3 = {
   class: "d-flex flex-wrap align-items-center"
 };
-var crosierListSvue_type_template_id_1f662374_hoisted_4 = {
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_4 = {
   class: "mr-1"
 };
-var crosierListSvue_type_template_id_1f662374_hoisted_5 = {
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_5 = {
   key: 0
 };
-var crosierListSvue_type_template_id_1f662374_hoisted_6 = {
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_6 = {
   class: "d-sm-flex flex-nowrap ml-auto"
 };
-var crosierListSvue_type_template_id_1f662374_hoisted_7 = ["href"];
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_7 = ["href"];
 
-var crosierListSvue_type_template_id_1f662374_hoisted_8 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_8 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
   class: "fas fa-file",
   "aria-hidden": "true"
 }, null, -1);
 
-var crosierListSvue_type_template_id_1f662374_hoisted_9 = [crosierListSvue_type_template_id_1f662374_hoisted_8];
-var crosierListSvue_type_template_id_1f662374_hoisted_10 = {
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_9 = [crosierListSvue_type_template_id_3d8cd21c_hoisted_8];
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_10 = {
   class: "card-body"
 };
 
-var crosierListSvue_type_template_id_1f662374_hoisted_11 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "Filtros", -1);
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_11 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "Filtros", -1);
 
-var crosierListSvue_type_template_id_1f662374_hoisted_12 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_12 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
   class: "pi pi-filter"
 }, null, -1);
 
-var crosierListSvue_type_template_id_1f662374_hoisted_13 = {
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_13 = {
   class: "row mt-3"
 };
-var crosierListSvue_type_template_id_1f662374_hoisted_14 = {
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_14 = {
   class: "col-8"
 };
 
-var crosierListSvue_type_template_id_1f662374_hoisted_15 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(". ");
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_15 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(". ");
 
-var crosierListSvue_type_template_id_1f662374_hoisted_16 = {
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_16 = {
   class: "col-4 text-right"
 };
-var crosierListSvue_type_template_id_1f662374_hoisted_17 = {
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_17 = {
   style: {
     "text-align": "right"
   }
 };
 
-var crosierListSvue_type_template_id_1f662374_hoisted_18 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])("  Id ");
+var crosierListSvue_type_template_id_3d8cd21c_hoisted_18 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])("  Id ");
 
-function crosierListSvue_type_template_id_1f662374_render(_ctx, _cache, $props, $setup, $data, $options) {
+function crosierListSvue_type_template_id_3d8cd21c_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_ConfirmDialog = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("ConfirmDialog");
@@ -11601,12 +11601,12 @@ function crosierListSvue_type_template_id_1f662374_render(_ctx, _cache, $props, 
     class: "mb-5"
   }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])(this.containerClass)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1f662374_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1f662374_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1f662374_hoisted_3, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1f662374_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.titulo), 1), $props.subtitulo ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("h6", crosierListSvue_type_template_id_1f662374_hoisted_5, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.subtitulo), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1f662374_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("a", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3d8cd21c_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3d8cd21c_hoisted_2, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3d8cd21c_hoisted_3, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3d8cd21c_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.titulo), 1), $props.subtitulo ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("h6", crosierListSvue_type_template_id_3d8cd21c_hoisted_5, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.subtitulo), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3d8cd21c_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("a", {
     type: "button",
     class: "btn btn-info",
     href: this.formUrl,
     title: "Novo"
-  }, crosierListSvue_type_template_id_1f662374_hoisted_9, 8, crosierListSvue_type_template_id_1f662374_hoisted_7), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.formUrl]]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "headerButtons")])])]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1f662374_hoisted_10, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_CrosierBlock, {
+  }, crosierListSvue_type_template_id_3d8cd21c_hoisted_9, 8, crosierListSvue_type_template_id_3d8cd21c_hoisted_7), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.formUrl]]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "headerButtons")])])]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3d8cd21c_hoisted_10, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_CrosierBlock, {
     loading: this.loading
   }, null, 8, ["loading"]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Accordion, {
     activeIndex: this.accordionActiveIndex
@@ -11614,7 +11614,7 @@ function crosierListSvue_type_template_id_1f662374_render(_ctx, _cache, $props, 
     default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
       return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_AccordionTab, null, {
         header: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-          return [crosierListSvue_type_template_id_1f662374_hoisted_11, crosierListSvue_type_template_id_1f662374_hoisted_12];
+          return [crosierListSvue_type_template_id_3d8cd21c_hoisted_11, crosierListSvue_type_template_id_3d8cd21c_hoisted_12];
         }),
         default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
           return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("form", {
@@ -11622,14 +11622,14 @@ function crosierListSvue_type_template_id_1f662374_render(_ctx, _cache, $props, 
               return _this.doFilter();
             }, ["prevent"])),
             class: "notSubmit"
-          }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "filter-fields"), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1f662374_hoisted_13, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1f662374_hoisted_14, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InlineMessage, {
+          }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "filter-fields"), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3d8cd21c_hoisted_13, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3d8cd21c_hoisted_14, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InlineMessage, {
             severity: "info"
           }, {
             default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-              return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("small", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.totalRecords) + " registro(s) encontrado(s) ", 1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "(com filtros aplicados)", 512), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], _this.isFiltering]]), crosierListSvue_type_template_id_1f662374_hoisted_15])];
+              return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("small", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($data.totalRecords) + " registro(s) encontrado(s) ", 1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", null, "(com filtros aplicados)", 512), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], _this.isFiltering]]), crosierListSvue_type_template_id_3d8cd21c_hoisted_15])];
             }),
             _: 1
-          })]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1f662374_hoisted_16, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
+          })]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3d8cd21c_hoisted_16, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
             label: "Filtrar",
             type: "submit",
             icon: "fas fa-search",
@@ -11648,7 +11648,7 @@ function crosierListSvue_type_template_id_1f662374_render(_ctx, _cache, $props, 
     }),
     _: 3
   }, 8, ["activeIndex"])]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_DataTable, {
-    stateStorage: "local",
+    stateStorage: this.stateStorage,
     class: "p-datatable-sm p-datatable-striped",
     stateKey: this.dataTableStateKey,
     value: $data.tableData,
@@ -11670,11 +11670,11 @@ function crosierListSvue_type_template_id_1f662374_render(_ctx, _cache, $props, 
     currentPageReportTemplate: "{first}-{last} de {totalRecords}",
     selection: this.selection,
     "onUpdate:selection": _cache[7] || (_cache[7] = function ($event) {
-      return _this.$emit('update:selection', $event);
+      return _this.onUpdateSelection($event);
     }),
     selectionMode: $props.selectionMode,
-    onRowSelect: [this.onUpdateSelection, this.onRowSelect],
-    onRowUnselect: [this.onUpdateSelection, this.onRowUnselect],
+    onRowSelect: [this.onRowSelect, this.onRowSelect],
+    onRowUnselect: [this.onRowUnselect, this.onRowUnselect],
     metaKeySelection: this.metaKeySelection,
     dataKey: "id",
     resizableColumns: true,
@@ -11684,7 +11684,7 @@ function crosierListSvue_type_template_id_1f662374_render(_ctx, _cache, $props, 
     ref: "dt"
   }, {
     footer: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_1f662374_hoisted_17, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
+      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierListSvue_type_template_id_3d8cd21c_hoisted_17, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Button, {
         class: "p-button-rounded p-button-success p-button-text",
         icon: "pi pi-file-excel",
         label: "Exportar para CSV",
@@ -11711,7 +11711,7 @@ function crosierListSvue_type_template_id_1f662374_render(_ctx, _cache, $props, 
             }),
             onIcon: "pi pi-check",
             offIcon: "pi pi-times"
-          }, null, 8, ["modelValue"]), crosierListSvue_type_template_id_1f662374_hoisted_18];
+          }, null, 8, ["modelValue"]), crosierListSvue_type_template_id_3d8cd21c_hoisted_18];
         }),
         body: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function (r) {
           return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(r.data.id), 1)];
@@ -11720,9 +11720,9 @@ function crosierListSvue_type_template_id_1f662374_render(_ctx, _cache, $props, 
       })) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "columns")];
     }),
     _: 3
-  }, 8, ["stateKey", "value", "totalRecords", "multiSortMeta", "selection", "selectionMode", "onRowSelect", "onRowUnselect", "metaKeySelection", "first"])])])], 2)], 64);
+  }, 8, ["stateStorage", "stateKey", "value", "totalRecords", "multiSortMeta", "selection", "selectionMode", "onRowSelect", "onRowUnselect", "metaKeySelection", "first"])])])], 2)], 64);
 }
-// CONCATENATED MODULE: ./src/components/crosierListS.vue?vue&type=template&id=1f662374
+// CONCATENATED MODULE: ./src/components/crosierListS.vue?vue&type=template&id=3d8cd21c
 
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
 function _arrayWithHoles(arr) {
@@ -23910,7 +23910,7 @@ function _deleteEntityData() {
     InlineMessage: inlinemessage_esm,
     Toast: toast_esm
   },
-  emits: ["beforeFilter", "afterFilter", "onRowSelect", "onRowUnselect", "update:selection", "tudoSelecionadoClick"],
+  emits: ["beforeFilter", "afterFilter", "row-select", "row-unselect", "update:selection", "tudoSelecionadoClick"],
   props: {
     titulo: {
       type: String,
@@ -23953,6 +23953,11 @@ function _deleteEntityData() {
       type: Boolean,
       default: false
     },
+    preselecao: {
+      // se for preselecao, então a seleção será fornecida
+      type: Boolean,
+      default: false
+    },
     selectionMode: {
       type: String,
       default: "multiple"
@@ -23964,6 +23969,10 @@ function _deleteEntityData() {
     dtStateName: {
       type: String,
       default: null
+    },
+    stateStorage: {
+      type: String,
+      default: "local"
     }
   },
   data: function data() {
@@ -23976,6 +23985,11 @@ function _deleteEntityData() {
       accordionActiveIndex: null,
       tudoSelecionado: false
     };
+  },
+  created: function created() {
+    if (this.preselecao) {
+      localStorage.removeItem(this.dataTableStateKey);
+    }
   },
   mounted: function mounted() {
     var _this = this;
@@ -23990,19 +24004,23 @@ function _deleteEntityData() {
 
               uri = window.location.search.substring(1);
               params = new URLSearchParams(uri);
-              _this.savedFilter = params.get("filters") || localStorage.getItem(_this.filtersOnLocalStorage);
 
-              if (_this.savedFilter) {
-                try {
-                  filtersParsed = JSON.parse(_this.savedFilter);
+              if (_this.filtersStoreName) {
+                _this.savedFilter = params.get("filters") || localStorage.getItem(_this.filtersOnLocalStorage);
 
-                  _this.setFilters(filtersParsed);
-                } catch (e) {
-                  console.error("N\xE3o foi poss\xEDvel recuperar os filtros (".concat(_this.savedFilter, ")"));
-                  console.error(e);
+                if (_this.savedFilter) {
+                  try {
+                    filtersParsed = JSON.parse(_this.savedFilter);
+
+                    _this.setFilters(filtersParsed);
+                  } catch (e) {
+                    console.error("N\xE3o foi poss\xEDvel recuperar os filtros (".concat(_this.savedFilter, ")"));
+                    console.error(e);
+                  }
                 }
               }
 
+              localStorage.removeItem(_this.dataTableStateKey);
               _context.next = 7;
               return _this.doFilter();
 
@@ -24021,13 +24039,15 @@ function _deleteEntityData() {
   },
   methods: _objectSpread2(_objectSpread2({}, mapMutations(["setLoading"])), {}, {
     setFilters: function setFilters(filters) {
-      var mutationName = "set".concat(this.filtersStoreName.charAt(0).toUpperCase()).concat(this.filtersStoreName.slice(1));
+      if (this.filtersStoreName) {
+        var mutationName = "set".concat(this.filtersStoreName.charAt(0).toUpperCase()).concat(this.filtersStoreName.slice(1));
 
-      try {
-        this.$store.commit(mutationName, filters);
-      } catch (e) {
-        console.error("crosierListS: |".concat(mutationName, "| n/d"));
-        console.error(e);
+        try {
+          this.$store.commit(mutationName, filters);
+        } catch (e) {
+          console.error("crosierListS: |".concat(mutationName, "| n/d"));
+          console.error(e);
+        }
       }
     },
     doFilter: function doFilter(event) {
@@ -24102,7 +24122,7 @@ function _deleteEntityData() {
 
                 _this2.$emit("afterFilter", _this2.tableData);
 
-                _this2.onUpdateSelection();
+                _this2.handleTudoSelecionado();
 
                 _this2.setLoading(false);
 
@@ -24125,9 +24145,13 @@ function _deleteEntityData() {
       });
     },
     tudoSelecionadoClick: function tudoSelecionadoClick() {
-      this.$emit("tudoSelecionadoClick", this.tudoSelecionado ? _toConsumableArray(this.tableData) : null);
+      this.$emit("update:selection", this.tudoSelecionado ? _toConsumableArray(this.tableData) : null);
     },
-    onUpdateSelection: function onUpdateSelection() {
+    onUpdateSelection: function onUpdateSelection($event) {
+      this.handleTudoSelecionado();
+      this.$emit("update:selection", $event);
+    },
+    handleTudoSelecionado: function handleTudoSelecionado() {
       var _this3 = this;
 
       this.$nextTick(function () {
@@ -24143,89 +24167,25 @@ function _deleteEntityData() {
             }).sort();
             _this3.tudoSelecionado = JSON.stringify(selectionIds) === JSON.stringify(valuesIds);
           } catch (e) {
-            console.error("Erro - onUpdateSelection");
+            console.error("Erro - handleTudoSelecionado");
             console.error(e);
           }
         }
       });
     },
-    onRowSelect: function onRowSelect(event) {
-      var _this4 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
-        return regeneratorRuntime.wrap(function _callee3$(_context3) {
-          while (1) {
-            switch (_context3.prev = _context3.next) {
-              case 0:
-                _context3.next = 2;
-                return _this4.$emit("onRowSelect", event);
-
-              case 2:
-              case "end":
-                return _context3.stop();
-            }
-          }
-        }, _callee3);
-      }))();
+    onRowSelect: function onRowSelect($event) {
+      this.$emit("row-select", $event);
+      this.handleTudoSelecionado();
     },
-    onRowUnselect: function onRowUnselect(event) {
-      var _this5 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
-        return regeneratorRuntime.wrap(function _callee4$(_context4) {
-          while (1) {
-            switch (_context4.prev = _context4.next) {
-              case 0:
-                _context4.next = 2;
-                return _this5.$emit("onRowUnselect", event);
-
-              case 2:
-              case "end":
-                return _context4.stop();
-            }
-          }
-        }, _callee4);
-      }))();
+    onRowUnselect: function onRowUnselect($event) {
+      this.$emit("row-unselect", $event);
+      this.handleTudoSelecionado();
     },
     exportCSV: function exportCSV() {
       this.$refs.dt.exportCSV();
     },
-    testToast2: function testToast2() {
-      this.$toast.add({
-        severity: "success",
-        summary: "Success",
-        detail: "yuioyoiyioyioRegistro deletado com sucesso",
-        life: 5000
-      });
-    },
-    testToast3: function testToast3($toast) {
-      $toast.add({
-        severity: "success",
-        summary: "Success",
-        detail: "ioyioyuiouyuioRegistro deletado com sucesso",
-        life: 5000
-      });
-    },
-    testToast4: function testToast4($toast, group) {
-      $toast.add({
-        group: group,
-        severity: "success",
-        summary: "Success",
-        detail: "ioyioyuiouyuioRegistro deletado com sucesso",
-        life: 5000
-      });
-    },
-    testToast5: function testToast5(group) {
-      this.$toast.add({
-        group: group,
-        severity: "success",
-        summary: "Success",
-        detail: "ioyioyuiouyuioRegistro deletado com sucesso",
-        life: 5000
-      });
-    },
     deletar: function deletar(id) {
-      var _this6 = this;
+      var _this4 = this;
 
       this.$confirm.require({
         acceptLabel: "Sim",
@@ -24234,28 +24194,27 @@ function _deleteEntityData() {
         header: "Atenção!",
         icon: "pi pi-exclamation-triangle",
         accept: function () {
-          var _accept = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+          var _accept = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3() {
             var rsDelete;
-            return regeneratorRuntime.wrap(function _callee5$(_context5) {
+            return regeneratorRuntime.wrap(function _callee3$(_context3) {
               while (1) {
-                switch (_context5.prev = _context5.next) {
+                switch (_context3.prev = _context3.next) {
                   case 0:
-                    _this6.setLoading(true);
+                    _this4.setLoading(true);
 
-                    _context5.prev = 1;
-                    _context5.next = 4;
-                    return api.delete("".concat(_this6.apiResource).concat(id));
+                    _context3.prev = 1;
+                    _context3.next = 4;
+                    return api.delete("".concat(_this4.apiResource).concat(id));
 
                   case 4:
-                    rsDelete = _context5.sent;
-                    console.log(rsDelete);
+                    rsDelete = _context3.sent;
 
                     if (!((rsDelete === null || rsDelete === void 0 ? void 0 : rsDelete.status) === 204)) {
-                      _context5.next = 10;
+                      _context3.next = 9;
                       break;
                     }
 
-                    _this6.$toast.add({
+                    _this4.$toast.add({
                       group: "mainToast",
                       severity: "success",
                       summary: "Success",
@@ -24263,10 +24222,10 @@ function _deleteEntityData() {
                       life: 5000
                     });
 
-                    _context5.next = 13;
+                    _context3.next = 12;
                     break;
 
-                  case 10:
+                  case 9:
                     if (rsDelete !== null && rsDelete !== void 0 && rsDelete.data["hydra:description"]) {
                       console.error(rsDelete === null || rsDelete === void 0 ? void 0 : rsDelete.data["hydra:description"]);
                     }
@@ -24274,20 +24233,20 @@ function _deleteEntityData() {
                     console.error(rsDelete === null || rsDelete === void 0 ? void 0 : rsDelete.statusText);
                     throw new Error("Não foi possível deletar o registro");
 
-                  case 13:
-                    _context5.next = 15;
-                    return _this6.doFilter();
+                  case 12:
+                    _context3.next = 14;
+                    return _this4.doFilter();
 
-                  case 15:
-                    _context5.next = 21;
+                  case 14:
+                    _context3.next = 20;
                     break;
 
-                  case 17:
-                    _context5.prev = 17;
-                    _context5.t0 = _context5["catch"](1);
-                    console.error(_context5.t0);
+                  case 16:
+                    _context3.prev = 16;
+                    _context3.t0 = _context3["catch"](1);
+                    console.error(_context3.t0);
 
-                    _this6.$toast.add({
+                    _this4.$toast.add({
                       group: "mainToast",
                       severity: "error",
                       summary: "Erro",
@@ -24295,15 +24254,15 @@ function _deleteEntityData() {
                       life: 5000
                     });
 
-                  case 21:
-                    _this6.setLoading(false);
+                  case 20:
+                    _this4.setLoading(false);
 
-                  case 22:
+                  case 21:
                   case "end":
-                    return _context5.stop();
+                    return _context3.stop();
                 }
               }
-            }, _callee5, null, [[1, 17]]);
+            }, _callee3, null, [[1, 16]]);
           }));
 
           function accept() {
@@ -24319,10 +24278,18 @@ function _deleteEntityData() {
     loading: "isLoading"
   })), {}, {
     filters: function filters() {
-      return this.$store.getters["get".concat(this.filtersStoreName.charAt(0).toUpperCase()).concat(this.filtersStoreName.slice(1))];
+      if (this.filtersStoreName) {
+        return this.$store.getters["get".concat(this.filtersStoreName.charAt(0).toUpperCase()).concat(this.filtersStoreName.slice(1))];
+      }
+
+      return null;
     },
     defaultFilters: function defaultFilters() {
-      return this.$store.getters["getDefault".concat(this.filtersStoreName.charAt(0).toUpperCase()).concat(this.filtersStoreName.slice(1))];
+      if (this.filtersStoreName) {
+        return this.$store.getters["getDefault".concat(this.filtersStoreName.charAt(0).toUpperCase()).concat(this.filtersStoreName.slice(1))];
+      }
+
+      return null;
     },
     filtersOnLocalStorage: function filtersOnLocalStorage() {
       return "filters".concat(this.apiResource, "_").concat(this.filtersStoreName);
@@ -24361,7 +24328,7 @@ function _deleteEntityData() {
 
 
 
-const crosierListS_exports_ = /*#__PURE__*/exportHelper_default()(crosierListSvue_type_script_lang_js, [['render',crosierListSvue_type_template_id_1f662374_render]])
+const crosierListS_exports_ = /*#__PURE__*/exportHelper_default()(crosierListSvue_type_script_lang_js, [['render',crosierListSvue_type_template_id_3d8cd21c_render]])
 
 /* harmony default export */ var crosierListS = (crosierListS_exports_);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierCalendar.vue?vue&type=template&id=e4b721f8&scoped=true
