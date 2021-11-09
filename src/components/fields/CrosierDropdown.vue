@@ -14,6 +14,7 @@
         :placeholder="this.showClear ? 'Selecione' : null"
         :showClear="this.showClear"
         :disabled="this.disabled"
+        :dataKey="this.dataKey"
         :filter="true"
       />
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
@@ -88,6 +89,10 @@ export default {
     appendTo: {
       type: String,
       default: "body",
+    },
+    dataKey: {
+      type: String,
+      default: "@id",
     },
   },
 

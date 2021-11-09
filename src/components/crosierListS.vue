@@ -416,7 +416,7 @@ export default {
               this.$toast.add({
                 group: "mainToast",
                 severity: "success",
-                summary: "Success",
+                summary: "Sucesso",
                 detail: "Registro deletado com sucesso",
                 life: 5000,
               });

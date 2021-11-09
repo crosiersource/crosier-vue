@@ -13,6 +13,7 @@
         :placeholder="this.showClear ? 'Selecione' : null"
         :showClear="this.showClear"
         :disabled="this.disabled"
+        dataKey="@id"
         :filter="true"
       />
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
