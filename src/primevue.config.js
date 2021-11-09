@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 
 const options = {
+  ripple: true,
   locale: {
     accept: "Sim",
     reject: "Não",
