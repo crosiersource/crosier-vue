@@ -9,6 +9,7 @@ import CrosierDropdown from "./components/fields/CrosierDropdown";
 import CrosierDropdownBanco from "./components/fields/CrosierDropdownBanco";
 import CrosierDropdownEntity from "./components/fields/CrosierDropdownEntity";
 import CrosierInputText from "./components/fields/CrosierInputText";
+import CrosierInputTextarea from "./components/fields/CrosierInputTextarea";
 import CrosierInputInt from "./components/fields/CrosierInputInt";
 import CrosierInputDecimal from "./components/fields/CrosierInputDecimal";
 import CrosierPercent from "./components/fields/CrosierPercent";
@@ -32,6 +33,7 @@ export default {
   CrosierDropdownBanco,
   CrosierDropdownEntity,
   CrosierInputText,
+  CrosierInputTextarea,
   CrosierInputInt,
   CrosierInputDecimal,
   CrosierPercent,

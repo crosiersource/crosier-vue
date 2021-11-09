@@ -2092,6 +2092,17 @@ module.exports = function settle(resolve, reject, response) {
 
 /***/ }),
 
+/***/ "47d9":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputTextarea_vue_vue_type_style_index_0_id_0f3e6ebe_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("b800");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputTextarea_vue_vue_type_style_index_0_id_0f3e6ebe_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputTextarea_vue_vue_type_style_index_0_id_0f3e6ebe_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
 /***/ "4840":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4667,6 +4678,20 @@ module.exports = DESCRIPTORS ? function (object, key, value) {
   object[key] = value;
   return object;
 };
+
+
+/***/ }),
+
+/***/ "91fc":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".invalid-feedbackk[data-v-0f3e6ebe]{width:100%;margin-top:.25rem;font-size:80%;color:#e55353}", ""]);
+// Exports
+module.exports = exports;
 
 
 /***/ }),
@@ -7357,6 +7382,22 @@ module.exports = {
 const HOOK_SETUP = 'devtools-plugin:setup';
 const HOOK_PLUGIN_SETTINGS_SET = 'plugin:settings:set';
 
+
+/***/ }),
+
+/***/ "b800":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("91fc");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("6e9e1886", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -27819,6 +27860,209 @@ var CrosierInputTextvue_type_style_index_0_id_e889ac76_scoped_true_lang_css = __
 const CrosierInputText_exports_ = /*#__PURE__*/exportHelper_default()(CrosierInputTextvue_type_script_lang_js, [['render',CrosierInputTextvue_type_template_id_e889ac76_scoped_true_render],['__scopeId',"data-v-e889ac76"]])
 
 /* harmony default export */ var CrosierInputText = (CrosierInputText_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputTextarea.vue?vue&type=template&id=0f3e6ebe&scoped=true
+
+
+var CrosierInputTextareavue_type_template_id_0f3e6ebe_scoped_true_withScopeId = function _withScopeId(n) {
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["pushScopeId"])("data-v-0f3e6ebe"), n = n(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["popScopeId"])(), n;
+};
+
+var CrosierInputTextareavue_type_template_id_0f3e6ebe_scoped_true_hoisted_1 = {
+  class: "form-group"
+};
+var CrosierInputTextareavue_type_template_id_0f3e6ebe_scoped_true_hoisted_2 = ["for"];
+var CrosierInputTextareavue_type_template_id_0f3e6ebe_scoped_true_hoisted_3 = ["id"];
+function CrosierInputTextareavue_type_template_id_0f3e6ebe_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Textarea = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Textarea");
+
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputTextareavue_type_template_id_0f3e6ebe_scoped_true_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+    for: this.id
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierInputTextareavue_type_template_id_0f3e6ebe_scoped_true_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Textarea, {
+    rows: this.rows,
+    cols: this.cols,
+    "auto-resize": this.autoResize,
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid' : '')),
+    id: this.id,
+    type: "text",
+    modelValue: $props.modelValue,
+    onInput: this.onInput,
+    disabled: this.disabled
+  }, null, 8, ["rows", "cols", "auto-resize", "class", "id", "modelValue", "onInput", "disabled"]), this.helpText ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("small", {
+    key: 0,
+    id: this.id + '_help',
+    class: "form-text text-muted"
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierInputTextareavue_type_template_id_0f3e6ebe_scoped_true_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+    class: "invalid-feedbackk blink"
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 513), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.error]])])], 2);
+}
+// CONCATENATED MODULE: ./src/components/fields/CrosierInputTextarea.vue?vue&type=template&id=0f3e6ebe&scoped=true
+
+// CONCATENATED MODULE: ./node_modules/primevue/textarea/textarea.esm.js
+
+
+var textarea_esm_script = {
+    name: 'Textarea',
+    emits: ['update:modelValue'],
+    props: {
+        modelValue: null,
+        autoResize: Boolean
+    },
+    mounted() {
+        if (this.$el.offsetParent && this.autoResize) {
+            this.resize();
+        }
+    },
+    updated() {
+        if (this.$el.offsetParent && this.autoResize) {
+            this.resize();
+        }
+    },
+    methods: {
+        resize() {
+            const style = window.getComputedStyle(this.$el);
+            this.$el.style.height = 'auto';
+            this.$el.style.height = `calc(${style.borderTopWidth} + ${style.borderBottomWidth} + ${this.$el.scrollHeight}px)`;
+
+            if (parseFloat(this.$el.style.height) >= parseFloat(this.$el.style.maxHeight)) {
+                this.$el.style.overflowY = "scroll";
+                this.$el.style.height = this.$el.style.maxHeight;
+            }
+            else {
+                this.$el.style.overflow = "hidden";
+            }
+        },
+        onInput(event) {
+             if (this.autoResize) {
+                this.resize();
+            }
+
+            this.$emit('update:modelValue', event.target.value);
+        }
+    },
+    computed: {
+        filled() {
+            return (this.modelValue != null && this.modelValue.toString().length > 0)
+        }
+    }
+};
+
+function textarea_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("textarea", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+    class: ['p-inputtextarea p-inputtext p-component', {'p-filled': $options.filled, 'p-inputtextarea-resizable ': $props.autoResize}]
+  }, _ctx.$attrs, {
+    value: $props.modelValue,
+    onInput: _cache[1] || (_cache[1] = (...args) => ($options.onInput && $options.onInput(...args)))
+  }), null, 16, ["value"]))
+}
+
+function textarea_esm_styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var textarea_esm_css_248z = "\n.p-inputtextarea-resizable {\n    overflow: hidden;\n    resize: none;\n}\n.p-fluid .p-inputtextarea {\n    width: 100%;\n}\n";
+textarea_esm_styleInject(textarea_esm_css_248z);
+
+textarea_esm_script.render = textarea_esm_render;
+
+/* harmony default export */ var textarea_esm = (textarea_esm_script);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputTextarea.vue?vue&type=script&lang=js
+
+
+/* harmony default export */ var CrosierInputTextareavue_type_script_lang_js = ({
+  name: "CrosierInputTextarea",
+  components: {
+    Textarea: textarea_esm
+  },
+  emits: ["update:modelValue", "input"],
+  props: {
+    modelValue: {
+      type: String
+    },
+    id: {
+      type: String,
+      required: true
+    },
+    error: {
+      type: String,
+      default: null
+    },
+    col: {
+      type: String,
+      default: "12"
+    },
+    label: {
+      type: String,
+      required: true
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    helpText: {
+      type: String
+    },
+    rows: {
+      type: Number,
+      default: 5
+    },
+    cols: {
+      type: Number,
+      default: 40
+    },
+    autoResize: {
+      type: Boolean,
+      default: true
+    }
+  },
+  methods: {
+    onInput: function onInput($event) {
+      this.$emit("update:modelValue", $event.target.value);
+      this.$emit("input", $event);
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/fields/CrosierInputTextarea.vue?vue&type=script&lang=js
+ 
+// EXTERNAL MODULE: ./src/components/fields/CrosierInputTextarea.vue?vue&type=style&index=0&id=0f3e6ebe&scoped=true&lang=css
+var CrosierInputTextareavue_type_style_index_0_id_0f3e6ebe_scoped_true_lang_css = __webpack_require__("47d9");
+
+// CONCATENATED MODULE: ./src/components/fields/CrosierInputTextarea.vue
+
+
+
+
+
+
+
+const CrosierInputTextarea_exports_ = /*#__PURE__*/exportHelper_default()(CrosierInputTextareavue_type_script_lang_js, [['render',CrosierInputTextareavue_type_template_id_0f3e6ebe_scoped_true_render],['__scopeId',"data-v-0f3e6ebe"]])
+
+/* harmony default export */ var CrosierInputTextarea = (CrosierInputTextarea_exports_);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputInt.vue?vue&type=template&id=3296df4e&scoped=true
 
 
@@ -28387,6 +28631,7 @@ function _submitForm() {
 
 
 
+
 /* harmony default export */ var main = ({
   HelloWorld: HelloWorld,
   CrosierBlock: crosierBlock,
@@ -28401,6 +28646,7 @@ function _submitForm() {
   CrosierDropdownBanco: CrosierDropdownBanco,
   CrosierDropdownEntity: CrosierDropdownEntity,
   CrosierInputText: CrosierInputText,
+  CrosierInputTextarea: CrosierInputTextarea,
   CrosierInputInt: CrosierInputInt,
   CrosierInputDecimal: CrosierInputDecimal,
   CrosierPercent: CrosierPercent
