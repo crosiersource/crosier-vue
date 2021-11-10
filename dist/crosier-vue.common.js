@@ -28453,13 +28453,13 @@ function _submitForm() {
   _submitForm = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(_ref) {
     var _response;
 
-    var apiResource, $store, formDataStateName, schemaValidator, _ref$setUrlId, setUrlId, _ref$fnBeforeSave, fnBeforeSave, _ref$fnAfterGet, fnAfterGet, _ref$$toast, $toast, _ref$msgSucesso, msgSucesso, _ref$msgErro, msgErro, getter, formDataOrig, formData, commitFormData, response, errMsg;
+    var apiResource, $store, formDataStateName, schemaValidator, _ref$setUrlId, setUrlId, _ref$fnBeforeSave, fnBeforeSave, _ref$fnAfterGet, fnAfterGet, _ref$$toast, $toast, _ref$commitFormDataAf, commitFormDataAfterSave, _ref$msgSucesso, msgSucesso, _ref$msgErro, msgErro, getter, formDataOrig, formData, commitFormData, response, errMsg;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            apiResource = _ref.apiResource, $store = _ref.$store, formDataStateName = _ref.formDataStateName, schemaValidator = _ref.schemaValidator, _ref$setUrlId = _ref.setUrlId, setUrlId = _ref$setUrlId === void 0 ? true : _ref$setUrlId, _ref$fnBeforeSave = _ref.fnBeforeSave, fnBeforeSave = _ref$fnBeforeSave === void 0 ? null : _ref$fnBeforeSave, _ref$fnAfterGet = _ref.fnAfterGet, fnAfterGet = _ref$fnAfterGet === void 0 ? null : _ref$fnAfterGet, _ref$$toast = _ref.$toast, $toast = _ref$$toast === void 0 ? null : _ref$$toast, _ref$msgSucesso = _ref.msgSucesso, msgSucesso = _ref$msgSucesso === void 0 ? "Registro salvo com sucesso" : _ref$msgSucesso, _ref$msgErro = _ref.msgErro, msgErro = _ref$msgErro === void 0 ? "Ocorreu um erro ao salvar" : _ref$msgErro;
+            apiResource = _ref.apiResource, $store = _ref.$store, formDataStateName = _ref.formDataStateName, schemaValidator = _ref.schemaValidator, _ref$setUrlId = _ref.setUrlId, setUrlId = _ref$setUrlId === void 0 ? true : _ref$setUrlId, _ref$fnBeforeSave = _ref.fnBeforeSave, fnBeforeSave = _ref$fnBeforeSave === void 0 ? null : _ref$fnBeforeSave, _ref$fnAfterGet = _ref.fnAfterGet, fnAfterGet = _ref$fnAfterGet === void 0 ? null : _ref$fnAfterGet, _ref$$toast = _ref.$toast, $toast = _ref$$toast === void 0 ? null : _ref$$toast, _ref$commitFormDataAf = _ref.commitFormDataAfterSave, commitFormDataAfterSave = _ref$commitFormDataAf === void 0 ? true : _ref$commitFormDataAf, _ref$msgSucesso = _ref.msgSucesso, msgSucesso = _ref$msgSucesso === void 0 ? "Registro salvo com sucesso" : _ref$msgSucesso, _ref$msgErro = _ref.msgErro, msgErro = _ref$msgErro === void 0 ? "Ocorreu um erro ao salvar" : _ref$msgErro;
             getter = "get".concat(formDataStateName.charAt(0).toUpperCase()).concat(formDataStateName.slice(1));
             formDataOrig = $store.getters[getter] ? $store.getters[getter] : $store.state[formDataStateName];
             formData = _objectSpread2({}, formDataOrig);
@@ -28578,7 +28578,10 @@ function _submitForm() {
               });
             }
 
-            $store.commit(commitFormData, formData);
+            if (commitFormDataAfterSave) {
+              $store.commit(commitFormData, formData);
+            }
+
             return _context.abrupt("return", response);
 
           case 44:

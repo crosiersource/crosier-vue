@@ -11,6 +11,7 @@ export async function submitForm({
   fnBeforeSave = null,
   fnAfterGet = null,
   $toast = null,
+  commitFormDataAfterSave = true,
   msgSucesso = "Registro salvo com sucesso",
   msgErro = "Ocorreu um erro ao salvar",
 }) {
@@ -91,7 +92,9 @@ export async function submitForm({
         life: 5000,
       });
     }
-    $store.commit(commitFormData, formData);
+    if (commitFormDataAfterSave) {
+      $store.commit(commitFormData, formData);
+    }
     return response;
   }
   // else...
