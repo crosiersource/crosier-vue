@@ -78,7 +78,7 @@
           :removable-sort="true"
           paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink
            LastPageLink CurrentPageReport RowsPerPageDropdown"
-          :rowsPerPageOptions="[5, 10, 25, 50, 200]"
+          :rowsPerPageOptions="[5, 10, 25, 50, 100, 200, 500]"
           currentPageReportTemplate="{first}-{last} de {totalRecords}"
           :selection="this.selection"
           @update:selection="this.onUpdateSelection($event)"
@@ -94,6 +94,7 @@
           responsiveLayout="scroll"
           :first="firstRecordIndex"
           ref="dt"
+          :rowHover="true"
         >
           <template #footer>
             <div style="text-align: right">
