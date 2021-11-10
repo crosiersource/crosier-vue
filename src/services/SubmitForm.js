@@ -11,6 +11,8 @@ export async function submitForm({
   fnBeforeSave = null,
   fnAfterGet = null,
   $toast = null,
+  msgSucesso = "Registro salvo com sucesso",
+  msgErro = "Ocorreu um erro ao salvar",
 }) {
   const getter = `get${formDataStateName.charAt(0).toUpperCase()}${formDataStateName.slice(1)}`;
   const formDataOrig = $store.getters[getter]
@@ -81,11 +83,11 @@ export async function submitForm({
     if (setUrlId) {
       window.history.pushState("form", "id", `?id=${formData.id}`);
     }
-    if ($toast) {
+    if ($toast && msgSucesso) {
       $toast.add({
         severity: "success",
         summary: "Sucesso",
-        detail: "Registro salvo com sucesso",
+        detail: msgSucesso,
         life: 5000,
       });
     }
@@ -94,9 +96,9 @@ export async function submitForm({
   }
   // else...
 
-  const errMsg = response.data["hydra:description"] || "Ocorreu um erro ao salvar!";
+  const errMsg = response.data["hydra:description"] || msgErro;
 
-  console.error("Ocorreu um erro salvar!");
+  console.error(errMsg);
 
   if ($toast) {
     $toast.add({
