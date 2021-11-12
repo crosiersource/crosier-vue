@@ -78,7 +78,6 @@ export default {
   methods: {
     onInput($event) {
       this.$nextTick(async () => {
-        console.log($event);
         this.$emit("update:modelValue", $event);
         this.$emit("input", $event);
       });
