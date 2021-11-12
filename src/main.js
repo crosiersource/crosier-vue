@@ -14,6 +14,11 @@ import CrosierInputInt from "./components/fields/CrosierInputInt";
 import CrosierInputDecimal from "./components/fields/CrosierInputDecimal";
 import CrosierPercent from "./components/fields/CrosierPercent";
 
+import CrosierInputCpfCnpj from "./components/fields/CrosierInputCpfCnpj";
+import CrosierInputCpf from "./components/fields/CrosierInputCpf";
+import CrosierInputCnpj from "./components/fields/CrosierInputCnpj";
+import CrosierInputTelefone from "./components/fields/CrosierInputTelefone";
+
 import api from "./services/api";
 import { submitForm } from "./services/SubmitForm";
 import { validateFormData } from "./services/ValidateFormData";
@@ -37,4 +42,9 @@ export default {
   CrosierInputInt,
   CrosierInputDecimal,
   CrosierPercent,
+
+  CrosierInputCpfCnpj,
+  CrosierInputCpf,
+  CrosierInputCnpj,
+  CrosierInputTelefone,
 };

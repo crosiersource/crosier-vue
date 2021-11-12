@@ -2,14 +2,24 @@
   <div :class="'col-md-' + this.col">
     <div class="form-group">
       <label :for="this.id">{{ label }}</label>
-      <InputText
+
+      <InputMask
         :class="'form-control ' + (this.error ? 'is-invalid' : '') + this.inputClass"
-        :id="this.id"
-        type="text"
-        :modelValue="modelValue"
-        @input="this.onInput"
-        :disabled="this.disabled"
+        :modelValue="this.modelValue"
+        @update:modelValue="this.onInput($event)"
+        v-if="this.modelValue && this.modelValue.length >= 11"
+        mask="(99) 99999-999?9"
+        :unmask="true"
       />
+      <InputMask
+        :class="'form-control ' + (this.error ? 'is-invalid' : '') + this.inputClass"
+        :modelValue="this.modelValue"
+        @update:modelValue="this.onInput($event)"
+        v-if="!this.modelValue || this.modelValue.length < 11"
+        mask="(99) 9999-9999?9"
+        :unmask="true"
+      />
+
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
         this.helpText
       }}</small>
@@ -21,13 +31,13 @@
 </template>
 
 <script>
-import InputText from "primevue/inputtext";
+import InputMask from "primevue/inputmask";
 
 export default {
-  name: "CrosierInputText",
+  name: "CrosierInputTelefone",
 
   components: {
-    InputText,
+    InputMask,
   },
 
   emits: ["update:modelValue", "input"],
@@ -67,8 +77,11 @@ export default {
 
   methods: {
     onInput($event) {
-      this.$emit("update:modelValue", $event.target.value);
-      this.$emit("input", $event);
+      this.$nextTick(async () => {
+        console.log($event);
+        this.$emit("update:modelValue", $event);
+        this.$emit("input", $event);
+      });
     },
   },
 };
