@@ -6,6 +6,7 @@ import CrosierListS from "./components/crosierListS.vue";
 import CrosierCalendar from "./components/fields/CrosierCalendar";
 import CrosierCurrency from "./components/fields/CrosierCurrency";
 import CrosierDropdown from "./components/fields/CrosierDropdown";
+import CrosierDropdownBoolean from "./components/fields/CrosierDropdownBoolean";
 import CrosierDropdownBanco from "./components/fields/CrosierDropdownBanco";
 import CrosierDropdownEntity from "./components/fields/CrosierDropdownEntity";
 import CrosierInputText from "./components/fields/CrosierInputText";
@@ -35,6 +36,7 @@ export default {
   CrosierCalendar,
   CrosierCurrency,
   CrosierDropdown,
+  CrosierDropdownBoolean,
   CrosierDropdownBanco,
   CrosierDropdownEntity,
   CrosierInputText,

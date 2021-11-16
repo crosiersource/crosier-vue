@@ -8,7 +8,6 @@
         :appendTo="this.appendTo"
         :modelValue="modelValue"
         @change="this.onChange"
-        emptyMessage="Nenhum resultado encontrado"
         :options="this.options"
         :optionLabel="this.optionLabel"
         :optionValue="this.optionValue"
@@ -32,7 +31,7 @@
 import Dropdown from "primevue/dropdown";
 
 export default {
-  name: "CrosierDropdown",
+  name: "CrosierDropdownBoolean",
 
   components: {
     Dropdown,
@@ -71,6 +70,10 @@ export default {
     },
     options: {
       type: Array,
+      default: () => [
+        { name: "Sim", value: true },
+        { name: "Não", value: false },
+      ],
     },
     disabled: {
       type: Boolean,
@@ -91,12 +94,6 @@ export default {
       type: String,
       default: "@id",
     },
-  },
-
-  created() {
-    if (!this.options || this.options.length < 1) {
-      console.error(`options n/d para ${this.id}`);
-    }
   },
 
   methods: {
