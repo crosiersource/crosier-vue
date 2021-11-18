@@ -2,17 +2,25 @@
   <div :class="'col-md-' + this.col">
     <div class="form-group">
       <label :for="this.id">{{ label }}</label>
-      <InputNumber
-        :class="'form-control ' + (this.error ? 'is-invalid' : '')"
-        :id="this.id"
-        inputClass="text-right"
-        mode="decimal"
-        :minFractionDigits="this.decimais"
-        :maxFractionDigits="this.decimais"
-        :modelValue="modelValue"
-        @input="this.onInput"
-        :disabled="this.disabled"
-      />
+      <div class="input-group">
+        <div v-if="this.append" class="input-group-append">
+          <span class="input-group-text">{{ this.append }}</span>
+        </div>
+        <InputNumber
+          :class="'form-control ' + (this.error ? 'is-invalid' : '')"
+          :id="this.id"
+          inputClass="text-right"
+          mode="decimal"
+          :minFractionDigits="this.decimais"
+          :maxFractionDigits="this.decimais"
+          :modelValue="modelValue"
+          @input="this.onInput"
+          :disabled="this.disabled"
+        />
+        <div v-if="this.prepend" class="input-group-prepend">
+          <span class="input-group-text">{{ this.prepend }}</span>
+        </div>
+      </div>
       <div class="invalid-feedbackk blink" v-show="this.error">
         {{ this.error }}
       </div>
@@ -64,6 +72,12 @@ export default {
       default: false,
     },
     helpText: {
+      type: String,
+    },
+    prepend: {
+      type: String,
+    },
+    append: {
       type: String,
     },
   },
