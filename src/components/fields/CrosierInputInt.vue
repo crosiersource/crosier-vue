@@ -3,8 +3,8 @@
     <div class="form-group">
       <label :for="this.id">{{ label }}</label>
       <div class="input-group">
-        <div v-if="this.append" class="input-group-append">
-          <span class="input-group-text">{{ this.append }}</span>
+        <div v-if="this.prepend" class="input-group-prepend">
+          <span class="input-group-text">{{ this.prepend }}</span>
         </div>
         <InputNumber
           :class="'form-control ' + (this.error ? 'is-invalid' : '')"
@@ -16,8 +16,8 @@
           :min="this.min"
           :max="this.max"
         />
-        <div v-if="this.prepend" class="input-group-prepend">
-          <span class="input-group-text">{{ this.prepend }}</span>
+        <div v-if="this.append" class="input-group-append">
+          <span class="input-group-text">{{ this.append }}</span>
         </div>
       </div>
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{

@@ -3,8 +3,8 @@
     <div class="form-group">
       <label :for="this.id">{{ label }}</label>
       <div class="input-group">
-        <div v-if="this.append" class="input-group-append">
-          <span class="input-group-text">{{ this.append }}</span>
+        <div v-if="this.prepend" class="input-group-prepend">
+          <span class="input-group-text">{{ this.prepend }}</span>
         </div>
         <InputNumber
           :class="'form-control ' + (this.error ? 'is-invalid' : '')"
@@ -17,8 +17,8 @@
           @input="this.onInput"
           :disabled="this.disabled"
         />
-        <div v-if="this.prepend" class="input-group-prepend">
-          <span class="input-group-text">{{ this.prepend }}</span>
+        <div v-if="this.append" class="input-group-append">
+          <span class="input-group-text">{{ this.append }}</span>
         </div>
       </div>
       <div class="invalid-feedbackk blink" v-show="this.error">
