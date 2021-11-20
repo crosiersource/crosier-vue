@@ -3445,6 +3445,17 @@ module.exports = function (argument) {
 
 /***/ }),
 
+/***/ "5b6f":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierAutoComplete_vue_vue_type_style_index_0_id_2436059b_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("92fd");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierAutoComplete_vue_vue_type_style_index_0_id_2436059b_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierAutoComplete_vue_vue_type_style_index_0_id_2436059b_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
 /***/ "5c6c":
 /***/ (function(module, exports) {
 
@@ -5211,6 +5222,22 @@ if (PATCH) {
 
 module.exports = patchedExec;
 
+
+/***/ }),
+
+/***/ "92fd":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("ad73");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("77b68f36", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -7150,6 +7177,20 @@ module.exports = function () {
   if (that.sticky) result += 'y';
   return result;
 };
+
+
+/***/ }),
+
+/***/ "ad73":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".invalid-feedbackk[data-v-2436059b]{width:100%;margin-top:.25rem;font-size:80%;color:#e55353}", ""]);
+// Exports
+module.exports = exports;
 
 
 /***/ }),
@@ -28311,6 +28352,948 @@ var CrosierDropdownEntityvue_type_style_index_0_id_458fbdda_scoped_true_lang_css
 const CrosierDropdownEntity_exports_ = /*#__PURE__*/exportHelper_default()(CrosierDropdownEntityvue_type_script_lang_js, [['render',CrosierDropdownEntityvue_type_template_id_458fbdda_scoped_true_render],['__scopeId',"data-v-458fbdda"]])
 
 /* harmony default export */ var CrosierDropdownEntity = (CrosierDropdownEntity_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierAutoComplete.vue?vue&type=template&id=2436059b&scoped=true
+
+
+
+
+
+var CrosierAutoCompletevue_type_template_id_2436059b_scoped_true_withScopeId = function _withScopeId(n) {
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["pushScopeId"])("data-v-2436059b"), n = n(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["popScopeId"])(), n;
+};
+
+var CrosierAutoCompletevue_type_template_id_2436059b_scoped_true_hoisted_1 = {
+  class: "form-group"
+};
+var CrosierAutoCompletevue_type_template_id_2436059b_scoped_true_hoisted_2 = ["for"];
+var CrosierAutoCompletevue_type_template_id_2436059b_scoped_true_hoisted_3 = ["id"];
+function CrosierAutoCompletevue_type_template_id_2436059b_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _this = this;
+
+  var _component_AutoComplete = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("AutoComplete");
+
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierAutoCompletevue_type_template_id_2436059b_scoped_true_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+    for: this.id
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierAutoCompletevue_type_template_id_2436059b_scoped_true_hoisted_2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_AutoComplete, {
+    class: "form-control",
+    inputClass: "form-control",
+    id: this.id,
+    modelValue: $props.modelValue,
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return _this.$emit('update:modelValue', $event);
+    }),
+    suggestions: this.values,
+    onComplete: _cache[1] || (_cache[1] = function ($event) {
+      return _this.$emit('complete', $event);
+    }),
+    onItemSelect: _cache[2] || (_cache[2] = function ($event) {
+      return _this.$emit('item-select', $event);
+    }),
+    onClear: _cache[3] || (_cache[3] = function ($event) {
+      return _this.$emit('clear');
+    }),
+    field: this.field,
+    disabled: this.disabled,
+    "append-to": this.appendTo,
+    "force-selection": this.forceSelection
+  }, {
+    item: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function (item) {
+      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "item", {
+        item: item.item
+      }, undefined, true)];
+    }),
+    _: 3
+  }, 8, ["id", "modelValue", "suggestions", "field", "disabled", "append-to", "force-selection"]), this.helpText ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("small", {
+    key: 0,
+    id: this.id + '_help',
+    class: "form-text text-muted"
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierAutoCompletevue_type_template_id_2436059b_scoped_true_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+    class: "invalid-feedbackk blink"
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 513), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.error]])])], 2);
+}
+// CONCATENATED MODULE: ./src/components/fields/CrosierAutoComplete.vue?vue&type=template&id=2436059b&scoped=true
+
+// CONCATENATED MODULE: ./node_modules/primevue/autocomplete/autocomplete.esm.js
+
+
+
+
+
+
+
+var autocomplete_esm_script = {
+    name: 'AutoComplete',
+    inheritAttrs: false,
+    emits: ['update:modelValue', 'item-select', 'item-unselect', 'dropdown-click', 'clear', 'complete'],
+    props: {
+        modelValue: null,
+        suggestions: {
+            type: Array,
+            default: null
+        },
+        field: {
+            type: [String,Function],
+            default: null
+        },
+        optionGroupLabel: null,
+        optionGroupChildren: null,
+        scrollHeight: {
+            type: String,
+            default: '200px'
+        },
+        dropdown: {
+            type: Boolean,
+            default: false
+        },
+        dropdownMode: {
+            type: String,
+            default: 'blank'
+        },
+        autoHighlight: {
+            type: Boolean,
+            default: false
+        },
+        multiple: {
+            type: Boolean,
+            default: false
+        },
+        minLength: {
+            type: Number,
+            default: 1
+        },
+        delay: {
+            type: Number,
+            default: 300
+        },
+        appendTo: {
+            type: String,
+            default: 'body'
+        },
+        forceSelection: {
+            type: Boolean,
+            default: false
+        },
+        completeOnFocus: {
+            type: Boolean,
+            default: false
+        },
+        inputClass: null,
+        inputStyle: null,
+        class: null,
+        style: null,
+        panelClass: null,
+        virtualScrollerOptions: {
+            type: Object,
+            default: null
+        }
+    },
+    timeout: null,
+    outsideClickListener: null,
+    resizeListener: null,
+    scrollHandler: null,
+    overlay: null,
+    virtualScroller: null,
+    data() {
+        return {
+            searching: false,
+            focused: false,
+            overlayVisible: false,
+            inputTextValue: null,
+            highlightItem: null
+        };
+    },
+    watch: {
+        suggestions() {
+            if (this.searching) {
+                if (this.suggestions && this.suggestions.length)
+                    this.showOverlay();
+                else
+                    this.hideOverlay();
+
+                this.searching = false;
+            }
+        }
+    },
+    beforeUnmount() {
+        this.unbindOutsideClickListener();
+        this.unbindResizeListener();
+
+        if (this.scrollHandler) {
+            this.scrollHandler.destroy();
+            this.scrollHandler = null;
+        }
+
+        if (this.overlay) {
+            ZIndexUtils.clear(this.overlay);
+            this.overlay = null;
+        }
+    },
+    updated() {
+        if (this.overlayVisible) {
+            this.alignOverlay();
+        }
+    },
+    methods: {
+        getOptionIndex(index, fn) {
+            return this.virtualScrollerDisabled ? index : (fn && fn(index)['index']);
+        },
+        getOptionGroupRenderKey(optionGroup) {
+            return ObjectUtils.resolveFieldData(optionGroup, this.optionGroupLabel);
+        },
+        getOptionGroupLabel(optionGroup) {
+            return ObjectUtils.resolveFieldData(optionGroup, this.optionGroupLabel);
+        },
+        getOptionGroupChildren(optionGroup) {
+            return ObjectUtils.resolveFieldData(optionGroup, this.optionGroupChildren);
+        },
+        onOverlayEnter(el) {
+            ZIndexUtils.set('overlay', el, this.$primevue.config.zIndex.overlay);
+            this.alignOverlay();
+            this.bindOutsideClickListener();
+            this.bindScrollListener();
+            this.bindResizeListener();
+
+            if (this.autoHighlight && this.suggestions && this.suggestions.length) {
+                DomHandler.addClass(this.overlay.firstElementChild.firstElementChild, 'p-highlight');
+            }
+        },
+        onOverlayLeave() {
+            this.unbindOutsideClickListener();
+            this.unbindScrollListener();
+            this.unbindResizeListener();
+            this.overlay = null;
+        },
+        onOverlayAfterLeave(el) {
+            ZIndexUtils.clear(el);
+        },
+        alignOverlay() {
+            let target = this.multiple ? this.$refs.multiContainer : this.$refs.input;
+            if (this.appendDisabled) {
+                DomHandler.relativePosition(this.overlay, target);
+            }
+            else {
+                this.overlay.style.minWidth = DomHandler.getOuterWidth(target) + 'px';
+                DomHandler.absolutePosition(this.overlay, target);
+            }
+        },
+        bindOutsideClickListener() {
+            if (!this.outsideClickListener) {
+                this.outsideClickListener = (event) => {
+                    if (this.overlayVisible && this.overlay && this.isOutsideClicked(event)) {
+                        this.hideOverlay();
+                    }
+                };
+                document.addEventListener('click', this.outsideClickListener);
+            }
+        },
+        bindScrollListener() {
+            if (!this.scrollHandler) {
+                this.scrollHandler = new ConnectedOverlayScrollHandler(this.$refs.container, () => {
+                    if (this.overlayVisible) {
+                        this.hideOverlay();
+                    }
+                });
+            }
+
+            this.scrollHandler.bindScrollListener();
+        },
+        unbindScrollListener() {
+            if (this.scrollHandler) {
+                this.scrollHandler.unbindScrollListener();
+            }
+        },
+        bindResizeListener() {
+            if (!this.resizeListener) {
+                this.resizeListener = () => {
+                    if (this.overlayVisible) {
+                        this.hideOverlay();
+                    }
+                };
+                window.addEventListener('resize', this.resizeListener);
+            }
+        },
+        unbindResizeListener() {
+            if (this.resizeListener) {
+                window.removeEventListener('resize', this.resizeListener);
+                this.resizeListener = null;
+            }
+        },
+        isOutsideClicked(event) {
+            return !this.overlay.contains(event.target) && !this.isInputClicked(event) && !this.isDropdownClicked(event);
+        },
+        isInputClicked(event) {
+            if (this.multiple)
+                return event.target === this.$refs.multiContainer || this.$refs.multiContainer.contains(event.target);
+            else
+                return event.target === this.$refs.input;
+        },
+        isDropdownClicked(event) {
+            return this.$refs.dropdownButton ? (event.target === this.$refs.dropdownButton || this.$refs.dropdownButton.$el.contains(event.target)) : false;
+        },
+        unbindOutsideClickListener() {
+            if (this.outsideClickListener) {
+                document.removeEventListener('click', this.outsideClickListener);
+                this.outsideClickListener = null;
+            }
+        },
+        selectItem(event, item) {
+            if (this.multiple) {
+                this.$refs.input.value = '';
+                this.inputTextValue = '';
+
+                if (!this.isSelected(item)) {
+                    let newValue = this.modelValue ? [...this.modelValue, item] : [item];
+                    this.$emit('update:modelValue', newValue);
+                }
+            }
+            else {
+                this.$emit('update:modelValue', item);
+            }
+
+            this.$emit('item-select', {
+                originalEvent: event,
+                value: item
+            });
+
+            this.focus();
+            this.hideOverlay();
+        },
+        onMultiContainerClick(event) {
+            this.focus();
+            if(this.completeOnFocus) {
+                this.search(event, '', 'click');
+            }
+        },
+        removeItem(event, index) {
+            let removedValue = this.modelValue[index];
+            let newValue = this.modelValue.filter((val, i) => (index !== i));
+            this.$emit('update:modelValue', newValue);
+            this.$emit('item-unselect', {
+                originalEvent: event,
+                value: removedValue
+            });
+        },
+        onDropdownClick(event) {
+            this.focus();
+            const query = this.$refs.input.value;
+
+            if (this.dropdownMode === 'blank')
+                this.search(event, '', 'dropdown');
+            else if (this.dropdownMode === 'current')
+                this.search(event, query, 'dropdown');
+
+            this.$emit('dropdown-click', {
+                originalEvent: event,
+                query: query
+            });
+        },
+        getItemContent(item) {
+            return this.field ? ObjectUtils.resolveFieldData(item, this.field) : item;
+        },
+        showOverlay() {
+            this.overlayVisible = true;
+        },
+        hideOverlay() {
+            this.overlayVisible = false;
+        },
+        focus() {
+            this.$refs.input.focus();
+        },
+        search(event, query, source) {
+            //allow empty string but not undefined or null
+            if (query === undefined || query === null) {
+                return;
+            }
+
+            //do not search blank values on input change
+            if (source === 'input' && query.trim().length === 0) {
+                return;
+            }
+
+            this.searching = true;
+            this.$emit('complete', {
+                originalEvent: event,
+                query: query
+            });
+        },
+        onInputClicked(event) {
+            if(this.completeOnFocus) {
+                this.search(event, '', 'click');
+            }
+        },
+        onInput(event) {
+            this.inputTextValue = event.target.value;
+
+            if (this.timeout) {
+                clearTimeout(this.timeout);
+            }
+
+            let query = event.target.value;
+            if (!this.multiple) {
+                this.$emit('update:modelValue', query);
+            }
+
+            if (query.length === 0) {
+                this.hideOverlay();
+                this.$emit('clear');
+            }
+            else {
+                if (query.length >= this.minLength) {
+                    this.timeout = setTimeout(() => {
+                        this.search(event, query, 'input');
+                    }, this.delay);
+                }
+                else {
+                    this.hideOverlay();
+                }
+            }
+        },
+        onFocus() {
+            this.focused = true;
+        },
+        onBlur() {
+            this.focused = false;
+        },
+        onKeyDown(event) {
+            if (this.overlayVisible) {
+                let highlightItem = DomHandler.findSingle(this.overlay, 'li.p-highlight');
+
+                switch(event.which) {
+                    //down
+                    case 40:
+                        if (highlightItem) {
+                            let nextElement = this.findNextItem(highlightItem);
+                            if (nextElement) {
+                                DomHandler.addClass(nextElement, 'p-highlight');
+                                DomHandler.removeClass(highlightItem, 'p-highlight');
+                                DomHandler.scrollInView(this.overlay, nextElement);
+                            }
+                        }
+                        else {
+                            highlightItem = this.overlay.firstElementChild.firstElementChild;
+                            if (DomHandler.hasClass(highlightItem, 'p-autocomplete-item-group')) {
+                                highlightItem = this.findNextItem(highlightItem);
+                            }
+
+                            if (highlightItem) {
+                                DomHandler.addClass(highlightItem, 'p-highlight');
+                            }
+                        }
+
+                        event.preventDefault();
+                    break;
+
+                    //up
+                    case 38:
+                        if (highlightItem) {
+                            let previousElement = this.findPrevItem(highlightItem);
+                            if (previousElement) {
+                                DomHandler.addClass(previousElement, 'p-highlight');
+                                DomHandler.removeClass(highlightItem, 'p-highlight');
+                                DomHandler.scrollInView(this.overlay, previousElement);
+                            }
+                        }
+
+                        event.preventDefault();
+                    break;
+
+                    //enter
+                    case 13:
+                        if (highlightItem) {
+                            this.selectHighlightItem(event, highlightItem);
+                            this.hideOverlay();
+                        }
+
+                        event.preventDefault();
+                    break;
+
+                    //escape
+                    case 27:
+                        this.hideOverlay();
+                        event.preventDefault();
+                    break;
+
+                    //tab
+                    case 9:
+                        if (highlightItem) {
+                            this.selectHighlightItem(event, highlightItem);
+                        }
+
+                        this.hideOverlay();
+                    break;
+                }
+            }
+
+            if (this.multiple) {
+                switch(event.which) {
+                    //backspace
+                    case 8:
+                        if (this.modelValue && this.modelValue.length && !this.$refs.input.value) {
+                            let removedValue = this.modelValue[this.modelValue.length - 1];
+                            let newValue = this.modelValue.slice(0, -1);
+
+                            this.$emit('update:modelValue', newValue);
+                            this.$emit('item-unselect', {
+                                originalEvent: event,
+                                value: removedValue
+                            });
+                        }
+                    break;
+                }
+            }
+        },
+        selectHighlightItem(event, item) {
+            if (this.optionGroupLabel) {
+                let optionGroup = this.suggestions[item.dataset.group];
+                this.selectItem(event, this.getOptionGroupChildren(optionGroup)[item.dataset.index]);
+            }
+            else {
+                this.selectItem(event, this.suggestions[DomHandler.index(item)]);
+            }
+        },
+        findNextItem(item) {
+            let nextItem = item.nextElementSibling;
+
+            if (nextItem)
+                return DomHandler.hasClass(nextItem, 'p-autocomplete-item-group') ? this.findNextItem(nextItem) : nextItem;
+            else
+                return null;
+        },
+        findPrevItem(item) {
+            let prevItem = item.previousElementSibling;
+
+            if (prevItem)
+                return DomHandler.hasClass(prevItem, 'p-autocomplete-item-group') ? this.findPrevItem(prevItem) : prevItem;
+            else
+                return null;
+        },
+        onChange(event) {
+            if (this.forceSelection) {
+                let valid = false;
+                let inputValue = event.target.value.trim();
+
+                if (this.suggestions)  {
+                    for (let item of this.suggestions) {
+                        let itemValue = this.field ? ObjectUtils.resolveFieldData(item, this.field) : item;
+                        if (itemValue && inputValue === itemValue.trim()) {
+                            valid = true;
+                            this.selectItem(event, item);
+                            break;
+                        }
+                    }
+                }
+
+                if (!valid) {
+                    this.$refs.input.value = '';
+                    this.inputTextValue = '';
+                    this.$emit('clear');
+                    if (!this.multiple) {
+                        this.$emit('update:modelValue', null);
+                    }
+                }
+            }
+        },
+        isSelected(val) {
+            let selected = false;
+            if (this.modelValue && this.modelValue.length) {
+                for (let i = 0; i < this.modelValue.length; i++) {
+                    if (ObjectUtils.equals(this.modelValue[i], val)) {
+                        selected = true;
+                        break;
+                    }
+                }
+            }
+
+            return selected;
+        },
+        overlayRef(el) {
+            this.overlay = el;
+        },
+        virtualScrollerRef(el) {
+            this.virtualScroller = el;
+        },
+        onOverlayClick(event) {
+            overlayeventbus_esm.emit('overlay-click', {
+                originalEvent: event,
+                target: this.$el
+            });
+        }
+    },
+    computed: {
+        containerClass() {
+            return ['p-autocomplete p-component p-inputwrapper', this.class, {
+                'p-autocomplete-dd': this.dropdown,
+                'p-autocomplete-multiple': this.multiple,
+                'p-inputwrapper-filled': ((this.modelValue) || (this.inputTextValue && this.inputTextValue.length)),
+                'p-inputwrapper-focus': this.focused
+            }];
+        },
+        inputFieldClass() {
+            return ['p-autocomplete-input p-inputtext p-component', this.inputClass, {
+                'p-autocomplete-dd-input': this.dropdown,
+                'p-disabled': this.$attrs.disabled
+            }];
+        },
+        multiContainerClass() {
+            return ['p-autocomplete-multiple-container p-component p-inputtext', {
+                'p-disabled': this.$attrs.disabled,
+                'p-focus': this.focused
+            }];
+        },
+        panelStyleClass() {
+            return [
+                'p-autocomplete-panel p-component', this.panelClass, {
+                'p-input-filled': this.$primevue.config.inputStyle === 'filled',
+                'p-ripple-disabled': this.$primevue.config.ripple === false
+            }];
+        },
+        inputValue() {
+            if (this.modelValue) {
+                if (this.field && typeof this.modelValue === 'object') {
+                    const resolvedFieldData = ObjectUtils.resolveFieldData(this.modelValue, this.field);
+                    return resolvedFieldData != null ? resolvedFieldData : this.modelValue;
+                }
+                else
+                    return this.modelValue;
+            }
+            else {
+                return '';
+            }
+        },
+        listId() {
+            return UniqueComponentId() + '_list';
+        },
+        appendDisabled() {
+            return this.appendTo === 'self';
+        },
+        appendTarget() {
+            return this.appendDisabled ? null : this.appendTo;
+        },
+        virtualScrollerDisabled() {
+            return !this.virtualScrollerOptions;
+        }
+    },
+    components: {
+        'Button': button_esm,
+        'VirtualScroller': virtualscroller_esm
+    },
+    directives: {
+        'ripple': ripple_esm
+    }
+};
+
+const autocomplete_esm_hoisted_1 = { class: "p-autocomplete-token-label" };
+const autocomplete_esm_hoisted_2 = { class: "p-autocomplete-input-token" };
+const autocomplete_esm_hoisted_3 = {
+  key: 2,
+  class: "p-autocomplete-loader pi pi-spinner pi-spin"
+};
+const autocomplete_esm_hoisted_4 = { class: "p-autocomplete-item-group" };
+
+function autocomplete_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_Button = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Button");
+  const _component_VirtualScroller = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("VirtualScroller");
+  const _directive_ripple = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveDirective"])("ripple");
+
+  return (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("span", {
+    ref: "container",
+    class: $options.containerClass,
+    "aria-haspopup": "listbox",
+    "aria-owns": $options.listId,
+    "aria-expanded": $data.overlayVisible,
+    style: $props.style
+  }, [
+    (!$props.multiple)
+      ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("input", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+          key: 0,
+          ref: "input",
+          class: $options.inputFieldClass,
+          style: $props.inputStyle
+        }, _ctx.$attrs, {
+          value: $options.inputValue,
+          onClick: _cache[1] || (_cache[1] = (...args) => ($options.onInputClicked && $options.onInputClicked(...args))),
+          onInput: _cache[2] || (_cache[2] = (...args) => ($options.onInput && $options.onInput(...args))),
+          onFocus: _cache[3] || (_cache[3] = (...args) => ($options.onFocus && $options.onFocus(...args))),
+          onBlur: _cache[4] || (_cache[4] = (...args) => ($options.onBlur && $options.onBlur(...args))),
+          onKeydown: _cache[5] || (_cache[5] = (...args) => ($options.onKeyDown && $options.onKeyDown(...args))),
+          onChange: _cache[6] || (_cache[6] = (...args) => ($options.onChange && $options.onChange(...args))),
+          type: "text",
+          autoComplete: "off",
+          role: "searchbox",
+          "aria-autocomplete": "list",
+          "aria-controls": $options.listId
+        }), null, 16, ["value", "aria-controls"]))
+      : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true),
+    ($props.multiple)
+      ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("ul", {
+          key: 1,
+          ref: "multiContainer",
+          class: $options.multiContainerClass,
+          onClick: _cache[12] || (_cache[12] = (...args) => ($options.onMultiContainerClick && $options.onMultiContainerClick(...args)))
+        }, [
+          (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])($props.modelValue, (item, i) => {
+            return (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("li", {
+              key: i,
+              class: "p-autocomplete-token"
+            }, [
+              Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "chip", { value: item }, () => [
+                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("span", autocomplete_esm_hoisted_1, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.getItemContent(item)), 1)
+              ]),
+              Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("span", {
+                class: "p-autocomplete-token-icon pi pi-times-circle",
+                onClick: $event => ($options.removeItem($event, i))
+              }, null, 8, ["onClick"])
+            ]))
+          }), 128)),
+          Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("li", autocomplete_esm_hoisted_2, [
+            Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("input", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+              ref: "input",
+              type: "text",
+              autoComplete: "off"
+            }, _ctx.$attrs, {
+              onInput: _cache[7] || (_cache[7] = (...args) => ($options.onInput && $options.onInput(...args))),
+              onFocus: _cache[8] || (_cache[8] = (...args) => ($options.onFocus && $options.onFocus(...args))),
+              onBlur: _cache[9] || (_cache[9] = (...args) => ($options.onBlur && $options.onBlur(...args))),
+              onKeydown: _cache[10] || (_cache[10] = (...args) => ($options.onKeyDown && $options.onKeyDown(...args))),
+              onChange: _cache[11] || (_cache[11] = (...args) => ($options.onChange && $options.onChange(...args))),
+              role: "searchbox",
+              "aria-autocomplete": "list",
+              "aria-controls": $options.listId
+            }), null, 16, ["aria-controls"])
+          ])
+        ], 2))
+      : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true),
+    ($data.searching)
+      ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("i", autocomplete_esm_hoisted_3))
+      : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true),
+    ($props.dropdown)
+      ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_Button, {
+          key: 3,
+          ref: "dropdownButton",
+          type: "button",
+          icon: "pi pi-chevron-down",
+          class: "p-autocomplete-dropdown",
+          disabled: _ctx.$attrs.disabled,
+          onClick: $options.onDropdownClick
+        }, null, 8, ["disabled", "onClick"]))
+      : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true),
+    (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Teleport"], {
+      to: $options.appendTarget,
+      disabled: $options.appendDisabled
+    }, [
+      Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
+        name: "p-connected-overlay",
+        onEnter: $options.onOverlayEnter,
+        onLeave: $options.onOverlayLeave,
+        onAfterLeave: $options.onOverlayAfterLeave
+      }, {
+        default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(() => [
+          ($data.overlayVisible)
+            ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", {
+                key: 0,
+                ref: $options.overlayRef,
+                class: $options.panelStyleClass,
+                style: {'max-height': $options.virtualScrollerDisabled ? $props.scrollHeight : ''},
+                onClick: _cache[13] || (_cache[13] = (...args) => ($options.onOverlayClick && $options.onOverlayClick(...args)))
+              }, [
+                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "header", {
+                  value: $props.modelValue,
+                  suggestions: $props.suggestions
+                }),
+                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_VirtualScroller, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({ ref: $options.virtualScrollerRef }, $props.virtualScrollerOptions, {
+                  style: {'height': $props.scrollHeight},
+                  items: $props.suggestions,
+                  disabled: $options.virtualScrollerDisabled
+                }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createSlots"])({
+                  content: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(({ styleClass, contentRef, items, getItemOptions }) => [
+                    Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("ul", {
+                      id: $options.listId,
+                      ref: contentRef,
+                      class: ['p-autocomplete-items', styleClass],
+                      role: "listbox"
+                    }, [
+                      (!$props.optionGroupLabel)
+                        ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], { key: 0 }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])(items, (item, i) => {
+                            return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])((Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("li", {
+                              class: "p-autocomplete-item",
+                              key: i,
+                              onClick: $event => ($options.selectItem($event, item)),
+                              role: "option"
+                            }, [
+                              Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "item", {
+                                item: item,
+                                index: $options.getOptionIndex(i, getItemOptions)
+                              }, () => [
+                                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.getItemContent(item)), 1)
+                              ])
+                            ], 8, ["onClick"])), [
+                              [_directive_ripple]
+                            ])
+                          }), 128))
+                        : (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], { key: 1 }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])(items, (optionGroup, i) => {
+                            return (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], {
+                              key: $options.getOptionGroupRenderKey(optionGroup)
+                            }, [
+                              Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("li", autocomplete_esm_hoisted_4, [
+                                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "optiongroup", {
+                                  item: optionGroup,
+                                  index: $options.getOptionIndex(i, getItemOptions)
+                                }, () => [
+                                  Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.getOptionGroupLabel(optionGroup)), 1)
+                                ])
+                              ]),
+                              (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])($options.getOptionGroupChildren(optionGroup), (item, j) => {
+                                return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])((Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("li", {
+                                  class: "p-autocomplete-item",
+                                  key: j,
+                                  onClick: $event => ($options.selectItem($event, item)),
+                                  role: "option",
+                                  "data-group": i,
+                                  "data-index": j
+                                }, [
+                                  Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "item", {
+                                    item: item,
+                                    index: $options.getOptionIndex(j, getItemOptions)
+                                  }, () => [
+                                    Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.getItemContent(item)), 1)
+                                  ])
+                                ], 8, ["onClick", "data-group", "data-index"])), [
+                                  [_directive_ripple]
+                                ])
+                              }), 128))
+                            ], 64))
+                          }), 128))
+                    ], 10, ["id"])
+                  ]),
+                  _: 2
+                }, [
+                  (_ctx.$slots.loader)
+                    ? {
+                        name: "loader",
+                        fn: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(({ options }) => [
+                          Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "loader", { options: options })
+                        ])
+                      }
+                    : undefined
+                ]), 1040, ["style", "items", "disabled"]),
+                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "footer", {
+                  value: $props.modelValue,
+                  suggestions: $props.suggestions
+                })
+              ], 6))
+            : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)
+        ]),
+        _: 3
+      }, 8, ["onEnter", "onLeave", "onAfterLeave"])
+    ], 8, ["to", "disabled"]))
+  ], 14, ["aria-owns", "aria-expanded"]))
+}
+
+function autocomplete_esm_styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var autocomplete_esm_css_248z = "\n.p-autocomplete {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    position: relative;\n}\n.p-autocomplete-loader {\n    position: absolute;\n    top: 50%;\n    margin-top: -.5rem;\n}\n.p-autocomplete-dd .p-autocomplete-input {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto;\n    width: 1%;\n}\n.p-autocomplete-dd .p-autocomplete-input,\n.p-autocomplete-dd .p-autocomplete-multiple-container {\n     border-top-right-radius: 0;\n     border-bottom-right-radius: 0;\n}\n.p-autocomplete-dd .p-autocomplete-dropdown {\n     border-top-left-radius: 0;\n     border-bottom-left-radius: 0px;\n}\n.p-autocomplete .p-autocomplete-panel {\n    min-width: 100%;\n}\n.p-autocomplete-panel {\n    position: absolute;\n    overflow: auto;\n    top: 0;\n    left: 0;\n}\n.p-autocomplete-items {\n    margin: 0;\n    padding: 0;\n    list-style-type: none;\n}\n.p-autocomplete-item {\n    cursor: pointer;\n    white-space: nowrap;\n    position: relative;\n    overflow: hidden;\n}\n.p-autocomplete-multiple-container {\n    margin: 0;\n    padding: 0;\n    list-style-type: none;\n    cursor: text;\n    overflow: hidden;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -ms-flex-wrap: wrap;\n        flex-wrap: wrap;\n}\n.p-autocomplete-token {\n    cursor: default;\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 auto;\n            flex: 0 0 auto;\n}\n.p-autocomplete-token-icon {\n    cursor: pointer;\n}\n.p-autocomplete-input-token {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto;\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n}\n.p-autocomplete-input-token input {\n    border: 0 none;\n    outline: 0 none;\n    background-color: transparent;\n    margin: 0;\n    padding: 0;\n    -webkit-box-shadow: none;\n            box-shadow: none;\n    border-radius: 0;\n    width: 100%;\n}\n.p-fluid .p-autocomplete {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n.p-fluid .p-autocomplete-dd .p-autocomplete-input {\n    width: 1%;\n}\n";
+autocomplete_esm_styleInject(autocomplete_esm_css_248z);
+
+autocomplete_esm_script.render = autocomplete_esm_render;
+
+/* harmony default export */ var autocomplete_esm = (autocomplete_esm_script);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierAutoComplete.vue?vue&type=script&lang=js
+
+/* harmony default export */ var CrosierAutoCompletevue_type_script_lang_js = ({
+  name: "CrosierAutoComplete",
+  components: {
+    AutoComplete: autocomplete_esm
+  },
+  emits: ["update:modelValue", "complete", "item-select", "clear"],
+  props: {
+    modelValue: {
+      default: null,
+      type: [String, Object]
+    },
+    values: {
+      default: null
+    },
+    id: {
+      type: String,
+      required: true
+    },
+    error: {
+      type: String,
+      default: null
+    },
+    col: {
+      type: String,
+      default: "12"
+    },
+    label: {
+      type: String,
+      required: true
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    field: {
+      type: String,
+      required: true
+    },
+    forceSelection: {
+      type: Boolean,
+      default: false
+    },
+    helpText: {
+      type: String
+    },
+    appendTo: {
+      type: String,
+      default: "body"
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/fields/CrosierAutoComplete.vue?vue&type=script&lang=js
+ 
+// EXTERNAL MODULE: ./src/components/fields/CrosierAutoComplete.vue?vue&type=style&index=0&id=2436059b&scoped=true&lang=css
+var CrosierAutoCompletevue_type_style_index_0_id_2436059b_scoped_true_lang_css = __webpack_require__("5b6f");
+
+// CONCATENATED MODULE: ./src/components/fields/CrosierAutoComplete.vue
+
+
+
+
+
+
+
+const CrosierAutoComplete_exports_ = /*#__PURE__*/exportHelper_default()(CrosierAutoCompletevue_type_script_lang_js, [['render',CrosierAutoCompletevue_type_template_id_2436059b_scoped_true_render],['__scopeId',"data-v-2436059b"]])
+
+/* harmony default export */ var CrosierAutoComplete = (CrosierAutoComplete_exports_);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputText.vue?vue&type=template&id=4b618e0e&scoped=true
 
 
@@ -30496,6 +31479,7 @@ function _submitForm() {
 
 
 
+
 /* harmony default export */ var main = ({
   HelloWorld: HelloWorld,
   CrosierBlock: crosierBlock,
@@ -30510,6 +31494,7 @@ function _submitForm() {
   CrosierDropdownBoolean: CrosierDropdownBoolean,
   CrosierDropdownBanco: CrosierDropdownBanco,
   CrosierDropdownEntity: CrosierDropdownEntity,
+  CrosierAutoComplete: CrosierAutoComplete,
   CrosierInputText: CrosierInputText,
   CrosierInputTextarea: CrosierInputTextarea,
   CrosierInputInt: CrosierInputInt,
