@@ -115,7 +115,7 @@ export async function fetchTableData({
         sProperties += `properties[]=${property}&`;
       }
     });
-    return sProperties.substring(0, sProperties.length - 1);
+    sProperties = sProperties.substring(0, sProperties.length - 1);
   }
 
   return axios.get(

@@ -24496,33 +24496,29 @@ function _fetchTableData() {
 
             sProperties = "";
 
-            if (!properties) {
-              _context.next = 16;
-              break;
+            if (properties) {
+              sProperties = "&";
+              Object.values(properties).forEach(function (property) {
+                if (property.includes(".")) {
+                  var sMult = "properties[";
+                  var campos = property.split(".");
+
+                  for (var i = 0; i <= campos.length - 2; i++) {
+                    sMult += "".concat(campos[i], "][");
+                  }
+
+                  sMult += "]=".concat(campos[campos.length - 1]);
+                  sProperties += "".concat(sMult, "&");
+                } else {
+                  sProperties += "properties[]=".concat(property, "&");
+                }
+              });
+              sProperties = sProperties.substring(0, sProperties.length - 1);
             }
 
-            sProperties = "&";
-            Object.values(properties).forEach(function (property) {
-              if (property.includes(".")) {
-                var sMult = "properties[";
-                var campos = property.split(".");
-
-                for (var i = 0; i <= campos.length - 2; i++) {
-                  sMult += "".concat(campos[i], "][");
-                }
-
-                sMult += "]=".concat(campos[campos.length - 1]);
-                sProperties += "".concat(sMult, "&");
-              } else {
-                sProperties += "properties[]=".concat(property, "&");
-              }
-            });
-            return _context.abrupt("return", sProperties.substring(0, sProperties.length - 1));
-
-          case 16:
             return _context.abrupt("return", axios_default.a.get("".concat(apiResource).concat(queryPage).concat(queryRows).concat(queryFilter).concat(queryOrder).concat(sProperties).concat(complement), params));
 
-          case 17:
+          case 14:
           case "end":
             return _context.stop();
         }
