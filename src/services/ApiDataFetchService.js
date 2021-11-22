@@ -40,6 +40,7 @@ export async function fetchTableData({
   defaultFilters = {},
   allRows = false,
   complement = "",
+  properties = null,
 }) {
   const params = {
     headers: {
@@ -98,8 +99,27 @@ export async function fetchTableData({
     }
   }
 
+  let sProperties = "";
+  if (properties) {
+    sProperties = "&";
+    Object.values(properties).forEach((property) => {
+      if (property.includes(".")) {
+        let sMult = "properties[";
+        const campos = property.split(".");
+        for (let i = 0; i <= campos.length - 2; i++) {
+          sMult += `${campos[i]}][`;
+        }
+        sMult += `]=${campos[campos.length - 1]}`;
+        sProperties += `${sMult}&`;
+      } else {
+        sProperties += `properties[]=${property}&`;
+      }
+    });
+    return sProperties.substring(0, sProperties.length - 1);
+  }
+
   return axios.get(
-    `${apiResource}${queryPage}${queryRows}${queryFilter}${queryOrder}${complement}`,
+    `${apiResource}${queryPage}${queryRows}${queryFilter}${queryOrder}${sProperties}${complement}`,
     params
   );
 }
