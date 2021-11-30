@@ -5163,6 +5163,17 @@ module.exports = store.inspectSource;
 
 /***/ }),
 
+/***/ "89fd":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierColorPicker_vue_vue_type_style_index_0_id_55184098_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("e28c");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierColorPicker_vue_vue_type_style_index_0_id_55184098_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierColorPicker_vue_vue_type_style_index_0_id_55184098_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
 /***/ "8aa5":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9825,6 +9836,22 @@ addToUnscopables('entries');
 
 /***/ }),
 
+/***/ "e28c":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("e3df");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("e3a43ae4", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
 /***/ "e2cc":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9834,6 +9861,20 @@ module.exports = function (target, src, options) {
   for (var key in src) redefine(target, key, src[key], options);
   return target;
 };
+
+
+/***/ }),
+
+/***/ "e3df":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".invalid-feedbackk[data-v-55184098]{width:100%;margin-top:.25rem;font-size:80%;color:#e55353}", ""]);
+// Exports
+module.exports = exports;
 
 
 /***/ }),
@@ -29711,6 +29752,1309 @@ var CrosierInputTextvue_type_style_index_0_id_4b618e0e_scoped_true_lang_css = __
 const CrosierInputText_exports_ = /*#__PURE__*/exportHelper_default()(CrosierInputTextvue_type_script_lang_js, [['render',CrosierInputTextvue_type_template_id_4b618e0e_scoped_true_render],['__scopeId',"data-v-4b618e0e"]])
 
 /* harmony default export */ var CrosierInputText = (CrosierInputText_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierColorPicker.vue?vue&type=template&id=55184098&scoped=true
+
+
+var CrosierColorPickervue_type_template_id_55184098_scoped_true_withScopeId = function _withScopeId(n) {
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["pushScopeId"])("data-v-55184098"), n = n(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["popScopeId"])(), n;
+};
+
+var CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_1 = {
+  class: "form-group"
+};
+var CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_2 = ["for"];
+
+var CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_3 = /*#__PURE__*/CrosierColorPickervue_type_template_id_55184098_scoped_true_withScopeId(function () {
+  return /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("br", null, null, -1);
+});
+
+var CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_4 = {
+  class: "col-md-1"
+};
+var CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_5 = {
+  class: "form-group"
+};
+
+var CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_6 = /*#__PURE__*/CrosierColorPickervue_type_template_id_55184098_scoped_true_withScopeId(function () {
+  return /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+    for: "corInput"
+  }, " ", -1);
+});
+
+var CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_7 = /*#__PURE__*/CrosierColorPickervue_type_template_id_55184098_scoped_true_withScopeId(function () {
+  return /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("br", null, null, -1);
+});
+
+var CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_8 = ["id"];
+function CrosierColorPickervue_type_template_id_55184098_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _this = this;
+
+  var _component_ColorPicker = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("ColorPicker");
+
+  var _component_InputMask = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("InputMask");
+
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + (this.col - 1))
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+    for: this.id
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_2), CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_3, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_ColorPicker, {
+    id: "cor",
+    modelValue: $props.modelValue,
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return _this.onChange($event);
+    })
+  }, null, 8, ["modelValue"])])], 2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_5, [CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_6, CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_7, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InputMask, {
+    mask: "#******",
+    class: "form-control",
+    id: this.id + 'Input',
+    type: "text",
+    modelValue: $props.modelValue,
+    onChange: this.onInput
+  }, null, 8, ["id", "modelValue", "onChange"])]), this.helpText ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("small", {
+    key: 0,
+    id: this.id + '_help',
+    class: "form-text text-muted"
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierColorPickervue_type_template_id_55184098_scoped_true_hoisted_8)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+    class: "invalid-feedbackk blink"
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 513), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.error]])])], 64);
+}
+// CONCATENATED MODULE: ./src/components/fields/CrosierColorPicker.vue?vue&type=template&id=55184098&scoped=true
+
+// CONCATENATED MODULE: ./node_modules/primevue/colorpicker/colorpicker.esm.js
+
+
+
+
+var colorpicker_esm_script = {
+    name: 'ColorPicker',
+    emits: ['update:modelValue'],
+    props: {
+        modelValue: {
+            type: null,
+            default: null
+        },
+        defaultColor: {
+            type: null,
+            default: 'ff0000'
+        },
+        inline: {
+            type: Boolean,
+            default: false
+        },
+        format: {
+            type: String,
+            default: 'hex'
+        },
+        disabled: {
+            type: Boolean,
+            default: false
+        },
+        tabindex: {
+            type: String,
+            default: null
+        },
+        autoZIndex: {
+            type: Boolean,
+            default: true
+        },
+        baseZIndex: {
+            type: Number,
+            default: 0
+        },
+        ariaLabelledBy: {
+            type: String,
+            default: null
+        },
+        appendTo: {
+            type: String,
+            default: 'body'
+        },
+        panelClass: null
+    },
+    data() {
+        return {
+            overlayVisible: false
+        };
+    },
+    hsbValue: null,
+    outsideClickListener: null,
+    documentMouseMoveListener: null,
+    documentMouseUpListener: null,
+    scrollHandler: null,
+    resizeListener: null,
+    hueDragging: null,
+    colorDragging: null,
+    selfUpdate: null,
+    picker: null,
+    colorSelector: null,
+    colorHandle: null,
+    hueView: null,
+    hueHandle: null,
+    beforeUnmount() {
+        this.unbindOutsideClickListener();
+        this.unbindDragListeners();
+        this.unbindResizeListener();
+
+        if (this.scrollHandler) {
+            this.scrollHandler.destroy();
+            this.scrollHandler = null;
+        }
+
+        if (this.picker && this.autoZIndex) {
+            ZIndexUtils.clear(this.picker);
+        }
+
+        this.clearRefs();
+    },
+    mounted() {
+        this.updateUI();
+    },
+    watch: {
+        modelValue: {
+            immediate: true,
+            handler(newValue) {
+                this.hsbValue = this.toHSB(newValue);
+
+                if (this.selfUpdate)
+                    this.selfUpdate = false;
+                else
+                    this.updateUI();
+            }
+        }
+    },
+    methods: {
+        pickColor(event) {
+            let rect = this.colorSelector.getBoundingClientRect();
+            let top = rect.top + (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
+            let left = rect.left + document.body.scrollLeft;
+            let saturation = Math.floor(100 * (Math.max(0, Math.min(150, ((event.pageX || event.changedTouches[0].pageX)- left)))) / 150);
+            let brightness = Math.floor(100 * (150 - Math.max(0, Math.min(150, ((event.pageY || event.changedTouches[0].pageY) - top)))) / 150);
+            this.hsbValue = this.validateHSB({
+                h: this.hsbValue.h,
+                s: saturation,
+                b: brightness
+            });
+
+            this.selfUpdate = true;
+            this.updateColorHandle();
+            this.updateInput();
+            this.updateModel();
+        },
+        pickHue(event) {
+            let top = this.hueView.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0);
+            this.hsbValue = this.validateHSB({
+                h: Math.floor(360 * (150 - Math.max(0, Math.min(150, ((event.pageY || event.changedTouches[0].pageY) - top)))) / 150),
+                s: 100,
+                b: 100
+            });
+
+            this.selfUpdate = true;
+            this.updateColorSelector();
+            this.updateHue();
+            this.updateModel();
+            this.updateInput();
+        },
+        updateModel() {
+            switch(this.format) {
+                case 'hex':
+                    this.$emit('update:modelValue', this.HSBtoHEX(this.hsbValue));
+                break;
+
+                case 'rgb':
+                    this.$emit('update:modelValue', this.HSBtoRGB(this.hsbValue));
+                break;
+
+                case 'hsb':
+                    this.$emit('update:modelValue', this.hsbValue);
+                break;
+            }
+        },
+        updateColorSelector() {
+            if (this.colorSelector) {
+                let hsbValue = this.validateHSB({
+                    h: this.hsbValue.h,
+                    s: 100,
+                    b: 100
+                });
+                this.colorSelector.style.backgroundColor = '#' + this.HSBtoHEX(hsbValue);
+            }
+        },
+        updateColorHandle() {
+            if (this.colorHandle) {
+                this.colorHandle.style.left = Math.floor(150 * this.hsbValue.s / 100) + 'px';
+                this.colorHandle.style.top = Math.floor(150 * (100 - this.hsbValue.b) / 100) + 'px';
+            }
+        },
+        updateHue() {
+            if (this.hueHandle) {
+                this.hueHandle.style.top = Math.floor(150 - (150 * this.hsbValue.h / 360)) + 'px';
+            }
+        },
+        updateInput() {
+            if (this.$refs.input) {
+                this.$refs.input.style.backgroundColor = '#' + this.HSBtoHEX(this.hsbValue);
+            }
+        },
+        updateUI() {
+            this.updateHue();
+            this.updateColorHandle();
+            this.updateInput();
+            this.updateColorSelector();
+        },
+        validateHSB(hsb) {
+            return {
+                h: Math.min(360, Math.max(0, hsb.h)),
+                s: Math.min(100, Math.max(0, hsb.s)),
+                b: Math.min(100, Math.max(0, hsb.b))
+            };
+        },
+        validateRGB(rgb) {
+            return {
+                r: Math.min(255, Math.max(0, rgb.r)),
+                g: Math.min(255, Math.max(0, rgb.g)),
+                b: Math.min(255, Math.max(0, rgb.b))
+            };
+        },
+        validateHEX(hex) {
+            var len = 6 - hex.length;
+            if (len > 0) {
+                var o = [];
+                for (var i=0; i<len; i++) {
+                    o.push('0');
+                }
+                o.push(hex);
+                hex = o.join('');
+            }
+            return hex;
+        },
+        HEXtoRGB(hex) {
+            let hexValue = parseInt(((hex.indexOf('#') > -1) ? hex.substring(1) : hex), 16);
+            return {r: hexValue >> 16, g: (hexValue & 0x00FF00) >> 8, b: (hexValue & 0x0000FF)};
+        },
+        HEXtoHSB(hex) {
+            return this.RGBtoHSB(this.HEXtoRGB(hex));
+        },
+        RGBtoHSB(rgb) {
+            var hsb = {
+                h: 0,
+                s: 0,
+                b: 0
+            };
+            var min = Math.min(rgb.r, rgb.g, rgb.b);
+            var max = Math.max(rgb.r, rgb.g, rgb.b);
+            var delta = max - min;
+            hsb.b = max;
+            hsb.s = max !== 0 ? 255 * delta / max : 0;
+            if (hsb.s !== 0) {
+                if (rgb.r === max) {
+                    hsb.h = (rgb.g - rgb.b) / delta;
+                } else if (rgb.g === max) {
+                    hsb.h = 2 + (rgb.b - rgb.r) / delta;
+                } else {
+                    hsb.h = 4 + (rgb.r - rgb.g) / delta;
+                }
+            } else {
+                hsb.h = -1;
+            }
+            hsb.h *= 60;
+            if (hsb.h < 0) {
+                hsb.h += 360;
+            }
+            hsb.s *= 100/255;
+            hsb.b *= 100/255;
+            return hsb;
+        },
+        HSBtoRGB(hsb) {
+            var rgb = {
+                r: null, g: null, b: null
+            };
+            var h = Math.round(hsb.h);
+            var s = Math.round(hsb.s*255/100);
+            var v = Math.round(hsb.b*255/100);
+            if (s === 0) {
+                rgb = {
+                    r: v,
+                    g: v,
+                    b: v
+                };
+            }
+            else {
+                var t1 = v;
+                var t2 = (255-s)*v/255;
+                var t3 = (t1-t2)*(h%60)/60;
+                if (h===360) h = 0;
+                if (h<60) {rgb.r=t1;	rgb.b=t2; rgb.g=t2+t3;}
+                else if (h<120) {rgb.g=t1; rgb.b=t2;	rgb.r=t1-t3;}
+                else if (h<180) {rgb.g=t1; rgb.r=t2;	rgb.b=t2+t3;}
+                else if (h<240) {rgb.b=t1; rgb.r=t2;	rgb.g=t1-t3;}
+                else if (h<300) {rgb.b=t1; rgb.g=t2;	rgb.r=t2+t3;}
+                else if (h<360) {rgb.r=t1; rgb.g=t2;	rgb.b=t1-t3;}
+                else {rgb.r=0; rgb.g=0;	rgb.b=0;}
+            }
+            return {r:Math.round(rgb.r), g:Math.round(rgb.g), b:Math.round(rgb.b)};
+        },
+        RGBtoHEX(rgb) {
+            var hex = [
+                rgb.r.toString(16),
+                rgb.g.toString(16),
+                rgb.b.toString(16)
+            ];
+
+            for (var key in hex) {
+                if (hex[key].length === 1) {
+                    hex[key] = '0' + hex[key];
+                }
+            }
+
+            return hex.join('');
+        },
+        HSBtoHEX(hsb) {
+            return this.RGBtoHEX(this.HSBtoRGB(hsb));
+        },
+        toHSB(value) {
+            let hsb;
+
+            if (value) {
+                switch (this.format) {
+                    case 'hex':
+                        hsb = this.HEXtoHSB(value);
+                    break;
+
+                    case 'rgb':
+                        hsb = this.RGBtoHSB(value);
+                    break;
+
+                    case 'hsb':
+                        hsb = value;
+                    break;
+                }
+            }
+            else {
+                hsb = this.HEXtoHSB(this.defaultColor);
+            }
+
+            return hsb;
+        },
+        onOverlayEnter(el) {
+            this.updateUI();
+            this.alignOverlay();
+            this.bindOutsideClickListener();
+            this.bindScrollListener();
+            this.bindResizeListener();
+
+            if (this.autoZIndex) {
+                ZIndexUtils.set('overlay', el, this.$primevue.config.zIndex.overlay);
+            }
+        },
+        onOverlayLeave() {
+            this.unbindOutsideClickListener();
+            this.unbindScrollListener();
+            this.unbindResizeListener();
+            this.clearRefs();
+        },
+        onOverlayAfterLeave(el) {
+            if (this.autoZIndex) {
+                ZIndexUtils.clear(el);
+            }
+        },
+        alignOverlay() {
+            if (this.appendDisabled)
+                DomHandler.relativePosition(this.picker, this.$refs.input);
+            else
+                DomHandler.absolutePosition(this.picker, this.$refs.input);
+        },
+        onInputClick() {
+            if (this.disabled) {
+                return;
+            }
+
+            this.overlayVisible = !this.overlayVisible;
+        },
+        onInputKeydown(event) {
+            switch(event.which) {
+                //space
+                case 32:
+                    this.overlayVisible = !this.overlayVisible;
+                    event.preventDefault();
+                break;
+
+                //escape and tab
+                case 27:
+                case 9:
+                    this.overlayVisible = false;
+                break;
+            }
+        },
+        onColorMousedown(event) {
+            if (this.disabled) {
+                return;
+            }
+
+            this.bindDragListeners();
+            this.onColorDragStart(event);
+        },
+        onColorDragStart(event) {
+            if (this.disabled) {
+                return;
+            }
+
+            this.colorDragging = true;
+            this.pickColor(event);
+            DomHandler.addClass(this.$el, 'p-colorpicker-dragging');
+            event.preventDefault();
+        },
+        onDrag(event) {
+            if (this.colorDragging) {
+                this.pickColor(event);
+                event.preventDefault();
+            }
+
+            if (this.hueDragging) {
+                this.pickHue(event);
+                event.preventDefault();
+            }
+        },
+        onDragEnd() {
+            this.colorDragging = false;
+            this.hueDragging = false;
+            DomHandler.removeClass(this.$el, 'p-colorpicker-dragging');
+            this.unbindDragListeners();
+        },
+        onHueMousedown(event) {
+            if (this.disabled) {
+                return;
+            }
+
+            this.bindDragListeners();
+            this.onHueDragStart(event);
+        },
+        onHueDragStart(event) {
+            if (this.disabled) {
+                return;
+            }
+
+            this.hueDragging = true;
+            this.pickHue(event);
+            DomHandler.addClass(this.$el, 'p-colorpicker-dragging');
+        },
+        isInputClicked(event) {
+            return this.$refs.input && this.$refs.input.isSameNode(event.target);
+        },
+        bindDragListeners() {
+            this.bindDocumentMouseMoveListener();
+            this.bindDocumentMouseUpListener();
+        },
+        unbindDragListeners() {
+            this.unbindDocumentMouseMoveListener();
+            this.unbindDocumentMouseUpListener();
+        },
+        bindOutsideClickListener() {
+            if (!this.outsideClickListener) {
+                this.outsideClickListener = (event) => {
+                    if (this.overlayVisible && this.picker && !this.picker.contains(event.target) && !this.isInputClicked(event)) {
+                        this.overlayVisible = false;
+                    }
+                };
+                document.addEventListener('click', this.outsideClickListener);
+            }
+        },
+        unbindOutsideClickListener() {
+            if (this.outsideClickListener) {
+                document.removeEventListener('click', this.outsideClickListener);
+                this.outsideClickListener = null;
+            }
+        },
+        bindScrollListener() {
+            if (!this.scrollHandler) {
+                this.scrollHandler = new ConnectedOverlayScrollHandler(this.$refs.container, () => {
+                    if (this.overlayVisible) {
+                        this.overlayVisible = false;
+                    }
+                });
+            }
+
+            this.scrollHandler.bindScrollListener();
+        },
+        unbindScrollListener() {
+            if (this.scrollHandler) {
+                this.scrollHandler.unbindScrollListener();
+            }
+        },
+        bindResizeListener() {
+            if (!this.resizeListener) {
+                this.resizeListener = () => {
+                    if (this.overlayVisible) {
+                        this.overlayVisible = false;
+                    }
+                };
+                window.addEventListener('resize', this.resizeListener);
+            }
+        },
+        unbindResizeListener() {
+            if (this.resizeListener) {
+                window.removeEventListener('resize', this.resizeListener);
+                this.resizeListener = null;
+            }
+        },
+        bindDocumentMouseMoveListener() {
+            if (!this.documentMouseMoveListener) {
+                this.documentMouseMoveListener = this.onDrag.bind(this);
+                document.addEventListener('mousemove', this.documentMouseMoveListener);
+            }
+        },
+        unbindDocumentMouseMoveListener() {
+            if (this.documentMouseMoveListener) {
+                document.removeEventListener('mousemove', this.documentMouseMoveListener);
+                this.documentMouseMoveListener = null;
+            }
+        },
+        bindDocumentMouseUpListener() {
+            if (!this.documentMouseUpListener) {
+                this.documentMouseUpListener = this.onDragEnd.bind(this);
+                document.addEventListener('mouseup', this.documentMouseUpListener);
+            }
+        },
+        unbindDocumentMouseUpListener() {
+            if (this.documentMouseUpListener) {
+                document.removeEventListener('mouseup', this.documentMouseUpListener);
+                this.documentMouseUpListener = null;
+            }
+        },
+        pickerRef(el) {
+            this.picker = el;
+        },
+        colorSelectorRef(el) {
+            this.colorSelector = el;
+        },
+        colorHandleRef(el) {
+            this.colorHandle = el;
+        },
+        hueViewRef(el) {
+            this.hueView = el;
+        },
+        hueHandleRef(el) {
+            this.hueHandle = el;
+        },
+        clearRefs() {
+            this.picker = null;
+            this.colorSelector = null;
+            this.colorHandle = null;
+            this.hueView = null;
+            this.hueHandle = null;
+        },
+        onOverlayClick(event) {
+            overlayeventbus_esm.emit('overlay-click', {
+                originalEvent: event,
+                target: this.$el
+            });
+        }
+    },
+    computed: {
+        containerClass() {
+            return ['p-colorpicker p-component', {'p-colorpicker-overlay': !this.inline}];
+        },
+        inputClass() {
+            return ['p-colorpicker-preview p-inputtext', {'p-disabled': this.disabled}];
+        },
+        pickerClass() {
+            return ['p-colorpicker-panel', this.panelClass, {
+                'p-colorpicker-overlay-panel': !this.inline, 'p-disabled': this.disabled,
+                'p-input-filled': this.$primevue.config.inputStyle === 'filled',
+                'p-ripple-disabled': this.$primevue.config.ripple === false
+            }];
+        },
+        appendDisabled() {
+            return this.appendTo === 'self' || this.inline;
+        },
+        appendTarget() {
+            return this.appendDisabled ? null : this.appendTo;
+        }
+    }
+};
+
+const colorpicker_esm_hoisted_1 = { class: "p-colorpicker-content" };
+const colorpicker_esm_hoisted_2 = { class: "p-colorpicker-color" };
+
+function colorpicker_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", {
+    ref: "container",
+    class: $options.containerClass
+  }, [
+    (!$props.inline)
+      ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("input", {
+          key: 0,
+          ref: "input",
+          type: "text",
+          class: $options.inputClass,
+          readonly: "readonly",
+          tabindex: $props.tabindex,
+          disabled: $props.disabled,
+          onClick: _cache[1] || (_cache[1] = (...args) => ($options.onInputClick && $options.onInputClick(...args))),
+          onKeydown: _cache[2] || (_cache[2] = (...args) => ($options.onInputKeydown && $options.onInputKeydown(...args))),
+          "aria-labelledby": $props.ariaLabelledBy
+        }, null, 42, ["tabindex", "disabled", "aria-labelledby"]))
+      : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true),
+    (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Teleport"], {
+      to: $options.appendTarget,
+      disabled: $options.appendDisabled
+    }, [
+      Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
+        name: "p-connected-overlay",
+        onEnter: $options.onOverlayEnter,
+        onLeave: $options.onOverlayLeave,
+        onAfterLeave: $options.onOverlayAfterLeave
+      }, {
+        default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(() => [
+          ($props.inline ? true : $data.overlayVisible)
+            ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", {
+                key: 0,
+                ref: $options.pickerRef,
+                class: $options.pickerClass,
+                onClick: _cache[11] || (_cache[11] = (...args) => ($options.onOverlayClick && $options.onOverlayClick(...args)))
+              }, [
+                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", colorpicker_esm_hoisted_1, [
+                  Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
+                    ref: $options.colorSelectorRef,
+                    class: "p-colorpicker-color-selector",
+                    onMousedown: _cache[3] || (_cache[3] = $event => ($options.onColorMousedown($event))),
+                    onTouchstart: _cache[4] || (_cache[4] = $event => ($options.onColorDragStart($event))),
+                    onTouchmove: _cache[5] || (_cache[5] = $event => ($options.onDrag($event))),
+                    onTouchend: _cache[6] || (_cache[6] = $event => ($options.onDragEnd()))
+                  }, [
+                    Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", colorpicker_esm_hoisted_2, [
+                      Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
+                        ref: $options.colorHandleRef,
+                        class: "p-colorpicker-color-handle"
+                      }, null, 512)
+                    ])
+                  ], 544),
+                  Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
+                    ref: $options.hueViewRef,
+                    class: "p-colorpicker-hue",
+                    onMousedown: _cache[7] || (_cache[7] = $event => ($options.onHueMousedown($event))),
+                    onTouchstart: _cache[8] || (_cache[8] = $event => ($options.onHueDragStart($event))),
+                    onTouchmove: _cache[9] || (_cache[9] = $event => ($options.onDrag($event))),
+                    onTouchend: _cache[10] || (_cache[10] = $event => ($options.onDragEnd()))
+                  }, [
+                    Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
+                      ref: $options.hueHandleRef,
+                      class: "p-colorpicker-hue-handle"
+                    }, null, 512)
+                  ], 544)
+                ])
+              ], 2))
+            : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)
+        ]),
+        _: 1
+      }, 8, ["onEnter", "onLeave", "onAfterLeave"])
+    ], 8, ["to", "disabled"]))
+  ], 2))
+}
+
+function colorpicker_esm_styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var colorpicker_esm_css_248z = "\n.p-colorpicker {\n    display: inline-block;\n}\n.p-colorpicker-dragging {\n    cursor: pointer;\n}\n.p-colorpicker-overlay {\n    position: relative;\n}\n.p-colorpicker-panel {\n    position: relative;\n    width: 193px;\n    height: 166px;\n}\n.p-colorpicker-overlay-panel {\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.p-colorpicker-preview {\n    cursor: pointer;\n}\n.p-colorpicker-panel .p-colorpicker-content {\n    position: relative;\n}\n.p-colorpicker-panel .p-colorpicker-color-selector {\n    width: 150px;\n    height: 150px;\n    top: 8px;\n    left: 8px;\n    position: absolute;\n}\n.p-colorpicker-panel .p-colorpicker-color {\n     width: 150px;\n     height: 150px;\n}\n.p-colorpicker-panel .p-colorpicker-color-handle {\n     position: absolute;\n     top: 0px;\n     left: 150px;\n     border-radius: 100%;\n     width: 10px;\n     height: 10px;\n     border-width: 1px;\n     border-style: solid;\n     margin: -5px 0 0 -5px;\n     cursor: pointer;\n     opacity: .85;\n}\n.p-colorpicker-panel .p-colorpicker-hue {\n    width: 17px;\n    height: 150px;\n    top: 8px;\n    left: 167px;\n    position: absolute;\n    opacity: .85;\n}\n.p-colorpicker-panel .p-colorpicker-hue-handle {\n     position: absolute;\n     top: 150px;\n     left: 0px;\n     width: 21px;\n     margin-left: -2px;\n     margin-top: -5px;\n     height: 10px;\n     border-width: 2px;\n     border-style: solid;\n     opacity: .85;\n     cursor: pointer;\n}\n";
+colorpicker_esm_styleInject(colorpicker_esm_css_248z);
+
+colorpicker_esm_script.render = colorpicker_esm_render;
+
+/* harmony default export */ var colorpicker_esm = (colorpicker_esm_script);
+
+// CONCATENATED MODULE: ./node_modules/primevue/inputmask/inputmask.esm.js
+
+
+
+var inputmask_esm_script = {
+    name: 'InputMask',
+    emits: ['update:modelValue', 'focus', 'blur', 'keydown', 'complete', 'keypress', 'paste'],
+    props: {
+        modelValue: null,
+        slotChar: {
+            type: String,
+            default: '_'
+        },
+        mask: {
+            type: String,
+            default: null
+        },
+        autoClear: {
+            type: Boolean,
+            default: true
+        },
+        unmask: {
+            type: Boolean,
+            default: false
+        }
+    },
+    methods: {
+        onInput(event) {
+            if (this.androidChrome)
+                this.handleAndroidInput(event);
+            else
+                this.handleInputChange(event);
+
+            this.$emit('update:modelValue', event.target.value);
+        },
+        onFocus(event) {
+            if (this.$attrs.readonly) {
+                return;
+            }
+
+            this.focus = true;
+
+            clearTimeout(this.caretTimeoutId);
+            let pos;
+
+            this.focusText = this.$el.value;
+
+            pos = this.checkVal();
+
+            this.caretTimeoutId = setTimeout(() => {
+                if (this.$el !== document.activeElement) {
+                    return;
+                }
+                this.writeBuffer();
+                if (pos === this.mask.replace("?", "").length) {
+                    this.caret(0, pos);
+                } else {
+                    this.caret(pos);
+                }
+            }, 10);
+
+            this.$emit('focus', event);
+        },
+        onBlur(event) {
+            this.focus = false;
+            this.checkVal();
+            this.updateModel(event);
+
+            if (this.$el.value !== this.focusText) {
+                let e = document.createEvent('HTMLEvents');
+                e.initEvent('change', true, false);
+                this.$el.dispatchEvent(e);
+            }
+
+            this.$emit('blur', event);
+        },
+        onKeyDown(event) {
+            if (this.$attrs.readonly) {
+                return;
+            }
+
+            let k = event.which || event.keyCode,
+                pos,
+                begin,
+                end;
+            let iPhone = /iphone/i.test(DomHandler.getUserAgent());
+            this.oldVal = this.$el.value;
+
+            //backspace, delete, and escape get special treatment
+            if (k === 8 || k === 46 || (iPhone && k === 127)) {
+                pos = this.caret();
+                begin = pos.begin;
+                end = pos.end;
+
+
+                if (end - begin === 0) {
+                    begin = k !== 46 ? this.seekPrev(begin) : (end = this.seekNext(begin - 1));
+                    end = k === 46 ? this.seekNext(end) : end;
+                }
+
+                this.clearBuffer(begin, end);
+                this.shiftL(begin, end - 1);
+                this.updateModel(event);
+
+                event.preventDefault();
+            } else if (k === 13) { // enter
+                this.$el.blur();
+                this.updateModel(event);
+            } else if (k === 27) { // escape
+                this.$el.value = this.focusText;
+                this.caret(0, this.checkVal());
+                this.updateModel(event);
+                event.preventDefault();
+            }
+
+            this.$emit('keydown', event);
+        },
+        onKeyPress(event) {
+            if (this.$attrs.readonly) {
+                return;
+            }
+
+            var k = event.which || event.keyCode,
+                pos = this.caret(),
+                p,
+                c,
+                next,
+                completed;
+
+            if (event.ctrlKey || event.altKey || event.metaKey || k < 32) {//Ignore
+                return;
+            } else if (k && k !== 13) {
+                if (pos.end - pos.begin !== 0) {
+                    this.clearBuffer(pos.begin, pos.end);
+                    this.shiftL(pos.begin, pos.end - 1);
+                }
+
+                p = this.seekNext(pos.begin - 1);
+                if (p < this.len) {
+                    c = String.fromCharCode(k);
+                    if (this.tests[p].test(c)) {
+                        this.shiftR(p);
+
+                        this.buffer[p] = c;
+                        this.writeBuffer();
+                        next = this.seekNext(p);
+
+                        if (/android/i.test(DomHandler.getUserAgent())) {
+                            //Path for CSP Violation on FireFox OS 1.1
+                            let proxy = () => {
+                                this.caret(next);
+                            };
+
+                            setTimeout(proxy, 0);
+                        } else {
+                            this.caret(next);
+                        }
+                        if (pos.begin <= this.lastRequiredNonMaskPos) {
+                            completed = this.isCompleted();
+                        }
+                    }
+                }
+                event.preventDefault();
+            }
+
+            this.updateModel(event);
+
+            if (completed) {
+                this.$emit('complete', event);
+            }
+
+            this.$emit('keypress', event);
+        },
+        onPaste(event)  {
+            this.handleInputChange(event);
+
+            this.$emit('paste', event);
+        },
+        caret(first, last) {
+            let range, begin, end;
+
+            if (!this.$el.offsetParent || this.$el !== document.activeElement) {
+                return;
+            }
+
+            if (typeof first === 'number') {
+                begin = first;
+                end = (typeof last === 'number') ? last : begin;
+                if (this.$el.setSelectionRange) {
+                    this.$el.setSelectionRange(begin, end);
+                }
+                else if (this.$el['createTextRange']) {
+                    range = this.$el['createTextRange']();
+                    range.collapse(true);
+                    range.moveEnd('character', end);
+                    range.moveStart('character', begin);
+                    range.select();
+                }
+            }
+            else {
+                if (this.$el.setSelectionRange) {
+                    begin = this.$el.selectionStart;
+                    end = this.$el.selectionEnd;
+                }
+                else if (document['selection'] && document['selection'].createRange) {
+                    range = document['selection'].createRange();
+                    begin = 0 - range.duplicate().moveStart('character', -100000);
+                    end = begin + range.text.length;
+                }
+
+                return { begin: begin, end: end };
+            }
+        },
+        isCompleted() {
+            for (let i = this.firstNonMaskPos; i <= this.lastRequiredNonMaskPos; i++) {
+                if (this.tests[i] && this.buffer[i] === this.getPlaceholder(i)) {
+                    return false;
+                }
+            }
+
+            return true;
+        },
+        getPlaceholder(i) {
+            if (i < this.slotChar.length) {
+                return this.slotChar.charAt(i);
+            }
+            return this.slotChar.charAt(0);
+        },
+        seekNext(pos) {
+            while (++pos < this.len && !this.tests[pos]);
+            return pos;
+        },
+        seekPrev(pos) {
+            while (--pos >= 0 && !this.tests[pos]);
+            return pos;
+        },
+        shiftL(begin, end) {
+            let i, j;
+
+            if (begin < 0) {
+                return;
+            }
+
+            for (i = begin, j = this.seekNext(end); i < this.len; i++) {
+                if (this.tests[i]) {
+                    if (j < this.len && this.tests[i].test(this.buffer[j])) {
+                        this.buffer[i] = this.buffer[j];
+                        this.buffer[j] = this.getPlaceholder(j);
+                    } else {
+                        break;
+                    }
+
+                    j = this.seekNext(j);
+                }
+            }
+            this.writeBuffer();
+            this.caret(Math.max(this.firstNonMaskPos, begin));
+        },
+        shiftR(pos) {
+            let i, c, j, t;
+
+            for (i = pos, c = this.getPlaceholder(pos); i < this.len; i++) {
+                if (this.tests[i]) {
+                    j = this.seekNext(i);
+                    t = this.buffer[i];
+                    this.buffer[i] = c;
+                    if (j < this.len && this.tests[j].test(t)) {
+                        c = t;
+                    } else {
+                        break;
+                    }
+                }
+            }
+        },
+        handleAndroidInput(event) {
+            var curVal = this.$el.value;
+            var pos = this.caret();
+            if (this.oldVal && this.oldVal.length && this.oldVal.length > curVal.length) {
+                // a deletion or backspace happened
+                this.checkVal(true);
+                while (pos.begin > 0 && !this.tests[pos.begin - 1])
+                    pos.begin--;
+                if (pos.begin === 0) {
+                    while (pos.begin < this.firstNonMaskPos && !this.tests[pos.begin])
+                        pos.begin++;
+                }
+                this.caret(pos.begin, pos.begin);
+            } else {
+                this.checkVal(true);
+                while (pos.begin < this.len && !this.tests[pos.begin])
+                    pos.begin++;
+
+                this.caret(pos.begin, pos.begin);
+            }
+
+            if (this.isCompleted()) {
+                this.$emit('complete', event);
+            }
+        },
+        clearBuffer(start, end) {
+            let i;
+            for (i = start; i < end && i < this.len; i++) {
+                if (this.tests[i]) {
+                    this.buffer[i] = this.getPlaceholder(i);
+                }
+            }
+        },
+        writeBuffer() {
+            this.$el.value = this.buffer.join('');
+        },
+        checkVal(allow) {
+            this.isValueChecked = true;
+            //try to place characters where they belong
+            let test = this.$el.value,
+                lastMatch = -1,
+                i,
+                c,
+                pos;
+
+            for (i = 0, pos = 0; i < this.len; i++) {
+                if (this.tests[i]) {
+                    this.buffer[i] = this.getPlaceholder(i);
+                    while (pos++ < test.length) {
+                        c = test.charAt(pos - 1);
+                        if (this.tests[i].test(c)) {
+                            this.buffer[i] = c;
+                            lastMatch = i;
+                            break;
+                        }
+                    }
+                    if (pos > test.length) {
+                        this.clearBuffer(i + 1, this.len);
+                        break;
+                    }
+                } else {
+                    if (this.buffer[i] === test.charAt(pos)) {
+                        pos++;
+                    }
+                    if (i < this.partialPosition) {
+                        lastMatch = i;
+                    }
+                }
+            }
+            if (allow) {
+                this.writeBuffer();
+            } else if (lastMatch + 1 < this.partialPosition) {
+                if (this.autoClear || this.buffer.join('') === this.defaultBuffer) {
+                    // Invalid value. Remove it and replace it with the
+                    // mask, which is the default behavior.
+                    if (this.$el.value) this.$el.value = '';
+                    this.clearBuffer(0, this.len);
+                } else {
+                    // Invalid value, but we opt to show the value to the
+                    // user and allow them to correct their mistake.
+                    this.writeBuffer();
+                }
+            } else {
+                this.writeBuffer();
+                this.$el.value = this.$el.value.substring(0, lastMatch + 1);
+            }
+            return (this.partialPosition ? i : this.firstNonMaskPos);
+        },
+        handleInputChange(event) {
+            if (this.$attrs.readonly) {
+                return;
+            }
+
+            var pos = this.checkVal(true);
+            this.caret(pos);
+            this.updateModel(event);
+
+            if (this.isCompleted()) {
+                this.$emit('complete', event);
+            }
+        },
+        getUnmaskedValue() {
+            let unmaskedBuffer = [];
+            for (let i = 0; i < this.buffer.length; i++) {
+                let c = this.buffer[i];
+                if (this.tests[i] && c !== this.getPlaceholder(i)) {
+                    unmaskedBuffer.push(c);
+                }
+            }
+
+            return unmaskedBuffer.join('');
+        },
+        updateModel(e) {
+            let val = this.unmask ? this.getUnmaskedValue() : e.target.value;
+            this.$emit('update:modelValue', (this.defaultBuffer !== val) ? val : '');
+        },
+        updateValue(updateModel = true) {
+            if (this.$el) {
+                if (this.modelValue == null) {
+                    this.$el.value = '';
+                    updateModel && this.$emit('update:modelValue', '');
+                }
+                else {
+                    this.$el.value = this.modelValue;
+                    this.checkVal();
+
+                    setTimeout(() => {
+                        if (this.$el) {
+                            this.writeBuffer();
+                            this.checkVal();
+
+                            if (updateModel) {
+                                let val = this.unmask ? this.getUnmaskedValue() : this.$el.value;
+                                this.$emit('update:modelValue', (this.defaultBuffer !== val) ? val : '');
+                            }
+                        }
+                    }, 10);
+                }
+
+                this.focusText = this.$el.value;
+            }
+        },
+        isValueUpdated() {
+            return this.unmask ?
+                        (this.modelValue != this.getUnmaskedValue()) :
+                        (this.defaultBuffer !== this.$el.value && this.$el.value !== this.modelValue);
+        }
+    },
+    mounted() {
+        this.tests = [];
+        this.partialPosition = this.mask.length;
+        this.len = this.mask.length;
+        this.firstNonMaskPos = null;
+        this.defs = {
+            '9': '[0-9]',
+            'a': '[A-Za-z]',
+            '*': '[A-Za-z0-9]'
+        };
+
+        let ua = DomHandler.getUserAgent();
+        this.androidChrome = /chrome/i.test(ua) && /android/i.test(ua);
+
+        let maskTokens = this.mask.split('');
+        for (let i = 0; i < maskTokens.length; i++) {
+            let c = maskTokens[i];
+            if (c === '?') {
+                this.len--;
+                this.partialPosition = i;
+            }
+            else if (this.defs[c]) {
+                this.tests.push(new RegExp(this.defs[c]));
+                if (this.firstNonMaskPos === null) {
+                    this.firstNonMaskPos = this.tests.length - 1;
+                }
+                if (i < this.partialPosition) {
+                    this.lastRequiredNonMaskPos = this.tests.length - 1;
+                }
+            }
+            else {
+                this.tests.push(null);
+            }
+        }
+
+        this.buffer = [];
+        for (let i = 0; i < maskTokens.length; i++) {
+            let c = maskTokens[i];
+            if (c !== '?') {
+                if (this.defs[c])
+                    this.buffer.push(this.getPlaceholder(i));
+                else
+                    this.buffer.push(c);
+            }
+        }
+        this.defaultBuffer = this.buffer.join('');
+        this.updateValue(false);
+    },
+    updated() {
+        if (this.isValueUpdated()) {
+            this.updateValue();
+        }
+    },
+    computed: {
+        filled() {
+            return (this.modelValue != null && this.modelValue.toString().length > 0)
+        },
+        inputClass() {
+            return ['p-inputmask p-inputtext p-component', {
+                'p-filled': this.filled
+            }];
+        },
+    }
+};
+
+function inputmask_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("input", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({ class: $options.inputClass }, _ctx.$attrs, {
+    onInput: _cache[1] || (_cache[1] = (...args) => ($options.onInput && $options.onInput(...args))),
+    onFocus: _cache[2] || (_cache[2] = (...args) => ($options.onFocus && $options.onFocus(...args))),
+    onBlur: _cache[3] || (_cache[3] = (...args) => ($options.onBlur && $options.onBlur(...args))),
+    onKeydown: _cache[4] || (_cache[4] = (...args) => ($options.onKeyDown && $options.onKeyDown(...args))),
+    onKeypress: _cache[5] || (_cache[5] = (...args) => ($options.onKeyPress && $options.onKeyPress(...args))),
+    onPaste: _cache[6] || (_cache[6] = (...args) => ($options.onPaste && $options.onPaste(...args)))
+  }), null, 16))
+}
+
+inputmask_esm_script.render = inputmask_esm_render;
+
+/* harmony default export */ var inputmask_esm = (inputmask_esm_script);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierColorPicker.vue?vue&type=script&lang=js
+
+
+/* harmony default export */ var CrosierColorPickervue_type_script_lang_js = ({
+  name: "CrosierColorPicker",
+  components: {
+    InputMask: inputmask_esm,
+    ColorPicker: colorpicker_esm
+  },
+  emits: ["update:modelValue", "input"],
+  props: {
+    modelValue: {
+      type: String
+    },
+    id: {
+      type: String,
+      required: true
+    },
+    error: {
+      type: String,
+      default: null
+    },
+    col: {
+      type: String,
+      default: "12"
+    },
+    label: {
+      type: String,
+      required: true
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    helpText: {
+      type: String
+    },
+    inputClass: {
+      type: String,
+      default: ""
+    }
+  },
+  methods: {
+    onInput: function onInput($event) {
+      this.$emit("update:modelValue", $event.target.value);
+      this.$emit("input", $event);
+    },
+    onChange: function onChange($event) {
+      this.$emit("update:modelValue", $event);
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/fields/CrosierColorPicker.vue?vue&type=script&lang=js
+ 
+// EXTERNAL MODULE: ./src/components/fields/CrosierColorPicker.vue?vue&type=style&index=0&id=55184098&scoped=true&lang=css
+var CrosierColorPickervue_type_style_index_0_id_55184098_scoped_true_lang_css = __webpack_require__("89fd");
+
+// CONCATENATED MODULE: ./src/components/fields/CrosierColorPicker.vue
+
+
+
+
+
+
+
+const CrosierColorPicker_exports_ = /*#__PURE__*/exportHelper_default()(CrosierColorPickervue_type_script_lang_js, [['render',CrosierColorPickervue_type_template_id_55184098_scoped_true_render],['__scopeId',"data-v-55184098"]])
+
+/* harmony default export */ var CrosierColorPicker = (CrosierColorPicker_exports_);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputTextarea.vue?vue&type=template&id=0f3e6ebe&scoped=true
 
 
@@ -30333,508 +31677,6 @@ var es_regexp_to_string = __webpack_require__("25f0");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.replace.js
 var es_string_replace = __webpack_require__("5319");
-
-// CONCATENATED MODULE: ./node_modules/primevue/inputmask/inputmask.esm.js
-
-
-
-var inputmask_esm_script = {
-    name: 'InputMask',
-    emits: ['update:modelValue', 'focus', 'blur', 'keydown', 'complete', 'keypress', 'paste'],
-    props: {
-        modelValue: null,
-        slotChar: {
-            type: String,
-            default: '_'
-        },
-        mask: {
-            type: String,
-            default: null
-        },
-        autoClear: {
-            type: Boolean,
-            default: true
-        },
-        unmask: {
-            type: Boolean,
-            default: false
-        }
-    },
-    methods: {
-        onInput(event) {
-            if (this.androidChrome)
-                this.handleAndroidInput(event);
-            else
-                this.handleInputChange(event);
-
-            this.$emit('update:modelValue', event.target.value);
-        },
-        onFocus(event) {
-            if (this.$attrs.readonly) {
-                return;
-            }
-
-            this.focus = true;
-
-            clearTimeout(this.caretTimeoutId);
-            let pos;
-
-            this.focusText = this.$el.value;
-
-            pos = this.checkVal();
-
-            this.caretTimeoutId = setTimeout(() => {
-                if (this.$el !== document.activeElement) {
-                    return;
-                }
-                this.writeBuffer();
-                if (pos === this.mask.replace("?", "").length) {
-                    this.caret(0, pos);
-                } else {
-                    this.caret(pos);
-                }
-            }, 10);
-
-            this.$emit('focus', event);
-        },
-        onBlur(event) {
-            this.focus = false;
-            this.checkVal();
-            this.updateModel(event);
-
-            if (this.$el.value !== this.focusText) {
-                let e = document.createEvent('HTMLEvents');
-                e.initEvent('change', true, false);
-                this.$el.dispatchEvent(e);
-            }
-
-            this.$emit('blur', event);
-        },
-        onKeyDown(event) {
-            if (this.$attrs.readonly) {
-                return;
-            }
-
-            let k = event.which || event.keyCode,
-                pos,
-                begin,
-                end;
-            let iPhone = /iphone/i.test(DomHandler.getUserAgent());
-            this.oldVal = this.$el.value;
-
-            //backspace, delete, and escape get special treatment
-            if (k === 8 || k === 46 || (iPhone && k === 127)) {
-                pos = this.caret();
-                begin = pos.begin;
-                end = pos.end;
-
-
-                if (end - begin === 0) {
-                    begin = k !== 46 ? this.seekPrev(begin) : (end = this.seekNext(begin - 1));
-                    end = k === 46 ? this.seekNext(end) : end;
-                }
-
-                this.clearBuffer(begin, end);
-                this.shiftL(begin, end - 1);
-                this.updateModel(event);
-
-                event.preventDefault();
-            } else if (k === 13) { // enter
-                this.$el.blur();
-                this.updateModel(event);
-            } else if (k === 27) { // escape
-                this.$el.value = this.focusText;
-                this.caret(0, this.checkVal());
-                this.updateModel(event);
-                event.preventDefault();
-            }
-
-            this.$emit('keydown', event);
-        },
-        onKeyPress(event) {
-            if (this.$attrs.readonly) {
-                return;
-            }
-
-            var k = event.which || event.keyCode,
-                pos = this.caret(),
-                p,
-                c,
-                next,
-                completed;
-
-            if (event.ctrlKey || event.altKey || event.metaKey || k < 32) {//Ignore
-                return;
-            } else if (k && k !== 13) {
-                if (pos.end - pos.begin !== 0) {
-                    this.clearBuffer(pos.begin, pos.end);
-                    this.shiftL(pos.begin, pos.end - 1);
-                }
-
-                p = this.seekNext(pos.begin - 1);
-                if (p < this.len) {
-                    c = String.fromCharCode(k);
-                    if (this.tests[p].test(c)) {
-                        this.shiftR(p);
-
-                        this.buffer[p] = c;
-                        this.writeBuffer();
-                        next = this.seekNext(p);
-
-                        if (/android/i.test(DomHandler.getUserAgent())) {
-                            //Path for CSP Violation on FireFox OS 1.1
-                            let proxy = () => {
-                                this.caret(next);
-                            };
-
-                            setTimeout(proxy, 0);
-                        } else {
-                            this.caret(next);
-                        }
-                        if (pos.begin <= this.lastRequiredNonMaskPos) {
-                            completed = this.isCompleted();
-                        }
-                    }
-                }
-                event.preventDefault();
-            }
-
-            this.updateModel(event);
-
-            if (completed) {
-                this.$emit('complete', event);
-            }
-
-            this.$emit('keypress', event);
-        },
-        onPaste(event)  {
-            this.handleInputChange(event);
-
-            this.$emit('paste', event);
-        },
-        caret(first, last) {
-            let range, begin, end;
-
-            if (!this.$el.offsetParent || this.$el !== document.activeElement) {
-                return;
-            }
-
-            if (typeof first === 'number') {
-                begin = first;
-                end = (typeof last === 'number') ? last : begin;
-                if (this.$el.setSelectionRange) {
-                    this.$el.setSelectionRange(begin, end);
-                }
-                else if (this.$el['createTextRange']) {
-                    range = this.$el['createTextRange']();
-                    range.collapse(true);
-                    range.moveEnd('character', end);
-                    range.moveStart('character', begin);
-                    range.select();
-                }
-            }
-            else {
-                if (this.$el.setSelectionRange) {
-                    begin = this.$el.selectionStart;
-                    end = this.$el.selectionEnd;
-                }
-                else if (document['selection'] && document['selection'].createRange) {
-                    range = document['selection'].createRange();
-                    begin = 0 - range.duplicate().moveStart('character', -100000);
-                    end = begin + range.text.length;
-                }
-
-                return { begin: begin, end: end };
-            }
-        },
-        isCompleted() {
-            for (let i = this.firstNonMaskPos; i <= this.lastRequiredNonMaskPos; i++) {
-                if (this.tests[i] && this.buffer[i] === this.getPlaceholder(i)) {
-                    return false;
-                }
-            }
-
-            return true;
-        },
-        getPlaceholder(i) {
-            if (i < this.slotChar.length) {
-                return this.slotChar.charAt(i);
-            }
-            return this.slotChar.charAt(0);
-        },
-        seekNext(pos) {
-            while (++pos < this.len && !this.tests[pos]);
-            return pos;
-        },
-        seekPrev(pos) {
-            while (--pos >= 0 && !this.tests[pos]);
-            return pos;
-        },
-        shiftL(begin, end) {
-            let i, j;
-
-            if (begin < 0) {
-                return;
-            }
-
-            for (i = begin, j = this.seekNext(end); i < this.len; i++) {
-                if (this.tests[i]) {
-                    if (j < this.len && this.tests[i].test(this.buffer[j])) {
-                        this.buffer[i] = this.buffer[j];
-                        this.buffer[j] = this.getPlaceholder(j);
-                    } else {
-                        break;
-                    }
-
-                    j = this.seekNext(j);
-                }
-            }
-            this.writeBuffer();
-            this.caret(Math.max(this.firstNonMaskPos, begin));
-        },
-        shiftR(pos) {
-            let i, c, j, t;
-
-            for (i = pos, c = this.getPlaceholder(pos); i < this.len; i++) {
-                if (this.tests[i]) {
-                    j = this.seekNext(i);
-                    t = this.buffer[i];
-                    this.buffer[i] = c;
-                    if (j < this.len && this.tests[j].test(t)) {
-                        c = t;
-                    } else {
-                        break;
-                    }
-                }
-            }
-        },
-        handleAndroidInput(event) {
-            var curVal = this.$el.value;
-            var pos = this.caret();
-            if (this.oldVal && this.oldVal.length && this.oldVal.length > curVal.length) {
-                // a deletion or backspace happened
-                this.checkVal(true);
-                while (pos.begin > 0 && !this.tests[pos.begin - 1])
-                    pos.begin--;
-                if (pos.begin === 0) {
-                    while (pos.begin < this.firstNonMaskPos && !this.tests[pos.begin])
-                        pos.begin++;
-                }
-                this.caret(pos.begin, pos.begin);
-            } else {
-                this.checkVal(true);
-                while (pos.begin < this.len && !this.tests[pos.begin])
-                    pos.begin++;
-
-                this.caret(pos.begin, pos.begin);
-            }
-
-            if (this.isCompleted()) {
-                this.$emit('complete', event);
-            }
-        },
-        clearBuffer(start, end) {
-            let i;
-            for (i = start; i < end && i < this.len; i++) {
-                if (this.tests[i]) {
-                    this.buffer[i] = this.getPlaceholder(i);
-                }
-            }
-        },
-        writeBuffer() {
-            this.$el.value = this.buffer.join('');
-        },
-        checkVal(allow) {
-            this.isValueChecked = true;
-            //try to place characters where they belong
-            let test = this.$el.value,
-                lastMatch = -1,
-                i,
-                c,
-                pos;
-
-            for (i = 0, pos = 0; i < this.len; i++) {
-                if (this.tests[i]) {
-                    this.buffer[i] = this.getPlaceholder(i);
-                    while (pos++ < test.length) {
-                        c = test.charAt(pos - 1);
-                        if (this.tests[i].test(c)) {
-                            this.buffer[i] = c;
-                            lastMatch = i;
-                            break;
-                        }
-                    }
-                    if (pos > test.length) {
-                        this.clearBuffer(i + 1, this.len);
-                        break;
-                    }
-                } else {
-                    if (this.buffer[i] === test.charAt(pos)) {
-                        pos++;
-                    }
-                    if (i < this.partialPosition) {
-                        lastMatch = i;
-                    }
-                }
-            }
-            if (allow) {
-                this.writeBuffer();
-            } else if (lastMatch + 1 < this.partialPosition) {
-                if (this.autoClear || this.buffer.join('') === this.defaultBuffer) {
-                    // Invalid value. Remove it and replace it with the
-                    // mask, which is the default behavior.
-                    if (this.$el.value) this.$el.value = '';
-                    this.clearBuffer(0, this.len);
-                } else {
-                    // Invalid value, but we opt to show the value to the
-                    // user and allow them to correct their mistake.
-                    this.writeBuffer();
-                }
-            } else {
-                this.writeBuffer();
-                this.$el.value = this.$el.value.substring(0, lastMatch + 1);
-            }
-            return (this.partialPosition ? i : this.firstNonMaskPos);
-        },
-        handleInputChange(event) {
-            if (this.$attrs.readonly) {
-                return;
-            }
-
-            var pos = this.checkVal(true);
-            this.caret(pos);
-            this.updateModel(event);
-
-            if (this.isCompleted()) {
-                this.$emit('complete', event);
-            }
-        },
-        getUnmaskedValue() {
-            let unmaskedBuffer = [];
-            for (let i = 0; i < this.buffer.length; i++) {
-                let c = this.buffer[i];
-                if (this.tests[i] && c !== this.getPlaceholder(i)) {
-                    unmaskedBuffer.push(c);
-                }
-            }
-
-            return unmaskedBuffer.join('');
-        },
-        updateModel(e) {
-            let val = this.unmask ? this.getUnmaskedValue() : e.target.value;
-            this.$emit('update:modelValue', (this.defaultBuffer !== val) ? val : '');
-        },
-        updateValue(updateModel = true) {
-            if (this.$el) {
-                if (this.modelValue == null) {
-                    this.$el.value = '';
-                    updateModel && this.$emit('update:modelValue', '');
-                }
-                else {
-                    this.$el.value = this.modelValue;
-                    this.checkVal();
-
-                    setTimeout(() => {
-                        if (this.$el) {
-                            this.writeBuffer();
-                            this.checkVal();
-
-                            if (updateModel) {
-                                let val = this.unmask ? this.getUnmaskedValue() : this.$el.value;
-                                this.$emit('update:modelValue', (this.defaultBuffer !== val) ? val : '');
-                            }
-                        }
-                    }, 10);
-                }
-
-                this.focusText = this.$el.value;
-            }
-        },
-        isValueUpdated() {
-            return this.unmask ?
-                        (this.modelValue != this.getUnmaskedValue()) :
-                        (this.defaultBuffer !== this.$el.value && this.$el.value !== this.modelValue);
-        }
-    },
-    mounted() {
-        this.tests = [];
-        this.partialPosition = this.mask.length;
-        this.len = this.mask.length;
-        this.firstNonMaskPos = null;
-        this.defs = {
-            '9': '[0-9]',
-            'a': '[A-Za-z]',
-            '*': '[A-Za-z0-9]'
-        };
-
-        let ua = DomHandler.getUserAgent();
-        this.androidChrome = /chrome/i.test(ua) && /android/i.test(ua);
-
-        let maskTokens = this.mask.split('');
-        for (let i = 0; i < maskTokens.length; i++) {
-            let c = maskTokens[i];
-            if (c === '?') {
-                this.len--;
-                this.partialPosition = i;
-            }
-            else if (this.defs[c]) {
-                this.tests.push(new RegExp(this.defs[c]));
-                if (this.firstNonMaskPos === null) {
-                    this.firstNonMaskPos = this.tests.length - 1;
-                }
-                if (i < this.partialPosition) {
-                    this.lastRequiredNonMaskPos = this.tests.length - 1;
-                }
-            }
-            else {
-                this.tests.push(null);
-            }
-        }
-
-        this.buffer = [];
-        for (let i = 0; i < maskTokens.length; i++) {
-            let c = maskTokens[i];
-            if (c !== '?') {
-                if (this.defs[c])
-                    this.buffer.push(this.getPlaceholder(i));
-                else
-                    this.buffer.push(c);
-            }
-        }
-        this.defaultBuffer = this.buffer.join('');
-        this.updateValue(false);
-    },
-    updated() {
-        if (this.isValueUpdated()) {
-            this.updateValue();
-        }
-    },
-    computed: {
-        filled() {
-            return (this.modelValue != null && this.modelValue.toString().length > 0)
-        },
-        inputClass() {
-            return ['p-inputmask p-inputtext p-component', {
-                'p-filled': this.filled
-            }];
-        },
-    }
-};
-
-function inputmask_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("input", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({ class: $options.inputClass }, _ctx.$attrs, {
-    onInput: _cache[1] || (_cache[1] = (...args) => ($options.onInput && $options.onInput(...args))),
-    onFocus: _cache[2] || (_cache[2] = (...args) => ($options.onFocus && $options.onFocus(...args))),
-    onBlur: _cache[3] || (_cache[3] = (...args) => ($options.onBlur && $options.onBlur(...args))),
-    onKeydown: _cache[4] || (_cache[4] = (...args) => ($options.onKeyDown && $options.onKeyDown(...args))),
-    onKeypress: _cache[5] || (_cache[5] = (...args) => ($options.onKeyPress && $options.onKeyPress(...args))),
-    onPaste: _cache[6] || (_cache[6] = (...args) => ($options.onPaste && $options.onPaste(...args)))
-  }), null, 16))
-}
-
-inputmask_esm_script.render = inputmask_esm_render;
-
-/* harmony default export */ var inputmask_esm = (inputmask_esm_script);
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputCpfCnpj.vue?vue&type=script&lang=js
 
@@ -31772,6 +32614,7 @@ function _submitForm() {
 
 
 
+
 /* harmony default export */ var main = ({
   HelloWorld: HelloWorld,
   CrosierBlock: crosierBlock,
@@ -31788,6 +32631,7 @@ function _submitForm() {
   CrosierDropdownEntity: CrosierDropdownEntity,
   CrosierAutoComplete: CrosierAutoComplete,
   CrosierInputText: CrosierInputText,
+  CrosierColorPicker: CrosierColorPicker,
   CrosierInputTextarea: CrosierInputTextarea,
   CrosierInputInt: CrosierInputInt,
   CrosierInputDecimal: CrosierInputDecimal,
