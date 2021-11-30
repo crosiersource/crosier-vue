@@ -231,6 +231,10 @@ export default {
       type: String,
       default: "local",
     },
+    properties: {
+      type: Array,
+      default: null,
+    },
   },
 
   data() {
@@ -339,6 +343,7 @@ export default {
         order: apiOrder,
         filters: this.filters,
         defaultFilters: this.defaultFilters,
+        properties: this.properties,
       });
 
       this.totalRecords = response.data["hydra:totalItems"];
