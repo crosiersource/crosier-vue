@@ -1,14 +1,14 @@
 <template>
   <div :class="'col-md-' + (this.col - 1)">
     <div class="form-group">
-      <label :for="this.id">{{ label }}</label>
+      <label v-if="this.showLabel" :for="this.id">{{ label }}</label>
       <br />
       <ColorPicker id="cor" :modelValue="modelValue" @update:modelValue="this.onChange($event)" />
     </div>
   </div>
   <div class="col-md-1">
     <div class="form-group">
-      <label for="corInput">&nbsp;</label>
+      <label v-if="this.showLabel" for="corInput">&nbsp;</label>
       <br />
       <InputMask
         mask="#******"
@@ -74,6 +74,10 @@ export default {
     inputClass: {
       type: String,
       default: "",
+    },
+    showLabel: {
+      type: Boolean,
+      default: true,
     },
   },
 

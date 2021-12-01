@@ -1,7 +1,7 @@
 <template>
   <div :class="'col-md-' + this.col">
     <div class="form-group">
-      <label :for="this.id">{{ label }}</label>
+      <label v-if="this.showLabel" :for="this.id">{{ label }}</label>
       <Textarea
         :rows="this.rows"
         :cols="this.cols"
@@ -73,6 +73,10 @@ export default {
       default: 40,
     },
     autoResize: {
+      type: Boolean,
+      default: true,
+    },
+    showLabel: {
       type: Boolean,
       default: true,
     },

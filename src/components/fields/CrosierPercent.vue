@@ -1,7 +1,7 @@
 <template>
   <div :class="'col-md-' + this.col">
     <div class="form-group">
-      <label :for="this.id">{{ label }}</label>
+      <label v-if="this.showLabel" :for="this.id">{{ label }}</label>
       <div class="input-group">
         <InputNumber
           :class="'form-control ' + (this.error ? 'is-invalid' : '')"
@@ -73,6 +73,10 @@ export default {
     decimais: {
       type: Number,
       default: 2,
+    },
+    showLabel: {
+      type: Boolean,
+      default: true,
     },
   },
 

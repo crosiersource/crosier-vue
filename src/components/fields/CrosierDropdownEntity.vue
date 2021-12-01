@@ -1,7 +1,7 @@
 <template>
   <div :class="'col-md-' + this.col">
     <div class="form-group">
-      <label :for="this.id">{{ label }}</label>
+      <label v-if="this.showLabel" :for="this.id">{{ label }}</label>
       <Dropdown
         :class="'form-control ' + (this.error ? 'is-invalid' : '')"
         :id="this.id"
@@ -96,6 +96,10 @@ export default {
     dataKey: {
       type: String,
       default: "@id",
+    },
+    showLabel: {
+      type: Boolean,
+      default: true,
     },
   },
 

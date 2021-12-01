@@ -1,7 +1,7 @@
 <template>
   <div :class="'col-md-' + this.col">
     <div class="form-group">
-      <label :for="this.id">{{ label }}</label>
+      <label v-if="this.showLabel" :for="this.id">{{ label }}</label>
       <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text">R$ </span>
@@ -69,6 +69,10 @@ export default {
     },
     helpText: {
       type: String,
+    },
+    showLabel: {
+      type: Boolean,
+      default: true,
     },
   },
 

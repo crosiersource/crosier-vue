@@ -1,7 +1,7 @@
 <template>
   <div :class="'col-md-' + this.col">
     <div class="form-group">
-      <label :for="this.id">{{ this.label }}</label>
+      <label v-if="this.showLabel" :for="this.id">{{ this.label }}</label>
       <Calendar
         :id="this.id"
         :inputClass="this.inputClass"
@@ -89,6 +89,10 @@ export default {
     baseZIndex: {
       type: Number,
       default: 0,
+    },
+    showLabel: {
+      type: Boolean,
+      default: true,
     },
   },
 
