@@ -4,7 +4,6 @@
     <form @submit.prevent="this.$emit('submitForm')">
       <fieldset :disabled="this.loading">
         <slot></slot>
-        <slot name="formChilds"></slot>
         <div class="row mt-3" v-if="!this.semBotaoSalvar">
           <div class="col text-right">
             <Button
@@ -48,6 +47,8 @@
               >
                 <i class="fas fa-list"></i>
               </a>
+
+              <slot name="btns"></slot>
             </div>
           </div>
         </div>
@@ -55,7 +56,6 @@
           <form @submit.prevent="this.$emit('submitForm')">
             <fieldset :disabled="this.loading">
               <slot></slot>
-              <slot name="formChilds"></slot>
               <div class="row mt-3" v-if="!this.semBotaoSalvar">
                 <div class="col text-right">
                   <Button
