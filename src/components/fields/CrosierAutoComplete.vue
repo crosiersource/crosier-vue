@@ -17,6 +17,8 @@
         :disabled="this.disabled"
         :append-to="this.appendTo"
         :force-selection="this.forceSelection"
+        @focus="this.$emit('focus')"
+        @blur="this.$emit('blur')"
       >
         <template #item="item">
           <slot name="item" :item="item.item"></slot>

@@ -10,6 +10,8 @@
         v-if="this.modelValue && this.modelValue.length >= 11"
         mask="(99) 99999-999?9"
         :unmask="true"
+        @focus="this.$emit('focus')"
+        @blur="this.$emit('blur')"
       />
       <InputMask
         :class="'form-control ' + (this.error ? 'is-invalid' : '') + this.inputClass"
@@ -18,6 +20,8 @@
         v-if="!this.modelValue || this.modelValue.length < 11"
         mask="(99) 9999-9999?9"
         :unmask="true"
+        @focus="this.$emit('focus')"
+        @blur="this.$emit('blur')"
       />
 
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{

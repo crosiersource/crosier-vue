@@ -14,6 +14,8 @@
           @input="this.onInput"
           placeholder="0,00"
           :disabled="this.disabled"
+          @focus="this.$emit('focus')"
+          @blur="this.$emit('blur')"
         />
         <div class="input-group-append">
           <span class="input-group-text">%</span>

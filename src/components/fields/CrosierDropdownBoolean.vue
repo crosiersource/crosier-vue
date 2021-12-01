@@ -16,6 +16,8 @@
         :disabled="this.disabled"
         :dataKey="this.dataKey"
         :filter="true"
+        @focus="this.$emit('focus')"
+        @blur="this.$emit('blur')"
       />
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
         this.helpText

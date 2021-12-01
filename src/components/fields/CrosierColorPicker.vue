@@ -17,6 +17,8 @@
         type="text"
         :modelValue="modelValue"
         @change="this.onInput"
+        @focus="this.$emit('focus')"
+        @blur="this.$emit('blur')"
       />
     </div>
     <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">

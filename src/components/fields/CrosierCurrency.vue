@@ -17,6 +17,8 @@
           @input="this.onInput"
           placeholder="0,00"
           :disabled="this.disabled"
+          @focus="this.$emit('focus')"
+          @blur="this.$emit('blur')"
         />
       </div>
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{

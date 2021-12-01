@@ -15,6 +15,8 @@
           :disabled="this.disabled"
           :min="this.min"
           :max="this.max"
+          @focus="this.$emit('focus')"
+          @blur="this.$emit('blur')"
         />
         <div v-if="this.append" class="input-group-append">
           <span class="input-group-text">{{ this.append }}</span>

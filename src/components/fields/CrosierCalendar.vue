@@ -9,6 +9,8 @@
         :modelValue="modelValue"
         :selectionMode="this.selectionMode"
         ref="refCalendar"
+        @focus="this.$emit('focus')"
+        @blur="this.$emit('blur')"
         @input="this.onInput"
         @date-select="this.onInput"
         dateFormat="dd/mm/yy"
