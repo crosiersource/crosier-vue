@@ -9,8 +9,6 @@
         :modelValue="modelValue"
         :selectionMode="this.selectionMode"
         ref="refCalendar"
-        @focus="this.$emit('focus')"
-        @blur="this.$emit('blur')"
         @input="this.onInput"
         @date-select="this.onInput"
         dateFormat="dd/mm/yy"
@@ -22,6 +20,8 @@
         :disabled="this.disabled"
         :autoZIndex="this.autoZIndex"
         :baseZIndex="this.baseZIndex"
+        @focus="this.$emit('focus')"
+        @blur="this.$emit('blur')"
       />
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
         this.helpText
