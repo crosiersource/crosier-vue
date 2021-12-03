@@ -1,6 +1,49 @@
 <template>
   <ConfirmDialog group="confirmDialog_crosierListS" />
   <Toast group="toast_crosierListS" class="mb-5" />
+
+  <Sidebar
+    class="p-sidebar-lg"
+    v-model:visible="this.visibleRight"
+    v-if="this.filtrosNaSidebar"
+    position="right"
+  >
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><i class="fas fa-search"></i> Filtros</h5>
+        <form @submit.prevent="this.doFilter()" class="notSubmit">
+          <slot name="filter-fields"></slot>
+          <div class="row mt-3">
+            <div class="col-12">
+              <InlineMessage severity="info"
+                ><small>
+                  {{ totalRecords }} registro(s) encontrado(s)
+                  <span v-show="this.isFiltering">(com filtros aplicados)</span>.
+                </small>
+              </InlineMessage>
+            </div>
+          </div>
+
+          <div class="form-row mt-2">
+            <div class="col-6">
+              <button type="submit" class="btn btn-primary btn-sm btn-block">
+                <i class="fas fa-search"></i> Filtrar
+              </button>
+            </div>
+            <div class="col-6">
+              <button
+                type="button"
+                class="btn btn-sm btn-secondary btn-block"
+                @click="this.doClearFilters()"
+              >
+                <i class="fas fa-backspace"></i> Limpar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </Sidebar>
   <div :class="this.containerClass">
     <div class="card" style="margin-bottom: 50px">
       <div class="card-header">
@@ -13,19 +56,22 @@
             <a
               v-show="this.formUrl"
               type="button"
-              class="btn btn-info"
+              class="btn btn-outline-info"
               :href="this.formUrl"
               title="Novo"
             >
               <i class="fas fa-file" aria-hidden="true"></i>
             </a>
+            <button type="button" class="btn btn-outline-warning ml-1" @click="this.toggleFiltros">
+              <i class="fas fa-search"></i>
+            </button>
             <slot name="headerButtons"></slot>
           </div>
         </div>
       </div>
       <div class="card-body">
         <CrosierBlock :loading="this.loading" />
-        <div>
+        <div v-if="!this.filtrosNaSidebar">
           <Accordion :activeIndex="this.accordionActiveIndex">
             <AccordionTab>
               <template #header>
@@ -44,16 +90,17 @@
                     </InlineMessage>
                   </div>
                   <div class="col-4 text-right">
-                    <Button
+                    <button
                       label="Filtrar"
                       type="submit"
                       icon="fas fa-search"
-                      class="p-button-primary p-button-sm mr-2"
+                      class="btn btn-primary btn-sm btn-block"
                     />
-                    <Button
+                    <button
+                      type="button"
                       label="Limpar"
                       icon="fas fa-backspace"
-                      class="p-button-secondary p-button-sm mr-2"
+                      class="btn btn-sm btn-secondary btn-block"
                       @click="this.doClearFilters()"
                     />
                   </div>
@@ -62,6 +109,7 @@
             </AccordionTab>
           </Accordion>
         </div>
+
         <DataTable
           :stateStorage="this.stateStorage"
           class="p-datatable-sm p-datatable-striped"
@@ -98,12 +146,14 @@
         >
           <template #footer>
             <div style="text-align: right">
-              <Button
-                class="p-button-rounded p-button-success p-button-text"
-                icon="pi pi-file-excel"
-                label="Exportar para CSV"
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-info"
+                title="Exportar para CSV"
                 @click="exportCSV($event)"
-              />
+              >
+                <i class="fas fa-file-csv"></i>
+              </button>
             </div>
           </template>
 
@@ -118,7 +168,7 @@
               />&nbsp; Id
             </template>
             <template #body="r">
-              {{ r.data.id }}
+              {{ ("0".repeat(this.zerofillId) + r.data.id).slice(-this.zerofillId) }}
             </template>
           </Column>
           <slot name="columns"></slot>
@@ -135,9 +185,9 @@ import Column from "primevue/column";
 import Toast from "primevue/toast";
 import Accordion from "primevue/accordion";
 import AccordionTab from "primevue/accordiontab";
-import Button from "primevue/button";
 import ConfirmDialog from "primevue/confirmdialog";
 import InlineMessage from "primevue/inlinemessage";
+import Sidebar from "primevue/sidebar";
 import { mapMutations, mapGetters } from "vuex";
 import api from "../services/api";
 import CrosierBlock from "../components/crosierBlock";
@@ -150,13 +200,13 @@ export default {
     Accordion,
     AccordionTab,
     Checkbox,
-    Button,
     ConfirmDialog,
     CrosierBlock,
     DataTable,
     Column,
     InlineMessage,
     Toast,
+    Sidebar,
   },
 
   emits: [
@@ -223,6 +273,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    filtrosNaSidebar: {
+      type: Boolean,
+      default: false,
+    },
     dtStateName: {
       type: String,
       default: null,
@@ -235,6 +289,9 @@ export default {
       type: Array,
       default: null,
     },
+    zerofillId: {
+      default: 0,
+    },
   },
 
   data() {
@@ -246,6 +303,7 @@ export default {
       multiSortMeta: [],
       accordionActiveIndex: null,
       tudoSelecionado: false,
+      visibleRight: false,
     };
   },
 
@@ -295,6 +353,11 @@ export default {
           console.error(e);
         }
       }
+    },
+
+    toggleFiltros() {
+      this.accordionActiveIndex = this.accordionActiveIndex === 0 ? null : 0;
+      this.visibleRight = !this.visibleRight;
     },
 
     async doFilter(event) {
@@ -358,6 +421,11 @@ export default {
 
       this.$emit("afterFilter", this.tableData);
       this.handleTudoSelecionado();
+
+      if (this.filtrosNaSidebar) {
+        this.visibleRight = false;
+      }
+
       this.setLoading(false);
     },
 
