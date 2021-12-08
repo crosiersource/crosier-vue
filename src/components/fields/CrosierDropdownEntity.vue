@@ -91,7 +91,7 @@ export default {
       type: Object,
     },
     properties: {
-      type: Object,
+      type: Array,
     },
     orderBy: {
       type: Object,
