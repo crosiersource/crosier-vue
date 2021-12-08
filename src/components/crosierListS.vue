@@ -90,19 +90,17 @@
                     </InlineMessage>
                   </div>
                   <div class="col-4 text-right">
-                    <button
-                      label="Filtrar"
-                      type="submit"
-                      icon="fas fa-search"
-                      class="btn btn-primary btn-sm btn-block"
-                    />
+                    <button type="submit" class="btn btn-primary btn-sm btn-block">
+                      <i class="fas fa-search"></i> Filtrar
+                    </button>
+
                     <button
                       type="button"
-                      label="Limpar"
-                      icon="fas fa-backspace"
                       class="btn btn-sm btn-secondary btn-block"
                       @click="this.doClearFilters()"
-                    />
+                    >
+                      <i class="fas fa-backspace"></i> Limpar
+                    </button>
                   </div>
                 </div>
               </form>
@@ -188,7 +186,7 @@ import AccordionTab from "primevue/accordiontab";
 import ConfirmDialog from "primevue/confirmdialog";
 import InlineMessage from "primevue/inlinemessage";
 import Sidebar from "primevue/sidebar";
-import { mapMutations, mapGetters } from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 import api from "../services/api";
 import CrosierBlock from "../components/crosierBlock";
 // import { api, CrosierBlock } from "crosier-vue";
