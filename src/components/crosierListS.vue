@@ -90,13 +90,13 @@
                     </InlineMessage>
                   </div>
                   <div class="col-4 text-right">
-                    <button type="submit" class="btn btn-primary btn-sm btn-block">
+                    <button type="submit" class="btn btn-primary btn-sm">
                       <i class="fas fa-search"></i> Filtrar
                     </button>
 
                     <button
                       type="button"
-                      class="btn btn-sm btn-secondary btn-block"
+                      class="btn btn-sm btn-secondary ml-1"
                       @click="this.doClearFilters()"
                     >
                       <i class="fas fa-backspace"></i> Limpar
