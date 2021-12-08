@@ -43,7 +43,7 @@ export default {
     Calendar,
   },
 
-  emits: ["update:modelValue", "date-select"],
+  emits: ["update:modelValue", "date-select", "focus", "blur"],
 
   props: {
     modelValue: {},

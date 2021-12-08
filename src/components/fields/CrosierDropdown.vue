@@ -40,7 +40,7 @@ export default {
     Dropdown,
   },
 
-  emits: ["update:modelValue", "change"],
+  emits: ["update:modelValue", "change", "focus", "blur"],
 
   props: {
     modelValue: {

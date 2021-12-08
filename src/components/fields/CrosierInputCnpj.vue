@@ -36,7 +36,7 @@ export default {
     InputMask,
   },
 
-  emits: ["update:modelValue", "input"],
+  emits: ["update:modelValue", "input", "focus", "blur"],
 
   props: {
     modelValue: {

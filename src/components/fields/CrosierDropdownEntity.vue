@@ -41,7 +41,7 @@ export default {
     Dropdown,
   },
 
-  emits: ["update:modelValue", "change"],
+  emits: ["update:modelValue", "change", "focus", "blur"],
 
   props: {
     modelValue: {
@@ -90,6 +90,9 @@ export default {
     filters: {
       type: Object,
     },
+    properties: {
+      type: Object,
+    },
     orderBy: {
       type: Object,
     },
@@ -118,6 +121,7 @@ export default {
         allRows: true,
         filters: this.filters,
         order: this.orderBy,
+        properties: this.properties,
       });
 
       if (response.data["hydra:totalItems"] > 0) {

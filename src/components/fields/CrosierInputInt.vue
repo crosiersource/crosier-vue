@@ -42,7 +42,7 @@ export default {
     InputNumber,
   },
 
-  emits: ["update:modelValue", "input"],
+  emits: ["update:modelValue", "input", "focus", "blur"],
 
   props: {
     modelValue: {

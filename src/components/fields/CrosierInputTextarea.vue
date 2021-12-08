@@ -35,7 +35,7 @@ export default {
     Textarea,
   },
 
-  emits: ["update:modelValue", "input"],
+  emits: ["update:modelValue", "input", "focus", "blur"],
 
   props: {
     modelValue: {

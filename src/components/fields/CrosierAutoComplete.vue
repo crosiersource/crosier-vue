@@ -44,7 +44,7 @@ export default {
     AutoComplete,
   },
 
-  emits: ["update:modelValue", "complete", "item-select", "clear"],
+  emits: ["update:modelValue", "complete", "item-select", "clear", "focus", "blur"],
 
   props: {
     modelValue: {
