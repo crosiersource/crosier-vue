@@ -1,11 +1,12 @@
 <template>
   <ConfirmDialog group="confirmDialog_crosierListS" />
   <Toast group="toast_crosierListS" class="mb-5" />
+  <CrosierBlock :loading="this.loading" />
 
   <Sidebar
+    v-if="this.comFiltragem && this.filtrosNaSidebar"
     class="p-sidebar-lg"
     v-model:visible="this.visibleRight"
-    v-if="this.filtrosNaSidebar"
     position="right"
   >
     <div class="card">
@@ -44,7 +45,8 @@
       </div>
     </div>
   </Sidebar>
-  <div :class="this.containerClass">
+
+  <div v-if="!this.withoutCard" :class="this.containerClass">
     <div class="card" style="margin-bottom: 50px">
       <div class="card-header">
         <div class="d-flex flex-wrap align-items-center">
@@ -70,8 +72,7 @@
         </div>
       </div>
       <div class="card-body">
-        <CrosierBlock :loading="this.loading" />
-        <div v-if="!this.filtrosNaSidebar">
+        <div v-if="this.comFiltragem && !this.filtrosNaSidebar">
           <Accordion :activeIndex="this.accordionActiveIndex">
             <AccordionTab>
               <template #header>
@@ -115,22 +116,20 @@
           :value="tableData"
           :totalRecords="totalRecords"
           :lazy="true"
-          :paginator="true"
-          :rows="10"
+          :paginator="this.comPaginador"
+          :rows="this.rows"
+          paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink
+           LastPageLink CurrentPageReport RowsPerPageDropdown"
+          :rowsPerPageOptions="[5, 10, 25, 50, 100, 200, 500]"
+          currentPageReportTemplate="{first}-{last} de {totalRecords}"
           @page="doFilter($event)"
           @sort="doFilter($event)"
           sortMode="multiple"
           :multiSortMeta="multiSortMeta"
           :removable-sort="true"
-          paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink
-           LastPageLink CurrentPageReport RowsPerPageDropdown"
-          :rowsPerPageOptions="[5, 10, 25, 50, 100, 200, 500]"
-          currentPageReportTemplate="{first}-{last} de {totalRecords}"
           :selection="this.selection"
           @update:selection="this.onUpdateSelection($event)"
           :selectionMode="selectionMode"
-          @row-select="this.onRowSelect"
-          @row-unselect="this.onRowUnselect"
           :metaKeySelection="this.metaKeySelection"
           dataKey="id"
           @rowSelect="this.onRowSelect"
@@ -173,6 +172,70 @@
         </DataTable>
       </div>
     </div>
+  </div>
+
+  <div v-else>
+    <DataTable
+      :stateStorage="this.stateStorage"
+      class="p-datatable-sm p-datatable-striped"
+      :stateKey="this.dataTableStateKey"
+      :value="tableData"
+      :totalRecords="totalRecords"
+      :lazy="true"
+      :paginator="this.comPaginador"
+      :rows="this.rows"
+      paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink
+           LastPageLink CurrentPageReport RowsPerPageDropdown"
+      :rowsPerPageOptions="[5, 10, 25, 50, 100, 200, 500]"
+      currentPageReportTemplate="{first}-{last} de {totalRecords}"
+      @page="doFilter($event)"
+      @sort="doFilter($event)"
+      sortMode="multiple"
+      :multiSortMeta="multiSortMeta"
+      :removable-sort="true"
+      :selection="this.selection"
+      @update:selection="this.onUpdateSelection($event)"
+      :selectionMode="selectionMode"
+      :metaKeySelection="this.metaKeySelection"
+      dataKey="id"
+      @rowSelect="this.onRowSelect"
+      @rowUnselect="this.onRowUnselect"
+      :resizableColumns="true"
+      columnResizeMode="fit"
+      responsiveLayout="scroll"
+      :first="firstRecordIndex"
+      ref="dt"
+      :rowHover="true"
+    >
+      <template #footer v-if="this.comExportCSV">
+        <div style="text-align: right">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-info"
+            title="Exportar para CSV"
+            @click="exportCSV($event)"
+          >
+            <i class="fas fa-file-csv"></i>
+          </button>
+        </div>
+      </template>
+
+      <Column field="id" :sortable="true" v-if="this.ativarSelecao">
+        <template #header>
+          <Checkbox
+            :binary="true"
+            @change="this.tudoSelecionadoClick()"
+            v-model="this.tudoSelecionado"
+            onIcon="pi pi-check"
+            offIcon="pi pi-times"
+          />&nbsp; Id
+        </template>
+        <template #body="r">
+          {{ ("0".repeat(this.zerofillId) + r.data.id).slice(-this.zerofillId) }}
+        </template>
+      </Column>
+      <slot name="columns"></slot>
+    </DataTable>
   </div>
 </template>
 
@@ -217,6 +280,10 @@ export default {
   ],
 
   props: {
+    withoutCard: {
+      type: Boolean,
+      default: false,
+    },
     titulo: {
       type: String,
       required: true,
@@ -241,6 +308,18 @@ export default {
     containerClass: {
       type: String,
       default: "container-fluid",
+    },
+    comFiltragem: {
+      type: Boolean,
+      default: true,
+    },
+    comPaginador: {
+      type: Boolean,
+      default: true,
+    },
+    comExportCSV: {
+      type: Boolean,
+      default: true,
     },
     sempreMostrarFiltros: {
       type: Boolean,
@@ -289,6 +368,9 @@ export default {
     },
     zerofillId: {
       default: 0,
+    },
+    rows: {
+      default: 10,
     },
   },
 
