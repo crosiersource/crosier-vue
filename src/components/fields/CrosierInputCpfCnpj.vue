@@ -19,7 +19,7 @@
       <div class="invalid-feedbackk blink" v-show="this.error">
         {{ this.error }}
       </div>
-      <div class="invalid-feedbackk blink" v-show="this.exibeValidacao && !this.cpfCnpjInvalido">
+      <div class="invalid-feedbackk blink" v-show="this.exibeValidacao && this.cpfCnpjInvalido">
         CPF inválido!
       </div>
     </div>
@@ -102,7 +102,7 @@ export default {
     onBlur() {
       this.$nextTick(async () => {
         if (this.exibeValidacao) {
-          this.cpfCnpjInvalido = this.validaCpf(this.modelValue);
+          this.cpfCnpjInvalido = !this.validaCpf(this.modelValue);
         }
         this.$emit("blur");
       });
