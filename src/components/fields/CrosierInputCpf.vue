@@ -56,7 +56,8 @@ export default {
     },
     label: {
       type: String,
-      required: true,
+      required: false,
+      default: "CPF",
     },
     disabled: {
       type: Boolean,
