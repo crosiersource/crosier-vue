@@ -477,6 +477,7 @@ export default {
             order: this.defaultOrder[campo] === "ASC" ? 1 : -1,
           });
         }, this);
+        apiOrder = this.multiSortMeta;
       }
 
       const response = await api.get({

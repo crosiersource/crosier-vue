@@ -6,13 +6,14 @@
         <slot></slot>
         <div class="row mt-3" v-if="!this.semBotaoSalvar">
           <div class="col text-right">
-            <Button
+            <button
+              class="btn btn-sm btn-primary"
               style="width: 12rem"
-              label="Salvar"
               type="submit"
-              icon="fas fa-save"
               v-if="!this.disabledSubmit"
-            />
+            >
+              <i class="fas fa-save"></i> Salvar
+            </button>
           </div>
         </div>
       </fieldset>
@@ -58,13 +59,15 @@
               <slot></slot>
               <div class="row mt-3" v-if="!this.semBotaoSalvar">
                 <div class="col text-right">
-                  <Button
+                  <button
+                    class="btn btn-sm btn-primary"
                     style="width: 12rem"
-                    label="Salvar"
                     type="submit"
                     icon="fas fa-save"
                     v-if="!this.disabledSubmit"
-                  />
+                  >
+                    <i class="fas fa-save"></i> Salvar
+                  </button>
                 </div>
               </div>
             </fieldset>
@@ -76,7 +79,6 @@
 </template>
 
 <script>
-import Button from "primevue/button";
 import CrosierBlock from "./crosierBlock";
 
 export default {
@@ -84,7 +86,6 @@ export default {
 
   components: {
     CrosierBlock,
-    Button,
   },
 
   emits: ["submitForm"],
