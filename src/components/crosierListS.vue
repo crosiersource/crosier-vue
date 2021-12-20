@@ -563,10 +563,15 @@ export default {
         message: "Confirmar a operação?",
         header: "Atenção!",
         icon: "pi pi-exclamation-triangle",
+        group: "confirmDialog_crosierListS",
         accept: async () => {
           this.setLoading(true);
           try {
-            const rsDelete = await api.delete(`${this.apiResource}${id}`);
+            const deleteUrl = `${this.apiResource}${id}`;
+            const rsDelete = await api.delete(deleteUrl);
+            if (!rsDelete) {
+              throw new Error("rsDelete n/d");
+            }
             if (rsDelete?.status === 204) {
               this.$toast.add({
                 group: "mainToast",
@@ -575,21 +580,21 @@ export default {
                 detail: "Registro deletado com sucesso",
                 life: 5000,
               });
+              await this.doFilter();
+            } else if (rsDelete?.data && rsDelete.data["hydra:description"]) {
+              throw new Error(`status !== 204: ${rsDelete?.data["hydra:description"]}`);
+            } else if (rsDelete?.statusText) {
+              throw new Error(`status !== 204: ${rsDelete?.statusText}`);
             } else {
-              if (rsDelete?.data["hydra:description"]) {
-                console.error(rsDelete?.data["hydra:description"]);
-              }
-              console.error(rsDelete?.statusText);
-              throw new Error("Não foi possível deletar o registro");
+              throw new Error("Erro ao deletar (erro n/d, status !== 204)");
             }
-            await this.doFilter();
           } catch (e) {
             console.error(e);
             this.$toast.add({
               group: "mainToast",
               severity: "error",
               summary: "Erro",
-              detail: "Ocorreu um erro ao efetuar a operação",
+              detail: "Ocorreu um erro ao deletar",
               life: 5000,
             });
           }
