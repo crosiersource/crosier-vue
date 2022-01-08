@@ -175,6 +175,43 @@
   </div>
 
   <div v-else>
+    <div v-if="this.comFiltragem && !this.filtrosNaSidebar">
+      <Accordion :activeIndex="this.accordionActiveIndex">
+        <AccordionTab>
+          <template #header>
+            <span>Filtros</span>
+            <i class="pi pi-filter"></i>
+          </template>
+          <form @submit.prevent="this.doFilter()" class="notSubmit">
+            <slot name="filter-fields"></slot>
+            <div class="row mt-3">
+              <div class="col-8">
+                <InlineMessage severity="info"
+                  ><small>
+                    {{ totalRecords }} registro(s) encontrado(s)
+                    <span v-show="this.isFiltering">(com filtros aplicados)</span>.
+                  </small>
+                </InlineMessage>
+              </div>
+              <div class="col-4 text-right">
+                <button type="submit" class="btn btn-primary btn-sm">
+                  <i class="fas fa-search"></i> Filtrar
+                </button>
+
+                <button
+                  type="button"
+                  class="btn btn-sm btn-secondary ml-1"
+                  @click="this.doClearFilters()"
+                >
+                  <i class="fas fa-backspace"></i> Limpar
+                </button>
+              </div>
+            </div>
+          </form>
+        </AccordionTab>
+      </Accordion>
+    </div>
+
     <DataTable
       :stateStorage="this.stateStorage"
       class="p-datatable-sm p-datatable-striped"
@@ -286,7 +323,6 @@ export default {
     },
     titulo: {
       type: String,
-      required: true,
     },
     subtitulo: {
       type: String,
