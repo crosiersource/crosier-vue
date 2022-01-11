@@ -19,7 +19,7 @@
       <div class="invalid-feedbackk blink" v-show="this.error">
         {{ this.error }}
       </div>
-      <div class="invalid-feedbackk blink" v-show="this.exibeValidacao && this.cpfCnpjInvalido">
+      <div class="invalid-feedbackk blink" v-show="this.exibeValidacao && this.cnpjInvalido">
         CNPJ inválido!
       </div>
     </div>
@@ -82,13 +82,13 @@ export default {
 
   data() {
     return {
-      cpfCnpjInvalido: false,
+      cnpjInvalido: false,
     };
   },
 
   mounted() {
     if (this.exibeValidacao) {
-      this.cpfCnpjInvalido = this.validaCnpj(this.modelValue);
+      this.cnpjInvalido = this.validaCnpj(this.modelValue);
     }
   },
 
@@ -103,7 +103,7 @@ export default {
     onBlur() {
       this.$nextTick(async () => {
         if (this.exibeValidacao) {
-          this.cpfCnpjInvalido = !this.validaCnpj(this.modelValue);
+          this.cnpjInvalido = !this.validaCnpj(this.modelValue);
         }
         this.$emit("blur");
       });
