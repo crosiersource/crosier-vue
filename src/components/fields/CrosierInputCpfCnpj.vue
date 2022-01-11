@@ -88,6 +88,18 @@ export default {
     };
   },
 
+  mounted() {
+    if (this.exibeValidacao && this.modelValue && this.modelValue.length > 0) {
+      if (this.modelValue.length === 11) {
+        this.cpfCnpjInvalido = !this.validaCpf(this.modelValue);
+      } else if (this.modelValue.length === 14) {
+        this.cpfCnpjInvalido = !this.validaCnpj(this.modelValue);
+      } else {
+        this.cpfCnpjInvalido = true;
+      }
+    }
+  },
+
   methods: {
     onFocus($event) {
       this.$nextTick(async () => {

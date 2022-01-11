@@ -87,7 +87,7 @@ export default {
   },
 
   mounted() {
-    if (this.exibeValidacao) {
+    if (this.exibeValidacao && this.modelValue && this.modelValue.length > 0) {
       this.cpfInvalido = this.validaCpf(this.modelValue);
     }
   },
