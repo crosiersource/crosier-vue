@@ -484,15 +484,17 @@ export default {
       const lsItem = localStorage.getItem(this.dataTableStateKey);
       const dtStateLS = lsItem ? JSON.parse(lsItem) : null;
 
-      const rows = event?.rows ?? dtStateLS?.rows ?? 10;
-
+      let rows = Number.MAX_SAFE_INTEGER;
       let page = 1;
-      if (event?.first) {
-        page = Math.ceil((event.first + 1) / event.rows);
-      } else if (lsItem?.first) {
-        page = Math.ceil((dtStateLS.first + 1) / dtStateLS.rows);
-      } else {
-        page = 1;
+
+      if (this.comPaginador) {
+        rows = event?.rows ?? dtStateLS?.rows ?? 10;
+
+        if (event?.first) {
+          page = Math.ceil((event.first + 1) / event.rows);
+        } else if (lsItem?.first) {
+          page = Math.ceil((dtStateLS.first + 1) / dtStateLS.rows);
+        }
       }
 
       let apiOrder = null;
