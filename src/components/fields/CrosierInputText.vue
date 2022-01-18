@@ -7,7 +7,7 @@
           <span class="input-group-text">{{ this.prepend }}</span>
         </div>
         <InputText
-          :class="'form-control ' + (this.error ? 'is-invalid' : '') + this.inputClass"
+          :class="'form-control ' + (this.error ? 'is-invalid ' : ' ') + this.inputClass"
           :id="this.id"
           type="text"
           :modelValue="modelValue"

@@ -6,7 +6,7 @@
         :rows="this.rows"
         :cols="this.cols"
         :auto-resize="this.autoResize"
-        :class="'form-control ' + (this.error ? 'is-invalid' : '')"
+        :class="'form-control ' + (this.error ? 'is-invalid ' : ' ') + this.inputClass"
         :id="this.id"
         type="text"
         :modelValue="modelValue"
@@ -79,6 +79,10 @@ export default {
     showLabel: {
       type: Boolean,
       default: true,
+    },
+    inputClass: {
+      type: String,
+      default: "",
     },
   },
 

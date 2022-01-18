@@ -3347,6 +3347,22 @@ module.exports = function dispatchRequest(config) {
 
 /***/ }),
 
+/***/ "5300":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("7369");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("1e28d405", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
 /***/ "5319":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3665,31 +3681,6 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "5b68":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputTextarea_vue_vue_type_style_index_0_id_5f657b2a_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("767d");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputTextarea_vue_vue_type_style_index_0_id_5f657b2a_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputTextarea_vue_vue_type_style_index_0_id_5f657b2a_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
-
-
-/***/ }),
-
-/***/ "5b84":
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, ".invalid-feedbackk[data-v-3c861a13]{width:100%;margin-top:.25rem;font-size:80%;color:#e55353}", ""]);
-// Exports
-module.exports = exports;
-
-
-/***/ }),
-
 /***/ "5c6c":
 /***/ (function(module, exports) {
 
@@ -3774,6 +3765,17 @@ exports = ___CSS_LOADER_API_IMPORT___(false);
 exports.push([module.i, ".invalid-feedbackk[data-v-4547f8e4]{width:100%;margin-top:.25rem;font-size:80%;color:#e55353}", ""]);
 // Exports
 module.exports = exports;
+
+
+/***/ }),
+
+/***/ "601f":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputText_vue_vue_type_style_index_0_id_510064fa_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ec90");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputText_vue_vue_type_style_index_0_id_510064fa_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputText_vue_vue_type_style_index_0_id_510064fa_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
 
 
 /***/ }),
@@ -4193,14 +4195,14 @@ module.exports = {
 
 /***/ }),
 
-/***/ "6afa":
+/***/ "6a33":
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".invalid-feedbackk[data-v-5f657b2a]{width:100%;margin-top:.25rem;font-size:80%;color:#e55353}", ""]);
+exports.push([module.i, ".invalid-feedbackk[data-v-510064fa]{width:100%;margin-top:.25rem;font-size:80%;color:#e55353}", ""]);
 // Exports
 module.exports = exports;
 
@@ -4468,6 +4470,20 @@ module.exports = exports;
 
 /***/ }),
 
+/***/ "7369":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".invalid-feedbackk[data-v-4416085a]{width:100%;margin-top:.25rem;font-size:80%;color:#e55353}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "7418":
 /***/ (function(module, exports) {
 
@@ -4492,22 +4508,6 @@ module.exports = function (NAME) {
   });
 };
 
-
-/***/ }),
-
-/***/ "767d":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("6afa");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("7dc999d6", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -8202,6 +8202,17 @@ module.exports = function (input, pref) {
 
 /***/ }),
 
+/***/ "c23e":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputTextarea_vue_vue_type_style_index_0_id_4416085a_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("5300");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputTextarea_vue_vue_type_style_index_0_id_4416085a_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputTextarea_vue_vue_type_style_index_0_id_4416085a_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
 /***/ "c345":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9997,22 +10008,6 @@ module.exports = exports;
 
 /***/ }),
 
-/***/ "e65a":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("5b84");
-if(content.__esModule) content = content.default;
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("593cc8a8", content, true, {"sourceMap":false,"shadowMode":false});
-
-/***/ }),
-
 /***/ "e667":
 /***/ (function(module, exports) {
 
@@ -10526,6 +10521,22 @@ module.exports = function (it) {
 
 /***/ }),
 
+/***/ "ec90":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("6a33");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("2e9feefe", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
 /***/ "ef2d":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10905,17 +10916,6 @@ module.exports = function (key) {
 "use strict";
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputCep_vue_vue_type_style_index_0_id_dd9369e6_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("5722");
 /* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputCep_vue_vue_type_style_index_0_id_dd9369e6_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputCep_vue_vue_type_style_index_0_id_dd9369e6_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
-
-
-/***/ }),
-
-/***/ "fa63":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputText_vue_vue_type_style_index_0_id_3c861a13_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("e65a");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputText_vue_vue_type_style_index_0_id_3c861a13_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierInputText_vue_vue_type_style_index_0_id_3c861a13_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
 
 
@@ -24639,47 +24639,47 @@ var CrosierInputTelefonevue_type_style_index_0_id_01be5518_scoped_true_lang_css 
 const CrosierInputTelefone_exports_ = /*#__PURE__*/exportHelper_default()(CrosierInputTelefonevue_type_script_lang_js, [['render',CrosierInputTelefonevue_type_template_id_01be5518_scoped_true_render],['__scopeId',"data-v-01be5518"]])
 
 /* harmony default export */ var CrosierInputTelefone = (CrosierInputTelefone_exports_);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputText.vue?vue&type=template&id=3c861a13&scoped=true
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputText.vue?vue&type=template&id=510064fa&scoped=true
 
 
-var CrosierInputTextvue_type_template_id_3c861a13_scoped_true_withScopeId = function _withScopeId(n) {
-  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["pushScopeId"])("data-v-3c861a13"), n = n(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["popScopeId"])(), n;
+var CrosierInputTextvue_type_template_id_510064fa_scoped_true_withScopeId = function _withScopeId(n) {
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["pushScopeId"])("data-v-510064fa"), n = n(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["popScopeId"])(), n;
 };
 
-var CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_1 = {
+var CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_1 = {
   class: "form-group"
 };
-var CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_2 = ["for"];
-var CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_3 = {
+var CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_2 = ["for"];
+var CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_3 = {
   class: "input-group"
 };
-var CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_4 = {
+var CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_4 = {
   key: 0,
   class: "input-group-prepend"
 };
-var CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_5 = {
+var CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_5 = {
   class: "input-group-text"
 };
-var CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_6 = {
+var CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_6 = {
   key: 1,
   class: "input-group-append"
 };
-var CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_7 = {
+var CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_7 = {
   class: "input-group-text"
 };
-var CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_8 = ["id"];
-function CrosierInputTextvue_type_template_id_3c861a13_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+var CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_8 = ["id"];
+function CrosierInputTextvue_type_template_id_510064fa_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_InputText = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("InputText");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_1, [this.showLabel ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("label", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_1, [this.showLabel ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("label", {
     key: 0,
     for: this.id
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_2)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_3, [this.prepend ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_5, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.prepend), 1)])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InputText, {
-    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid' : '') + this.inputClass),
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_2)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_3, [this.prepend ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_4, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_5, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.prepend), 1)])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_InputText, {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid ' : ' ') + this.inputClass),
     id: this.id,
     type: "text",
     modelValue: $props.modelValue,
@@ -24691,15 +24691,15 @@ function CrosierInputTextvue_type_template_id_3c861a13_scoped_true_render(_ctx, 
     onBlur: _cache[1] || (_cache[1] = function ($event) {
       return _this.$emit('blur');
     })
-  }, null, 8, ["class", "id", "modelValue", "onInput", "disabled"]), this.append ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_7, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.append), 1)])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), this.helpText ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("small", {
+  }, null, 8, ["class", "id", "modelValue", "onInput", "disabled"]), this.append ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("span", CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_7, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.append), 1)])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), this.helpText ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("small", {
     key: 1,
     id: this.id + '_help',
     class: "form-text text-muted"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierInputTextvue_type_template_id_3c861a13_scoped_true_hoisted_8)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierInputTextvue_type_template_id_510064fa_scoped_true_hoisted_8)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
     class: "invalid-feedbackk blink"
   }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 513), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.error]])])], 2);
 }
-// CONCATENATED MODULE: ./src/components/fields/CrosierInputText.vue?vue&type=template&id=3c861a13&scoped=true
+// CONCATENATED MODULE: ./src/components/fields/CrosierInputText.vue?vue&type=template&id=510064fa&scoped=true
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputText.vue?vue&type=script&lang=js
 
@@ -24760,8 +24760,8 @@ function CrosierInputTextvue_type_template_id_3c861a13_scoped_true_render(_ctx, 
 });
 // CONCATENATED MODULE: ./src/components/fields/CrosierInputText.vue?vue&type=script&lang=js
  
-// EXTERNAL MODULE: ./src/components/fields/CrosierInputText.vue?vue&type=style&index=0&id=3c861a13&scoped=true&lang=css
-var CrosierInputTextvue_type_style_index_0_id_3c861a13_scoped_true_lang_css = __webpack_require__("fa63");
+// EXTERNAL MODULE: ./src/components/fields/CrosierInputText.vue?vue&type=style&index=0&id=510064fa&scoped=true&lang=css
+var CrosierInputTextvue_type_style_index_0_id_510064fa_scoped_true_lang_css = __webpack_require__("601f");
 
 // CONCATENATED MODULE: ./src/components/fields/CrosierInputText.vue
 
@@ -24771,36 +24771,36 @@ var CrosierInputTextvue_type_style_index_0_id_3c861a13_scoped_true_lang_css = __
 
 
 
-const CrosierInputText_exports_ = /*#__PURE__*/exportHelper_default()(CrosierInputTextvue_type_script_lang_js, [['render',CrosierInputTextvue_type_template_id_3c861a13_scoped_true_render],['__scopeId',"data-v-3c861a13"]])
+const CrosierInputText_exports_ = /*#__PURE__*/exportHelper_default()(CrosierInputTextvue_type_script_lang_js, [['render',CrosierInputTextvue_type_template_id_510064fa_scoped_true_render],['__scopeId',"data-v-510064fa"]])
 
 /* harmony default export */ var CrosierInputText = (CrosierInputText_exports_);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputTextarea.vue?vue&type=template&id=5f657b2a&scoped=true
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputTextarea.vue?vue&type=template&id=4416085a&scoped=true
 
 
-var CrosierInputTextareavue_type_template_id_5f657b2a_scoped_true_withScopeId = function _withScopeId(n) {
-  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["pushScopeId"])("data-v-5f657b2a"), n = n(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["popScopeId"])(), n;
+var CrosierInputTextareavue_type_template_id_4416085a_scoped_true_withScopeId = function _withScopeId(n) {
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["pushScopeId"])("data-v-4416085a"), n = n(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["popScopeId"])(), n;
 };
 
-var CrosierInputTextareavue_type_template_id_5f657b2a_scoped_true_hoisted_1 = {
+var CrosierInputTextareavue_type_template_id_4416085a_scoped_true_hoisted_1 = {
   class: "form-group"
 };
-var CrosierInputTextareavue_type_template_id_5f657b2a_scoped_true_hoisted_2 = ["for"];
-var CrosierInputTextareavue_type_template_id_5f657b2a_scoped_true_hoisted_3 = ["id"];
-function CrosierInputTextareavue_type_template_id_5f657b2a_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+var CrosierInputTextareavue_type_template_id_4416085a_scoped_true_hoisted_2 = ["for"];
+var CrosierInputTextareavue_type_template_id_4416085a_scoped_true_hoisted_3 = ["id"];
+function CrosierInputTextareavue_type_template_id_4416085a_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this = this;
 
   var _component_Textarea = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Textarea");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
     class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputTextareavue_type_template_id_5f657b2a_scoped_true_hoisted_1, [this.showLabel ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("label", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierInputTextareavue_type_template_id_4416085a_scoped_true_hoisted_1, [this.showLabel ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("label", {
     key: 0,
     for: this.id
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierInputTextareavue_type_template_id_5f657b2a_scoped_true_hoisted_2)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Textarea, {
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierInputTextareavue_type_template_id_4416085a_scoped_true_hoisted_2)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Textarea, {
     rows: this.rows,
     cols: this.cols,
     "auto-resize": this.autoResize,
-    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid' : '')),
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid ' : ' ') + this.inputClass),
     id: this.id,
     type: "text",
     modelValue: $props.modelValue,
@@ -24816,11 +24816,11 @@ function CrosierInputTextareavue_type_template_id_5f657b2a_scoped_true_render(_c
     key: 1,
     id: this.id + '_help',
     class: "form-text text-muted"
-  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierInputTextareavue_type_template_id_5f657b2a_scoped_true_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierInputTextareavue_type_template_id_4416085a_scoped_true_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
     class: "invalid-feedbackk blink"
   }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 513), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.error]])])], 2);
 }
-// CONCATENATED MODULE: ./src/components/fields/CrosierInputTextarea.vue?vue&type=template&id=5f657b2a&scoped=true
+// CONCATENATED MODULE: ./src/components/fields/CrosierInputTextarea.vue?vue&type=template&id=4416085a&scoped=true
 
 // CONCATENATED MODULE: ./node_modules/primevue/textarea/textarea.esm.js
 
@@ -24965,6 +24965,10 @@ textarea_esm_script.render = textarea_esm_render;
     showLabel: {
       type: Boolean,
       default: true
+    },
+    inputClass: {
+      type: String,
+      default: ""
     }
   },
   methods: {
@@ -24976,8 +24980,8 @@ textarea_esm_script.render = textarea_esm_render;
 });
 // CONCATENATED MODULE: ./src/components/fields/CrosierInputTextarea.vue?vue&type=script&lang=js
  
-// EXTERNAL MODULE: ./src/components/fields/CrosierInputTextarea.vue?vue&type=style&index=0&id=5f657b2a&scoped=true&lang=css
-var CrosierInputTextareavue_type_style_index_0_id_5f657b2a_scoped_true_lang_css = __webpack_require__("5b68");
+// EXTERNAL MODULE: ./src/components/fields/CrosierInputTextarea.vue?vue&type=style&index=0&id=4416085a&scoped=true&lang=css
+var CrosierInputTextareavue_type_style_index_0_id_4416085a_scoped_true_lang_css = __webpack_require__("c23e");
 
 // CONCATENATED MODULE: ./src/components/fields/CrosierInputTextarea.vue
 
@@ -24987,7 +24991,7 @@ var CrosierInputTextareavue_type_style_index_0_id_5f657b2a_scoped_true_lang_css 
 
 
 
-const CrosierInputTextarea_exports_ = /*#__PURE__*/exportHelper_default()(CrosierInputTextareavue_type_script_lang_js, [['render',CrosierInputTextareavue_type_template_id_5f657b2a_scoped_true_render],['__scopeId',"data-v-5f657b2a"]])
+const CrosierInputTextarea_exports_ = /*#__PURE__*/exportHelper_default()(CrosierInputTextareavue_type_script_lang_js, [['render',CrosierInputTextareavue_type_template_id_4416085a_scoped_true_render],['__scopeId',"data-v-4416085a"]])
 
 /* harmony default export */ var CrosierInputTextarea = (CrosierInputTextarea_exports_);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierPercent.vue?vue&type=template&id=5010a422&scoped=true
