@@ -34168,7 +34168,6 @@ function _submitForm() {
 
 
 
-
 function SetFocus(_x) {
   return _SetFocus.apply(this, arguments);
 }
@@ -34187,7 +34186,7 @@ function _SetFocus() {
 
           case 2:
             if (!(t < tMax)) {
-              _context.next = 12;
+              _context.next = 11;
               break;
             }
 
@@ -34197,22 +34196,21 @@ function _SetFocus() {
             });
 
           case 5:
-            console.info("".concat(t, ") tentando focar no ").concat(componentId));
             document.getElementById(componentId).focus();
 
             if (!(document.activeElement.id === componentId)) {
-              _context.next = 9;
+              _context.next = 8;
               break;
             }
 
-            return _context.abrupt("break", 12);
+            return _context.abrupt("break", 11);
 
-          case 9:
+          case 8:
             t++;
             _context.next = 2;
             break;
 
-          case 12:
+          case 11:
           case "end":
             return _context.stop();
         }
