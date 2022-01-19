@@ -34271,7 +34271,7 @@ function _SetFocus() {
   api: api,
   submitForm: submitForm,
   validateFormData: validateFormData,
-  SetFocus: /* Cannot get final name for export "default" in "./src/functions/SetFocus.js" (known exports: SetFocus, known reexports: ) */ undefined
+  SetFocus: SetFocus
 });
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 

@@ -31,7 +31,7 @@ import { submitForm } from "./services/SubmitForm";
 import { validateFormData } from "./services/ValidateFormData";
 
 // functions
-import SetFocus from "./functions/SetFocus";
+import { SetFocus } from "./functions/SetFocus";
 
 export default {
   CrosierAutoComplete,
