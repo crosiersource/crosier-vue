@@ -34177,7 +34177,7 @@ function _SetFocus() {
 
           case 2:
             if (!(t < tMax)) {
-              _context.next = 11;
+              _context.next = 12;
               break;
             }
 
@@ -34187,21 +34187,26 @@ function _SetFocus() {
             });
 
           case 5:
-            document.getElementById(componentId).focus();
-
-            if (!(document.activeElement.id === componentId)) {
-              _context.next = 8;
+            if (!document.getElementById(componentId)) {
+              _context.next = 9;
               break;
             }
 
-            return _context.abrupt("break", 11);
+            document.getElementById(componentId).focus();
 
-          case 8:
+            if (!(document.activeElement.id === componentId)) {
+              _context.next = 9;
+              break;
+            }
+
+            return _context.abrupt("break", 12);
+
+          case 9:
             t++;
             _context.next = 2;
             break;
 
-          case 11:
+          case 12:
           case "end":
             return _context.stop();
         }
