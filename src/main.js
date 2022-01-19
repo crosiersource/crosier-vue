@@ -30,6 +30,9 @@ import api from "./services/api";
 import { submitForm } from "./services/SubmitForm";
 import { validateFormData } from "./services/ValidateFormData";
 
+// functions
+import SetFocus from "./functions/SetFocus";
+
 export default {
   CrosierAutoComplete,
   CrosierCalendar,
@@ -59,4 +62,6 @@ export default {
   api,
   submitForm,
   validateFormData,
+
+  SetFocus,
 };

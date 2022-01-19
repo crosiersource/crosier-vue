@@ -34163,6 +34163,64 @@ function _submitForm() {
   }));
   return _submitForm.apply(this, arguments);
 }
+// CONCATENATED MODULE: ./src/functions/SetFocus.js
+
+
+
+
+
+function SetFocus(_x) {
+  return _SetFocus.apply(this, arguments);
+}
+
+function _SetFocus() {
+  _SetFocus = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(componentId) {
+    var tMax,
+        t,
+        _args = arguments;
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            tMax = _args.length > 1 && _args[1] !== undefined ? _args[1] : 20;
+            t = 0;
+
+          case 2:
+            if (!(t < tMax)) {
+              _context.next = 12;
+              break;
+            }
+
+            _context.next = 5;
+            return new Promise(function (r) {
+              return setTimeout(r, 100);
+            });
+
+          case 5:
+            console.info("".concat(t, ") tentando focar no ").concat(componentId));
+            document.getElementById(componentId).focus();
+
+            if (!(document.activeElement.id === componentId)) {
+              _context.next = 9;
+              break;
+            }
+
+            return _context.abrupt("break", 12);
+
+          case 9:
+            t++;
+            _context.next = 2;
+            break;
+
+          case 12:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _SetFocus.apply(this, arguments);
+}
 // CONCATENATED MODULE: ./src/main.js
 // fields
 
@@ -34192,6 +34250,8 @@ function _submitForm() {
 
 
 
+ // functions
+
 
 /* harmony default export */ var main = ({
   CrosierAutoComplete: CrosierAutoComplete,
@@ -34219,7 +34279,8 @@ function _submitForm() {
   CrosierListS: crosierListS,
   api: api,
   submitForm: submitForm,
-  validateFormData: validateFormData
+  validateFormData: validateFormData,
+  SetFocus: /* Cannot get final name for export "default" in "./src/functions/SetFocus.js" (known exports: SetFocus, known reexports: ) */ undefined
 });
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
 
