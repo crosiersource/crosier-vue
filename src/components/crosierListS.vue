@@ -329,6 +329,8 @@ export default {
     },
     formUrl: {
       type: String,
+      required: false,
+      default: "form",
     },
     pesquisar: {
       type: String,

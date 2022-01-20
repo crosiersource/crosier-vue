@@ -99,9 +99,13 @@ export default {
     },
     listUrl: {
       type: String,
+      required: false,
+      default: "list",
     },
     formUrl: {
       type: String,
+      required: false,
+      default: "form",
     },
     withoutCard: {
       type: Boolean,
