@@ -18,6 +18,7 @@ import CrosierInputInt from "./components/fields/CrosierInputInt";
 import CrosierInputTelefone from "./components/fields/CrosierInputTelefone";
 import CrosierInputText from "./components/fields/CrosierInputText";
 import CrosierInputTextarea from "./components/fields/CrosierInputTextarea";
+import CrosierMesAno from "./components/fields/CrosierMesAno";
 import CrosierPercent from "./components/fields/CrosierPercent";
 
 // components
@@ -53,6 +54,7 @@ export default {
   CrosierInputTelefone,
   CrosierInputText,
   CrosierInputTextarea,
+  CrosierMesAno,
   CrosierPercent,
 
   CrosierBlock,
