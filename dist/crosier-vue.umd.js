@@ -8653,6 +8653,17 @@ $({ target: 'Object', stat: true }, {
 
 /***/ }),
 
+/***/ "4fd7":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierMultiSelectEntity_vue_vue_type_style_index_0_id_1de316d2_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("b4d0");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierMultiSelectEntity_vue_vue_type_style_index_0_id_1de316d2_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierMultiSelectEntity_vue_vue_type_style_index_0_id_1de316d2_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
 /***/ "5038":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18950,6 +18961,20 @@ module.exports = function (METHOD_NAME) {
 
 /***/ }),
 
+/***/ "ab26":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".invalid-feedbackk[data-v-1de316d2]{width:100%;margin-top:.25rem;font-size:80%;color:#e55353}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "abc5":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -19630,6 +19655,22 @@ if (DESCRIPTORS && !FUNCTION_NAME_EXISTS) {
 
 })));
 
+
+/***/ }),
+
+/***/ "b4d0":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("ab26");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("74f7ab80", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -46326,6 +46367,1178 @@ var CrosierMesAnovue_type_style_index_0_id_1722cde5_scoped_true_lang_css = __web
 const CrosierMesAno_exports_ = /*#__PURE__*/exportHelper_default()(CrosierMesAnovue_type_script_lang_js, [['render',CrosierMesAnovue_type_template_id_1722cde5_scoped_true_render],['__scopeId',"data-v-1722cde5"]])
 
 /* harmony default export */ var CrosierMesAno = (CrosierMesAno_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierMultiSelectEntity.vue?vue&type=template&id=1de316d2&scoped=true
+
+
+var CrosierMultiSelectEntityvue_type_template_id_1de316d2_scoped_true_withScopeId = function _withScopeId(n) {
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["pushScopeId"])("data-v-1de316d2"), n = n(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["popScopeId"])(), n;
+};
+
+var CrosierMultiSelectEntityvue_type_template_id_1de316d2_scoped_true_hoisted_1 = {
+  class: "form-group"
+};
+var CrosierMultiSelectEntityvue_type_template_id_1de316d2_scoped_true_hoisted_2 = ["for"];
+var CrosierMultiSelectEntityvue_type_template_id_1de316d2_scoped_true_hoisted_3 = ["id"];
+function CrosierMultiSelectEntityvue_type_template_id_1de316d2_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _this = this;
+
+  var _component_MultiSelect = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("MultiSelect");
+
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierMultiSelectEntityvue_type_template_id_1de316d2_scoped_true_hoisted_1, [this.showLabel ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("label", {
+    key: 0,
+    for: this.id
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.label), 9, CrosierMultiSelectEntityvue_type_template_id_1de316d2_scoped_true_hoisted_2)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_MultiSelect, {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('form-control ' + (this.error ? 'is-invalid' : '')),
+    id: this.id,
+    modelValue: $props.modelValue,
+    onChange: this.onChange,
+    options: this.options,
+    optionLabel: this.optionLabel,
+    optionValue: this.optionValue,
+    placeholder: this.showClear ? 'Selecione' : null,
+    showClear: this.showClear,
+    disabled: this.disabled,
+    dataKey: this.dataKey,
+    filter: true,
+    onFocus: _cache[0] || (_cache[0] = function ($event) {
+      return _this.$emit('focus');
+    }),
+    onBlur: _cache[1] || (_cache[1] = function ($event) {
+      return _this.$emit('blur');
+    }),
+    display: "chip"
+  }, null, 8, ["class", "id", "modelValue", "onChange", "options", "optionLabel", "optionValue", "placeholder", "showClear", "disabled", "dataKey"]), this.helpText ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("small", {
+    key: 1,
+    id: this.id + '_help',
+    class: "form-text text-muted"
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 9, CrosierMultiSelectEntityvue_type_template_id_1de316d2_scoped_true_hoisted_3)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+    class: "invalid-feedbackk blink"
+  }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 513), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.error]])])], 2);
+}
+// CONCATENATED MODULE: ./src/components/fields/CrosierMultiSelectEntity.vue?vue&type=template&id=1de316d2&scoped=true
+
+// CONCATENATED MODULE: ./node_modules/primevue/multiselect/multiselect.esm.js
+
+
+
+
+
+
+
+var multiselect_esm_script = {
+    name: 'MultiSelect',
+    emits: ['update:modelValue', 'before-show', 'before-hide', 'change', 'show', 'hide', 'filter', 'selectall-change'],
+    props: {
+        modelValue: null,
+        options: Array,
+        optionLabel: null,
+        optionValue: null,
+        optionDisabled: null,
+        optionGroupLabel: null,
+        optionGroupChildren: null,
+		scrollHeight: {
+			type: String,
+			default: '200px'
+		},
+		placeholder: String,
+		disabled: Boolean,
+        tabindex: String,
+        inputId: String,
+        dataKey: null,
+        filter: Boolean,
+        filterPlaceholder: String,
+        filterLocale: String,
+        filterMatchMode: {
+            type: String,
+            default: 'contains'
+        },
+        filterFields: {
+            type: Array,
+            default: null
+        },
+        ariaLabelledBy: null,
+        appendTo: {
+            type: String,
+            default: 'body'
+        },
+        emptyFilterMessage: {
+            type: String,
+            default: null
+        },
+        emptyMessage: {
+            type: String,
+            default: null
+        },
+        display: {
+            type: String,
+            default: 'comma'
+        },
+        panelClass: null,
+        selectedItemsLabel: {
+            type: String,
+            default: '{0} items selected'
+        },
+        maxSelectedLabels: {
+            type: Number,
+            default: null
+        },
+        selectionLimit: {
+            type: Number,
+            default: null
+        },
+        showToggleAll: {
+            type: Boolean,
+            default: true
+        },
+        loading: {
+            type: Boolean,
+            default: false
+        },
+        loadingIcon: {
+            type: String,
+            default: 'pi pi-spinner pi-spin'
+        },
+        virtualScrollerOptions: {
+            type: Object,
+            default: null
+        },
+        selectAll: {
+            type: Boolean,
+            default: null
+        }
+    },
+    data() {
+        return {
+            focused: false,
+            headerCheckboxFocused: false,
+            filterValue: null,
+            overlayVisible: false
+        };
+    },
+    outsideClickListener: null,
+    resizeListener: null,
+    scrollHandler: null,
+    overlay: null,
+    virtualScroller: null,
+    beforeUnmount() {
+        this.unbindOutsideClickListener();
+        this.unbindResizeListener();
+
+        if (this.scrollHandler) {
+            this.scrollHandler.destroy();
+            this.scrollHandler = null;
+        }
+
+        if (this.overlay) {
+            ZIndexUtils.clear(this.overlay);
+            this.overlay = null;
+        }
+    },
+    methods: {
+        getOptionIndex(index, fn) {
+            return this.virtualScrollerDisabled ? index : (fn && fn(index)['index']);
+        },
+        getOptionLabel(option) {
+            return this.optionLabel ? ObjectUtils.resolveFieldData(option, this.optionLabel) : option;
+        },
+        getOptionValue(option) {
+            return this.optionValue ? ObjectUtils.resolveFieldData(option, this.optionValue) : option;
+        },
+        getOptionRenderKey(option) {
+            return this.dataKey ? ObjectUtils.resolveFieldData(option, this.dataKey) : this.getOptionLabel(option);
+        },
+        getOptionGroupRenderKey(optionGroup) {
+            return ObjectUtils.resolveFieldData(optionGroup, this.optionGroupLabel);
+        },
+        getOptionGroupLabel(optionGroup) {
+            return ObjectUtils.resolveFieldData(optionGroup, this.optionGroupLabel);
+        },
+        getOptionGroupChildren(optionGroup) {
+            return ObjectUtils.resolveFieldData(optionGroup, this.optionGroupChildren);
+        },
+        isOptionDisabled(option) {
+            if (this.maxSelectionLimitReached && !this.isSelected(option)) {
+                return true;
+            }
+
+            return this.optionDisabled ? ObjectUtils.resolveFieldData(option, this.optionDisabled) : false;
+        },
+        getSelectedOptionIndex() {
+            if (this.modelValue != null && this.options) {
+                if (this.optionGroupLabel) {
+                    for (let i = 0; i < this.options.length; i++) {
+                        let selectedOptionIndex = this.findOptionIndexInList(this.modelValue, this.getOptionGroupChildren(this.options[i]));
+                        if (selectedOptionIndex !== -1) {
+                            return {group: i, option: selectedOptionIndex};
+                        }
+                    }
+                }
+                else {
+                    return this.findOptionIndexInList(this.modelValue, this.options);
+                }
+            }
+
+            return -1;
+        },
+        findOptionIndexInList(value, list) {
+            return value ? list.findIndex(item => value.some(val => ObjectUtils.equals(val, this.getOptionValue(item), this.equalityKey))) : -1;
+        },
+        isSelected(option) {
+            if (this.modelValue) {
+                let optionValue = this.getOptionValue(option);
+                let key = this.equalityKey;
+
+                return this.modelValue.some(val => ObjectUtils.equals(val, optionValue, key));
+            }
+
+            return false;
+        },
+        show() {
+            this.$emit('before-show');
+            this.overlayVisible = true;
+        },
+        hide() {
+            this.$emit('before-hide');
+            this.overlayVisible = false;
+        },
+        onFocus() {
+            this.focused = true;
+        },
+        onBlur() {
+            this.focused = false;
+        },
+        onHeaderCheckboxFocus() {
+            this.headerCheckboxFocused = true;
+        },
+        onHeaderCheckboxBlur() {
+            this.headerCheckboxFocused = false;
+        },
+        onClick(event) {
+            if (this.disabled || this.loading) {
+                return;
+            }
+
+            if ((!this.overlay || !this.overlay.contains(event.target)) && !DomHandler.hasClass(event.target, 'p-multiselect-close')) {
+                DomHandler.hasClass(event.target, 'p-multiselect-close');
+                if (this.overlayVisible)
+                    this.hide();
+                else
+                    this.show();
+
+                this.$refs.focusInput.focus();
+            }
+        },
+        onCloseClick() {
+            this.hide();
+        },
+        onKeyDown(event) {
+            switch(event.which) {
+                //down
+                case 40:
+                    if (this.visibleOptions && !this.overlayVisible && event.altKey) {
+                        this.show();
+                    }
+                break;
+
+                //space
+                case 32:
+                    if (!this.overlayVisible) {
+                        this.show();
+                        event.preventDefault();
+                    }
+                break;
+
+                //enter and escape
+                case 13:
+                case 27:
+                    if (this.overlayVisible) {
+                        this.hide();
+                        event.preventDefault();
+                    }
+                break;
+
+                //tab
+                case 9:
+                    this.hide();
+                break;
+            }
+        },
+        onOptionSelect(event, option) {
+            if (this.disabled || this.isOptionDisabled(option)) {
+                return;
+            }
+
+            let selected = this.isSelected(option);
+            let value = null;
+
+            if (selected)
+                value = this.modelValue.filter(val => !ObjectUtils.equals(val, this.getOptionValue(option), this.equalityKey));
+            else
+                value = [...(this.modelValue || []), this.getOptionValue(option)];
+
+            this.$emit('update:modelValue', value);
+            this.$emit('change', {originalEvent: event, value: value});
+        },
+        onOptionKeyDown(event, option) {
+            let listItem = event.target;
+
+            switch(event.which) {
+                //down
+                case 40:
+                    var nextItem = this.findNextItem(listItem);
+                    if (nextItem) {
+                        nextItem.focus();
+                    }
+
+                    event.preventDefault();
+                break;
+
+                //up
+                case 38:
+                    var prevItem = this.findPrevItem(listItem);
+                    if (prevItem) {
+                        prevItem.focus();
+                    }
+
+                    event.preventDefault();
+                break;
+
+                //enter
+                case 13:
+                    this.onOptionSelect(event, option);
+                    event.preventDefault();
+                break;
+            }
+        },
+        findNextItem(item) {
+            let nextItem = item.nextElementSibling;
+
+            if (nextItem)
+                return DomHandler.hasClass(nextItem, 'p-disabled') || DomHandler.hasClass(nextItem, 'p-multiselect-item-group') ? this.findNextItem(nextItem) : nextItem;
+            else
+                return null;
+        },
+        findPrevItem(item) {
+            let prevItem = item.previousElementSibling;
+
+            if (prevItem)
+                return DomHandler.hasClass(prevItem, 'p-disabled') || DomHandler.hasClass(prevItem, 'p-multiselect-item-group') ? this.findPrevItem(prevItem) : prevItem;
+            else
+                return null;
+        },
+        onOverlayEnter(el) {
+            ZIndexUtils.set('overlay', el, this.$primevue.config.zIndex.overlay);
+            this.alignOverlay();
+            this.bindOutsideClickListener();
+            this.bindScrollListener();
+            this.bindResizeListener();
+
+            if (this.filter) {
+                this.$refs.filterInput.focus();
+            }
+
+            if (!this.virtualScrollerDisabled) {
+                const selectedIndex = this.getSelectedOptionIndex();
+                if (selectedIndex !== -1) {
+                    this.virtualScroller.scrollToIndex(selectedIndex);
+                }
+            }
+
+            this.$emit('show');
+        },
+        onOverlayLeave() {
+            this.unbindOutsideClickListener();
+            this.unbindScrollListener();
+            this.unbindResizeListener();
+            this.$emit('hide');
+            this.overlay = null;
+        },
+        onOverlayAfterLeave(el) {
+            ZIndexUtils.clear(el);
+        },
+        alignOverlay() {
+            if (this.appendDisabled) {
+                DomHandler.relativePosition(this.overlay, this.$el);
+            }
+            else {
+                this.overlay.style.minWidth = DomHandler.getOuterWidth(this.$el) + 'px';
+                DomHandler.absolutePosition(this.overlay, this.$el);
+            }
+        },
+        bindOutsideClickListener() {
+            if (!this.outsideClickListener) {
+                this.outsideClickListener = (event) => {
+                    if (this.overlayVisible && this.isOutsideClicked(event)) {
+                        this.hide();
+                    }
+                };
+                document.addEventListener('click', this.outsideClickListener);
+            }
+        },
+        unbindOutsideClickListener() {
+            if (this.outsideClickListener) {
+                document.removeEventListener('click', this.outsideClickListener);
+                this.outsideClickListener = null;
+            }
+        },
+        bindScrollListener() {
+            if (!this.scrollHandler) {
+                this.scrollHandler = new ConnectedOverlayScrollHandler(this.$refs.container, () => {
+                    if (this.overlayVisible) {
+                        this.hide();
+                    }
+                });
+            }
+
+            this.scrollHandler.bindScrollListener();
+        },
+        unbindScrollListener() {
+            if (this.scrollHandler) {
+                this.scrollHandler.unbindScrollListener();
+            }
+        },
+        bindResizeListener() {
+            if (!this.resizeListener) {
+                this.resizeListener = () => {
+                    if (this.overlayVisible && !DomHandler.isAndroid()) {
+                        this.hide();
+                    }
+                };
+                window.addEventListener('resize', this.resizeListener);
+            }
+        },
+        unbindResizeListener() {
+            if (this.resizeListener) {
+                window.removeEventListener('resize', this.resizeListener);
+                this.resizeListener = null;
+            }
+        },
+        isOutsideClicked(event) {
+            return !(this.$el.isSameNode(event.target) || this.$el.contains(event.target) || (this.overlay && this.overlay.contains(event.target)));
+        },
+        getLabelByValue(val) {
+            let option;
+            if (this.options) {
+                if (this.optionGroupLabel) {
+                    for (let optionGroup of this.options) {
+                        option = this.findOptionByValue(val, this.getOptionGroupChildren(optionGroup));
+                        if (option) {
+                            break;
+                        }
+                    }
+                }
+                else {
+                    option = this.findOptionByValue(val, this.options);
+                }
+            }
+
+            return option ? this.getOptionLabel(option): null;
+        },
+        findOptionByValue(val, list) {
+            for (let option of list) {
+                let optionValue = this.getOptionValue(option);
+
+                if(ObjectUtils.equals(optionValue, val, this.equalityKey)) {
+                    return option;
+                }
+            }
+
+            return null;
+        },
+        getSelectedItemsLabel() {
+            let pattern = /{(.*?)}/;
+            if (pattern.test(this.selectedItemsLabel)) {
+                return this.selectedItemsLabel.replace(this.selectedItemsLabel.match(pattern)[0], this.modelValue.length + '');
+            }
+
+            return this.selectedItemsLabel;
+        },
+        onToggleAll(event) {
+            if (this.selectAll !== null) {
+                this.$emit('selectall-change', {originalEvent: event, checked: !this.allSelected});
+            }
+            else {
+                let value = null;
+
+                if (this.allSelected) {
+                    value = [];
+                }
+                else if (this.visibleOptions) {
+                    if (this.optionGroupLabel) {
+                        value = [];
+                        this.visibleOptions.forEach(optionGroup => value = [...value, ...this.getOptionGroupChildren(optionGroup)]);
+                    }
+                    else  {
+                        value = this.visibleOptions.map(option => this.getOptionValue(option));
+                    }
+                }
+
+                this.$emit('update:modelValue', value);
+                this.$emit('change', {originalEvent: event, value: value});
+            }
+        },
+        onFilterChange(event) {
+            this.$emit('filter', {originalEvent: event, value: event.target.value});
+            if (this.overlayVisible) {
+                this.alignOverlay();
+            }
+        },
+        overlayRef(el) {
+            this.overlay = el;
+        },
+        virtualScrollerRef(el) {
+            this.virtualScroller = el;
+        },
+        removeChip(item) {
+            let value = this.modelValue.filter(val => !ObjectUtils.equals(val, item, this.equalityKey));
+
+            this.$emit('update:modelValue', value);
+            this.$emit('change', {originalEvent: event, value: value});
+        },
+        onOverlayClick(event) {
+            overlayeventbus_esm.emit('overlay-click', {
+                originalEvent: event,
+                target: this.$el
+            });
+        }
+    },
+    computed: {
+         visibleOptions() {
+            if (this.filterValue) {
+                if (this.optionGroupLabel) {
+                    let filteredGroups = [];
+                    for (let optgroup of this.options) {
+                        let filteredSubOptions = FilterService.filter(this.getOptionGroupChildren(optgroup), this.searchFields, this.filterValue, this.filterMatchMode, this.filterLocale);
+                        if (filteredSubOptions && filteredSubOptions.length) {
+                            filteredGroups.push({...optgroup, ...{items: filteredSubOptions}});
+                        }
+                    }
+                    return filteredGroups
+                }
+                else {
+                    return FilterService.filter(this.options, this.searchFields, this.filterValue, 'contains', this.filterLocale);
+                }
+            }
+            else {
+                return this.options;
+            }
+        },
+        containerClass() {
+            return ['p-multiselect p-component p-inputwrapper', {
+                'p-multiselect-chip': this.display === 'chip',
+                'p-disabled': this.disabled,
+                'p-focus': this.focused,
+                'p-inputwrapper-filled': this.modelValue && this.modelValue.length,
+                'p-inputwrapper-focus': this.focused || this.overlayVisible
+            }];
+        },
+        labelClass() {
+            return ['p-multiselect-label', {
+                'p-placeholder': this.label === this.placeholder,
+                'p-multiselect-label-empty': !this.placeholder && (!this.modelValue || this.modelValue.length === 0)
+            }];
+        },
+        panelStyleClass() {
+            return ['p-multiselect-panel p-component', this.panelClass, {
+                'p-input-filled': this.$primevue.config.inputStyle === 'filled',
+                'p-ripple-disabled': this.$primevue.config.ripple === false
+            }];
+        },
+        label() {
+            let label;
+
+            if (this.modelValue && this.modelValue.length) {
+                if (!this.maxSelectedLabels || this.modelValue.length <= this.maxSelectedLabels) {
+                    label = '';
+                    for(let i = 0; i < this.modelValue.length; i++) {
+                        if(i !== 0) {
+                            label += ', ';
+                        }
+
+                        label += this.getLabelByValue(this.modelValue[i]);
+                    }
+                }
+                else {
+                    return this.getSelectedItemsLabel();
+                }
+            }
+            else {
+                label = this.placeholder;
+            }
+
+            return label;
+        },
+        allSelected() {
+            if (this.selectAll !== null) {
+                return this.selectAll;
+            }
+            else {
+                if (this.filterValue && this.filterValue.trim().length > 0) {
+                    if (this.visibleOptions.length === 0) {
+                        return false;
+                    }
+
+                    if (this.optionGroupLabel) {
+                        for (let optionGroup of this.visibleOptions) {
+                            for (let option of this.getOptionGroupChildren(optionGroup)) {
+                                if (!this.isSelected(option)) {
+                                    return false;
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        for (let option of this.visibleOptions) {
+                            if (!this.isSelected(option)) {
+                                return false;
+                            }
+                        }
+                    }
+
+                    return true;
+                }
+                else {
+                    if (this.modelValue && this.options) {
+                        let optionCount = 0;
+                        if (this.optionGroupLabel)
+                            this.options.forEach(optionGroup => optionCount += this.getOptionGroupChildren(optionGroup).length);
+                        else
+                            optionCount = this.options.length;
+
+                        return optionCount > 0 && optionCount === this.modelValue.length;
+                    }
+
+                    return false;
+                }
+            }
+        },
+        equalityKey() {
+            return this.optionValue ? null : this.dataKey;
+        },
+        searchFields() {
+            return this.filterFields || [this.optionLabel];
+        },
+        emptyFilterMessageText() {
+            return this.emptyFilterMessage || this.$primevue.config.locale.emptyFilterMessage;
+        },
+        emptyMessageText() {
+            return this.emptyMessage || this.$primevue.config.locale.emptyMessage;
+        },
+        appendDisabled() {
+            return this.appendTo === 'self';
+        },
+        appendTarget() {
+            return this.appendDisabled ? null : this.appendTo;
+        },
+        virtualScrollerDisabled() {
+            return !this.virtualScrollerOptions;
+        },
+        maxSelectionLimitReached() {
+            return this.selectionLimit && (this.modelValue && this.modelValue.length === this.selectionLimit);
+        },
+        dropdownIconClass() {
+            return ['p-multiselect-trigger-icon', this.loading ? this.loadingIcon : 'pi pi-chevron-down'];
+        }
+    },
+    directives: {
+        'ripple': ripple_esm
+    },
+    components: {
+        'VirtualScroller': virtualscroller_esm
+    }
+};
+
+const multiselect_esm_hoisted_1 = { class: "p-hidden-accessible" };
+const multiselect_esm_hoisted_2 = { class: "p-multiselect-label-container" };
+const multiselect_esm_hoisted_3 = { class: "p-multiselect-token-label" };
+const multiselect_esm_hoisted_4 = { class: "p-multiselect-trigger" };
+const multiselect_esm_hoisted_5 = {
+  key: 0,
+  class: "p-multiselect-header"
+};
+const multiselect_esm_hoisted_6 = { class: "p-hidden-accessible" };
+const multiselect_esm_hoisted_7 = {
+  key: 1,
+  class: "p-multiselect-filter-container"
+};
+const multiselect_esm_hoisted_8 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("span", { class: "p-multiselect-filter-icon pi pi-search" }, null, -1);
+const multiselect_esm_hoisted_9 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("span", { class: "p-multiselect-close-icon pi pi-times" }, null, -1);
+const multiselect_esm_hoisted_10 = { class: "p-checkbox p-component" };
+const multiselect_esm_hoisted_11 = { class: "p-multiselect-item-group" };
+const multiselect_esm_hoisted_12 = { class: "p-checkbox p-component" };
+const multiselect_esm_hoisted_13 = {
+  key: 2,
+  class: "p-multiselect-empty-message"
+};
+const multiselect_esm_hoisted_14 = {
+  key: 3,
+  class: "p-multiselect-empty-message"
+};
+
+function multiselect_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_VirtualScroller = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("VirtualScroller");
+  const _directive_ripple = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveDirective"])("ripple");
+
+  return (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", {
+    ref: "container",
+    class: $options.containerClass,
+    onClick: _cache[11] || (_cache[11] = (...args) => ($options.onClick && $options.onClick(...args)))
+  }, [
+    Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", multiselect_esm_hoisted_1, [
+      Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("input", {
+        ref: "focusInput",
+        type: "text",
+        role: "listbox",
+        id: $props.inputId,
+        readonly: "",
+        disabled: $props.disabled,
+        onFocus: _cache[1] || (_cache[1] = (...args) => ($options.onFocus && $options.onFocus(...args))),
+        onBlur: _cache[2] || (_cache[2] = (...args) => ($options.onBlur && $options.onBlur(...args))),
+        onKeydown: _cache[3] || (_cache[3] = (...args) => ($options.onKeyDown && $options.onKeyDown(...args))),
+        tabindex: $props.tabindex,
+        "aria-haspopup": "true",
+        "aria-expanded": $data.overlayVisible,
+        "aria-labelledby": $props.ariaLabelledBy
+      }, null, 40, ["id", "disabled", "tabindex", "aria-expanded", "aria-labelledby"])
+    ]),
+    Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", multiselect_esm_hoisted_2, [
+      Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", { class: $options.labelClass }, [
+        Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "value", {
+          value: $props.modelValue,
+          placeholder: $props.placeholder
+        }, () => [
+          ($props.display === 'comma')
+            ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], { key: 0 }, [
+                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.label || 'empty'), 1)
+              ], 64))
+            : ($props.display === 'chip')
+              ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], { key: 1 }, [
+                  (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])($props.modelValue, (item) => {
+                    return (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", {
+                      class: "p-multiselect-token",
+                      key: $options.getLabelByValue(item)
+                    }, [
+                      Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "chip", { value: item }, () => [
+                        Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("span", multiselect_esm_hoisted_3, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.getLabelByValue(item)), 1)
+                      ]),
+                      (!$props.disabled)
+                        ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("span", {
+                            key: 0,
+                            class: "p-multiselect-token-icon pi pi-times-circle",
+                            onClick: $event => ($options.removeChip(item))
+                          }, null, 8, ["onClick"]))
+                        : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)
+                    ]))
+                  }), 128)),
+                  (!$props.modelValue || $props.modelValue.length === 0)
+                    ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], { key: 0 }, [
+                        Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.placeholder || 'empty'), 1)
+                      ], 64))
+                    : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)
+                ], 64))
+              : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)
+        ])
+      ], 2)
+    ]),
+    Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", multiselect_esm_hoisted_4, [
+      Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "indicator", {}, () => [
+        Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("span", { class: $options.dropdownIconClass }, null, 2)
+      ])
+    ]),
+    (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Teleport"], {
+      to: $options.appendTarget,
+      disabled: $options.appendDisabled
+    }, [
+      Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
+        name: "p-connected-overlay",
+        onEnter: $options.onOverlayEnter,
+        onLeave: $options.onOverlayLeave,
+        onAfterLeave: $options.onOverlayAfterLeave
+      }, {
+        default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(() => [
+          ($data.overlayVisible)
+            ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", {
+                key: 0,
+                ref: $options.overlayRef,
+                class: $options.panelStyleClass,
+                onClick: _cache[10] || (_cache[10] = (...args) => ($options.onOverlayClick && $options.onOverlayClick(...args)))
+              }, [
+                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "header", {
+                  value: $props.modelValue,
+                  options: $options.visibleOptions
+                }),
+                (($props.showToggleAll && $props.selectionLimit == null) || $props.filter)
+                  ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", multiselect_esm_hoisted_5, [
+                      ($props.showToggleAll && $props.selectionLimit == null)
+                        ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", {
+                            key: 0,
+                            class: "p-checkbox p-component",
+                            onClick: _cache[6] || (_cache[6] = (...args) => ($options.onToggleAll && $options.onToggleAll(...args))),
+                            role: "checkbox",
+                            "aria-checked": $options.allSelected
+                          }, [
+                            Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", multiselect_esm_hoisted_6, [
+                              Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("input", {
+                                type: "checkbox",
+                                readonly: "",
+                                onFocus: _cache[4] || (_cache[4] = (...args) => ($options.onHeaderCheckboxFocus && $options.onHeaderCheckboxFocus(...args))),
+                                onBlur: _cache[5] || (_cache[5] = (...args) => ($options.onHeaderCheckboxBlur && $options.onHeaderCheckboxBlur(...args)))
+                              }, null, 32)
+                            ]),
+                            Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
+                              class: ['p-checkbox-box', {'p-highlight': $options.allSelected, 'p-focus': $data.headerCheckboxFocused}],
+                              role: "checkbox",
+                              "aria-checked": $options.allSelected
+                            }, [
+                              Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("span", {
+                                class: ['p-checkbox-icon', {'pi pi-check': $options.allSelected}]
+                              }, null, 2)
+                            ], 10, ["aria-checked"])
+                          ], 8, ["aria-checked"]))
+                        : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true),
+                      ($props.filter)
+                        ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("div", multiselect_esm_hoisted_7, [
+                            Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("input", {
+                              type: "text",
+                              ref: "filterInput",
+                              "onUpdate:modelValue": _cache[7] || (_cache[7] = $event => ($data.filterValue = $event)),
+                              class: "p-multiselect-filter p-inputtext p-component",
+                              placeholder: $props.filterPlaceholder,
+                              onInput: _cache[8] || (_cache[8] = (...args) => ($options.onFilterChange && $options.onFilterChange(...args)))
+                            }, null, 40, ["placeholder"]), [
+                              [external_commonjs_vue_commonjs2_vue_root_Vue_["vModelText"], $data.filterValue]
+                            ]),
+                            multiselect_esm_hoisted_8
+                          ]))
+                        : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true),
+                      Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("button", {
+                        class: "p-multiselect-close p-link",
+                        onClick: _cache[9] || (_cache[9] = (...args) => ($options.onCloseClick && $options.onCloseClick(...args))),
+                        type: "button"
+                      }, [
+                        multiselect_esm_hoisted_9
+                      ], 512), [
+                        [_directive_ripple]
+                      ])
+                    ]))
+                  : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true),
+                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
+                  class: "p-multiselect-items-wrapper",
+                  style: {'max-height': $options.virtualScrollerDisabled ? $props.scrollHeight : ''}
+                }, [
+                  Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_VirtualScroller, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({ ref: $options.virtualScrollerRef }, $props.virtualScrollerOptions, {
+                    items: $options.visibleOptions,
+                    style: {'height': $props.scrollHeight},
+                    disabled: $options.virtualScrollerDisabled
+                  }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createSlots"])({
+                    content: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(({ styleClass, contentRef, items, getItemOptions }) => [
+                      Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("ul", {
+                        ref: contentRef,
+                        class: ['p-multiselect-items p-component', styleClass],
+                        role: "listbox",
+                        "aria-multiselectable": "true"
+                      }, [
+                        (!$props.optionGroupLabel)
+                          ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], { key: 0 }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])(items, (option, i) => {
+                              return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])((Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("li", {
+                                class: ['p-multiselect-item', {'p-highlight': $options.isSelected(option), 'p-disabled': $options.isOptionDisabled(option)}],
+                                role: "option",
+                                "aria-selected": $options.isSelected(option),
+                                key: $options.getOptionRenderKey(option),
+                                onClick: $event => ($options.onOptionSelect($event, option)),
+                                onKeydown: $event => ($options.onOptionKeyDown($event, option)),
+                                tabindex: $props.tabindex||'0',
+                                "aria-label": $options.getOptionLabel(option)
+                              }, [
+                                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", multiselect_esm_hoisted_10, [
+                                  Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
+                                    class: ['p-checkbox-box', {'p-highlight': $options.isSelected(option)}]
+                                  }, [
+                                    Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("span", {
+                                      class: ['p-checkbox-icon', {'pi pi-check': $options.isSelected(option)}]
+                                    }, null, 2)
+                                  ], 2)
+                                ]),
+                                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "option", {
+                                  option: option,
+                                  index: $options.getOptionIndex(i, getItemOptions)
+                                }, () => [
+                                  Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("span", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.getOptionLabel(option)), 1)
+                                ])
+                              ], 42, ["aria-selected", "onClick", "onKeydown", "tabindex", "aria-label"])), [
+                                [_directive_ripple]
+                              ])
+                            }), 128))
+                          : (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], { key: 1 }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])(items, (optionGroup, i) => {
+                              return (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], {
+                                key: $options.getOptionGroupRenderKey(optionGroup)
+                              }, [
+                                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("li", multiselect_esm_hoisted_11, [
+                                  Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "optiongroup", {
+                                    option: optionGroup,
+                                    index: $options.getOptionIndex(i, getItemOptions)
+                                  }, () => [
+                                    Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.getOptionGroupLabel(optionGroup)), 1)
+                                  ])
+                                ]),
+                                (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderList"])($options.getOptionGroupChildren(optionGroup), (option, i) => {
+                                  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])((Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("li", {
+                                    class: ['p-multiselect-item', {'p-highlight': $options.isSelected(option), 'p-disabled': $options.isOptionDisabled(option)}],
+                                    role: "option",
+                                    "aria-selected": $options.isSelected(option),
+                                    key: $options.getOptionRenderKey(option),
+                                    onClick: $event => ($options.onOptionSelect($event, option)),
+                                    onKeydown: $event => ($options.onOptionKeyDown($event, option)),
+                                    tabindex: $props.tabindex||'0',
+                                    "aria-label": $options.getOptionLabel(option)
+                                  }, [
+                                    Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", multiselect_esm_hoisted_12, [
+                                      Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
+                                        class: ['p-checkbox-box', {'p-highlight': $options.isSelected(option)}]
+                                      }, [
+                                        Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("span", {
+                                          class: ['p-checkbox-icon', {'pi pi-check': $options.isSelected(option)}]
+                                        }, null, 2)
+                                      ], 2)
+                                    ]),
+                                    Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "option", {
+                                      option: option,
+                                      index: $options.getOptionIndex(i, getItemOptions)
+                                    }, () => [
+                                      Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("span", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.getOptionLabel(option)), 1)
+                                    ])
+                                  ], 42, ["aria-selected", "onClick", "onKeydown", "tabindex", "aria-label"])), [
+                                    [_directive_ripple]
+                                  ])
+                                }), 128))
+                              ], 64))
+                            }), 128)),
+                        ($data.filterValue && (!items || (items && items.length === 0)))
+                          ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("li", multiselect_esm_hoisted_13, [
+                              Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "emptyfilter", {}, () => [
+                                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.emptyFilterMessageText), 1)
+                              ])
+                            ]))
+                          : ((!$props.options || ($props.options && $props.options.length === 0)))
+                            ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("li", multiselect_esm_hoisted_14, [
+                                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "empty", {}, () => [
+                                  Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($options.emptyMessageText), 1)
+                                ])
+                              ]))
+                            : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)
+                      ], 2)
+                    ]),
+                    _: 2
+                  }, [
+                    (_ctx.$slots.loader)
+                      ? {
+                          name: "loader",
+                          fn: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(({ options }) => [
+                            Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "loader", { options: options })
+                          ])
+                        }
+                      : undefined
+                  ]), 1040, ["items", "style", "disabled"])
+                ], 4),
+                Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "footer", {
+                  value: $props.modelValue,
+                  options: $options.visibleOptions
+                })
+              ], 2))
+            : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)
+        ]),
+        _: 3
+      }, 8, ["onEnter", "onLeave", "onAfterLeave"])
+    ], 8, ["to", "disabled"]))
+  ], 2))
+}
+
+function multiselect_esm_styleInject(css, ref) {
+  if ( ref === void 0 ) ref = {};
+  var insertAt = ref.insertAt;
+
+  if (!css || typeof document === 'undefined') { return; }
+
+  var head = document.head || document.getElementsByTagName('head')[0];
+  var style = document.createElement('style');
+  style.type = 'text/css';
+
+  if (insertAt === 'top') {
+    if (head.firstChild) {
+      head.insertBefore(style, head.firstChild);
+    } else {
+      head.appendChild(style);
+    }
+  } else {
+    head.appendChild(style);
+  }
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+}
+
+var multiselect_esm_css_248z = "\n.p-multiselect {\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    cursor: pointer;\n    position: relative;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n}\n.p-multiselect-trigger {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -ms-flex-negative: 0;\n        flex-shrink: 0;\n}\n.p-multiselect-label-container {\n    overflow: hidden;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto;\n    cursor: pointer;\n}\n.p-multiselect-label  {\n    display: block;\n    white-space: nowrap;\n    cursor: pointer;\n    overflow: hidden;\n    text-overflow: ellipsis;\n}\n.p-multiselect-label-empty {\n    overflow: hidden;\n    visibility: hidden;\n}\n.p-multiselect-token {\n    cursor: default;\n    display: -webkit-inline-box;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 auto;\n            flex: 0 0 auto;\n}\n.p-multiselect-token-icon {\n    cursor: pointer;\n}\n.p-multiselect .p-multiselect-panel {\n    min-width: 100%;\n}\n.p-multiselect-panel {\n    position: absolute;\n    top: 0;\n    left: 0;\n}\n.p-multiselect-items-wrapper {\n    overflow: auto;\n}\n.p-multiselect-items {\n    margin: 0;\n    padding: 0;\n    list-style-type: none;\n}\n.p-multiselect-item {\n    cursor: pointer;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    font-weight: normal;\n    white-space: nowrap;\n    position: relative;\n    overflow: hidden;\n}\n.p-multiselect-item-group {\n    cursor: auto;\n}\n.p-multiselect-header {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: justify;\n        -ms-flex-pack: justify;\n            justify-content: space-between;\n}\n.p-multiselect-filter-container {\n    position: relative;\n    -webkit-box-flex: 1;\n        -ms-flex: 1 1 auto;\n            flex: 1 1 auto;\n}\n.p-multiselect-filter-icon {\n    position: absolute;\n    top: 50%;\n    margin-top: -.5rem;\n}\n.p-multiselect-filter-container .p-inputtext {\n    width: 100%;\n}\n.p-multiselect-close {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    -ms-flex-negative: 0;\n        flex-shrink: 0;\n    overflow: hidden;\n    position: relative;\n    margin-left: auto;\n}\n.p-fluid .p-multiselect {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n}\n";
+multiselect_esm_styleInject(multiselect_esm_css_248z);
+
+multiselect_esm_script.render = multiselect_esm_render;
+
+/* harmony default export */ var multiselect_esm = (multiselect_esm_script);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierMultiSelectEntity.vue?vue&type=script&lang=js
+
+
+
+
+
+
+/* harmony default export */ var CrosierMultiSelectEntityvue_type_script_lang_js = ({
+  name: "CrosierMultiSelectEntity",
+  components: {
+    MultiSelect: multiselect_esm
+  },
+  emits: ["update:modelValue", "change", "focus", "blur"],
+  props: {
+    modelValue: {
+      default: null,
+      type: [String, Object]
+    },
+    id: {
+      type: String,
+      required: true
+    },
+    error: {
+      type: String,
+      default: null
+    },
+    col: {
+      type: String,
+      default: "12"
+    },
+    label: {
+      type: String,
+      required: true
+    },
+    optionLabel: {
+      type: String,
+      required: true
+    },
+    optionValue: {
+      type: String,
+      default: "@id"
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    showClear: {
+      type: Boolean,
+      default: true
+    },
+    helpText: {
+      type: String
+    },
+    entityUri: {
+      type: String,
+      required: true
+    },
+    filters: {
+      type: Object
+    },
+    properties: {
+      type: Array
+    },
+    orderBy: {
+      type: Object
+    },
+    dataKey: {
+      type: String,
+      default: "@id"
+    },
+    showLabel: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data: function data() {
+    return {
+      options: null
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+      var response;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _this.setLoading(true);
+
+              _context.prev = 1;
+              _context.next = 4;
+              return api.get({
+                apiResource: _this.entityUri,
+                allRows: true,
+                filters: _this.filters,
+                order: _this.orderBy,
+                properties: _this.properties
+              });
+
+            case 4:
+              response = _context.sent;
+
+              if (response.data["hydra:totalItems"] > 0) {
+                _this.options = response.data["hydra:member"];
+              }
+
+              _context.next = 11;
+              break;
+
+            case 8:
+              _context.prev = 8;
+              _context.t0 = _context["catch"](1);
+              console.error(_context.t0);
+
+            case 11:
+              _this.setLoading(false);
+
+            case 12:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[1, 8]]);
+    }))();
+  },
+  methods: _objectSpread2(_objectSpread2({}, mapMutations(["setLoading"])), {}, {
+    onChange: function onChange($event) {
+      this.$emit("change", $event);
+      this.$emit("update:modelValue", $event.value);
+    }
+  })
+});
+// CONCATENATED MODULE: ./src/components/fields/CrosierMultiSelectEntity.vue?vue&type=script&lang=js
+ 
+// EXTERNAL MODULE: ./src/components/fields/CrosierMultiSelectEntity.vue?vue&type=style&index=0&id=1de316d2&scoped=true&lang=css
+var CrosierMultiSelectEntityvue_type_style_index_0_id_1de316d2_scoped_true_lang_css = __webpack_require__("4fd7");
+
+// CONCATENATED MODULE: ./src/components/fields/CrosierMultiSelectEntity.vue
+
+
+
+
+
+
+
+const CrosierMultiSelectEntity_exports_ = /*#__PURE__*/exportHelper_default()(CrosierMultiSelectEntityvue_type_script_lang_js, [['render',CrosierMultiSelectEntityvue_type_template_id_1de316d2_scoped_true_render],['__scopeId',"data-v-1de316d2"]])
+
+/* harmony default export */ var CrosierMultiSelectEntity = (CrosierMultiSelectEntity_exports_);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierPercent.vue?vue&type=template&id=5010a422&scoped=true
 
 
@@ -55572,6 +56785,7 @@ function _SetFocus() {
 
 
 
+
  // components
 
 
@@ -55604,6 +56818,7 @@ function _SetFocus() {
   CrosierInputText: CrosierInputText,
   CrosierInputTextarea: CrosierInputTextarea,
   CrosierMesAno: CrosierMesAno,
+  CrosierMultiSelectEntity: CrosierMultiSelectEntity,
   CrosierPercent: CrosierPercent,
   CrosierBlock: crosierBlock,
   CrosierFormS: crosierFormS,
