@@ -427,6 +427,7 @@ export default {
 
   created() {
     if (this.preselecao) {
+      console.debug("Atenção: preselecao >> localStorage.removeItem(this.dataTableStateKey)");
       localStorage.removeItem(this.dataTableStateKey);
     }
   },
@@ -448,8 +449,6 @@ export default {
         }
       }
     }
-
-    localStorage.removeItem(this.dataTableStateKey);
 
     await this.doFilter();
     this.accordionActiveIndex = this.isFiltering ? 0 : null;
@@ -484,6 +483,7 @@ export default {
       await this.$emit("beforeFilter");
 
       const lsItem = localStorage.getItem(this.dataTableStateKey);
+
       const dtStateLS = lsItem ? JSON.parse(lsItem) : null;
 
       let rows = Number.MAX_SAFE_INTEGER;
