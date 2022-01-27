@@ -14,6 +14,7 @@ import CrosierInputCpf from "./components/fields/CrosierInputCpf";
 import CrosierInputCpfCnpj from "./components/fields/CrosierInputCpfCnpj";
 import CrosierInputDecimal from "./components/fields/CrosierInputDecimal";
 import CrosierInputEmail from "./components/fields/CrosierInputEmail";
+import CrosierInputId from "./components/fields/CrosierInputId";
 import CrosierInputInt from "./components/fields/CrosierInputInt";
 import CrosierInputTelefone from "./components/fields/CrosierInputTelefone";
 import CrosierInputText from "./components/fields/CrosierInputText";
@@ -51,6 +52,7 @@ export default {
   CrosierInputCpfCnpj,
   CrosierInputDecimal,
   CrosierInputEmail,
+  CrosierInputId,
   CrosierInputInt,
   CrosierInputTelefone,
   CrosierInputText,
