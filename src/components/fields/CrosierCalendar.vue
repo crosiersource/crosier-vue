@@ -61,7 +61,7 @@ export default {
     },
     label: {
       type: String,
-      required: true,
+      required: false,
     },
     showTime: {
       type: Boolean,
