@@ -64,9 +64,20 @@
             >
               <i class="fas fa-file" aria-hidden="true"></i>
             </a>
+
             <button type="button" class="btn btn-outline-warning ml-1" @click="this.toggleFiltros">
               <i class="fas fa-search"></i>
             </button>
+
+            <button
+              type="button"
+              class="btn btn-outline-secondary ml-1"
+              @click="this.doClearFilters()"
+              title="Limpar filtros"
+            >
+              <i class="fas fa-backspace"></i>
+            </button>
+
             <slot name="headerButtons"></slot>
           </div>
         </div>
