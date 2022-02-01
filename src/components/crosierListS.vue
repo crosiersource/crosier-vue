@@ -12,7 +12,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title"><i class="fas fa-search"></i> Filtros</h5>
-        <form @submit.prevent="this.doFilter()" class="notSubmit">
+        <form @submit.prevent="this.doFilter()">
           <slot name="filter-fields"></slot>
           <div class="row mt-3">
             <div class="col-12">
@@ -65,7 +65,11 @@
               <i class="fas fa-file" aria-hidden="true"></i>
             </a>
 
-            <button type="button" class="btn btn-outline-warning ml-1" @click="this.toggleFiltros">
+            <button
+              type="button"
+              :class="'btn btn-' + (!this.isFiltering ? 'outline-' : '') + 'warning ml-1'"
+              @click="this.toggleFiltros"
+            >
               <i class="fas fa-search"></i>
             </button>
 
