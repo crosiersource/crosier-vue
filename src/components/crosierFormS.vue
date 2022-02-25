@@ -28,6 +28,7 @@
               <h3>{{ titulo }}</h3>
               <h6 v-if="subtitulo">{{ this.subtitulo }}</h6>
             </div>
+            <slot name="divCima"></slot>
             <div class="d-sm-flex flex-nowrap ml-auto">
               <a
                 v-show="this.formUrl"

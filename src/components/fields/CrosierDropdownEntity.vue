@@ -14,6 +14,7 @@
         :showClear="this.showClear"
         :disabled="this.disabled"
         :dataKey="this.dataKey"
+        :selectFirst="this.selectFirst"
         :filter="true"
         @focus="this.$emit('focus')"
         @blur="this.$emit('blur')"
@@ -80,6 +81,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    selectFirst: {
+      type: Boolean,
+      default: false,
+    },
     helpText: {
       type: String,
     },
@@ -115,27 +120,38 @@ export default {
   async mounted() {
     this.setLoading(true);
 
-    try {
-      const response = await api.get({
-        apiResource: this.entityUri,
-        allRows: true,
-        filters: this.filters,
-        order: this.orderBy,
-        properties: this.properties,
-      });
-
-      if (response.data["hydra:totalItems"] > 0) {
-        this.options = response.data["hydra:member"];
-      }
-    } catch (err) {
-      console.error(err);
-    }
+    await this.load();
 
     this.setLoading(false);
   },
 
   methods: {
     ...mapMutations(["setLoading"]),
+
+    async load() {
+      try {
+        const response = await api.get({
+          apiResource: this.entityUri,
+          allRows: true,
+          filters: this.filters,
+          order: this.orderBy,
+          properties: this.properties,
+        });
+
+        if (response.data["hydra:totalItems"] > 0) {
+          this.options = response.data["hydra:member"];
+          if (this.selectFirst && this.options && this.options.length >= 1) {
+            const value = this.optionValue ? this.options[0][this.optionValue] : this.options[0];
+            const $event = {
+              value,
+            };
+            this.onChange($event);
+          }
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    },
 
     onChange($event) {
       this.$emit("change", $event);

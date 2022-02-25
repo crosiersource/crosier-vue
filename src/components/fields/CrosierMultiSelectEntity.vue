@@ -114,28 +114,30 @@ export default {
 
   async mounted() {
     this.setLoading(true);
-
-    try {
-      const response = await api.get({
-        apiResource: this.entityUri,
-        allRows: true,
-        filters: this.filters,
-        order: this.orderBy,
-        properties: this.properties,
-      });
-
-      if (response.data["hydra:totalItems"] > 0) {
-        this.options = response.data["hydra:member"];
-      }
-    } catch (err) {
-      console.error(err);
-    }
-
+    await this.load();
     this.setLoading(false);
   },
 
   methods: {
     ...mapMutations(["setLoading"]),
+
+    async load() {
+      try {
+        const response = await api.get({
+          apiResource: this.entityUri,
+          allRows: true,
+          filters: this.filters,
+          order: this.orderBy,
+          properties: this.properties,
+        });
+
+        if (response.data["hydra:totalItems"] > 0) {
+          this.options = response.data["hydra:member"];
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    },
 
     onChange($event) {
       this.$emit("change", $event);
