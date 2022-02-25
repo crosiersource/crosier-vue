@@ -36,8 +36,8 @@ export async function fetchTableData({
   page = 1,
   rows = 10,
   order = {},
-  filters = {},
-  defaultFilters = {},
+  filters = null,
+  defaultFilters = null,
   allRows = false,
   complement = "",
   properties = null,
@@ -72,29 +72,48 @@ export async function fetchTableData({
   }
 
   // eslint-disable-next-line no-restricted-syntax
-  for (const key in filters) {
-    if (filters[key] !== null && filters[key] !== "") {
-      if (!Array.isArray(filters[key])) {
-        queryFilter += `&${key}=${filters[key]}`;
-      } else {
-        // eslint-disable-next-line no-loop-func
-        filters[key].forEach(function iterate(item) {
-          queryFilter += `&${key}[]=${item}`;
-        });
+  if (filters) {
+    if (filters instanceof Array) {
+      filters.forEach((e) => {
+        const entries = Object.entries(e);
+        queryFilter = `${queryFilter}&${entries[0][0]}=${entries[0][1]}`;
+      });
+    } else {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const key in filters) {
+        if (filters[key] !== null && filters[key] !== "") {
+          if (!Array.isArray(filters[key])) {
+            queryFilter += `&${key}=${filters[key]}`;
+          } else {
+            // eslint-disable-next-line no-loop-func
+            filters[key].forEach(function iterate(item) {
+              queryFilter += `&${key}[]=${item}`;
+            });
+          }
+        }
       }
     }
   }
 
-  // eslint-disable-next-line no-restricted-syntax
-  for (const key in defaultFilters) {
-    if (defaultFilters[key] !== null && defaultFilters[key] !== "") {
-      if (!Array.isArray(defaultFilters[key])) {
-        queryFilter += `&${key}=${defaultFilters[key]}`;
-      } else {
-        // eslint-disable-next-line no-loop-func
-        defaultFilters[key].forEach(function iterate(item) {
-          queryFilter += `&${key}[]=${item}`;
-        });
+  if (defaultFilters) {
+    if (defaultFilters instanceof Array) {
+      defaultFilters.forEach((e) => {
+        const entries = Object.entries(e);
+        queryFilter = `${queryFilter}&${entries[0][0]}=${entries[0][1]}`;
+      });
+    } else {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const key in defaultFilters) {
+        if (defaultFilters[key] !== null && defaultFilters[key] !== "") {
+          if (!Array.isArray(defaultFilters[key])) {
+            queryFilter += `&${key}=${defaultFilters[key]}`;
+          } else {
+            // eslint-disable-next-line no-loop-func
+            defaultFilters[key].forEach(function iterate(item) {
+              queryFilter += `&${key}[]=${item}`;
+            });
+          }
+        }
       }
     }
   }
