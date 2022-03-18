@@ -96,7 +96,7 @@ export default {
 
   computed: {
     idParsed() {
-      return String(`000000000${this.modelValue}`).slice(-9);
+      return String(`000000000${this.modelValue ?? 0}`).slice(-9);
     },
   },
 };
