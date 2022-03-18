@@ -10,9 +10,8 @@
           this.inputClass
         "
         :value="modelValue"
+        :id="this.id"
         @input="this.onInput($event)"
-        mask="99999999999999"
-        :unmask="true"
         @focus="this.onFocus($event)"
         @blur="this.onBlur($event)"
         @keypress="validate($event)"
@@ -46,7 +45,8 @@ export default {
     },
     id: {
       type: String,
-      required: true,
+      required: false,
+      default: "documento",
     },
     error: {
       type: String,

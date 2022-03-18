@@ -4,6 +4,7 @@
       <label v-if="this.showLabel" :for="this.id">{{ label }}</label>
 
       <InputMask
+        :id="this.id"
         :class="'form-control ' + (this.error ? 'is-invalid' : '') + this.inputClass"
         :modelValue="modelValue"
         @update:modelValue="this.onInput($event)"
@@ -44,7 +45,8 @@ export default {
     },
     id: {
       type: String,
-      required: true,
+      required: false,
+      default: "cnpj",
     },
     error: {
       type: String,
