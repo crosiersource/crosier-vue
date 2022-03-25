@@ -15,7 +15,6 @@
         @focus="this.onFocus($event)"
         @blur="this.onBlur($event)"
         @keypress="validate($event)"
-        maxlength="14"
       />
 
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
@@ -97,6 +96,7 @@ export default {
       } else {
         this.cpfCnpjInvalido = true;
       }
+      this.format();
     }
   },
 
@@ -135,29 +135,33 @@ export default {
 
     onBlur() {
       this.$nextTick(async () => {
-        if (this.modelValue.length === 11) {
-          this.$emit(
-            "update:modelValue",
-            this.modelValue.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")
-          );
-        } else if (this.modelValue.length === 14) {
-          const formatado = this.modelValue.replace(
-            /^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/,
-            "$1.$2.$3/$4-$5"
-          );
-          this.$emit("update:modelValue", formatado);
-        }
-        if (this.exibeValidacao) {
-          if (this.modelValue.length === 11) {
-            this.cpfCnpjInvalido = !this.validaCpf(this.modelValue);
-          } else if (this.modelValue.length === 14) {
-            this.cpfCnpjInvalido = !this.validaCnpj(this.modelValue);
-          } else {
-            this.cpfCnpjInvalido = true;
-          }
-        }
+        this.format();
         this.$emit("blur");
       });
+    },
+
+    format() {
+      if (this.modelValue.length === 11) {
+        this.$emit(
+          "update:modelValue",
+          this.modelValue.replace(/^(\d{3})(\d{3})(\d{3})(\d{2})/, "$1.$2.$3-$4")
+        );
+      } else if (this.modelValue.length === 14) {
+        const formatado = this.modelValue.replace(
+          /^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/,
+          "$1.$2.$3/$4-$5"
+        );
+        this.$emit("update:modelValue", formatado);
+      }
+      if (this.exibeValidacao) {
+        if (this.modelValue.length === 11) {
+          this.cpfCnpjInvalido = !this.validaCpf(this.modelValue);
+        } else if (this.modelValue.length === 14) {
+          this.cpfCnpjInvalido = !this.validaCnpj(this.modelValue);
+        } else {
+          this.cpfCnpjInvalido = true;
+        }
+      }
     },
 
     calcDigitosPosicoesCpf(digitos, posicoes = 10, somaDigitos = 0) {
@@ -218,6 +222,20 @@ export default {
       const primeiroCalculo = this.calcDigitosPosicoesCnpj(primeirosNumerosCnpj, 5);
       const cnpj = this.calcDigitosPosicoesCnpj(primeiroCalculo, 6);
       return cnpj === cnpjOriginal;
+    },
+  },
+
+  watch: {
+    modelValue() {
+      if (this.modelValue) {
+        const mvf = this.modelValue.replace(/\D/g, "");
+
+        if (mvf.length === 11 || mvf.length === 14) {
+          this.format();
+        } else {
+          this.$emit("update:modelValue", mvf);
+        }
+      }
     },
   },
 };
