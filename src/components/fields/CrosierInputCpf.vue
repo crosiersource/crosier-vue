@@ -12,6 +12,7 @@
         mask="999.999.999-99"
         :unmask="true"
         @focus="this.$emit('focus')"
+        :disabled="this.disabled"
       />
 
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{

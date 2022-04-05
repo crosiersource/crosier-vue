@@ -3,7 +3,12 @@
     <div class="form-group">
       <label v-if="this.showLabel" :for="this.id">{{ label }}</label>
       <br />
-      <ColorPicker id="cor" :modelValue="modelValue" @update:modelValue="this.onChange($event)" />
+      <ColorPicker
+        id="cor"
+        :modelValue="modelValue"
+        @update:modelValue="this.onChange($event)"
+        :disabled="this.disabled"
+      />
     </div>
   </div>
   <div class="col-md-1">
@@ -19,6 +24,7 @@
         @change="this.onInput"
         @focus="this.$emit('focus')"
         @blur="this.$emit('blur')"
+        :disabled="this.disabled"
       />
     </div>
     <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">

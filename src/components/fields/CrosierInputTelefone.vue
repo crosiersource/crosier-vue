@@ -12,6 +12,7 @@
         :unmask="true"
         @focus="this.$emit('focus')"
         @blur="this.$emit('blur')"
+        :disabled="this.disabled"
       />
       <InputMask
         :class="'form-control ' + (this.error ? 'is-invalid' : '') + this.inputClass"
@@ -22,6 +23,7 @@
         :unmask="true"
         @focus="this.$emit('focus')"
         @blur="this.$emit('blur')"
+        :disabled="this.disabled"
       />
 
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{

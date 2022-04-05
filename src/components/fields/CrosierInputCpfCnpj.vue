@@ -15,6 +15,7 @@
         @focus="this.onFocus($event)"
         @blur="this.onBlur($event)"
         @keypress="validate($event)"
+        :disabled="this.disabled"
       />
 
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
