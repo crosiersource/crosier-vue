@@ -14,11 +14,12 @@
           :minFractionDigits="2"
           :maxFractionDigits="2"
           :modelValue="modelValue"
-          @input="this.onInput"
+          @update:modelValue="this.onInput"
           placeholder="0,00"
           :disabled="this.disabled"
-          @focus="this.$emit('focus')"
+          @focus="this.onFocus()"
           @blur="this.$emit('blur')"
+          ref="inputNumber"
         />
       </div>
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
@@ -78,8 +79,17 @@ export default {
 
   methods: {
     onInput($event) {
-      this.$emit("update:modelValue", $event.value);
+      this.$emit("update:modelValue", $event);
       this.$emit("input", $event);
+    },
+
+    onFocus() {
+      this.$nextTick(() => {
+        const el = document.getElementById(this.id);
+        el.selectionStart = 10000;
+        el.selectionEnd = 10000;
+      });
+      this.$emit("focus");
     },
   },
 };
