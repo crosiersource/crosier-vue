@@ -4,6 +4,7 @@
       <label v-if="this.showLabel" :for="this.id">{{ this.label }}</label>
       <div class="input-group">
         <Datepicker
+          :key="this.key"
           :class="this.inputClass"
           :id="this.id"
           ref="refCalendar"
@@ -140,6 +141,7 @@ export default {
       inputClass: null,
       format: "dd/MM/yyyy",
       showTimePicker: false,
+      key: 0,
     };
   },
 
@@ -158,6 +160,7 @@ export default {
       this.inputClass = "crsr-date";
     }
     this.corrigirMascaras();
+    this.key++;
   },
 
   updated() {
@@ -240,6 +243,7 @@ export default {
           if (dtIni && dtFim) {
             const dts = [dtIni, dtFim];
             this.$emit("update:modelValue", dts);
+            return;
           }
         }
 
