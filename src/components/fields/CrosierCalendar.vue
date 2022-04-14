@@ -2,27 +2,54 @@
   <div :class="'col-md-' + this.col">
     <div class="form-group">
       <label v-if="this.showLabel" :for="this.id">{{ this.label }}</label>
-      <Calendar
-        :id="this.id"
-        :inputClass="this.inputClass"
-        :class="'form-control ' + (this.error ? 'is-invalid' : '')"
-        :modelValue="modelValue"
-        :selectionMode="this.selectionMode"
-        ref="refCalendar"
-        @input="this.onInput"
-        @date-select="this.onInput"
-        dateFormat="dd/mm/yy"
-        :showTime="this.showTime"
-        :showSeconds="this.showSeconds"
-        :showButtonBar="true"
-        :showIcon="true"
-        :showOnFocus="false"
-        :disabled="this.disabled"
-        :autoZIndex="this.autoZIndex"
-        :baseZIndex="this.baseZIndex"
-        @focus="this.$emit('focus')"
-        @blur="this.$emit('blur')"
-      />
+      <div class="input-group">
+        <Datepicker
+          :class="this.inputClass"
+          :id="this.id"
+          ref="refCalendar"
+          :modelValue="modelValue"
+          @update:modelValue="this.onInput"
+          @cleared="this.clear"
+          @focus="this.$emit('focus')"
+          @blur="this.$emit('blur')"
+          :range="this.range"
+          :multiCalendars="this.range"
+          :maxRange="this.maxRange"
+          :format="this.format"
+          locale="pt-BR"
+          selectText="OK"
+          cancelText="Cancelar"
+          nowButtonLabel="Agora"
+          closeOnScroll
+          autoApply
+          :disabled="this.disabled"
+          :textInput="this.textInput"
+          :enableTimePicker="this.showTimePicker"
+          :enableSeconds="this.showSeconds"
+        />
+        <div class="input-group-append" v-if="this.comBotoesPeriodo">
+          <button
+            type="button"
+            class="ml-1 btn btn-outline-info"
+            title="Período anterior"
+            @click="this.trocaPeriodo(false)"
+            :disabled="!this.modelValue"
+          >
+            <i class="fas fa-angle-left"></i>
+          </button>
+
+          <button
+            type="button"
+            class="ml-1 btn btn-outline-info"
+            title="Próximo período"
+            @click="this.trocaPeriodo(true)"
+            :disabled="!this.modelValue"
+          >
+            <i class="fas fa-angle-right"></i>
+          </button>
+        </div>
+      </div>
+
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
         this.helpText
       }}</small>
@@ -34,13 +61,17 @@
 </template>
 
 <script>
-import Calendar from "primevue/calendar";
+import Datepicker from "@vuepic/vue-datepicker";
+import "@vuepic/vue-datepicker/dist/main.css";
+import moment from "moment";
+import axios from "axios";
+import { mapMutations } from "vuex";
 
 export default {
   name: "CrosierCalendar",
 
   components: {
-    Calendar,
+    Datepicker,
   },
 
   emits: ["update:modelValue", "date-select", "focus", "blur"],
@@ -63,6 +94,18 @@ export default {
       type: String,
       required: false,
     },
+    range: {
+      type: Boolean,
+      default: false,
+    },
+    comBotoesPeriodo: {
+      type: Boolean,
+      default: false,
+    },
+    textInput: {
+      type: Boolean,
+      default: false,
+    },
     showTime: {
       type: Boolean,
       default: false,
@@ -82,80 +125,57 @@ export default {
       type: String,
       default: "single",
     },
-    autoZIndex: {
-      type: Boolean,
-      default: true,
-    },
-    baseZIndex: {
-      type: Number,
-      default: 0,
-    },
     showLabel: {
       type: Boolean,
       default: true,
+    },
+    maxRange: {
+      type: Number,
+      default: 59,
     },
   },
 
   data() {
     return {
       inputClass: null,
+      format: "dd/MM/yyyy",
+      showTimePicker: false,
     };
   },
 
   mounted() {
-    if (this.selectionMode === "range") {
+    if (this.range) {
       this.inputClass = "crsr-date-periodo text-center";
     } else if (this.showSeconds) {
+      this.format = "dd/MM/yyyy HH:mm:ss";
       this.inputClass = "crsr-datetime";
+      this.showTimePicker = true;
     } else if (this.showTime) {
+      this.format = "dd/MM/yyyy HH:mm";
       this.inputClass = "crsr-datetime-nseg";
+      this.showTimePicker = true;
     } else {
       this.inputClass = "crsr-date";
     }
+    this.corrigirMascaras();
   },
 
   updated() {
-    document.querySelectorAll(".crsr-date").forEach(function format(el) {
-      // eslint-disable-next-line no-new,no-undef
-      new Cleave(el, {
-        date: true,
-        delimiter: "/",
-        datePattern: ["d", "m", "Y"],
-      });
-    });
-
-    document.querySelectorAll(".crsr-datetime").forEach(function format(el) {
-      el.maxLength = 19; // 01/02/1903 12:34:56
-      // eslint-disable-next-line no-new,no-undef
-      new Cleave(el, {
-        numeralPositiveOnly: true,
-        delimiters: ["/", "/", " ", ":"],
-        blocks: [2, 2, 4, 2, 2, 2],
-      });
-    });
-
-    document.querySelectorAll(".crsr-datetime-nseg").forEach(function format(el) {
-      el.maxLength = 17; // 01/02/1903 12:34
-      // eslint-disable-next-line no-new, no-undef
-      new Cleave(el, {
-        numeralPositiveOnly: true,
-        delimiters: ["/", "/", " ", ":"],
-        blocks: [2, 2, 4, 2, 2],
-      });
-    });
-
-    document.querySelectorAll(".crsr-date-periodo").forEach(function format(el) {
-      el.maxLength = 23; // 01/02/1903 12:34:56
-      // eslint-disable-next-line no-new,no-undef
-      new Cleave(el, {
-        numeralPositiveOnly: true,
-        delimiters: ["/", "/", " - ", "/", "/"],
-        blocks: [2, 2, 4, 2, 2, 4],
-      });
-    });
+    this.corrigirMascaras();
   },
 
   methods: {
+    ...mapMutations(["setLoading"]),
+
+    moment(date) {
+      return moment(date);
+    },
+
+    clear() {
+      this.$emit("update:modelValue", null);
+      this.$emit("clear");
+    },
+
     onInput($event) {
       this.$nextTick(() => {
         const dtStr = $event?.target?.value ?? $event;
@@ -169,7 +189,7 @@ export default {
         if (dtStr instanceof Date) {
           date = dtStr;
         } else if (this.inputClass === "crsr-date") {
-          if (dtStr.length === 10) {
+          if (dtStr && dtStr.length === 10) {
             dateParser = /(\d{2})\/(\d{2})\/(\d{4})/;
             match = dtStr.match(dateParser);
             date = new Date(
@@ -181,7 +201,7 @@ export default {
               // match[6]  //seconds
             );
           }
-        } else if (dtStr.length === 16 && this.inputClass === "crsr-datetime-nseg") {
+        } else if (dtStr && dtStr.length === 16 && this.inputClass === "crsr-datetime-nseg") {
           dateParser = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2})/;
           match = dtStr.match(dateParser);
           date = new Date(
@@ -192,7 +212,7 @@ export default {
             match[5] // minutes
             // match[6]  //seconds
           );
-        } else if (dtStr.length === 19 && this.inputClass === "crsr-datetime") {
+        } else if (dtStr && dtStr.length === 19 && this.inputClass === "crsr-datetime") {
           dateParser = /(\d{2})\/(\d{2})\/(\d{4}) (\d{2}):(\d{2}):(\d{2})/;
           match = dtStr.match(dateParser);
           date = new Date(
@@ -203,7 +223,7 @@ export default {
             match[5], // minutes
             match[6] // seconds
           );
-        } else if (dtStr.length === 23 && this.selectionMode === "range") {
+        } else if (dtStr && dtStr.length === 23 && this.selectionMode === "range") {
           dateParser = /(\d{2})\/(\d{2})\/(\d{4}) - (\d{2})\/(\d{2})\/(\d{4})/;
           match = dtStr.match(dateParser);
           dtIni = new Date(
@@ -224,11 +244,73 @@ export default {
 
         if (date) {
           this.$emit("update:modelValue", date);
-          this.$emit("date-select", $event);
         } else {
           this.$emit("update:modelValue", dtStr);
         }
       });
+    },
+
+    async trocaPeriodo(proximo) {
+      this.setLoading(true);
+      const ini = moment(this.modelValue[0]).format("YYYY-MM-DD");
+      const fim = moment(this.modelValue[1]).format("YYYY-MM-DD");
+
+      const rs = await axios.get(
+        // eslint-disable-next-line max-len
+        `/base/diaUtil/incPeriodo/?ini=${ini}&fim=${fim}&futuro=${proximo}&comercial=false&financeiro=false`
+      );
+
+      this.$emit("update:modelValue", [
+        new Date(moment(rs.data.dtIni)),
+        new Date(moment(rs.data.dtFim)),
+      ]);
+
+      this.setLoading(false);
+    },
+
+    corrigirMascaras() {
+      document.querySelectorAll(".crsr-date > div > div > input").forEach(function format(el) {
+        // eslint-disable-next-line no-new,no-undef
+        new Cleave(el, {
+          date: true,
+          delimiter: "/",
+          datePattern: ["d", "m", "Y"],
+        });
+      });
+
+      document.querySelectorAll(".crsr-datetime > div > div > input").forEach(function format(el) {
+        el.maxLength = 19; // 01/02/1903 12:34:56
+        // eslint-disable-next-line no-new,no-undef
+        new Cleave(el, {
+          numeralPositiveOnly: true,
+          delimiters: ["/", "/", " ", ":"],
+          blocks: [2, 2, 4, 2, 2, 2],
+        });
+      });
+
+      document
+        .querySelectorAll(".crsr-datetime-nseg > div > div > input")
+        .forEach(function format(el) {
+          el.maxLength = 17; // 01/02/1903 12:34
+          // eslint-disable-next-line no-new, no-undef
+          new Cleave(el, {
+            numeralPositiveOnly: true,
+            delimiters: ["/", "/", " ", ":"],
+            blocks: [2, 2, 4, 2, 2],
+          });
+        });
+
+      document
+        .querySelectorAll(".crsr-date-periodo > div > div > input")
+        .forEach(function format(el) {
+          el.maxLength = 23; // 01/02/1903 12:34:56
+          // eslint-disable-next-line no-new,no-undef
+          new Cleave(el, {
+            numeralPositiveOnly: true,
+            delimiters: ["/", "/", " - ", "/", "/"],
+            blocks: [2, 2, 4, 2, 2, 4],
+          });
+        });
     },
   },
 };
@@ -239,5 +321,9 @@ export default {
   margin-top: 0.25rem;
   font-size: 80%;
   color: #e55353;
+}
+
+.dp__pointer.dp__input.dp__input_icon_pad {
+  height: 31.1562px;
 }
 </style>
