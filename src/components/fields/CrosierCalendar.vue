@@ -104,7 +104,7 @@ export default {
     },
     textInput: {
       type: Boolean,
-      default: false,
+      default: true,
     },
     showTime: {
       type: Boolean,
