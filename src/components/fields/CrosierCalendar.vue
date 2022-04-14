@@ -173,6 +173,7 @@ export default {
 
     clear() {
       this.$emit("update:modelValue", null);
+      this.$emit("date-select");
       this.$emit("clear");
     },
 
@@ -247,6 +248,7 @@ export default {
         } else {
           this.$emit("update:modelValue", dtStr);
         }
+        this.$emit("date-select");
       });
     },
 
@@ -264,6 +266,8 @@ export default {
         new Date(moment(rs.data.dtIni)),
         new Date(moment(rs.data.dtFim)),
       ]);
+
+      this.$emit("date-select");
 
       this.setLoading(false);
     },
