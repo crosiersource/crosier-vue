@@ -17,6 +17,7 @@
         :disabled="this.disabled"
         :dataKey="this.dataKey"
         :filter="true"
+        :editable="this.editable"
         @focus="this.$emit('focus')"
         @blur="this.$emit('blur')"
       />
@@ -95,6 +96,10 @@ export default {
     showLabel: {
       type: Boolean,
       default: true,
+    },
+    editable: {
+      type: Boolean,
+      default: false,
     },
   },
 
