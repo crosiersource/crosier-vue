@@ -376,7 +376,7 @@ export default {
     },
     comExportCSV: {
       type: Boolean,
-      default: true,
+      default: false,
     },
     sempreMostrarFiltros: {
       type: Boolean,
@@ -429,6 +429,10 @@ export default {
     rows: {
       default: 10,
     },
+    filterOnLoad: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
@@ -469,7 +473,9 @@ export default {
       }
     }
 
-    await this.doFilter();
+    if (this.filterOnLoad) {
+      await this.doFilter();
+    }
     this.accordionActiveIndex = this.isFiltering ? 0 : null;
     this.setLoading(false);
   },
