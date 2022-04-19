@@ -159,7 +159,7 @@
           :rowHover="true"
         >
           <template #footer>
-            <div style="text-align: right">
+            <div style="text-align: right" v-if="this.comExportCSV">
               <button
                 type="button"
                 class="btn btn-sm btn-outline-info"
@@ -169,6 +169,7 @@
                 <i class="fas fa-file-csv"></i>
               </button>
             </div>
+            <slot name="footer"></slot>
           </template>
 
           <Column field="id" :sortable="true" v-if="this.ativarSelecao">
@@ -261,8 +262,8 @@
       ref="dt"
       :rowHover="true"
     >
-      <template #footer v-if="this.comExportCSV">
-        <div style="text-align: right">
+      <template #footer>
+        <div style="text-align: right" v-if="this.comExportCSV">
           <button
             type="button"
             class="btn btn-sm btn-outline-info"
@@ -272,6 +273,7 @@
             <i class="fas fa-file-csv"></i>
           </button>
         </div>
+        <slot name="footer"></slot>
       </template>
 
       <Column field="id" :sortable="true" v-if="this.ativarSelecao">
