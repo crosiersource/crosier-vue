@@ -25,7 +25,7 @@
             </div>
           </div>
 
-          <div class="form-row mt-2" v-if="this.comFiltragem">
+          <div class="form-row mt-2">
             <div class="col-6">
               <button type="submit" class="btn btn-primary btn-sm btn-block">
                 <i class="fas fa-search"></i> Filtrar
@@ -56,7 +56,7 @@
           </div>
           <div class="d-sm-flex flex-nowrap ml-auto">
             <a
-              v-show="this.formUrl"
+              v-if="this.formUrl"
               type="button"
               class="btn btn-outline-info"
               :href="this.formUrl"
@@ -69,6 +69,7 @@
               type="button"
               :class="'btn btn-' + (!this.isFiltering ? 'outline-' : '') + 'warning ml-1'"
               @click="this.toggleFiltros"
+              v-if="this.comFiltragem"
             >
               <i class="fas fa-search"></i>
             </button>
@@ -78,6 +79,7 @@
               class="btn btn-outline-secondary ml-1"
               @click="this.doClearFilters()"
               title="Limpar filtros"
+              v-if="this.comFiltragem"
             >
               <i class="fas fa-backspace"></i>
             </button>
