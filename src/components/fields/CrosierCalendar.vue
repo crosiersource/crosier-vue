@@ -27,6 +27,7 @@
           :textInput="this.textInput"
           :enableTimePicker="this.showTimePicker"
           :enableSeconds="this.showSeconds"
+          weekStart="0"
         />
         <div class="input-group-append" v-if="this.comBotoesPeriodo">
           <button

@@ -25,7 +25,7 @@
             </div>
           </div>
 
-          <div class="form-row mt-2">
+          <div class="form-row mt-2" v-if="this.comFiltragem">
             <div class="col-6">
               <button type="submit" class="btn btn-primary btn-sm btn-block">
                 <i class="fas fa-search"></i> Filtrar
