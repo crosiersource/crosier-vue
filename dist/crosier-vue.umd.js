@@ -46872,6 +46872,9 @@ function CrosierDropdownBancovue_type_template_id_63a6a424_scoped_true_render(_c
 }
 // CONCATENATED MODULE: ./src/components/fields/CrosierDropdownBanco.vue?vue&type=template&id=63a6a424&scoped=true
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.slice.js
+var es_array_slice = __webpack_require__("fb6a");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.number.max-safe-integer.js
 var es_number_max_safe_integer = __webpack_require__("aff5");
 
@@ -46897,6 +46900,8 @@ var es_string_includes = __webpack_require__("2532");
 var es_string_split = __webpack_require__("1276");
 
 // CONCATENATED MODULE: ./src/services/ApiDataFetchService.js
+
+
 
 
 
@@ -46961,6 +46966,31 @@ function _fetchTableData() {
         switch (_context.prev = _context.next) {
           case 0:
             apiResource = _ref.apiResource, _ref$page = _ref.page, page = _ref$page === void 0 ? 1 : _ref$page, _ref$rows = _ref.rows, rows = _ref$rows === void 0 ? 10 : _ref$rows, _ref$order = _ref.order, order = _ref$order === void 0 ? {} : _ref$order, _ref$filters = _ref.filters, filters = _ref$filters === void 0 ? null : _ref$filters, _ref$defaultFilters = _ref.defaultFilters, defaultFilters = _ref$defaultFilters === void 0 ? null : _ref$defaultFilters, _ref$allRows = _ref.allRows, allRows = _ref$allRows === void 0 ? false : _ref$allRows, _ref$complement = _ref.complement, complement = _ref$complement === void 0 ? "" : _ref$complement, _ref$properties = _ref.properties, properties = _ref$properties === void 0 ? null : _ref$properties;
+
+            if (!apiResource) {
+              _context.next = 7;
+              break;
+            }
+
+          case 2:
+            if (!(!apiResource || apiResource.slice(-1).match(/[a-z0-9]/i))) {
+              _context.next = 4;
+              break;
+            }
+
+            return _context.abrupt("break", 7);
+
+          case 4:
+            console.debug("apiResource com formato inv\xE1lido: ".concat(apiResource));
+            apiResource = apiResource.substring(0, apiResource.length - 1); // eslint-disable-next-line no-constant-condition
+
+          case 6:
+            if (true) {
+              _context.next = 2;
+              break;
+            }
+
+          case 7:
             params = {
               headers: {
                 "Content-Type": "application/json;charset=UTF-8"
@@ -47069,7 +47099,7 @@ function _fetchTableData() {
 
             return _context.abrupt("return", axios_default.a.get("".concat(apiResource).concat(queryPage).concat(queryRows).concat(queryFilter).concat(queryOrder).concat(sProperties).concat(complement), params));
 
-          case 12:
+          case 18:
           case "end":
             return _context.stop();
         }
@@ -47079,6 +47109,9 @@ function _fetchTableData() {
   return _fetchTableData.apply(this, arguments);
 }
 // CONCATENATED MODULE: ./src/services/ApiPostService.js
+
+
+
 
 
 
@@ -47093,6 +47126,30 @@ function _postEntityData() {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
+            if (!apiResource) {
+              _context.next = 6;
+              break;
+            }
+
+          case 1:
+            if (!(!apiResource || apiResource.slice(-1).match(/[a-z0-9]/i))) {
+              _context.next = 3;
+              break;
+            }
+
+            return _context.abrupt("break", 6);
+
+          case 3:
+            console.debug("apiResource com formato inv\xE1lido: ".concat(apiResource));
+            apiResource = apiResource.substring(0, apiResource.length - 1); // eslint-disable-next-line no-constant-condition
+
+          case 5:
+            if (true) {
+              _context.next = 1;
+              break;
+            }
+
+          case 6:
             params = {
               headers: {
                 "Content-Type": "application/ld+json"
@@ -47103,7 +47160,7 @@ function _postEntityData() {
             };
             return _context.abrupt("return", axios_default.a.post("".concat(apiResource), data, params));
 
-          case 2:
+          case 8:
           case "end":
             return _context.stop();
         }
@@ -47113,6 +47170,9 @@ function _postEntityData() {
   return _postEntityData.apply(this, arguments);
 }
 // CONCATENATED MODULE: ./src/services/ApiPutService.js
+
+
+
 
 
 
@@ -47127,6 +47187,30 @@ function _putEntityData() {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
+            if (!apiResource) {
+              _context.next = 6;
+              break;
+            }
+
+          case 1:
+            if (!(!apiResource || apiResource.slice(-1).match(/[a-z0-9]/i))) {
+              _context.next = 3;
+              break;
+            }
+
+            return _context.abrupt("break", 6);
+
+          case 3:
+            console.debug("apiResource com formato inv\xE1lido: ".concat(apiResource));
+            apiResource = apiResource.substring(0, apiResource.length - 1); // eslint-disable-next-line no-constant-condition
+
+          case 5:
+            if (true) {
+              _context.next = 1;
+              break;
+            }
+
+          case 6:
             params = {
               headers: {
                 "Content-Type": "application/ld+json"
@@ -47137,7 +47221,7 @@ function _putEntityData() {
             };
             return _context.abrupt("return", axios_default.a.put("".concat(apiResource), data, params));
 
-          case 2:
+          case 8:
           case "end":
             return _context.stop();
         }
@@ -47147,6 +47231,9 @@ function _putEntityData() {
   return _putEntityData.apply(this, arguments);
 }
 // CONCATENATED MODULE: ./src/services/ApiDeleteService.js
+
+
+
 
 
 
@@ -47160,6 +47247,30 @@ function _deleteEntityData() {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
+            if (!apiResource) {
+              _context.next = 6;
+              break;
+            }
+
+          case 1:
+            if (!(!apiResource || apiResource.slice(-1).match(/[a-z0-9]/i))) {
+              _context.next = 3;
+              break;
+            }
+
+            return _context.abrupt("break", 6);
+
+          case 3:
+            console.debug("apiResource com formato inv\xE1lido: ".concat(apiResource));
+            apiResource = apiResource.substring(0, apiResource.length - 1); // eslint-disable-next-line no-constant-condition
+
+          case 5:
+            if (true) {
+              _context.next = 1;
+              break;
+            }
+
+          case 6:
             return _context.abrupt("return", axios_default.a.delete(apiResource, {
               headers: {
                 "Content-Type": "application/ld+json"
@@ -47169,7 +47280,7 @@ function _deleteEntityData() {
               }
             }));
 
-          case 1:
+          case 7:
           case "end":
             return _context.stop();
         }
@@ -49272,9 +49383,6 @@ function CrosierInputIdvue_type_template_id_6ff932ca_scoped_true_render(_ctx, _c
   }, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.error), 513), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.error]])])], 2);
 }
 // CONCATENATED MODULE: ./src/components/fields/CrosierInputId.vue?vue&type=template&id=6ff932ca&scoped=true
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.slice.js
-var es_array_slice = __webpack_require__("fb6a");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierInputId.vue?vue&type=script&lang=js
 

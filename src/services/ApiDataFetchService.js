@@ -42,6 +42,17 @@ export async function fetchTableData({
   complement = "",
   properties = null,
 }) {
+  if (apiResource) {
+    do {
+      if (!apiResource || apiResource.slice(-1).match(/[a-z0-9]/i)) {
+        break;
+      }
+      console.debug(`apiResource com formato inválido: ${apiResource}`);
+      apiResource = apiResource.substring(0, apiResource.length - 1);
+      // eslint-disable-next-line no-constant-condition
+    } while (true);
+  }
+
   const params = {
     headers: {
       "Content-Type": "application/json;charset=UTF-8",
