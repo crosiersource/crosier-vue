@@ -141,9 +141,6 @@
           currentPageReportTemplate="{first}-{last} de {totalRecords}"
           @page="doFilter($event)"
           @sort="doFilter($event)"
-          sortMode="multiple"
-          :multiSortMeta="multiSortMeta"
-          :removable-sort="true"
           :selection="this.selection"
           @update:selection="this.onUpdateSelection($event)"
           :selectionMode="selectionMode"
@@ -157,7 +154,18 @@
           :first="firstRecordIndex"
           ref="dt"
           :rowHover="true"
+          :multiSortMeta="multiSortMeta"
+          :removableSort="this.removableSort"
+          :sortMode="this.sortMode"
+          :rowGroupMode="this.rowGroupMode"
+          :groupRowsBy="this.groupRowsBy"
+          :sortField="this.sortField"
+          :sortOrder="this.sortOrder"
         >
+          <template #groupheader="groupheader">
+            <slot name="groupheader" :groupheader="groupheader"></slot>
+          </template>
+
           <template #footer>
             <div style="text-align: right" v-if="this.comExportCSV">
               <button
@@ -245,9 +253,6 @@
       currentPageReportTemplate="{first}-{last} de {totalRecords}"
       @page="doFilter($event)"
       @sort="doFilter($event)"
-      sortMode="multiple"
-      :multiSortMeta="multiSortMeta"
-      :removable-sort="true"
       :selection="this.selection"
       @update:selection="this.onUpdateSelection($event)"
       :selectionMode="selectionMode"
@@ -261,7 +266,18 @@
       :first="firstRecordIndex"
       ref="dt"
       :rowHover="true"
+      :multiSortMeta="multiSortMeta"
+      :removableSort="this.removableSort"
+      :sortMode="this.sortMode"
+      :rowGroupMode="this.rowGroupMode"
+      :groupRowsBy="this.groupRowsBy"
+      :sortField="this.sortField"
+      :sortOrder="this.sortOrder"
     >
+      <template #groupheader="groupheader">
+        <slot name="groupheader" :groupheader="groupheader"></slot>
+      </template>
+
       <template #footer>
         <div style="text-align: right" v-if="this.comExportCSV">
           <button
@@ -290,6 +306,7 @@
           {{ ("0".repeat(this.zerofillId) + r.data.id).slice(-this.zerofillId) }}
         </template>
       </Column>
+
       <slot name="columns"></slot>
     </DataTable>
   </div>
@@ -432,6 +449,27 @@ export default {
     filterOnLoad: {
       type: Boolean,
       default: true,
+    },
+    removableSort: {
+      type: Boolean,
+      default: true,
+    },
+    sortMode: {
+      type: String,
+      default: "multiple", // single ou multiple
+    },
+    rowGroupMode: {
+      type: String,
+    },
+    groupRowsBy: {
+      type: String,
+    },
+    sortField: {
+      type: String,
+    },
+    sortOrder: {
+      type: Number,
+      default: 1,
     },
   },
 
