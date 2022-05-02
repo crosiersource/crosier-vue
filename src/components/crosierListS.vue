@@ -150,7 +150,6 @@
           @rowUnselect="this.onRowUnselect"
           :resizableColumns="true"
           columnResizeMode="fit"
-          responsiveLayout="scroll"
           :first="firstRecordIndex"
           ref="dt"
           :rowHover="true"
@@ -161,6 +160,8 @@
           :groupRowsBy="this.groupRowsBy"
           :sortField="this.sortField"
           :sortOrder="this.sortOrder"
+          :responsiveLayout="this.responsiveLayout"
+          :showGridlines="this.showGridlines"
         >
           <template #groupheader="groupheader">
             <slot name="groupheader" :groupheader="groupheader"></slot>
@@ -262,7 +263,6 @@
       @rowUnselect="this.onRowUnselect"
       :resizableColumns="true"
       columnResizeMode="fit"
-      responsiveLayout="scroll"
       :first="firstRecordIndex"
       ref="dt"
       :rowHover="true"
@@ -273,6 +273,8 @@
       :groupRowsBy="this.groupRowsBy"
       :sortField="this.sortField"
       :sortOrder="this.sortOrder"
+      :responsiveLayout="this.responsiveLayout"
+      :showGridlines="this.showGridlines"
     >
       <template #groupheader="groupheader">
         <slot name="groupheader" :groupheader="groupheader"></slot>
@@ -470,6 +472,14 @@ export default {
     sortOrder: {
       type: Number,
       default: 1,
+    },
+    responsiveLayout: {
+      type: String,
+      default: "scroll",
+    },
+    showGridlines: {
+      type: Boolean,
+      default: false,
     },
   },
 
