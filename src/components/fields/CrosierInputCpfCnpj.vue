@@ -155,10 +155,11 @@ export default {
         this.$emit("update:modelValue", formatado);
       }
       if (this.exibeValidacao) {
-        if (this.modelValue.length === 11) {
-          this.cpfCnpjInvalido = !this.validaCpf(this.modelValue);
-        } else if (this.modelValue.length === 14) {
-          this.cpfCnpjInvalido = !this.validaCnpj(this.modelValue);
+        const valor = this.modelValue.replace(/[^0-9]/g, "");
+        if (valor.length === 11) {
+          this.cpfCnpjInvalido = !this.validaCpf(valor);
+        } else if (valor.length === 14) {
+          this.cpfCnpjInvalido = !this.validaCnpj(valor);
         } else {
           this.cpfCnpjInvalido = true;
         }
