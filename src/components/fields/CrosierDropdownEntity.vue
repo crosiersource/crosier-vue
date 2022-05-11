@@ -3,6 +3,7 @@
     <div class="form-group">
       <label v-if="this.showLabel" :for="this.id">{{ label }}</label>
       <Dropdown
+        v-if="this.waitTo"
         :class="'form-control ' + (this.error ? 'is-invalid' : '')"
         :id="this.id"
         :modelValue="modelValue"
@@ -19,6 +20,7 @@
         @focus="this.$emit('focus')"
         @blur="this.$emit('blur')"
       />
+      <Skeleton v-if="!this.waitTo" width="100%" height="2rem" />
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
         this.helpText
       }}</small>
@@ -32,6 +34,7 @@
 <script>
 import Dropdown from "primevue/dropdown";
 import { mapMutations } from "vuex";
+import Skeleton from "primevue/skeleton";
 import api from "../../services/api";
 // import { api } from "crosier-vue";
 
@@ -40,6 +43,7 @@ export default {
 
   components: {
     Dropdown,
+    Skeleton,
   },
 
   emits: ["update:modelValue", "change", "focus", "blur"],
@@ -107,6 +111,9 @@ export default {
     },
     showLabel: {
       type: Boolean,
+      default: true,
+    },
+    waitTo: {
       default: true,
     },
   },
