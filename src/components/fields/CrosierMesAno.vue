@@ -1,33 +1,31 @@
 <template>
   <div :class="'col-md-' + this.col">
     <div class="form-group">
-      <div class="form-row">
-        <div class="col-7">
-          <label v-if="this.showLabel" :for="this.id + '_mes'">{{ label }}</label>
-          <Dropdown
-            :class="'form-control ' + (this.error ? 'is-invalid' : '')"
-            :id="this.id + '_mes'"
-            :appendTo="this.appendTo"
-            v-model="this.mes"
-            @update:modelValue="this.emit"
-            :options="this.meses"
-            optionLabel="label"
-            optionValue="value"
-            :placeholder="this.showClear ? 'Selecione' : null"
-            :showClear="true"
-            :disabled="this.disabled"
-            :filter="true"
-            @focus="this.$emit('focus')"
-            @blur="this.$emit('blur')"
-          />
-        </div>
-        <div class="col-3">
-          <label v-if="this.showLabel" :for="this.id + '_ano'"
-            ><span style="color: transparent">...</span></label
-          >
+      <label v-if="this.showLabel" :for="this.id + '_mes'">{{ label }}</label>
+      <div class="input-group">
+        <Dropdown
+          style="max-width: 220px"
+          :class="'form-control ' + (this.error ? 'is-invalid' : '')"
+          :id="this.id + '_mes'"
+          :appendTo="this.appendTo"
+          v-model="this.mes"
+          @update:modelValue="this.emit"
+          :options="this.meses"
+          optionLabel="label"
+          optionValue="value"
+          :placeholder="this.showClear ? 'Selecione' : null"
+          :showClear="true"
+          :disabled="this.disabled"
+          :filter="true"
+          @focus="this.$emit('focus')"
+          @blur="this.$emit('blur')"
+        />
+        <div class="input-group-append">
           <InputNumber
-            :class="'form-control ' + (this.error ? 'is-invalid' : '')"
-            inputClass="text-right"
+            style="max-width: 90px"
+            :class="'ml-1 form-control ' + (this.error ? 'is-invalid' : '')"
+            inputClass="text-center"
+            :useGrouping="false"
             :id="this.id + '_ano'"
             v-model="this.ano"
             @update:modelValue="this.emit"
@@ -37,28 +35,18 @@
             @focus="this.$emit('focus')"
             @blur="this.$emit('blur')"
           />
-        </div>
-        <div class="col-1">
-          <label v-if="this.showLabel" :for="this.id + '_btns'"
-            ><span style="color: transparent">...</span></label
-          >
           <button
             :id="this.id + '_btns'"
             type="button"
-            class="btn btn-block btn-sm btn-info"
+            class="btn btn-sm btn-outline-info"
             @click="this.trocaMes(false)"
             :disabled="!this.ano || !this.mes"
           >
             <i class="fas fa-angle-left"></i>
           </button>
-        </div>
-        <div class="col-1">
-          <label v-if="this.showLabel" :for="this.id + '_btns'"
-            ><span style="color: transparent">...</span></label
-          >
           <button
             type="button"
-            class="btn btn-block btn-sm btn-info"
+            class="btn btn-sm btn-outline-info"
             @click="this.trocaMes(true)"
             :disabled="!this.ano || !this.mes"
           >
@@ -66,13 +54,13 @@
           </button>
         </div>
       </div>
+    </div>
 
-      <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
-        this.helpText
-      }}</small>
-      <div class="invalid-feedbackk blink" v-show="this.error">
-        {{ this.error }}
-      </div>
+    <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
+      this.helpText
+    }}</small>
+    <div class="invalid-feedbackk blink" v-show="this.error">
+      {{ this.error }}
     </div>
   </div>
 </template>
@@ -153,12 +141,20 @@ export default {
       type: Boolean,
       default: true,
     },
+    mesCorrenteInicial: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   mounted() {
     if (this.modelValue) {
       this.mes = moment(this.modelValue).format("MM");
       this.ano = moment(this.modelValue).format("YYYY");
+      this.emit();
+    } else if (this.mesCorrenteInicial) {
+      this.mes = moment().format("MM");
+      this.ano = moment().format("YYYY");
       this.emit();
     }
   },
