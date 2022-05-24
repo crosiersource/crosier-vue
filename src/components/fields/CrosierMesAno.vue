@@ -1,7 +1,12 @@
 <template>
   <div :class="'col-md-' + this.col">
     <div class="form-group">
-      <label v-if="this.showLabel" :for="this.id + '_mes'">{{ label }}</label>
+      <label
+        v-if="this.showLabel"
+        :class="this.labelTransparente ? 'transparente' : ''"
+        :for="this.id + '_mes'"
+        >{{ this.labelTransparente ? "..." : label }}</label
+      >
       <div class="input-group">
         <Dropdown
           style="max-width: 220px"
@@ -140,6 +145,10 @@ export default {
     showLabel: {
       type: Boolean,
       default: true,
+    },
+    labelTransparente: {
+      type: Boolean,
+      default: false,
     },
     mesCorrenteInicial: {
       type: Boolean,

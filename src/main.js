@@ -4,9 +4,11 @@ import CrosierCalendar from "./components/fields/CrosierCalendar";
 import CrosierColorPicker from "./components/fields/CrosierColorPicker";
 import CrosierCurrency from "./components/fields/CrosierCurrency";
 import CrosierDropdown from "./components/fields/CrosierDropdown";
+import CrosierDropdownAno from "./components/fields/CrosierDropdownAno";
 import CrosierDropdownBanco from "./components/fields/CrosierDropdownBanco";
 import CrosierDropdownBoolean from "./components/fields/CrosierDropdownBoolean";
 import CrosierDropdownEntity from "./components/fields/CrosierDropdownEntity";
+import CrosierDropdownMes from "./components/fields/CrosierDropdownMes";
 import CrosierDropdownUf from "./components/fields/CrosierDropdownUf";
 import CrosierInputCep from "./components/fields/CrosierInputCep";
 import CrosierInputCnpj from "./components/fields/CrosierInputCnpj";
@@ -16,6 +18,7 @@ import CrosierInputDecimal from "./components/fields/CrosierInputDecimal";
 import CrosierInputEmail from "./components/fields/CrosierInputEmail";
 import CrosierInputId from "./components/fields/CrosierInputId";
 import CrosierInputInt from "./components/fields/CrosierInputInt";
+import CrosierInputMask from "./components/fields/CrosierInputMask";
 import CrosierInputTelefone from "./components/fields/CrosierInputTelefone";
 import CrosierInputText from "./components/fields/CrosierInputText";
 import CrosierInputTextarea from "./components/fields/CrosierInputTextarea";
@@ -44,9 +47,11 @@ export default {
   CrosierColorPicker,
   CrosierCurrency,
   CrosierDropdown,
+  CrosierDropdownAno,
   CrosierDropdownBanco,
   CrosierDropdownBoolean,
   CrosierDropdownEntity,
+  CrosierDropdownMes,
   CrosierDropdownUf,
   CrosierInputCep,
   CrosierInputCnpj,
@@ -56,6 +61,7 @@ export default {
   CrosierInputEmail,
   CrosierInputId,
   CrosierInputInt,
+  CrosierInputMask,
   CrosierInputTelefone,
   CrosierInputText,
   CrosierInputTextarea,

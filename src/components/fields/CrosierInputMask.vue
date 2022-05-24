@@ -11,15 +11,19 @@
         <div v-if="this.prepend" class="input-group-prepend">
           <span class="input-group-text">{{ this.prepend }}</span>
         </div>
-        <InputText
-          :class="'form-control email ' + (this.error ? 'is-invalid' : '') + this.inputClass"
+        <InputMask
+          :class="'form-control ' + (this.error ? 'is-invalid ' : ' ') + this.inputClass"
           :id="this.id"
           type="text"
           :modelValue="modelValue"
-          @input="this.onInput"
+          @update:modelValue="this.onInput"
           :disabled="this.disabled"
           @focus="this.$emit('focus')"
-          @blur="this.onBlur($event)"
+          @blur="this.$emit('blur')"
+          :mask="this.mask"
+          :slotChar="this.slotChar"
+          :autoClear="this.autoClear"
+          :unmask="this.unmask"
         />
         <div v-if="this.append" class="input-group-append">
           <span class="input-group-text">{{ this.append }}</span>
@@ -32,21 +36,18 @@
       <div class="invalid-feedbackk blink" v-show="this.error">
         {{ this.error }}
       </div>
-      <div class="invalid-feedbackk blink" v-show="this.exibeValidacao && this.emailInvalido">
-        E-mail inválido!
-      </div>
     </div>
   </div>
 </template>
 
 <script>
-import InputText from "primevue/inputtext";
+import InputMask from "primevue/inputmask";
 
 export default {
-  name: "CrosierInputText",
+  name: "CrosierInputMask",
 
   components: {
-    InputText,
+    InputMask,
   },
 
   emits: ["update:modelValue", "input", "focus", "blur"],
@@ -70,7 +71,6 @@ export default {
     label: {
       type: String,
       required: false,
-      default: "E-mail",
     },
     disabled: {
       type: Boolean,
@@ -97,41 +97,27 @@ export default {
       type: Boolean,
       default: false,
     },
-    exibeValidacao: {
+    mask: {
+      type: String,
+    },
+    slotChar: {
+      type: String,
+      default: "_",
+    },
+    autoClear: {
       type: Boolean,
       default: true,
     },
-  },
-
-  data() {
-    return {
-      emailInvalido: false,
-    };
-  },
-
-  mounted() {
-    if (this.exibeValidacao && this.modelValue) {
-      this.emailInvalido = !this.validaEmail(this.modelValue);
-    }
+    unmask: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   methods: {
     onInput($event) {
-      this.$emit("update:modelValue", $event.target.value);
+      this.$emit("update:modelValue", $event);
       this.$emit("input", $event);
-    },
-
-    onBlur() {
-      this.$nextTick(async () => {
-        if (this.exibeValidacao) {
-          this.emailInvalido = !this.validaEmail(this.modelValue);
-        }
-        this.$emit("blur");
-      });
-    },
-
-    validaEmail(email) {
-      return /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
     },
   },
 };

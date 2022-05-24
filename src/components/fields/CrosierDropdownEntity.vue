@@ -1,7 +1,12 @@
 <template>
   <div :class="'col-md-' + this.col">
     <div class="form-group">
-      <label v-if="this.showLabel" :for="this.id">{{ label }}</label>
+      <label
+        v-if="this.showLabel"
+        :class="this.labelTransparente ? 'transparente' : ''"
+        :for="this.id"
+        >{{ this.labelTransparente ? "..." : label }}</label
+      >
       <Dropdown
         v-if="this.waitTo"
         :class="'form-control ' + (this.error ? 'is-invalid' : '')"
@@ -112,6 +117,10 @@ export default {
     showLabel: {
       type: Boolean,
       default: true,
+    },
+    labelTransparente: {
+      type: Boolean,
+      default: false,
     },
     waitTo: {
       default: true,
