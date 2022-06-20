@@ -509,8 +509,9 @@ export default {
     const params = new URLSearchParams(uri);
 
     if (this.filtersStoreName) {
-      this.savedFilter = params.get("filters") || localStorage.getItem(this.filtersOnLocalStorage);
-      if (this.savedFilter) {
+      this.savedFilter =
+        params.get("filters") || localStorage.getItem(this.filtersOnLocalStorage) || "{}";
+      if (this.savedFilter && this.savedFilter !== "undefined") {
         try {
           const filtersParsed = JSON.parse(this.savedFilter);
           this.setFilters(filtersParsed);
