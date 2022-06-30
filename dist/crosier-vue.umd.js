@@ -18061,6 +18061,20 @@ module.exports = function (argument, usingIterator) {
 
 /***/ }),
 
+/***/ "9b98":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".invalid-feedbackk[data-v-05650390]{width:100%;margin-top:.25rem;font-size:80%;color:#e55353}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
 /***/ "9bdd":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29569,6 +29583,17 @@ var update = add("26304f36", content, true, {"sourceMap":false,"shadowMode":fals
 
 /***/ }),
 
+/***/ "df47":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierButton_vue_vue_type_style_index_0_id_05650390_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("f37a");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierButton_vue_vue_type_style_index_0_id_05650390_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_6_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_6_oneOf_1_1_node_modules_vue_loader_v16_dist_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_CrosierButton_vue_vue_type_style_index_0_id_05650390_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
 /***/ "df75":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31687,6 +31712,22 @@ class ApiProxy {
     }
 }
 
+
+/***/ }),
+
+/***/ "f37a":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("9b98");
+if(content.__esModule) content = content.default;
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("70812324", content, true, {"sourceMap":false,"shadowMode":false});
 
 /***/ }),
 
@@ -34878,6 +34919,127 @@ var exportHelper_default = /*#__PURE__*/__webpack_require__.n(exportHelper);
 const __exports__ = /*#__PURE__*/exportHelper_default()(CrosierAutoCompletevue_type_script_lang_js, [['render',render],['__scopeId',"data-v-63f90e40"]])
 
 /* harmony default export */ var CrosierAutoComplete = (__exports__);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierButton.vue?vue&type=template&id=05650390&scoped=true
+
+
+var CrosierButtonvue_type_template_id_05650390_scoped_true_withScopeId = function _withScopeId(n) {
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["pushScopeId"])("data-v-05650390"), n = n(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["popScopeId"])(), n;
+};
+
+var CrosierButtonvue_type_template_id_05650390_scoped_true_hoisted_1 = {
+  class: "form-group"
+};
+
+var CrosierButtonvue_type_template_id_05650390_scoped_true_hoisted_2 = /*#__PURE__*/CrosierButtonvue_type_template_id_05650390_scoped_true_withScopeId(function () {
+  return /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", null, [/*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("label", {
+    class: "transparente"
+  }, ".")], -1);
+});
+
+var CrosierButtonvue_type_template_id_05650390_scoped_true_hoisted_3 = {
+  key: 0
+};
+var CrosierButtonvue_type_template_id_05650390_scoped_true_hoisted_4 = {
+  key: 1
+};
+var _hoisted_5 = ["title", "href"];
+var _hoisted_6 = {
+  key: 2,
+  class: "form-text text-muted"
+};
+function CrosierButtonvue_type_template_id_05650390_scoped_true_render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _this = this;
+
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('col-md-' + this.col)
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", CrosierButtonvue_type_template_id_05650390_scoped_true_hoisted_1, [CrosierButtonvue_type_template_id_05650390_scoped_true_hoisted_2, this.placeholder ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", CrosierButtonvue_type_template_id_05650390_scoped_true_hoisted_3)) : (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", CrosierButtonvue_type_template_id_05650390_scoped_true_hoisted_4, [this.tipo === 'link' ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("a", {
+    key: 0,
+    role: "button",
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('btn btn-' + this.cor + ' btn-sm'),
+    title: this.title,
+    href: this.href
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])(this.icon),
+    "aria-hidden": "true"
+  }, null, 2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(" " + Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.label), 1)], 10, _hoisted_5)) : (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", {
+    key: 1,
+    type: "button",
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])('btn btn-' + this.cor + ' btn-sm'),
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return _this.$emit('click');
+    }),
+    role: "button"
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+    class: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["normalizeClass"])(this.icon),
+    "aria-hidden": "true"
+  }, null, 2), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(" " + Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.label), 1)], 2))])), this.helpText ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("small", _hoisted_6, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.helpText), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)])], 2);
+}
+// CONCATENATED MODULE: ./src/components/fields/CrosierButton.vue?vue&type=template&id=05650390&scoped=true
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierButton.vue?vue&type=script&lang=js
+/* harmony default export */ var CrosierButtonvue_type_script_lang_js = ({
+  name: "CrosierButton",
+  emits: ["click"],
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    placeholder: {
+      type: Boolean,
+      default: false
+    },
+    tipo: {
+      type: String,
+      default: "button"
+    },
+    icon: {
+      type: String,
+      default: "fas fa-link"
+    },
+    col: {
+      type: String,
+      default: "1"
+    },
+    cor: {
+      type: String,
+      default: "primary"
+    },
+    label: {
+      type: String
+    },
+    title: {
+      type: String
+    },
+    helpText: {
+      type: String
+    },
+    href: {
+      type: String
+    }
+  },
+  methods: {
+    onChange: function onChange() {
+      this.$emit("update:modelValue", this.modelValue !== true);
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/fields/CrosierButton.vue?vue&type=script&lang=js
+ 
+// EXTERNAL MODULE: ./src/components/fields/CrosierButton.vue?vue&type=style&index=0&id=05650390&scoped=true&lang=css
+var CrosierButtonvue_type_style_index_0_id_05650390_scoped_true_lang_css = __webpack_require__("df47");
+
+// CONCATENATED MODULE: ./src/components/fields/CrosierButton.vue
+
+
+
+
+
+
+
+const CrosierButton_exports_ = /*#__PURE__*/exportHelper_default()(CrosierButtonvue_type_script_lang_js, [['render',CrosierButtonvue_type_template_id_05650390_scoped_true_render],['__scopeId',"data-v-05650390"]])
+
+/* harmony default export */ var CrosierButton = (CrosierButton_exports_);
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/fields/CrosierCalendar.vue?vue&type=template&id=11158092&scoped=true
 
 
@@ -34896,15 +35058,15 @@ var CrosierCalendarvue_type_template_id_11158092_scoped_true_hoisted_4 = {
   key: 0,
   class: "input-group-append"
 };
-var _hoisted_5 = ["disabled"];
+var CrosierCalendarvue_type_template_id_11158092_scoped_true_hoisted_5 = ["disabled"];
 
-var _hoisted_6 = /*#__PURE__*/CrosierCalendarvue_type_template_id_11158092_scoped_true_withScopeId(function () {
+var CrosierCalendarvue_type_template_id_11158092_scoped_true_hoisted_6 = /*#__PURE__*/CrosierCalendarvue_type_template_id_11158092_scoped_true_withScopeId(function () {
   return /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
     class: "fas fa-angle-left"
   }, null, -1);
 });
 
-var _hoisted_7 = [_hoisted_6];
+var _hoisted_7 = [CrosierCalendarvue_type_template_id_11158092_scoped_true_hoisted_6];
 var _hoisted_8 = ["disabled"];
 
 var _hoisted_9 = /*#__PURE__*/CrosierCalendarvue_type_template_id_11158092_scoped_true_withScopeId(function () {
@@ -34963,7 +35125,7 @@ function CrosierCalendarvue_type_template_id_11158092_scoped_true_render(_ctx, _
       return _this.trocaPeriodo(false);
     }),
     disabled: !this.modelValue
-  }, _hoisted_7, 8, _hoisted_5), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("button", {
+  }, _hoisted_7, 8, CrosierCalendarvue_type_template_id_11158092_scoped_true_hoisted_5), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("button", {
     type: "button",
     class: "ml-1 btn btn-outline-info",
     title: "Próximo período",
@@ -62156,6 +62318,7 @@ function _SetFocus() {
 
 
 
+
  // components
 
 
@@ -62169,6 +62332,7 @@ function _SetFocus() {
 
 /* harmony default export */ var src_main = ({
   CrosierAutoComplete: CrosierAutoComplete,
+  CrosierButton: CrosierButton,
   CrosierCalendar: CrosierCalendar,
   CrosierColorPicker: CrosierColorPicker,
   CrosierCurrency: CrosierCurrency,
