@@ -1,5 +1,6 @@
 // fields
 import CrosierAutoComplete from "./components/fields/CrosierAutoComplete";
+import CrosierButton from "./components/fields/CrosierButton";
 import CrosierCalendar from "./components/fields/CrosierCalendar";
 import CrosierColorPicker from "./components/fields/CrosierColorPicker";
 import CrosierCurrency from "./components/fields/CrosierCurrency";
@@ -43,6 +44,7 @@ import { SetFocus } from "./functions/SetFocus";
 
 export default {
   CrosierAutoComplete,
+  CrosierButton,
   CrosierCalendar,
   CrosierColorPicker,
   CrosierCurrency,
