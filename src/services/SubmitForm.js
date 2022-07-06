@@ -1,12 +1,13 @@
-import { putEntityData } from "./ApiPutService";
-import { postEntityData } from "./ApiPostService";
+import api from "./api";
 import { validateFormData } from "./ValidateFormData";
+// import { api, validateFormData } from "crosier-vue";
 
 export async function submitForm({
   apiResource,
-  $store,
-  formDataStateName,
-  schemaValidator,
+  formData = null,
+  $store = null,
+  formDataStateName = null,
+  schemaValidator = null,
   setUrlId = true,
   fnBeforeSave = null,
   fnAfterGet = null,
@@ -15,19 +16,24 @@ export async function submitForm({
   msgSucesso = "Registro salvo com sucesso",
   msgErro = "Ocorreu um erro ao salvar",
 }) {
-  const getter = `get${formDataStateName.charAt(0).toUpperCase()}${formDataStateName.slice(1)}`;
-  const formDataOrig = $store.getters[getter]
-    ? $store.getters[getter]
-    : $store.state[formDataStateName];
-  let formData = { ...formDataOrig };
+  if (!formData) {
+    const getter = `get${formDataStateName.charAt(0).toUpperCase()}${formDataStateName.slice(1)}`;
+    const formDataOrig = $store.getters[getter]
+      ? $store.getters[getter]
+      : $store.state[formDataStateName];
+    formData = { ...formDataOrig };
+  }
 
   if (!formData) {
     console.error(`$store.state[${formDataStateName}] n/d`);
     return false;
   }
-  const commitFormData = `set${formDataStateName.charAt(0).toUpperCase()}${formDataStateName.slice(
-    1
-  )}`;
+
+  let commitFormData = null;
+
+  if (formDataStateName) {
+    commitFormData = `set${formDataStateName.charAt(0).toUpperCase()}${formDataStateName.slice(1)}`;
+  }
 
   if (
     schemaValidator &&
@@ -44,7 +50,7 @@ export async function submitForm({
 
   if (formData["@id"]) {
     try {
-      response = await putEntityData(formData["@id"], JSON.stringify(formData));
+      response = await api.put(formData["@id"], JSON.stringify(formData));
     } catch (e) {
       if ($toast) {
         $toast.add({
@@ -60,7 +66,7 @@ export async function submitForm({
     }
   } else {
     try {
-      response = await postEntityData(apiResource, JSON.stringify(formData));
+      response = await api.post(apiResource, JSON.stringify(formData));
     } catch (e) {
       if ($toast) {
         $toast.add({
@@ -113,3 +119,7 @@ export async function submitForm({
   }
   return false;
 }
+
+export default {
+  submitForm,
+};

@@ -47,3 +47,7 @@ export function validateFormData({ $store, formDataStateName, schemaValidator, $
   }
   return true;
 }
+
+export default {
+  validateFormData,
+};

@@ -481,6 +481,9 @@ export default {
       type: Boolean,
       default: false,
     },
+    staticFilters: {
+      type: Object,
+    },
   },
 
   data() {
@@ -537,11 +540,16 @@ export default {
         const mutationName = `set${this.filtersStoreName
           .charAt(0)
           .toUpperCase()}${this.filtersStoreName.slice(1)}`;
-        try {
-          this.$store.commit(mutationName, filters);
-        } catch (e) {
-          console.error(`crosierListS: |${mutationName}| n/d`);
-          console.error(e);
+        // eslint-disable-next-line no-underscore-dangle
+        if (mutationName in this.$store._mutations) {
+          try {
+            this.$store.commit(mutationName, filters);
+          } catch (e) {
+            console.error(`crosierListS: |${mutationName}| n/d`);
+            console.error(e);
+          }
+        } else {
+          console.debug(`${mutationName} não existe`);
         }
       }
     },
@@ -724,12 +732,17 @@ export default {
     }),
 
     filters() {
+      let filters = null;
       if (this.filtersStoreName) {
-        return this.$store.getters[
-          `get${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(1)}`
-        ];
+        filters =
+          this.$store.getters[
+            `get${this.filtersStoreName.charAt(0).toUpperCase()}${this.filtersStoreName.slice(1)}`
+          ];
       }
-      return null;
+      if (this.staticFilters) {
+        filters = { ...filters, ...this.staticFilters };
+      }
+      return filters;
     },
 
     defaultFilters() {

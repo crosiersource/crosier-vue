@@ -114,7 +114,7 @@ export default {
 
   created() {
     if (!this.options || this.options.length < 1) {
-      console.error(`options n/d para ${this.id}`);
+      console.debug(`options n/d para ${this.id}`);
     }
   },
 
