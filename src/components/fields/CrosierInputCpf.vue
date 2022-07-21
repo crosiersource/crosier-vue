@@ -100,7 +100,7 @@ export default {
 
   mounted() {
     if (this.exibeValidacao && this.modelValue && this.modelValue.length > 0) {
-      this.cpfInvalido = this.validaCpf(this.modelValue);
+      this.cpfInvalido = !this.validaCpf(this.modelValue);
     }
   },
 

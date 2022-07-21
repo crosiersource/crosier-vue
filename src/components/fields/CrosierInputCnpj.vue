@@ -100,7 +100,7 @@ export default {
 
   mounted() {
     if (this.exibeValidacao && this.modelValue && this.modelValue.length > 0) {
-      this.cnpjInvalido = this.validaCnpj(this.modelValue);
+      this.cnpjInvalido = !this.validaCnpj(this.modelValue);
     }
   },
 
