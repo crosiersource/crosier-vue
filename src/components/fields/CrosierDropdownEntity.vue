@@ -125,6 +125,10 @@ export default {
     waitTo: {
       default: true,
     },
+    convertIdsToString: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -156,6 +160,13 @@ export default {
 
         if (response.data["hydra:totalItems"] > 0) {
           this.options = response.data["hydra:member"];
+
+          if (this.convertIdsToString) {
+            Object.keys(this.options).forEach((k) => {
+              this.options[k].id = this.options[k].id.toString();
+            });
+          }
+
           if (this.selectFirst && this.options && this.options.length >= 1) {
             const value = this.optionValue ? this.options[0][this.optionValue] : this.options[0];
             const $event = {
