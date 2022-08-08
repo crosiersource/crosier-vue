@@ -235,20 +235,6 @@ export default {
       return cnpj === cnpjOriginal;
     },
   },
-
-  watch: {
-    modelValue() {
-      if (this.modelValue) {
-        const mvf = this.modelValue.replace(/\D/g, "");
-
-        if (mvf.length === 11 || mvf.length === 14) {
-          this.format();
-        } else {
-          this.$emit("update:modelValue", mvf);
-        }
-      }
-    },
-  },
 };
 </script>
 <style scoped>
