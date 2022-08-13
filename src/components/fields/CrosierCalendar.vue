@@ -33,6 +33,7 @@
           :enableTimePicker="this.showTimePicker"
           :enableSeconds="this.showSeconds"
           weekStart="0"
+          :monthPicker="this.monthPicker"
         />
         <div class="input-group-append" v-if="this.comBotoesPeriodo">
           <button
@@ -143,6 +144,10 @@ export default {
     maxRange: {
       type: Number,
     },
+    monthPicker: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -155,7 +160,9 @@ export default {
   },
 
   mounted() {
-    if (this.range) {
+    if (this.monthPicker) {
+      this.format = "MM/yyyy";
+    } else if (this.range) {
       this.inputClass = "crsr-date-periodo text-center";
     } else if (this.showSeconds) {
       this.format = "dd/MM/yyyy HH:mm:ss";
@@ -168,6 +175,7 @@ export default {
     } else {
       this.inputClass = "crsr-date";
     }
+
     this.corrigirMascaras();
     this.key++;
   },
