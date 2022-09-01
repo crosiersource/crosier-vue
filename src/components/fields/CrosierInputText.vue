@@ -24,6 +24,17 @@
         <div v-if="this.append" class="input-group-append">
           <span class="input-group-text">{{ this.append }}</span>
         </div>
+        <div v-if="this.appendButtonLinkHref && !this.disabled" class="input-group-append">
+          <a
+            role="button"
+            class="btn btn-sm btn-block btn-outline-secondary"
+            :target="this.appendButtonLinkTarget || '_blank'"
+            :title="this.appendButtonLinkTitle || 'Abrir registro'"
+            :href="this.appendButtonLinkHref"
+          >
+            <i class="fas fa-link"></i>
+          </a>
+        </div>
       </div>
 
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
@@ -83,6 +94,12 @@ export default {
       type: String,
     },
     append: {
+      type: String,
+    },
+    appendButtonLinkHref: {
+      type: String,
+    },
+    appendButtonLinkTitle: {
       type: String,
     },
     showLabel: {
