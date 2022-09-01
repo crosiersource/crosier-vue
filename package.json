@@ -1,6 +1,6 @@
 {
     "name": "crosier-vue",
-    "version": "1.3.5",
+    "version": "1.3.6",
     "author": "carlospauluk@gmail.com",
     "license": "MIT",
     "main": "./dist/crosier-vue.common.js",

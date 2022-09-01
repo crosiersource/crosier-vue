@@ -24,7 +24,7 @@
         <div v-if="this.append" class="input-group-append">
           <span class="input-group-text">{{ this.append }}</span>
         </div>
-        <div v-if="this.appendButtonLinkHref && !this.disabled" class="input-group-append">
+        <div v-if="this.appendButtonLinkHref" class="input-group-append">
           <a
             role="button"
             class="btn btn-sm btn-block btn-outline-secondary"
@@ -100,6 +100,9 @@ export default {
       type: String,
     },
     appendButtonLinkTitle: {
+      type: String,
+    },
+    appendButtonLinkTarget: {
       type: String,
     },
     showLabel: {
