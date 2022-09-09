@@ -48,6 +48,8 @@ import moment from "moment-timezone";
 import CrosierListS from "./crosierListS";
 
 export default {
+  name: "ModalEntityChanges",
+
   components: {
     Dialog,
     CrosierListS,
