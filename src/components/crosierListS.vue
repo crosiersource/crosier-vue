@@ -325,9 +325,9 @@ import ConfirmDialog from "primevue/confirmdialog";
 import InlineMessage from "primevue/inlinemessage";
 import Sidebar from "primevue/sidebar";
 import { mapGetters, mapMutations } from "vuex";
+// import { api, CrosierBlock } from "crosier-vue";
 import api from "../services/api";
 import CrosierBlock from "../components/crosierBlock";
-// import { api, CrosierBlock } from "crosier-vue";
 
 export default {
   name: "CrosierListS",

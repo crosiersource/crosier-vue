@@ -1,7 +1,7 @@
 <template>
   <Dialog
     header="Alterações"
-    v-model:visible="this.$store.state.exibirModalEntityChanges"
+    v-model:visible="this.$store.state.entityChangesExibir"
     :style="{ width: '55vw' }"
     modal
     ref="dialog"
@@ -9,13 +9,14 @@
     :autoZIndex="false"
   >
     <CrosierListS
-      v-if="this.$store.state.exibirModalEntityChanges"
+      v-if="this.$store.state.entityChangesClass && this.$store.state.entityChangesId"
+      :key="this.$store.state.entityChangesClass + '_' + this.$store.state.entityChangesId"
       withoutCard
       :comFiltragem="false"
       apiResource="/api/core/config/entityChange/"
       :staticFilters="{
-        entityClass: this.entityChangesClass,
-        entityId: this.entityChangesId,
+        entityClass: this.$store.state.entityChangesClass,
+        entityId: this.$store.state.entityChangesId,
       }"
     >
       <template #columns>
@@ -51,18 +52,6 @@ export default {
     Dialog,
     CrosierListS,
     Column,
-  },
-
-  props: {
-    entityChangesClass: {
-      type: String,
-      required: true,
-    },
-
-    entityChangesId: {
-      type: Number,
-      required: true,
-    },
   },
 
   methods: {
