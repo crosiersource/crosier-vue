@@ -62762,10 +62762,16 @@ sidebar_esm_script.render = sidebar_esm_render;
 const crosierListS_exports_ = /*#__PURE__*/exportHelper_default()(crosierListSvue_type_script_lang_js, [['render',crosierListSvue_type_template_id_d0a66430_render]])
 
 /* harmony default export */ var crosierListS = (crosierListS_exports_);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/entityChanges.vue?vue&type=template&id=4afcecfd
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/entityChanges.vue?vue&type=template&id=3f716265
 
-function entityChangesvue_type_template_id_4afcecfd_render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _this = this;
+var entityChangesvue_type_template_id_3f716265_hoisted_1 = {
+  class: "row"
+};
+function entityChangesvue_type_template_id_3f716265_render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _this$$store$state$en,
+      _this = this;
+
+  var _component_CrosierInputText = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("CrosierInputText");
 
   var _component_Column = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Column");
 
@@ -62774,9 +62780,10 @@ function entityChangesvue_type_template_id_4afcecfd_render(_ctx, _cache, $props,
   var _component_Dialog = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Dialog");
 
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_Dialog, {
+    key: this.$store.state.entityChangesClass + '_' + ((_this$$store$state$en = this.$store.state.entityChangesData) === null || _this$$store$state$en === void 0 ? void 0 : _this$$store$state$en.id),
     header: "Alterações",
     visible: this.$store.state.entityChangesExibir,
-    "onUpdate:visible": _cache[0] || (_cache[0] = function ($event) {
+    "onUpdate:visible": _cache[2] || (_cache[2] = function ($event) {
       return _this.$store.state.entityChangesExibir = $event;
     }),
     style: {
@@ -62791,15 +62798,40 @@ function entityChangesvue_type_template_id_4afcecfd_render(_ctx, _cache, $props,
     autoZIndex: false
   }, {
     default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-      return [_this.$store.state.entityChangesClass && _this.$store.state.entityChangesId ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_CrosierListS, {
-        key: _this.$store.state.entityChangesClass + '_' + _this.$store.state.entityChangesId,
+      var _this$$store$state$en2;
+
+      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", entityChangesvue_type_template_id_3f716265_hoisted_1, [_this.dadosCriacao ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_CrosierInputText, {
+        key: 0,
+        id: "dadosCriacao",
+        label: "Criação",
+        col: "6",
+        modelValue: _this.dadosCriacao,
+        "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+          return _this.dadosCriacao = $event;
+        }),
+        disabled: "",
+        inputClass: "notuppercase"
+      }, null, 8, ["modelValue"])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), _this.dadosAlteracao ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_CrosierInputText, {
+        key: 1,
+        id: "dadosAlteracao",
+        label: "Alteração",
+        col: "6",
+        modelValue: _this.dadosAlteracao,
+        "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+          return _this.dadosAlteracao = $event;
+        }),
+        disabled: "",
+        inputClass: "notuppercase"
+      }, null, 8, ["modelValue"])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), _this.$store.state.entityChangesClass && (_this$$store$state$en2 = _this.$store.state.entityChangesData) !== null && _this$$store$state$en2 !== void 0 && _this$$store$state$en2.id ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_CrosierListS, {
+        key: 0,
         withoutCard: "",
         comFiltragem: false,
         apiResource: "/api/core/config/entityChange/",
         staticFilters: {
           entityClass: _this.$store.state.entityChangesClass,
-          entityId: _this.$store.state.entityChangesId
-        }
+          entityId: _this.$store.state.entityChangesData.id
+        },
+        onAfterFilter: _this.loadUserById
       }, {
         columns: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
           return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Column, {
@@ -62826,12 +62858,12 @@ function entityChangesvue_type_template_id_4afcecfd_render(_ctx, _cache, $props,
           })];
         }),
         _: 1
-      }, 8, ["staticFilters"])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)];
+      }, 8, ["staticFilters", "onAfterFilter"])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)];
     }),
     _: 1
   }, 8, ["visible"]);
 }
-// CONCATENATED MODULE: ./src/components/entityChanges.vue?vue&type=template&id=4afcecfd
+// CONCATENATED MODULE: ./src/components/entityChanges.vue?vue&type=template&id=3f716265
 
 // EXTERNAL MODULE: ./node_modules/moment-timezone/index.js
 var moment_timezone = __webpack_require__("7f45");
@@ -62839,20 +62871,157 @@ var moment_timezone_default = /*#__PURE__*/__webpack_require__.n(moment_timezone
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/entityChanges.vue?vue&type=script&lang=js
 
- // import { CrosierListS } from "crosier-vue";
 
 
+
+
+
+
+
+
+
+ // import { CrosierInputText, CrosierListS } from "crosier-vue";
 
 /* harmony default export */ var entityChangesvue_type_script_lang_js = ({
   name: "ModalEntityChanges",
   components: {
     Dialog: dialog_esm,
     CrosierListS: crosierListS,
-    Column: column_esm
+    Column: column_esm,
+    CrosierInputText: CrosierInputText
   },
-  methods: {
+  data: function data() {
+    return {
+      dadosCriacao: null,
+      dadosAlteracao: null
+    };
+  },
+  methods: _objectSpread2(_objectSpread2({}, mapMutations(["setLoading"])), {}, {
     moment: function moment(date) {
       return moment_timezone_default()(date);
+    },
+    loadUserById: function loadUserById() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+        var _this$$store$state, _this$$store$state$en, _this$$store$state2, _this$$store$state2$e;
+
+        var userInsertedId, criadoPor, userUpdatedId, alteradoPor;
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                userInsertedId = (_this$$store$state = _this.$store.state) === null || _this$$store$state === void 0 ? void 0 : (_this$$store$state$en = _this$$store$state.entityChangesData) === null || _this$$store$state$en === void 0 ? void 0 : _this$$store$state$en.userInsertedId;
+                _this.dadosCriacao = "Em ".concat(_this.fInserted);
+
+                if (!userInsertedId) {
+                  _context.next = 9;
+                  break;
+                }
+
+                _context.next = 5;
+                return _this.getUserById(userInsertedId);
+
+              case 5:
+                criadoPor = _context.sent;
+                console.log("criadoPor");
+                console.log(criadoPor);
+                _this.dadosCriacao += " por ".concat(criadoPor || "n/d");
+
+              case 9:
+                userUpdatedId = (_this$$store$state2 = _this.$store.state) === null || _this$$store$state2 === void 0 ? void 0 : (_this$$store$state2$e = _this$$store$state2.entityChangesData) === null || _this$$store$state2$e === void 0 ? void 0 : _this$$store$state2$e.userUpdatedId;
+                _this.dadosAlteracao = "Em ".concat(_this.fUpdated);
+
+                if (!userUpdatedId) {
+                  _context.next = 16;
+                  break;
+                }
+
+                _context.next = 14;
+                return _this.getUserById(userUpdatedId);
+
+              case 14:
+                alteradoPor = _context.sent;
+                _this.dadosAlteracao += " por ".concat(alteradoPor || "n/d");
+
+              case 16:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    getUserById: function getUserById(id) {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+        var rs, _rs$data;
+
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+
+                _this2.setLoading(true);
+
+                _context2.next = 4;
+                return axios_default.a.get("/api/getUserById/".concat(id), {
+                  validateStatus: function validateStatus(status) {
+                    return status < 500;
+                  },
+                  responseType: "json"
+                });
+
+              case 4:
+                rs = _context2.sent;
+
+                if (![200, 201].includes(rs === null || rs === void 0 ? void 0 : rs.status)) {
+                  _context2.next = 7;
+                  break;
+                }
+
+                return _context2.abrupt("return", rs === null || rs === void 0 ? void 0 : (_rs$data = rs.data) === null || _rs$data === void 0 ? void 0 : _rs$data.nome);
+
+              case 7:
+                _context2.next = 12;
+                break;
+
+              case 9:
+                _context2.prev = 9;
+                _context2.t0 = _context2["catch"](0);
+                console.error(_context2.t0);
+
+              case 12:
+                _context2.prev = 12;
+
+                _this2.setLoading(false);
+
+                return _context2.finish(12);
+
+              case 15:
+                return _context2.abrupt("return", null);
+
+              case 16:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 9, 12, 15]]);
+      }))();
+    }
+  }),
+  computed: {
+    fInserted: function fInserted() {
+      var _this$$store$state$en2, _this$$store$state3, _this$$store$state3$e;
+
+      return (_this$$store$state$en2 = this.$store.state.entityChangesData) !== null && _this$$store$state$en2 !== void 0 && _this$$store$state$en2.inserted ? this.moment((_this$$store$state3 = this.$store.state) === null || _this$$store$state3 === void 0 ? void 0 : (_this$$store$state3$e = _this$$store$state3.entityChangesData) === null || _this$$store$state3$e === void 0 ? void 0 : _this$$store$state3$e.inserted).format("DD/MM/YYYY HH:mm:ss") : null;
+    },
+    fUpdated: function fUpdated() {
+      var _this$$store$state$en3, _this$$store$state4, _this$$store$state4$e;
+
+      return (_this$$store$state$en3 = this.$store.state.entityChangesData) !== null && _this$$store$state$en3 !== void 0 && _this$$store$state$en3.updated ? this.moment((_this$$store$state4 = this.$store.state) === null || _this$$store$state4 === void 0 ? void 0 : (_this$$store$state4$e = _this$$store$state4.entityChangesData) === null || _this$$store$state4$e === void 0 ? void 0 : _this$$store$state4$e.updated).format("DD/MM/YYYY HH:mm:ss") : null;
     }
   }
 });
@@ -62864,7 +63033,7 @@ var moment_timezone_default = /*#__PURE__*/__webpack_require__.n(moment_timezone
 
 
 
-const entityChanges_exports_ = /*#__PURE__*/exportHelper_default()(entityChangesvue_type_script_lang_js, [['render',entityChangesvue_type_template_id_4afcecfd_render]])
+const entityChanges_exports_ = /*#__PURE__*/exportHelper_default()(entityChangesvue_type_script_lang_js, [['render',entityChangesvue_type_template_id_3f716265_render]])
 
 /* harmony default export */ var entityChanges = (entityChanges_exports_);
 // CONCATENATED MODULE: ./src/services/ValidateFormData.js
