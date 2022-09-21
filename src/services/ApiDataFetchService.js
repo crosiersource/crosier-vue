@@ -101,9 +101,9 @@ export async function fetchTableData({
         for (let i = 0; i < nivel; i++) {
           auxs.qs += i === 0 ? auxs.prefixos[0] : `[${auxs.prefixos[i]}]`;
         }
-        auxs.qs += `=${item}&`;
+        auxs.qs += `=${item}`;
       }
-      return nivel === 0 ? auxs.qs.slice(0, -1) : auxs.qs;
+      return nivel === 0 ? `&${auxs.qs}` : auxs.qs;
     }
     return null;
   }

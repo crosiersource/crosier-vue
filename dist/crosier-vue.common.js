@@ -48333,10 +48333,10 @@ function _fetchTableData() {
                     auxs.qs += i === 0 ? auxs.prefixos[0] : "[".concat(auxs.prefixos[i], "]");
                   }
 
-                  auxs.qs += "=".concat(item, "&");
+                  auxs.qs += "=".concat(item);
                 }
 
-                return nivel === 0 ? auxs.qs.slice(0, -1) : auxs.qs;
+                return nivel === 0 ? "&".concat(auxs.qs) : auxs.qs;
               }
 
               return null;
