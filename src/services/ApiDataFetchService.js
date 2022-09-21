@@ -22,13 +22,20 @@ import axios from "axios";
         },
       },
     };
- * @param string apiResource O endereço relativo do recurso da API.
- * @param int page A página que está sendo listada.
- * @param int rows O número de itens a serem listados na página.
- * @param {} order A ordem em que os itens serão ordenados.
- * @param {*} filters Um array associativo indexado pelo nome do campo, contendo valores e outros arrays.
- * @param boolean allRows Retorne todas as linhas? Default: falso.
- * @param string complement Complemento?
+ * 
+ * params 
+ * {
+ *  string apiResource: O endereço relativo do recurso da API.
+ *  int page: A página que está sendo listada.
+ *  int rows: O número de itens a serem listados na página.
+ *  {} order: A ordem em que os itens serão ordenados.
+ *  {} filters: Um array associativo indexado pelo nome do campo, contendo valores e outros arrays.
+ *  {} defaultFilters: Um array associativo indexado pelo nome do campo, contendo valores e outros arrays.
+ *  boolean allRows: Retorne todas as linhas? Default: falso.
+ *  string complement: Algum complemento adicional
+ *  {} properties: Os campos que deverão ser retornados na consulta
+ * }
+ *  
  * @returns A resposta, dada por axios.get.
  */
 export async function fetchTableData({
@@ -82,6 +89,25 @@ export async function fetchTableData({
     }
   }
 
+  function recursiveIterate(item, nivel = 0, auxs = { prefixos: {}, qs: "" }) {
+    if (item) {
+      if (typeof item === "object") {
+        // eslint-disable-next-line no-restricted-syntax
+        for (const [key, value] of Object.entries(item)) {
+          auxs.prefixos[nivel] = key;
+          recursiveIterate(value, nivel + 1, auxs);
+        }
+      } else {
+        for (let i = 0; i < nivel; i++) {
+          auxs.qs += i === 0 ? auxs.prefixos[0] : `[${auxs.prefixos[i]}]`;
+        }
+        auxs.qs += `=${item}&`;
+      }
+      return nivel === 0 ? auxs.qs.slice(0, -1) : auxs.qs;
+    }
+    return null;
+  }
+
   // eslint-disable-next-line no-restricted-syntax
   if (filters) {
     if (filters instanceof Array) {
@@ -90,19 +116,7 @@ export async function fetchTableData({
         queryFilter = `${queryFilter}&${entries[0][0]}=${entries[0][1]}`;
       });
     } else {
-      // eslint-disable-next-line no-restricted-syntax
-      for (const key in filters) {
-        if (filters[key] !== null && filters[key] !== "") {
-          if (!Array.isArray(filters[key])) {
-            queryFilter += `&${key}=${filters[key]}`;
-          } else {
-            // eslint-disable-next-line no-loop-func
-            filters[key].forEach(function iterate(item) {
-              queryFilter += `&${key}[]=${item}`;
-            });
-          }
-        }
-      }
+      queryFilter = recursiveIterate(filters);
     }
   }
 

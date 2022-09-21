@@ -100,8 +100,6 @@ export default {
       this.dadosCriacao = `Em ${this.fInserted}`;
       if (userInsertedId) {
         const criadoPor = await this.getUserById(userInsertedId);
-        console.log("criadoPor");
-        console.log(criadoPor);
         this.dadosCriacao += ` por ${criadoPor || "n/d"}`;
       }
 

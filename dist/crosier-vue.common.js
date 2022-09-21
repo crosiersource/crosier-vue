@@ -48095,17 +48095,130 @@ function CrosierDropdownBancovue_type_template_id_1763440f_scoped_true_render(_c
 }
 // CONCATENATED MODULE: ./src/components/fields/CrosierDropdownBanco.vue?vue&type=template&id=1763440f&scoped=true
 
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.symbol.description.js
+var es_symbol_description = __webpack_require__("e01a");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.symbol.iterator.js
+var es_symbol_iterator = __webpack_require__("d28b");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.iterator.js
+var es_string_iterator = __webpack_require__("3ca3");
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js
+
+
+
+
+
+
+
+function _iterableToArrayLimit(arr, i) {
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+
+  if (_i == null) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+
+  var _s, _e;
+
+  try {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.slice.js
 var es_array_slice = __webpack_require__("fb6a");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.function.name.js
+var es_function_name = __webpack_require__("b0c0");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.from.js
+var es_array_from = __webpack_require__("a630");
+
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
+
+
+
+
+
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js
+
+
+
+
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
+
+
+
+
+
+
+
+function _typeof(obj) {
+  "@babel/helpers - typeof";
+
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function _typeof(obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function _typeof(obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
+
+  return _typeof(obj);
+}
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.number.max-safe-integer.js
 var es_number_max_safe_integer = __webpack_require__("aff5");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.map.js
 var es_map = __webpack_require__("4ec9");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.iterator.js
-var es_string_iterator = __webpack_require__("3ca3");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.entries.js
 var es_object_entries = __webpack_require__("4fad");
@@ -48123,6 +48236,8 @@ var es_string_includes = __webpack_require__("2532");
 var es_string_split = __webpack_require__("1276");
 
 // CONCATENATED MODULE: ./src/services/ApiDataFetchService.js
+
+
 
 
 
@@ -48166,13 +48281,20 @@ var es_string_split = __webpack_require__("1276");
         },
       },
     };
- * @param string apiResource O endereço relativo do recurso da API.
- * @param int page A página que está sendo listada.
- * @param int rows O número de itens a serem listados na página.
- * @param {} order A ordem em que os itens serão ordenados.
- * @param {*} filters Um array associativo indexado pelo nome do campo, contendo valores e outros arrays.
- * @param boolean allRows Retorne todas as linhas? Default: falso.
- * @param string complement Complemento?
+ * 
+ * params 
+ * {
+ *  string apiResource: O endereço relativo do recurso da API.
+ *  int page: A página que está sendo listada.
+ *  int rows: O número de itens a serem listados na página.
+ *  {} order: A ordem em que os itens serão ordenados.
+ *  {} filters: Um array associativo indexado pelo nome do campo, contendo valores e outros arrays.
+ *  {} defaultFilters: Um array associativo indexado pelo nome do campo, contendo valores e outros arrays.
+ *  boolean allRows: Retorne todas as linhas? Default: falso.
+ *  string complement: Algum complemento adicional
+ *  {} properties: Os campos que deverão ser retornados na consulta
+ * }
+ *  
  * @returns A resposta, dada por axios.get.
  */
 
@@ -48182,38 +48304,70 @@ function fetchTableData(_x) {
 
 function _fetchTableData() {
   _fetchTableData = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(_ref) {
-    var apiResource, _ref$page, page, _ref$rows, rows, _ref$order, order, _ref$filters, filters, _ref$defaultFilters, defaultFilters, _ref$allRows, allRows, _ref$complement, complement, _ref$properties, properties, params, queryPage, queryRows, queryOrder, queryFilter, _loop, key, _loop2, _key, sProperties;
+    var apiResource, _ref$page, page, _ref$rows, rows, _ref$order, order, _ref$filters, filters, _ref$defaultFilters, defaultFilters, _ref$allRows, allRows, _ref$complement, complement, _ref$properties, properties, params, queryPage, queryRows, queryOrder, queryFilter, recursiveIterate, _loop, key, sProperties;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
+            recursiveIterate = function _recursiveIterate(item) {
+              var nivel = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+              var auxs = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {
+                prefixos: {},
+                qs: ""
+              };
+
+              if (item) {
+                if (_typeof(item) === "object") {
+                  // eslint-disable-next-line no-restricted-syntax
+                  for (var _i = 0, _Object$entries = Object.entries(item); _i < _Object$entries.length; _i++) {
+                    var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+                        key = _Object$entries$_i[0],
+                        value = _Object$entries$_i[1];
+
+                    auxs.prefixos[nivel] = key;
+                    recursiveIterate(value, nivel + 1, auxs);
+                  }
+                } else {
+                  for (var i = 0; i < nivel; i++) {
+                    auxs.qs += i === 0 ? auxs.prefixos[0] : "[".concat(auxs.prefixos[i], "]");
+                  }
+
+                  auxs.qs += "=".concat(item, "&");
+                }
+
+                return nivel === 0 ? auxs.qs.slice(0, -1) : auxs.qs;
+              }
+
+              return null;
+            };
+
             apiResource = _ref.apiResource, _ref$page = _ref.page, page = _ref$page === void 0 ? 1 : _ref$page, _ref$rows = _ref.rows, rows = _ref$rows === void 0 ? 10 : _ref$rows, _ref$order = _ref.order, order = _ref$order === void 0 ? {} : _ref$order, _ref$filters = _ref.filters, filters = _ref$filters === void 0 ? null : _ref$filters, _ref$defaultFilters = _ref.defaultFilters, defaultFilters = _ref$defaultFilters === void 0 ? null : _ref$defaultFilters, _ref$allRows = _ref.allRows, allRows = _ref$allRows === void 0 ? false : _ref$allRows, _ref$complement = _ref.complement, complement = _ref$complement === void 0 ? "" : _ref$complement, _ref$properties = _ref.properties, properties = _ref$properties === void 0 ? null : _ref$properties;
 
             if (!apiResource) {
-              _context.next = 7;
+              _context.next = 8;
               break;
             }
 
-          case 2:
+          case 3:
             if (!(!apiResource || apiResource.slice(-1).match(/[a-z0-9]/i))) {
-              _context.next = 4;
+              _context.next = 5;
               break;
             }
 
-            return _context.abrupt("break", 7);
+            return _context.abrupt("break", 8);
 
-          case 4:
+          case 5:
             console.debug("apiResource com formato inv\xE1lido: ".concat(apiResource));
             apiResource = apiResource.substring(0, apiResource.length - 1); // eslint-disable-next-line no-constant-condition
 
-          case 6:
+          case 7:
             if (true) {
-              _context.next = 2;
+              _context.next = 3;
               break;
             }
 
-          case 7:
+          case 8:
             params = {
               headers: {
                 "Content-Type": "application/json;charset=UTF-8"
@@ -48241,9 +48395,9 @@ function _fetchTableData() {
                   queryOrder += "&order[".concat(value, "]=").concat(order[value]);
                 }, order);
               }
-            } // eslint-disable-next-line no-restricted-syntax
+            }
 
-
+            // eslint-disable-next-line no-restricted-syntax
             if (filters) {
               if (filters instanceof Array) {
                 filters.forEach(function (e) {
@@ -48251,23 +48405,7 @@ function _fetchTableData() {
                   queryFilter = "".concat(queryFilter, "&").concat(entries[0][0], "=").concat(entries[0][1]);
                 });
               } else {
-                _loop = function _loop(key) {
-                  if (filters[key] !== null && filters[key] !== "") {
-                    if (!Array.isArray(filters[key])) {
-                      queryFilter += "&".concat(key, "=").concat(filters[key]);
-                    } else {
-                      // eslint-disable-next-line no-loop-func
-                      filters[key].forEach(function iterate(item) {
-                        queryFilter += "&".concat(key, "[]=").concat(item);
-                      });
-                    }
-                  }
-                };
-
-                // eslint-disable-next-line no-restricted-syntax
-                for (key in filters) {
-                  _loop(key);
-                }
+                queryFilter = recursiveIterate(filters);
               }
             }
 
@@ -48278,22 +48416,22 @@ function _fetchTableData() {
                   queryFilter = "".concat(queryFilter, "&").concat(entries[0][0], "=").concat(entries[0][1]);
                 });
               } else {
-                _loop2 = function _loop2(_key) {
-                  if (defaultFilters[_key] !== null && defaultFilters[_key] !== "") {
-                    if (!Array.isArray(defaultFilters[_key])) {
-                      queryFilter += "&".concat(_key, "=").concat(defaultFilters[_key]);
+                _loop = function _loop(key) {
+                  if (defaultFilters[key] !== null && defaultFilters[key] !== "") {
+                    if (!Array.isArray(defaultFilters[key])) {
+                      queryFilter += "&".concat(key, "=").concat(defaultFilters[key]);
                     } else {
                       // eslint-disable-next-line no-loop-func
-                      defaultFilters[_key].forEach(function iterate(item) {
-                        queryFilter += "&".concat(_key, "[]=").concat(item);
+                      defaultFilters[key].forEach(function iterate(item) {
+                        queryFilter += "&".concat(key, "[]=").concat(item);
                       });
                     }
                   }
                 };
 
                 // eslint-disable-next-line no-restricted-syntax
-                for (_key in defaultFilters) {
-                  _loop2(_key);
+                for (key in defaultFilters) {
+                  _loop(key);
                 }
               }
             }
@@ -48322,7 +48460,7 @@ function _fetchTableData() {
 
             return _context.abrupt("return", axios_default.a.get("".concat(apiResource).concat(queryPage).concat(queryRows).concat(queryFilter).concat(queryOrder).concat(sProperties).concat(complement), params));
 
-          case 18:
+          case 19:
           case "end":
             return _context.stop();
         }
@@ -54758,96 +54896,6 @@ function crosierListSvue_type_template_id_d0a66430_render(_ctx, _cache, $props, 
 }
 // CONCATENATED MODULE: ./src/components/crosierListS.vue?vue&type=template&id=d0a66430
 
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithHoles.js
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
-}
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.symbol.description.js
-var es_symbol_description = __webpack_require__("e01a");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.symbol.iterator.js
-var es_symbol_iterator = __webpack_require__("d28b");
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/iterableToArrayLimit.js
-
-
-
-
-
-
-
-function _iterableToArrayLimit(arr, i) {
-  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
-
-  if (_i == null) return;
-  var _arr = [];
-  var _n = true;
-  var _d = false;
-
-  var _s, _e;
-
-  try {
-    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
-      _arr.push(_s.value);
-
-      if (i && _arr.length === i) break;
-    }
-  } catch (err) {
-    _d = true;
-    _e = err;
-  } finally {
-    try {
-      if (!_n && _i["return"] != null) _i["return"]();
-    } finally {
-      if (_d) throw _e;
-    }
-  }
-
-  return _arr;
-}
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.function.name.js
-var es_function_name = __webpack_require__("b0c0");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.from.js
-var es_array_from = __webpack_require__("a630");
-
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) {
-    arr2[i] = arr[i];
-  }
-
-  return arr2;
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js
-
-
-
-
-
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/nonIterableRest.js
-function _nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-// CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js
-
-
-
-
-function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
-}
 // CONCATENATED MODULE: ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js
 
 function _arrayWithoutHoles(arr) {
@@ -62753,12 +62801,12 @@ sidebar_esm_script.render = sidebar_esm_render;
 const crosierListS_exports_ = /*#__PURE__*/exportHelper_default()(crosierListSvue_type_script_lang_js, [['render',crosierListSvue_type_template_id_d0a66430_render]])
 
 /* harmony default export */ var crosierListS = (crosierListS_exports_);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/entityChanges.vue?vue&type=template&id=3f716265
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/entityChanges.vue?vue&type=template&id=60f67467
 
-var entityChangesvue_type_template_id_3f716265_hoisted_1 = {
+var entityChangesvue_type_template_id_60f67467_hoisted_1 = {
   class: "row"
 };
-function entityChangesvue_type_template_id_3f716265_render(_ctx, _cache, $props, $setup, $data, $options) {
+function entityChangesvue_type_template_id_60f67467_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _this$$store$state$en,
       _this = this;
 
@@ -62791,7 +62839,7 @@ function entityChangesvue_type_template_id_3f716265_render(_ctx, _cache, $props,
     default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
       var _this$$store$state$en2;
 
-      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", entityChangesvue_type_template_id_3f716265_hoisted_1, [_this.dadosCriacao ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_CrosierInputText, {
+      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", entityChangesvue_type_template_id_60f67467_hoisted_1, [_this.dadosCriacao ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_CrosierInputText, {
         key: 0,
         id: "dadosCriacao",
         label: "Criação",
@@ -62854,7 +62902,7 @@ function entityChangesvue_type_template_id_3f716265_render(_ctx, _cache, $props,
     _: 1
   }, 8, ["visible"]);
 }
-// CONCATENATED MODULE: ./src/components/entityChanges.vue?vue&type=template&id=3f716265
+// CONCATENATED MODULE: ./src/components/entityChanges.vue?vue&type=template&id=60f67467
 
 // EXTERNAL MODULE: ./node_modules/moment-timezone/index.js
 var moment_timezone = __webpack_require__("7f45");
@@ -62906,7 +62954,7 @@ var moment_timezone_default = /*#__PURE__*/__webpack_require__.n(moment_timezone
                 _this.dadosCriacao = "Em ".concat(_this.fInserted);
 
                 if (!userInsertedId) {
-                  _context.next = 9;
+                  _context.next = 7;
                   break;
                 }
 
@@ -62915,27 +62963,25 @@ var moment_timezone_default = /*#__PURE__*/__webpack_require__.n(moment_timezone
 
               case 5:
                 criadoPor = _context.sent;
-                console.log("criadoPor");
-                console.log(criadoPor);
                 _this.dadosCriacao += " por ".concat(criadoPor || "n/d");
 
-              case 9:
+              case 7:
                 userUpdatedId = (_this$$store$state2 = _this.$store.state) === null || _this$$store$state2 === void 0 ? void 0 : (_this$$store$state2$e = _this$$store$state2.entityChangesData) === null || _this$$store$state2$e === void 0 ? void 0 : _this$$store$state2$e.userUpdatedId;
                 _this.dadosAlteracao = "Em ".concat(_this.fUpdated);
 
                 if (!userUpdatedId) {
-                  _context.next = 16;
+                  _context.next = 14;
                   break;
                 }
 
-                _context.next = 14;
+                _context.next = 12;
                 return _this.getUserById(userUpdatedId);
 
-              case 14:
+              case 12:
                 alteradoPor = _context.sent;
                 _this.dadosAlteracao += " por ".concat(alteradoPor || "n/d");
 
-              case 16:
+              case 14:
               case "end":
                 return _context.stop();
             }
@@ -63024,7 +63070,7 @@ var moment_timezone_default = /*#__PURE__*/__webpack_require__.n(moment_timezone
 
 
 
-const entityChanges_exports_ = /*#__PURE__*/exportHelper_default()(entityChangesvue_type_script_lang_js, [['render',entityChangesvue_type_template_id_3f716265_render]])
+const entityChanges_exports_ = /*#__PURE__*/exportHelper_default()(entityChangesvue_type_script_lang_js, [['render',entityChangesvue_type_template_id_60f67467_render]])
 
 /* harmony default export */ var entityChanges = (entityChanges_exports_);
 // CONCATENATED MODULE: ./src/services/ValidateFormData.js
