@@ -22,8 +22,8 @@ import axios from "axios";
         },
       },
     };
- * 
- * params 
+ *
+ * params
  * {
  *  string apiResource: O endereço relativo do recurso da API.
  *  int page: A página que está sendo listada.
@@ -35,7 +35,7 @@ import axios from "axios";
  *  string complement: Algum complemento adicional
  *  {} properties: Os campos que deverão ser retornados na consulta
  * }
- *  
+ *
  * @returns A resposta, dada por axios.get.
  */
 export async function fetchTableData({
@@ -90,22 +90,19 @@ export async function fetchTableData({
   }
 
   function recursiveIterate(item, nivel = 0, auxs = { prefixos: {}, qs: "" }) {
-    if (item) {
-      if (typeof item === "object") {
-        // eslint-disable-next-line no-restricted-syntax
-        for (const [key, value] of Object.entries(item)) {
-          auxs.prefixos[nivel] = key;
-          recursiveIterate(value, nivel + 1, auxs);
-        }
-      } else {
-        for (let i = 0; i < nivel; i++) {
-          auxs.qs += i === 0 ? auxs.prefixos[0] : `[${auxs.prefixos[i]}]`;
-        }
-        auxs.qs += `=${item}&`;
+    if (typeof item === "object") {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const [key, value] of Object.entries(item)) {
+        auxs.prefixos[nivel] = key;
+        recursiveIterate(value, nivel + 1, auxs);
       }
-      return nivel === 0 ? `&${auxs.qs}`.slice(0, -1) : auxs.qs;
+    } else {
+      for (let i = 0; i < nivel; i++) {
+        auxs.qs += i === 0 ? auxs.prefixos[0] : `[${auxs.prefixos[i]}]`;
+      }
+      auxs.qs += `=${item}&`;
     }
-    return null;
+    return nivel === 0 ? `&${auxs.qs}`.slice(0, -1) : auxs.qs;
   }
 
   // eslint-disable-next-line no-restricted-syntax
