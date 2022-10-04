@@ -90,19 +90,24 @@ export async function fetchTableData({
   }
 
   function recursiveIterate(item, nivel = 0, auxs = { prefixos: {}, qs: "" }) {
-    if (typeof item === "object") {
-      // eslint-disable-next-line no-restricted-syntax
-      for (const [key, value] of Object.entries(item)) {
-        auxs.prefixos[nivel] = key;
-        recursiveIterate(value, nivel + 1, auxs);
+    try {
+      if (typeof item === "object") {
+        // eslint-disable-next-line no-restricted-syntax
+        for (const [key, value] of Object.entries(item)) {
+          auxs.prefixos[nivel] = key;
+          recursiveIterate(value, nivel + 1, auxs);
+        }
+      } else {
+        for (let i = 0; i < nivel; i++) {
+          auxs.qs += i === 0 ? auxs.prefixos[0] : `[${auxs.prefixos[i]}]`;
+        }
+        auxs.qs += `=${item}&`;
       }
-    } else {
-      for (let i = 0; i < nivel; i++) {
-        auxs.qs += i === 0 ? auxs.prefixos[0] : `[${auxs.prefixos[i]}]`;
-      }
-      auxs.qs += `=${item}&`;
+      return nivel === 0 ? `&${auxs.qs}`.slice(0, -1) : auxs.qs;
+    } catch (e) {
+      console.error(e);
+      return null;
     }
-    return nivel === 0 ? `&${auxs.qs}`.slice(0, -1) : auxs.qs;
   }
 
   // eslint-disable-next-line no-restricted-syntax
@@ -112,7 +117,7 @@ export async function fetchTableData({
         const entries = Object.entries(e);
         queryFilter = `${queryFilter}&${entries[0][0]}=${entries[0][1]}`;
       });
-    } else {
+    } else if (filters) {
       queryFilter = recursiveIterate(filters);
     }
   }

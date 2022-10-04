@@ -48317,25 +48317,30 @@ function _fetchTableData() {
                 qs: ""
               };
 
-              if (_typeof(item) === "object") {
-                // eslint-disable-next-line no-restricted-syntax
-                for (var _i = 0, _Object$entries = Object.entries(item); _i < _Object$entries.length; _i++) {
-                  var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
-                      key = _Object$entries$_i[0],
-                      value = _Object$entries$_i[1];
+              try {
+                if (_typeof(item) === "object") {
+                  // eslint-disable-next-line no-restricted-syntax
+                  for (var _i = 0, _Object$entries = Object.entries(item); _i < _Object$entries.length; _i++) {
+                    var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
+                        key = _Object$entries$_i[0],
+                        value = _Object$entries$_i[1];
 
-                  auxs.prefixos[nivel] = key;
-                  recursiveIterate(value, nivel + 1, auxs);
-                }
-              } else {
-                for (var i = 0; i < nivel; i++) {
-                  auxs.qs += i === 0 ? auxs.prefixos[0] : "[".concat(auxs.prefixos[i], "]");
+                    auxs.prefixos[nivel] = key;
+                    recursiveIterate(value, nivel + 1, auxs);
+                  }
+                } else {
+                  for (var i = 0; i < nivel; i++) {
+                    auxs.qs += i === 0 ? auxs.prefixos[0] : "[".concat(auxs.prefixos[i], "]");
+                  }
+
+                  auxs.qs += "=".concat(item, "&");
                 }
 
-                auxs.qs += "=".concat(item, "&");
+                return nivel === 0 ? "&".concat(auxs.qs).slice(0, -1) : auxs.qs;
+              } catch (e) {
+                console.error(e);
+                return null;
               }
-
-              return nivel === 0 ? "&".concat(auxs.qs).slice(0, -1) : auxs.qs;
             };
 
             apiResource = _ref.apiResource, _ref$page = _ref.page, page = _ref$page === void 0 ? 1 : _ref$page, _ref$rows = _ref.rows, rows = _ref$rows === void 0 ? 10 : _ref$rows, _ref$order = _ref.order, order = _ref$order === void 0 ? {} : _ref$order, _ref$filters = _ref.filters, filters = _ref$filters === void 0 ? null : _ref$filters, _ref$defaultFilters = _ref.defaultFilters, defaultFilters = _ref$defaultFilters === void 0 ? null : _ref$defaultFilters, _ref$allRows = _ref.allRows, allRows = _ref$allRows === void 0 ? false : _ref$allRows, _ref$complement = _ref.complement, complement = _ref$complement === void 0 ? "" : _ref$complement, _ref$properties = _ref.properties, properties = _ref$properties === void 0 ? null : _ref$properties;
@@ -48400,7 +48405,7 @@ function _fetchTableData() {
                   var entries = Object.entries(e);
                   queryFilter = "".concat(queryFilter, "&").concat(entries[0][0], "=").concat(entries[0][1]);
                 });
-              } else {
+              } else if (filters) {
                 queryFilter = recursiveIterate(filters);
               }
             }
