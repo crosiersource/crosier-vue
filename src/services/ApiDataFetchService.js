@@ -91,13 +91,13 @@ export async function fetchTableData({
 
   function recursiveIterate(item, nivel = 0, auxs = { prefixos: {}, qs: "" }) {
     try {
-      if (typeof item === "object") {
+      if (typeof item === "object" && !Array.isArray(item) && item !== null) {
         // eslint-disable-next-line no-restricted-syntax
         for (const [key, value] of Object.entries(item)) {
           auxs.prefixos[nivel] = key;
           recursiveIterate(value, nivel + 1, auxs);
         }
-      } else {
+      } else if (item) {
         for (let i = 0; i < nivel; i++) {
           auxs.qs += i === 0 ? auxs.prefixos[0] : `[${auxs.prefixos[i]}]`;
         }
