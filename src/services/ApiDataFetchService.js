@@ -97,7 +97,7 @@ export async function fetchTableData({
           auxs.prefixos[nivel] = key;
           recursiveIterate(value, nivel + 1, auxs);
         }
-      } else if (item) {
+      } else if (item || typeof item === "boolean") {
         for (let i = 0; i < nivel; i++) {
           auxs.qs += i === 0 ? auxs.prefixos[0] : `[${auxs.prefixos[i]}]`;
         }

@@ -48328,7 +48328,7 @@ function _fetchTableData() {
                     auxs.prefixos[nivel] = key;
                     recursiveIterate(value, nivel + 1, auxs);
                   }
-                } else if (item) {
+                } else if (item || typeof item === "boolean") {
                   for (var i = 0; i < nivel; i++) {
                     auxs.qs += i === 0 ? auxs.prefixos[0] : "[".concat(auxs.prefixos[i], "]");
                   }
