@@ -48318,7 +48318,7 @@ function _fetchTableData() {
               };
 
               try {
-                if (_typeof(item) === "object") {
+                if (_typeof(item) === "object" && !Array.isArray(item) && item !== null) {
                   // eslint-disable-next-line no-restricted-syntax
                   for (var _i = 0, _Object$entries = Object.entries(item); _i < _Object$entries.length; _i++) {
                     var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
@@ -48328,7 +48328,7 @@ function _fetchTableData() {
                     auxs.prefixos[nivel] = key;
                     recursiveIterate(value, nivel + 1, auxs);
                   }
-                } else {
+                } else if (item) {
                   for (var i = 0; i < nivel; i++) {
                     auxs.qs += i === 0 ? auxs.prefixos[0] : "[".concat(auxs.prefixos[i], "]");
                   }
