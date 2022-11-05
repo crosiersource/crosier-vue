@@ -34,6 +34,7 @@
           :enableSeconds="this.showSeconds"
           weekStart="0"
           :monthPicker="this.monthPicker"
+          :timePicker="this.timePicker"
         />
         <div class="input-group-append" v-if="this.comBotoesPeriodo">
           <button
@@ -148,6 +149,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    timeOnly: {
+      type: Boolean,
+      default: false,
+    },
   },
 
   data() {
@@ -155,12 +160,22 @@ export default {
       inputClass: null,
       format: "dd/MM/yyyy",
       showTimePicker: false,
+      timePicker: false,
       key: 0,
     };
   },
 
   mounted() {
-    if (this.monthPicker) {
+    if (this.timeOnly) {
+      this.timePicker = true;
+      this.showTimePicker = true;
+      this.format = "HH:mm";
+      this.inputClass = "crsr-timeonly-nseg";
+      if (this.showSeconds) {
+        this.format = "HH:mm:ss";
+        this.inputClass = "crsr-timeonly";
+      }
+    } else if (this.monthPicker) {
       this.format = "MM/yyyy";
     } else if (this.range) {
       this.inputClass = "crsr-date-periodo text-center";
@@ -200,6 +215,11 @@ export default {
     onInput($event) {
       this.$nextTick(() => {
         const dtStr = $event?.target?.value ?? $event;
+
+        if (this.timeOnly) {
+          this.$emit("update:modelValue", dtStr);
+          return;
+        }
 
         let dateParser = null;
         let date = null;
@@ -334,6 +354,18 @@ export default {
             numeralPositiveOnly: true,
             delimiters: ["/", "/", " - ", "/", "/"],
             blocks: [2, 2, 4, 2, 2, 4],
+          });
+        });
+
+      document
+        .querySelectorAll(".crsr-timeonly-nseg > div > div > input")
+        .forEach(function format(el) {
+          el.maxLength = 5; // 12:34
+          // eslint-disable-next-line no-new,no-undef
+          new Cleave(el, {
+            numeralPositiveOnly: true,
+            delimiters: [":"],
+            blocks: [2, 2],
           });
         });
     },
