@@ -88,8 +88,22 @@ export default {
   },
 
   methods: {
-    onChange() {
-      this.$emit("update:modelValue", this.modelValue !== true);
+    onChange(event) {
+      console.log(`emitindo: ${this.modelValue}`);
+      if (!this.$attrs.disabled) {
+        const newValue = this.checked ? this.falseValue : this.trueValue;
+        this.$emit("click", event);
+        this.$emit("update:modelValue", newValue);
+        this.$emit("change", event);
+        this.$emit("input", newValue);
+      }
+      event.preventDefault();
+    },
+  },
+
+  computed: {
+    checked() {
+      return this.modelValue === this.trueValue;
     },
   },
 };
