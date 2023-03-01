@@ -89,7 +89,6 @@ export default {
 
   methods: {
     onChange(event) {
-      console.log(`emitindo: ${this.modelValue}`);
       if (!this.$attrs.disabled) {
         const newValue = this.checked ? this.falseValue : this.trueValue;
         this.$emit("click", event);
