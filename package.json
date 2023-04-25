@@ -43,7 +43,8 @@
         "webpack-notifier": "^1.6.0"
     },
     "resolutions": {
-        "jquery": "3.5.1"
+        "jquery": "3.5.1",
+        "acorn": "npm:acorn-with-stage3"
     },
     "dependencies": {
         "@fullcalendar/core": "^5.6.0",
