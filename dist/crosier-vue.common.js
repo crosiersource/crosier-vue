@@ -50709,7 +50709,7 @@ async function fetchTableData({
     qs: ""
   }) {
     try {
-      if (typeof item === "object" && !Array.isArray(item) && item !== null) {
+      if (typeof item === "object" && item !== null) {
         // eslint-disable-next-line no-restricted-syntax
         for (const [key, value] of Object.entries(item)) {
           auxs.prefixos[nivel] = key;
