@@ -67560,7 +67560,7 @@ async function submitForm({
   }
   let response;
   if (fnBeforeSave) {
-    fnBeforeSave(formData);
+    await fnBeforeSave(formData);
   }
   if (formData["@id"]) {
     try {
