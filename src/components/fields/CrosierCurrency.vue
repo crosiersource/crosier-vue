@@ -84,10 +84,17 @@ export default {
       type: Boolean,
       default: false,
     },
+    forceZeroIfNull: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   methods: {
     onInput($event) {
+      if (this.forceZeroIfNull && $event === null) {
+        $event = 0;
+      }
       this.$emit("update:modelValue", $event);
       this.$emit("input", $event);
     },
