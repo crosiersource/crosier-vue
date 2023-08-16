@@ -372,7 +372,7 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style>
 .invalid-feedbackk {
   width: 100%;
   margin-top: 0.25rem;
@@ -381,6 +381,9 @@ export default {
 }
 
 .dp__pointer.dp__input.dp__input_icon_pad {
-  height: 31.1562px;
+  max-height: 31px;
+}
+.dp__disabled.dp__input.dp__input_icon_pad {
+  max-height: 31px;
 }
 </style>
