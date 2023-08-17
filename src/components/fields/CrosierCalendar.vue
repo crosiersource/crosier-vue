@@ -380,10 +380,7 @@ export default {
   color: #e55353;
 }
 
-.dp__pointer.dp__input.dp__input_icon_pad {
-  max-height: 31px;
-}
-.dp__disabled.dp__input.dp__input_icon_pad {
+.dp__input {
   max-height: 31px;
 }
 </style>
