@@ -7,21 +7,43 @@
         :for="this.id"
         >{{ this.labelTransparente ? "..." : label }}</label
       >
-
-      <input
-        :class="
-          'form-control p-inputtext p-component ' +
-          (this.error ? 'is-invalid' : '') +
-          this.inputClass
-        "
-        :value="modelValue"
-        :id="this.id"
-        @input="this.onInput($event)"
-        @focus="this.onFocus($event)"
-        @blur="this.onBlur($event)"
-        @keypress="validate($event)"
-        :disabled="this.disabled"
-      />
+      <div class="input-group">
+        <input
+          :class="
+            'form-control p-inputtext p-component ' +
+            (this.error ? 'is-invalid' : '') +
+            this.inputClass
+          "
+          :value="modelValue"
+          :id="this.id"
+          @input="this.onInput($event)"
+          @focus="this.onFocus($event)"
+          @blur="this.onBlur($event)"
+          @keypress="validate($event)"
+          :disabled="this.disabled"
+        />
+        <div v-if="this.appendButtonLinkHref" class="input-group-append">
+          <a
+            role="button"
+            class="btn btn-sm btn-block btn-outline-secondary"
+            :target="this.appendButtonLinkTarget || '_blank'"
+            :title="this.appendButtonTitle || 'Abrir registro'"
+            :href="this.appendButtonLinkHref"
+          >
+            <i :class="this.appendButtonIcon"></i>
+          </a>
+        </div>
+        <div v-if="this.appendButton" class="input-group-append">
+          <button
+            type="button"
+            class="btn btn-sm btn-block btn-outline-secondary"
+            :title="this.appendButtonTitle"
+            @click="this.$emit('appendButtonClicked')"
+          >
+            <i :class="this.appendButtonIcon"></i>
+          </button>
+        </div>
+      </div>
 
       <small v-if="this.helpText" :id="this.id + '_help'" class="form-text text-muted">{{
         this.helpText
@@ -42,7 +64,7 @@ export default {
 
   components: {},
 
-  emits: ["update:modelValue", "input", "focus", "blur"],
+  emits: ["update:modelValue", "input", "focus", "blur", "appendButtonClicked"],
 
   props: {
     modelValue: {
@@ -89,11 +111,29 @@ export default {
       type: Boolean,
       default: true,
     },
+    appendButton: {
+      type: Boolean,
+      default: false,
+    },
+    appendButtonLinkHref: {
+      type: String,
+    },
+    appendButtonTitle: {
+      type: String,
+    },
+    appendButtonLinkTarget: {
+      type: String,
+    },
+    appendButtonIcon: {
+      type: String,
+      default: "fas fa-search",
+    },
   },
 
   data() {
     return {
       value: null,
+      jaFormatouAoConstruir: false,
     };
   },
 
@@ -233,6 +273,20 @@ export default {
       const primeiroCalculo = this.calcDigitosPosicoesCnpj(primeirosNumerosCnpj, 5);
       const cnpj = this.calcDigitosPosicoesCnpj(primeiroCalculo, 6);
       return cnpj === cnpjOriginal;
+    },
+  },
+
+  watch: {
+    modelValue(val, oldVal) {
+      if (
+        !this.jaFormatouAoConstruir &&
+        val &&
+        val !== oldVal &&
+        (val.lenght === 11 || val.length === 14)
+      ) {
+        this.jaFormatouAoConstruir = true;
+        this.format();
+      }
     },
   },
 };

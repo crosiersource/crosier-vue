@@ -29,11 +29,21 @@
             role="button"
             class="btn btn-sm btn-block btn-outline-secondary"
             :target="this.appendButtonLinkTarget || '_blank'"
-            :title="this.appendButtonLinkTitle || 'Abrir registro'"
+            :title="this.appendButtonTitle || 'Abrir registro'"
             :href="this.appendButtonLinkHref"
           >
-            <i class="fas fa-link"></i>
+            <i :class="this.appendButtonIcon"></i>
           </a>
+        </div>
+        <div v-if="this.appendButton" class="input-group-append">
+          <button
+            type="button"
+            class="btn btn-sm btn-block btn-outline-secondary"
+            :title="this.appendButtonTitle"
+            @click="this.$emit('appendButtonClicked')"
+          >
+            <i :class="this.appendButtonIcon"></i>
+          </button>
         </div>
       </div>
 
@@ -57,7 +67,7 @@ export default {
     InputText,
   },
 
-  emits: ["update:modelValue", "input", "focus", "blur"],
+  emits: ["update:modelValue", "input", "focus", "blur", "appendButtonClicked"],
 
   props: {
     modelValue: {
@@ -96,14 +106,22 @@ export default {
     append: {
       type: String,
     },
+    appendButton: {
+      type: Boolean,
+      default: false,
+    },
     appendButtonLinkHref: {
       type: String,
     },
-    appendButtonLinkTitle: {
+    appendButtonTitle: {
       type: String,
     },
     appendButtonLinkTarget: {
       type: String,
+    },
+    appendButtonIcon: {
+      type: String,
+      default: "fas fa-search",
     },
     showLabel: {
       type: Boolean,
