@@ -468,10 +468,11 @@ export default {
     },
     sortField: {
       type: String,
+      default: "updated",
     },
     sortOrder: {
       type: Number,
-      default: 1,
+      default: -1,
     },
     responsiveLayout: {
       type: String,
@@ -528,6 +529,21 @@ export default {
     if (this.filterOnLoad) {
       await this.doFilter();
     }
+
+    const dtState = localStorage.getItem(this.dataTableStateKey);
+    const dtStateParsed = dtState ? JSON.parse(dtState) : null;
+
+    if (!dtStateParsed?.multiSortMeta || dtStateParsed?.multiSortMeta?.length === 0) {
+      dtStateParsed.multiSortMeta = [
+        {
+          field: this.sortField,
+          order: this.sortOrder,
+        },
+      ];
+      const dtStateJson = JSON.stringify(dtStateParsed);
+      localStorage.setItem(this.dataTableStateKey, dtStateJson);
+    }
+
     this.accordionActiveIndex = this.isFiltering ? 0 : null;
     this.setLoading(false);
   },
