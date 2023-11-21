@@ -530,18 +530,23 @@ export default {
       await this.doFilter();
     }
 
-    const dtState = localStorage.getItem(this.dataTableStateKey);
-    const dtStateParsed = dtState ? JSON.parse(dtState) : null;
+    try {
+      const dtState = localStorage.getItem(this.dataTableStateKey);
+      const dtStateParsed = dtState ? JSON.parse(dtState) : {};
 
-    if (!dtStateParsed?.multiSortMeta || dtStateParsed?.multiSortMeta?.length === 0) {
-      dtStateParsed.multiSortMeta = [
-        {
-          field: this.sortField,
-          order: this.sortOrder,
-        },
-      ];
-      const dtStateJson = JSON.stringify(dtStateParsed);
-      localStorage.setItem(this.dataTableStateKey, dtStateJson);
+      if (!dtStateParsed?.multiSortMeta || dtStateParsed?.multiSortMeta?.length === 0) {
+        dtStateParsed.multiSortMeta = [
+          {
+            field: this.sortField,
+            order: this.sortOrder,
+          },
+        ];
+        const dtStateJson = JSON.stringify(dtStateParsed);
+        localStorage.setItem(this.dataTableStateKey, dtStateJson);
+      }
+    } catch (e) {
+      console.error('Erro ao setar o "multiSortMeta"');
+      console.error(e);
     }
 
     this.accordionActiveIndex = this.isFiltering ? 0 : null;
