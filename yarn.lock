@@ -1463,9 +1463,9 @@
     "@types/node" "*"
 
 "@types/node@*":
-  version "20.9.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.9.3.tgz#e089e1634436f676ff299596c9531bd2b59fffc6"
-  integrity sha512-nk5wXLAXGBKfrhLB0cyHGbSqopS+nz0BUgZkUQqSHSSgdee0kssp1IAqlQOu333bW+gMNs2QREx7iynm19Abxw==
+  version "20.9.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.9.4.tgz#cc8f970e869c26834bdb7ed480b30ede622d74c7"
+  integrity sha512-wmyg8HUhcn6ACjsn8oKYjkN/zUzQeNtMy44weTJSM6p4MMzEOuKbA3OjJ267uPCOW7Xex9dyrNTful8XTQYoDA==
   dependencies:
     undici-types "~5.26.4"
 
@@ -1563,9 +1563,9 @@
     source-map "^0.7.3"
 
 "@types/webpack@^4", "@types/webpack@^4.0.0", "@types/webpack@^4.4.31":
-  version "4.41.37"
-  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.41.37.tgz#3678c30c4270566b2a8c2a3fd2baa71117dc38d1"
-  integrity sha512-oUs4nP9PJMannYwLkfT0HppaqHL890ACYAaquH1EroPAeRGeruB2NUXkBdm9AXimohWXwuq8wzbFOwu+5dJ2KQ==
+  version "4.41.38"
+  resolved "https://registry.yarnpkg.com/@types/webpack/-/webpack-4.41.38.tgz#5a40ac81bdd052bf405e8bdcf3e1236f6db6dc26"
+  integrity sha512-oOW7E931XJU1mVfCnxCVgv8GLFL768pDO5u2Gzk82i8yTIgX6i7cntyZOkZYb/JtYM8252SN9bQp9tgkVDSsRw==
   dependencies:
     "@types/node" "*"
     "@types/tapable" "^1"
@@ -8702,10 +8702,10 @@ primeicons@^4.1.0:
   resolved "https://registry.yarnpkg.com/primeicons/-/primeicons-4.1.0.tgz#19eaef8ef5594b0006358ae64e738d03e167c9bb"
   integrity sha512-uEv2pSPk1zQCfaB2VgnUfnUxxlGryYi+5rbdxmZBBt5v9S/pscIQYS5YDLxsQZ7D9jn5c76+Tx5wX/2J1nK6sA==
 
-primevue@^3.41.0:
-  version "3.41.0"
-  resolved "https://registry.yarnpkg.com/primevue/-/primevue-3.41.0.tgz#d0acd668dd069d9d8e9be24f568f327778450a45"
-  integrity sha512-xdoB5JtAmam/05f2AbVdYA26XhHgeZZ4w+crQ5FZAeq3CkFL5tWjreWLwbtUWYhWimhdk9ZCrCvX/L+FjuWR/Q==
+primevue@3.30.0:
+  version "3.30.0"
+  resolved "https://registry.yarnpkg.com/primevue/-/primevue-3.30.0.tgz#97fe7d921b75fb0e9d6e1117145242cb453f10bc"
+  integrity sha512-BPMCtfEQIRfD4rrYpoRfPDWnMgrWZ7tTciKn98C1jtDxsIr7pMeNpIC2kS8x+1Jz33wqn74fi03TYo7WgJJFtA==
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
