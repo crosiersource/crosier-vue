@@ -197,6 +197,18 @@
           </Column>
           <slot name="columns"></slot>
         </DataTable>
+
+        <div class="d-flex justify-content-end" v-if="this.exibirBtnLimparConfiguracoesDaTabela">
+          <button
+            type="button"
+            id="btnLimparConfiguracoesDaTabela01"
+            class="btn btn-outline-info btn-sm ml-1 mt-3"
+            title="Limpar configurações da tabela"
+            @click="this.limparConfiguracoesDaTabela"
+          >
+            <i class="fas fa-sync-alt"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -311,16 +323,18 @@
 
       <slot name="columns"></slot>
     </DataTable>
-  </div>
 
-  <div class="d-flex justify-content-end" v-if="this.exibirBtnLimparConfiguracoesDaTabela">
-    <button
-      class="btn btn-outline-info btn-sm ml-1 mt-3"
-      title="Limpar configurações da tabela"
-      @click="this.limparConfiguracoesDaTabela"
-    >
-      <i class="fas fa-sync-alt"></i>
-    </button>
+    <div class="d-flex justify-content-end" v-if="this.exibirBtnLimparConfiguracoesDaTabela">
+      <button
+        type="button"
+        id="btnLimparConfiguracoesDaTabela02"
+        class="btn btn-outline-info btn-sm ml-1 mt-3"
+        title="Limpar configurações da tabela"
+        @click="this.limparConfiguracoesDaTabela"
+      >
+        <i class="fas fa-sync-alt"></i>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -769,8 +783,12 @@ export default {
         icon: "pi pi-exclamation-triangle",
         group: "confirmDialog_crosierListS",
         accept: () => {
+          try {
+            this.setLoading(true);
+          } catch (e) {
+            console.error(e);
+          }
           localStorage.removeItem(this.dataTableStateKey);
-          // now refresh the page
           window.location.reload();
         },
       });
