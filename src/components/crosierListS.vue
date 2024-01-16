@@ -312,6 +312,16 @@
       <slot name="columns"></slot>
     </DataTable>
   </div>
+
+  <div class="d-flex justify-content-end" v-if="this.exibirBtnLimparConfiguracoesDaTabela">
+    <button
+      class="btn btn-outline-info btn-sm ml-1 mt-3"
+      title="Limpar configurações da tabela"
+      @click="this.limparConfiguracoesDaTabela"
+    >
+      <i class="fas fa-sync-alt"></i>
+    </button>
+  </div>
 </template>
 
 <script>
@@ -484,6 +494,10 @@ export default {
     },
     staticFilters: {
       type: Object,
+    },
+    exibirBtnLimparConfiguracoesDaTabela: {
+      type: Boolean,
+      default: true,
     },
   },
 
@@ -742,6 +756,22 @@ export default {
             });
           }
           this.setLoading(false);
+        },
+      });
+    },
+
+    limparConfiguracoesDaTabela() {
+      this.$confirm.require({
+        acceptLabel: "Sim",
+        rejectLabel: "Não",
+        message: "Confirmar a operação?",
+        header: "Atenção!",
+        icon: "pi pi-exclamation-triangle",
+        group: "confirmDialog_crosierListS",
+        accept: () => {
+          localStorage.removeItem(this.dataTableStateKey);
+          // now refresh the page
+          window.location.reload();
         },
       });
     },
