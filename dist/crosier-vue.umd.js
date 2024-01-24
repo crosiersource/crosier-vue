@@ -68279,7 +68279,7 @@ async function submitForm({
   }
   if (formData["@id"]) {
     try {
-      response = await api.put(formData["@id"], JSON.stringify(formData));
+      response = await api.put(apiResource, JSON.stringify(formData));
     } catch (e) {
       if ($toast) {
         $toast.add({
