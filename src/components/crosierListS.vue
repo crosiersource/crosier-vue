@@ -181,7 +181,7 @@
             <slot name="footer"></slot>
           </template>
 
-          <Column field="id" :sortable="true" v-if="this.slecao">
+          <Column field="id" :sortable="true" v-if="this.selecao">
             <template #header>
               <Checkbox
                 :binary="true"
