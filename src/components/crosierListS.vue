@@ -12,7 +12,7 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title"><i class="fas fa-search"></i> Filtros</h5>
-        <form @submit.prevent="this.doFilter()">
+        <form @submit.prevent="doFilter()">
           <slot name="filter-fields"></slot>
           <div class="row mt-3">
             <div class="col-12">
@@ -96,7 +96,7 @@
                 <span>Filtros</span>
                 <i class="pi pi-filter"></i>
               </template>
-              <form @submit.prevent="this.doFilter()" class="notSubmit">
+              <form @submit.prevent="doFilter()" class="notSubmit">
                 <slot name="filter-fields"></slot>
                 <div class="row mt-3">
                   <div class="col-8">
@@ -221,7 +221,7 @@
             <span>Filtros</span>
             <i class="pi pi-filter"></i>
           </template>
-          <form @submit.prevent="this.doFilter()" class="notSubmit">
+          <form @submit.prevent="doFilter()" class="notSubmit">
             <slot name="filter-fields"></slot>
             <div class="row mt-3">
               <div class="col-8">
@@ -537,6 +537,9 @@ export default {
 
   async mounted() {
     this.setLoading(true);
+
+    this.setColumnWidthsByLocalStorage();
+
     const uri = window.location.search.substring(1);
     const params = new URLSearchParams(uri);
 
@@ -579,6 +582,8 @@ export default {
 
     this.accordionActiveIndex = this.isFiltering ? 0 : null;
     this.setLoading(false);
+
+    this.setColumnWidthsByLocalStorage();
   },
 
   methods: {
@@ -678,14 +683,16 @@ export default {
         this.visibleRight = false;
       }
 
+      this.setColumnWidthsByLocalStorage();
+
       this.setLoading(false);
     },
 
-    doClearFilters() {
+    async doClearFilters() {
       this.setFilters({});
       localStorage.setItem(this.filtersOnLocalStorage, null);
       this.$refs.dt.resetPage();
-      this.doFilter({ event: { first: 0 } });
+      await this.doFilter({ event: { first: 0 } });
     },
 
     tudoSelecionadoClick() {
@@ -721,6 +728,20 @@ export default {
     onRowUnselect($event) {
       this.$emit("row-unselect", $event);
       this.handleTudoSelecionado();
+    },
+
+    setColumnWidthsByLocalStorage() {
+      const dtStateKey = this.dataTableStateKey;
+      if (dtStateKey) {
+        const keyColumnWidths = `${dtStateKey}_columnWidths`;
+        const columnWidthsNoLocalStorage = localStorage.getItem(keyColumnWidths);
+        const dtStateKeyDecoded = JSON.parse(localStorage.getItem(dtStateKey));
+        if (dtStateKeyDecoded?.columnWidths) {
+          dtStateKeyDecoded.columnWidths = columnWidthsNoLocalStorage;
+          const dtStateKeyEncoded = JSON.stringify(dtStateKeyDecoded);
+          localStorage.setItem(dtStateKey, dtStateKeyEncoded);
+        }
+      }
     },
 
     exportCSV() {
@@ -789,6 +810,7 @@ export default {
             console.error(e);
           }
           localStorage.removeItem(this.dataTableStateKey);
+          localStorage.removeItem(`${this.dataTableStateKey}_columnWidths`);
           window.location.reload();
         },
       });
