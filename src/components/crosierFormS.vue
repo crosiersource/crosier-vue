@@ -1,6 +1,8 @@
 <template>
   <CrosierBlock :loading="this.loading" />
 
+  <ModalEntityChanges :storeFieldsName="this.storeFieldsName" :entityClass="this.entityClass" />
+
   <div v-if="this.withoutCard">
     <form @submit.prevent="this.$emit('submitForm')">
       <fieldset :disabled="this.loading">
@@ -52,6 +54,15 @@
                 <i class="fas fa-list"></i>
               </a>
 
+              <button
+                v-if="entityChanges && this.$store?.state?.[this.storeFieldsName]?.id"
+                class="btn btn-outline-info"
+                @click="this.$store.state.exibirModalEntityChanges = true"
+                title="Ver logs de alterações"
+              >
+                <i class="far fa-eye"></i>
+              </button>
+
               <slot name="btns"></slot>
             </div>
           </div>
@@ -84,12 +95,14 @@
 <script>
 import CrosierBlock from "./crosierBlock";
 // import { CrosierBlock } from "crosier-vue";
+import ModalEntityChanges from "./ModalEntityChanges.vue";
 
 export default {
   name: "CrosierFormS",
 
   components: {
     CrosierBlock,
+    ModalEntityChanges,
   },
 
   emits: ["submitForm"],
@@ -124,6 +137,19 @@ export default {
       default: false,
     },
     parentLoad: {
+      type: Boolean,
+      default: false,
+    },
+    storeFieldsName: {
+      type: String,
+      required: false,
+      default: "fields",
+    },
+    entityClass: {
+      type: String,
+      required: false,
+    },
+    entityChanges: {
       type: Boolean,
       default: false,
     },

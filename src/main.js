@@ -33,7 +33,7 @@ import CrosierSwitch from "./components/fields/CrosierSwitch";
 import CrosierBlock from "./components/crosierBlock.vue";
 import CrosierFormS from "./components/crosierFormS.vue";
 import CrosierListS from "./components/crosierListS.vue";
-import ModalEntityChanges from "./components/entityChanges.vue";
+import ModalEntityChanges from "./components/ModalEntityChanges.vue";
 
 // services
 import api from "./services/api";
