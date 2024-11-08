@@ -56591,20 +56591,20 @@ var crosierBlockvue_type_style_index_0_id_2baa3622_lang_scss_scoped_true = __web
 const crosierBlock_exports_ = /*#__PURE__*/exportHelper_default()(crosierBlockvue_type_script_lang_js, [['render',crosierBlockvue_type_template_id_2baa3622_scoped_true_render],['__scopeId',"data-v-2baa3622"]])
 
 /* harmony default export */ var crosierBlock = (crosierBlock_exports_);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/crosierFormS.vue?vue&type=template&id=4a49e948
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/crosierFormS.vue?vue&type=template&id=a5d6abae
 
-const crosierFormSvue_type_template_id_4a49e948_hoisted_1 = {
+const crosierFormSvue_type_template_id_a5d6abae_hoisted_1 = {
   key: 0
 };
-const crosierFormSvue_type_template_id_4a49e948_hoisted_2 = ["disabled"];
-const crosierFormSvue_type_template_id_4a49e948_hoisted_3 = {
+const crosierFormSvue_type_template_id_a5d6abae_hoisted_2 = ["disabled"];
+const crosierFormSvue_type_template_id_a5d6abae_hoisted_3 = {
   key: 0,
   class: "row mt-3"
 };
-const crosierFormSvue_type_template_id_4a49e948_hoisted_4 = {
+const crosierFormSvue_type_template_id_a5d6abae_hoisted_4 = {
   class: "col text-right"
 };
-const crosierFormSvue_type_template_id_4a49e948_hoisted_5 = {
+const crosierFormSvue_type_template_id_a5d6abae_hoisted_5 = {
   key: 0,
   class: "btn btn-sm btn-primary",
   style: {
@@ -56612,28 +56612,28 @@ const crosierFormSvue_type_template_id_4a49e948_hoisted_5 = {
   },
   type: "submit"
 };
-const crosierFormSvue_type_template_id_4a49e948_hoisted_6 = {
+const crosierFormSvue_type_template_id_a5d6abae_hoisted_6 = {
   key: 1
 };
-const crosierFormSvue_type_template_id_4a49e948_hoisted_7 = {
+const crosierFormSvue_type_template_id_a5d6abae_hoisted_7 = {
   class: "container"
 };
-const crosierFormSvue_type_template_id_4a49e948_hoisted_8 = {
+const crosierFormSvue_type_template_id_a5d6abae_hoisted_8 = {
   class: "card",
   style: {
     "margin-bottom": "50px"
   }
 };
-const crosierFormSvue_type_template_id_4a49e948_hoisted_9 = {
+const crosierFormSvue_type_template_id_a5d6abae_hoisted_9 = {
   class: "card-header"
 };
-const crosierFormSvue_type_template_id_4a49e948_hoisted_10 = {
+const crosierFormSvue_type_template_id_a5d6abae_hoisted_10 = {
   class: "d-flex flex-wrap align-items-center"
 };
-const crosierFormSvue_type_template_id_4a49e948_hoisted_11 = {
+const crosierFormSvue_type_template_id_a5d6abae_hoisted_11 = {
   class: "mr-1"
 };
-const crosierFormSvue_type_template_id_4a49e948_hoisted_12 = {
+const crosierFormSvue_type_template_id_a5d6abae_hoisted_12 = {
   key: 0
 };
 const _hoisted_13 = ["href"];
@@ -56658,24 +56658,29 @@ const _hoisted_19 = {
   type: "submit",
   icon: "fas fa-save"
 };
-function crosierFormSvue_type_template_id_4a49e948_render(_ctx, _cache, $props, $setup, $data, $options) {
+function crosierFormSvue_type_template_id_a5d6abae_render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _this$$store, _this$$store$state, _this$$store$state$th;
   const _component_CrosierBlock = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("CrosierBlock");
+  const _component_ModalEntityChanges = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("ModalEntityChanges");
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Fragment"], null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_CrosierBlock, {
     loading: this.loading
-  }, null, 8, ["loading"]), this.withoutCard ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", crosierFormSvue_type_template_id_4a49e948_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("form", {
+  }, null, 8, ["loading"]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_ModalEntityChanges, {
+    storeFieldsName: this.storeFieldsName,
+    entityClass: this.entityClass
+  }, null, 8, ["storeFieldsName", "entityClass"]), this.withoutCard ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", crosierFormSvue_type_template_id_a5d6abae_hoisted_1, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("form", {
     onSubmit: _cache[0] || (_cache[0] = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withModifiers"])($event => this.$emit('submitForm'), ["prevent"]))
   }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("fieldset", {
     disabled: this.loading
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default"), !this.semBotaoSalvar ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", crosierFormSvue_type_template_id_4a49e948_hoisted_3, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierFormSvue_type_template_id_4a49e948_hoisted_4, [!this.disabledSubmit ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", crosierFormSvue_type_template_id_4a49e948_hoisted_5, _cache[2] || (_cache[2] = [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default"), !this.semBotaoSalvar ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", crosierFormSvue_type_template_id_a5d6abae_hoisted_3, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierFormSvue_type_template_id_a5d6abae_hoisted_4, [!this.disabledSubmit ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", crosierFormSvue_type_template_id_a5d6abae_hoisted_5, _cache[3] || (_cache[3] = [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
     class: "fas fa-save"
-  }, null, -1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(" Salvar ")]))) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)])])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 8, crosierFormSvue_type_template_id_4a49e948_hoisted_2)], 32)])) : (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", crosierFormSvue_type_template_id_4a49e948_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierFormSvue_type_template_id_4a49e948_hoisted_7, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierFormSvue_type_template_id_4a49e948_hoisted_8, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierFormSvue_type_template_id_4a49e948_hoisted_9, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierFormSvue_type_template_id_4a49e948_hoisted_10, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierFormSvue_type_template_id_4a49e948_hoisted_11, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.titulo), 1), $props.subtitulo ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("h6", crosierFormSvue_type_template_id_4a49e948_hoisted_12, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.subtitulo), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), _cache[5] || (_cache[5] = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+  }, null, -1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(" Salvar ")]))) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)])])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 8, crosierFormSvue_type_template_id_a5d6abae_hoisted_2)], 32)])) : (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", crosierFormSvue_type_template_id_a5d6abae_hoisted_6, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierFormSvue_type_template_id_a5d6abae_hoisted_7, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierFormSvue_type_template_id_a5d6abae_hoisted_8, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierFormSvue_type_template_id_a5d6abae_hoisted_9, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierFormSvue_type_template_id_a5d6abae_hoisted_10, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", crosierFormSvue_type_template_id_a5d6abae_hoisted_11, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("h3", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])($props.titulo), 1), $props.subtitulo ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("h6", crosierFormSvue_type_template_id_a5d6abae_hoisted_12, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(this.subtitulo), 1)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), _cache[7] || (_cache[7] = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
     class: "d-sm-flex flex-nowrap ml-auto"
   }, null, -1)), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "divCima"), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("a", {
     type: "button",
     class: "btn btn-info mr-1",
     href: this.formUrl,
     title: "Novo"
-  }, _cache[3] || (_cache[3] = [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+  }, _cache[4] || (_cache[4] = [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
     class: "fas fa-file",
     "aria-hidden": "true"
   }, null, -1)]), 8, _hoisted_13), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.formUrl]]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("a", {
@@ -56683,79 +56688,1163 @@ function crosierFormSvue_type_template_id_4a49e948_render(_ctx, _cache, $props, 
     class: "btn btn-outline-secondary mr-1",
     href: this.listUrl,
     title: "Listar"
-  }, _cache[4] || (_cache[4] = [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+  }, _cache[5] || (_cache[5] = [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
     class: "fas fa-list"
-  }, null, -1)]), 8, _hoisted_14), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.listUrl]]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "btns")])])]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", _hoisted_15, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("form", {
-    onSubmit: _cache[1] || (_cache[1] = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withModifiers"])($event => this.$emit('submitForm'), ["prevent"]))
+  }, null, -1)]), 8, _hoisted_14), [[external_commonjs_vue_commonjs2_vue_root_Vue_["vShow"], this.listUrl]]), $props.entityChanges && (_this$$store = this.$store) !== null && _this$$store !== void 0 && (_this$$store$state = _this$$store.state) !== null && _this$$store$state !== void 0 && (_this$$store$state$th = _this$$store$state[this.storeFieldsName]) !== null && _this$$store$state$th !== void 0 && _this$$store$state$th.id ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", {
+    key: 0,
+    class: "btn btn-outline-info",
+    onClick: _cache[1] || (_cache[1] = $event => this.$store.state.exibirModalEntityChanges = true),
+    title: "Ver logs de alterações"
+  }, _cache[6] || (_cache[6] = [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+    class: "far fa-eye"
+  }, null, -1)]))) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "btns")])])]), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", _hoisted_15, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("form", {
+    onSubmit: _cache[2] || (_cache[2] = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withModifiers"])($event => this.$emit('submitForm'), ["prevent"]))
   }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("fieldset", {
     disabled: this.loading
-  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default"), !this.semBotaoSalvar ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", _hoisted_17, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", _hoisted_18, [!this.disabledSubmit ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", _hoisted_19, _cache[6] || (_cache[6] = [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
+  }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default"), !this.semBotaoSalvar ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", _hoisted_17, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", _hoisted_18, [!this.disabledSubmit ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", _hoisted_19, _cache[8] || (_cache[8] = [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("i", {
     class: "fas fa-save"
   }, null, -1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(" Salvar ")]))) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)])])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 8, _hoisted_16)], 32)])])])]))], 64);
 }
-// CONCATENATED MODULE: ./src/components/crosierFormS.vue?vue&type=template&id=4a49e948
+// CONCATENATED MODULE: ./src/components/crosierFormS.vue?vue&type=template&id=a5d6abae
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/crosierFormS.vue?vue&type=script&lang=js
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/ModalEntityChanges.vue?vue&type=template&id=a1181a2a
 
-// import { CrosierBlock } from "crosier-vue";
+const ModalEntityChangesvue_type_template_id_a1181a2a_hoisted_1 = {
+  class: "row"
+};
+const ModalEntityChangesvue_type_template_id_a1181a2a_hoisted_2 = ["innerHTML"];
+function ModalEntityChangesvue_type_template_id_a1181a2a_render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_CrosierInputText = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("CrosierInputText");
+  const _component_Column = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Column");
+  const _component_CrosierListS = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("CrosierListS");
+  const _component_Dialog = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Dialog");
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_Dialog, {
+    key: this.$store.state.modalEntityChanges_key,
+    header: "Alterações",
+    visible: this.$store.state.exibirModalEntityChanges,
+    "onUpdate:visible": _cache[2] || (_cache[2] = $event => this.$store.state.exibirModalEntityChanges = $event),
+    style: {
+      width: '55vw'
+    },
+    modal: "",
+    ref: "dialog",
+    breakpoints: {
+      '960px': '75vw',
+      '640px': '100vw'
+    },
+    autoZIndex: false
+  }, {
+    default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(() => [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", ModalEntityChangesvue_type_template_id_a1181a2a_hoisted_1, [this.dadosCriacao ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_CrosierInputText, {
+      key: 0,
+      id: "dadosCriacao",
+      label: "Criação",
+      col: "6",
+      modelValue: this.dadosCriacao,
+      "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => this.dadosCriacao = $event),
+      disabled: "",
+      inputClass: "notuppercase"
+    }, null, 8, ["modelValue"])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), this.dadosAlteracao ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_CrosierInputText, {
+      key: 1,
+      id: "dadosAlteracao",
+      label: "Última Alteração",
+      col: "6",
+      modelValue: this.dadosAlteracao,
+      "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => this.dadosAlteracao = $event),
+      disabled: "",
+      inputClass: "notuppercase"
+    }, null, 8, ["modelValue"])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), $options.entityId ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_CrosierListS, {
+      key: 0,
+      ref: "crosierListS_entityChanges",
+      withoutCard: "",
+      comFiltragem: false,
+      comPaginador: false,
+      apiResource: "/api/core/config/entityChanges/",
+      staticFilters: {
+        entityClass: this.entityClass,
+        entityId: this.entityId
+      },
+      onAfterFilter: this.loadInsertedUpdated
+    }, {
+      columns: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(() => [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Column, {
+        field: "obs",
+        header: "Alterações"
+      }, {
+        body: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(r => [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", {
+          innerHTML: r.data.changes
+        }, null, 8, ModalEntityChangesvue_type_template_id_a1181a2a_hoisted_2)]),
+        _: 1
+      }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Column, {
+        field: "changedAt",
+        header: "Em",
+        sortable: true
+      }, {
+        body: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(r => [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(r.data.changedAt ? this.moment(r.data.changedAt).format("DD/MM/YYYY HH:mm:ss") : ""), 1)]),
+        _: 1
+      }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Column, {
+        field: "changingUserUsername",
+        header: "Por",
+        sortable: true
+      })]),
+      _: 1
+    }, 8, ["staticFilters", "onAfterFilter"])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]),
+    _: 1
+  }, 8, ["visible"]);
+}
+// CONCATENATED MODULE: ./src/components/ModalEntityChanges.vue?vue&type=template&id=a1181a2a
 
-/* harmony default export */ var crosierFormSvue_type_script_lang_js = ({
-  name: "CrosierFormS",
-  components: {
-    CrosierBlock: crosierBlock
-  },
-  emits: ["submitForm"],
-  props: {
-    titulo: {
-      type: String
-    },
-    subtitulo: {
-      type: String
-    },
-    listUrl: {
-      type: String,
-      required: false,
-      default: "list"
-    },
-    formUrl: {
-      type: String,
-      required: false,
-      default: "form"
-    },
-    withoutCard: {
-      type: Boolean,
-      default: false
-    },
-    semBotaoSalvar: {
-      type: Boolean,
-      default: false
-    },
-    disabledSubmit: {
-      type: Boolean,
-      default: false
-    },
-    parentLoad: {
-      type: Boolean,
-      default: false
+// CONCATENATED MODULE: ./node_modules/primevue/focustrap/focustrap.esm.js
+
+
+
+var BaseFocusTrap = BaseDirective.extend({});
+
+var FocusTrap = BaseFocusTrap.extend('focustrap', {
+  mounted: function mounted(el, binding) {
+    var _ref = binding.value || {},
+      disabled = _ref.disabled;
+    if (!disabled) {
+      this.createHiddenFocusableElements(el, binding);
+      this.bind(el, binding);
+      this.autoFocus(el, binding);
     }
+    el.setAttribute('data-pd-focustrap', true);
+    this.$el = el;
   },
-  computed: {
-    loading() {
-      return this.$store.getters.isLoading || this.parentLoad;
+  updated: function updated(el, binding) {
+    var _ref2 = binding.value || {},
+      disabled = _ref2.disabled;
+    disabled && this.unbind(el);
+  },
+  unmounted: function unmounted(el) {
+    this.unbind(el);
+  },
+  methods: {
+    getComputedSelector: function getComputedSelector(selector) {
+      return ":not(.p-hidden-focusable):not([data-p-hidden-focusable=\"true\"])".concat(selector !== null && selector !== void 0 ? selector : '');
+    },
+    bind: function bind(el, binding) {
+      var _this = this;
+      var _ref3 = binding.value || {},
+        onFocusIn = _ref3.onFocusIn,
+        onFocusOut = _ref3.onFocusOut;
+      el.$_pfocustrap_mutationobserver = new MutationObserver(function (mutationList) {
+        mutationList.forEach(function (mutation) {
+          if (mutation.type === 'childList' && !el.contains(document.activeElement)) {
+            var findNextFocusableElement = function findNextFocusableElement(_el) {
+              var focusableElement = DomHandler.isFocusableElement(_el) ? DomHandler.isFocusableElement(_el, _this.getComputedSelector(el.$_pfocustrap_focusableselector)) ? _el : DomHandler.getFirstFocusableElement(el, _this.getComputedSelector(el.$_pfocustrap_focusableselector)) : DomHandler.getFirstFocusableElement(_el);
+              return ObjectUtils.isNotEmpty(focusableElement) ? focusableElement : findNextFocusableElement(_el.nextSibling);
+            };
+            DomHandler.focus(findNextFocusableElement(mutation.nextSibling));
+          }
+        });
+      });
+      el.$_pfocustrap_mutationobserver.disconnect();
+      el.$_pfocustrap_mutationobserver.observe(el, {
+        childList: true
+      });
+      el.$_pfocustrap_focusinlistener = function (event) {
+        return onFocusIn && onFocusIn(event);
+      };
+      el.$_pfocustrap_focusoutlistener = function (event) {
+        return onFocusOut && onFocusOut(event);
+      };
+      el.addEventListener('focusin', el.$_pfocustrap_focusinlistener);
+      el.addEventListener('focusout', el.$_pfocustrap_focusoutlistener);
+    },
+    unbind: function unbind(el) {
+      el.$_pfocustrap_mutationobserver && el.$_pfocustrap_mutationobserver.disconnect();
+      el.$_pfocustrap_focusinlistener && el.removeEventListener('focusin', el.$_pfocustrap_focusinlistener) && (el.$_pfocustrap_focusinlistener = null);
+      el.$_pfocustrap_focusoutlistener && el.removeEventListener('focusout', el.$_pfocustrap_focusoutlistener) && (el.$_pfocustrap_focusoutlistener = null);
+    },
+    autoFocus: function autoFocus(el, binding) {
+      var _ref4 = binding.value || {},
+        _ref4$autoFocusSelect = _ref4.autoFocusSelector,
+        autoFocusSelector = _ref4$autoFocusSelect === void 0 ? '' : _ref4$autoFocusSelect,
+        _ref4$firstFocusableS = _ref4.firstFocusableSelector,
+        firstFocusableSelector = _ref4$firstFocusableS === void 0 ? '' : _ref4$firstFocusableS,
+        _ref4$autoFocus = _ref4.autoFocus,
+        autoFocus = _ref4$autoFocus === void 0 ? false : _ref4$autoFocus;
+      var focusableElement = DomHandler.getFirstFocusableElement(el, "[autofocus]".concat(this.getComputedSelector(autoFocusSelector)));
+      autoFocus && !focusableElement && (focusableElement = DomHandler.getFirstFocusableElement(el, this.getComputedSelector(firstFocusableSelector)));
+      DomHandler.focus(focusableElement);
+    },
+    onFirstHiddenElementFocus: function onFirstHiddenElementFocus(event) {
+      var _this$$el;
+      var currentTarget = event.currentTarget,
+        relatedTarget = event.relatedTarget;
+      var focusableElement = relatedTarget === currentTarget.$_pfocustrap_lasthiddenfocusableelement || !((_this$$el = this.$el) !== null && _this$$el !== void 0 && _this$$el.contains(relatedTarget)) ? DomHandler.getFirstFocusableElement(currentTarget.parentElement, this.getComputedSelector(currentTarget.$_pfocustrap_focusableselector)) : currentTarget.$_pfocustrap_lasthiddenfocusableelement;
+      DomHandler.focus(focusableElement);
+    },
+    onLastHiddenElementFocus: function onLastHiddenElementFocus(event) {
+      var _this$$el2;
+      var currentTarget = event.currentTarget,
+        relatedTarget = event.relatedTarget;
+      var focusableElement = relatedTarget === currentTarget.$_pfocustrap_firsthiddenfocusableelement || !((_this$$el2 = this.$el) !== null && _this$$el2 !== void 0 && _this$$el2.contains(relatedTarget)) ? DomHandler.getLastFocusableElement(currentTarget.parentElement, this.getComputedSelector(currentTarget.$_pfocustrap_focusableselector)) : currentTarget.$_pfocustrap_firsthiddenfocusableelement;
+      DomHandler.focus(focusableElement);
+    },
+    createHiddenFocusableElements: function createHiddenFocusableElements(el, binding) {
+      var _this2 = this;
+      var _ref5 = binding.value || {},
+        _ref5$tabIndex = _ref5.tabIndex,
+        tabIndex = _ref5$tabIndex === void 0 ? 0 : _ref5$tabIndex,
+        _ref5$firstFocusableS = _ref5.firstFocusableSelector,
+        firstFocusableSelector = _ref5$firstFocusableS === void 0 ? '' : _ref5$firstFocusableS,
+        _ref5$lastFocusableSe = _ref5.lastFocusableSelector,
+        lastFocusableSelector = _ref5$lastFocusableSe === void 0 ? '' : _ref5$lastFocusableSe;
+      var createFocusableElement = function createFocusableElement(onFocus) {
+        return DomHandler.createElement('span', {
+          "class": 'p-hidden-accessible p-hidden-focusable',
+          tabIndex: tabIndex,
+          role: 'presentation',
+          'aria-hidden': true,
+          'data-p-hidden-accessible': true,
+          'data-p-hidden-focusable': true,
+          onFocus: onFocus === null || onFocus === void 0 ? void 0 : onFocus.bind(_this2)
+        });
+      };
+      var firstFocusableElement = createFocusableElement(this.onFirstHiddenElementFocus);
+      var lastFocusableElement = createFocusableElement(this.onLastHiddenElementFocus);
+      firstFocusableElement.$_pfocustrap_lasthiddenfocusableelement = lastFocusableElement;
+      firstFocusableElement.$_pfocustrap_focusableselector = firstFocusableSelector;
+      firstFocusableElement.setAttribute('data-pc-section', 'firstfocusableelement');
+      lastFocusableElement.$_pfocustrap_firsthiddenfocusableelement = firstFocusableElement;
+      lastFocusableElement.$_pfocustrap_focusableselector = lastFocusableSelector;
+      lastFocusableElement.setAttribute('data-pc-section', 'lastfocusableelement');
+      el.prepend(firstFocusableElement);
+      el.append(lastFocusableElement);
     }
   }
 });
-// CONCATENATED MODULE: ./src/components/crosierFormS.vue?vue&type=script&lang=js
- 
-// CONCATENATED MODULE: ./src/components/crosierFormS.vue
+
+
+
+// CONCATENATED MODULE: ./node_modules/primevue/icons/windowmaximize/index.esm.js
+
+
+
+
+var windowmaximize_index_esm_script = {
+  name: 'WindowMaximizeIcon',
+  "extends": baseicon_esm_script,
+  computed: {
+    pathId: function pathId() {
+      return "pv_icon_clip_".concat(UniqueComponentId());
+    }
+  }
+};
+
+var windowmaximize_index_esm_hoisted_1 = ["clipPath"];
+var windowmaximize_index_esm_hoisted_2 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("path", {
+  "fill-rule": "evenodd",
+  "clip-rule": "evenodd",
+  d: "M7 14H11.8C12.3835 14 12.9431 13.7682 13.3556 13.3556C13.7682 12.9431 14 12.3835 14 11.8V2.2C14 1.61652 13.7682 1.05694 13.3556 0.644365C12.9431 0.231785 12.3835 0 11.8 0H2.2C1.61652 0 1.05694 0.231785 0.644365 0.644365C0.231785 1.05694 0 1.61652 0 2.2V7C0 7.15913 0.063214 7.31174 0.175736 7.42426C0.288258 7.53679 0.44087 7.6 0.6 7.6C0.75913 7.6 0.911742 7.53679 1.02426 7.42426C1.13679 7.31174 1.2 7.15913 1.2 7V2.2C1.2 1.93478 1.30536 1.68043 1.49289 1.49289C1.68043 1.30536 1.93478 1.2 2.2 1.2H11.8C12.0652 1.2 12.3196 1.30536 12.5071 1.49289C12.6946 1.68043 12.8 1.93478 12.8 2.2V11.8C12.8 12.0652 12.6946 12.3196 12.5071 12.5071C12.3196 12.6946 12.0652 12.8 11.8 12.8H7C6.84087 12.8 6.68826 12.8632 6.57574 12.9757C6.46321 13.0883 6.4 13.2409 6.4 13.4C6.4 13.5591 6.46321 13.7117 6.57574 13.8243C6.68826 13.9368 6.84087 14 7 14ZM9.77805 7.42192C9.89013 7.534 10.0415 7.59788 10.2 7.59995C10.3585 7.59788 10.5099 7.534 10.622 7.42192C10.7341 7.30985 10.798 7.15844 10.8 6.99995V3.94242C10.8066 3.90505 10.8096 3.86689 10.8089 3.82843C10.8079 3.77159 10.7988 3.7157 10.7824 3.6623C10.756 3.55552 10.701 3.45698 10.622 3.37798C10.5099 3.2659 10.3585 3.20202 10.2 3.19995H7.00002C6.84089 3.19995 6.68828 3.26317 6.57576 3.37569C6.46324 3.48821 6.40002 3.64082 6.40002 3.79995C6.40002 3.95908 6.46324 4.11169 6.57576 4.22422C6.68828 4.33674 6.84089 4.39995 7.00002 4.39995H8.80006L6.19997 7.00005C6.10158 7.11005 6.04718 7.25246 6.04718 7.40005C6.04718 7.54763 6.10158 7.69004 6.19997 7.80005C6.30202 7.91645 6.44561 7.98824 6.59997 8.00005C6.75432 7.98824 6.89791 7.91645 6.99997 7.80005L9.60002 5.26841V6.99995C9.6021 7.15844 9.66598 7.30985 9.77805 7.42192ZM1.4 14H3.8C4.17066 13.9979 4.52553 13.8498 4.78763 13.5877C5.04973 13.3256 5.1979 12.9707 5.2 12.6V10.2C5.1979 9.82939 5.04973 9.47452 4.78763 9.21242C4.52553 8.95032 4.17066 8.80215 3.8 8.80005H1.4C1.02934 8.80215 0.674468 8.95032 0.412371 9.21242C0.150274 9.47452 0.00210008 9.82939 0 10.2V12.6C0.00210008 12.9707 0.150274 13.3256 0.412371 13.5877C0.674468 13.8498 1.02934 13.9979 1.4 14ZM1.25858 10.0586C1.29609 10.0211 1.34696 10 1.4 10H3.8C3.85304 10 3.90391 10.0211 3.94142 10.0586C3.97893 10.0961 4 10.147 4 10.2V12.6C4 12.6531 3.97893 12.704 3.94142 12.7415C3.90391 12.779 3.85304 12.8 3.8 12.8H1.4C1.34696 12.8 1.29609 12.779 1.25858 12.7415C1.22107 12.704 1.2 12.6531 1.2 12.6V10.2C1.2 10.147 1.22107 10.0961 1.25858 10.0586Z",
+  fill: "currentColor"
+}, null, -1);
+var windowmaximize_index_esm_hoisted_3 = [windowmaximize_index_esm_hoisted_2];
+var windowmaximize_index_esm_hoisted_4 = ["id"];
+var windowmaximize_index_esm_hoisted_5 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("rect", {
+  width: "14",
+  height: "14",
+  fill: "white"
+}, null, -1);
+var windowmaximize_index_esm_hoisted_6 = [windowmaximize_index_esm_hoisted_5];
+function windowmaximize_index_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("svg", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+    width: "14",
+    height: "14",
+    viewBox: "0 0 14 14",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, _ctx.pti()), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("g", {
+    clipPath: "url(#".concat($options.pathId, ")")
+  }, windowmaximize_index_esm_hoisted_3, 8, windowmaximize_index_esm_hoisted_1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("defs", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("clipPath", {
+    id: "".concat($options.pathId)
+  }, windowmaximize_index_esm_hoisted_6, 8, windowmaximize_index_esm_hoisted_4)])], 16);
+}
+
+windowmaximize_index_esm_script.render = windowmaximize_index_esm_render;
+
+
+
+// CONCATENATED MODULE: ./node_modules/primevue/icons/windowminimize/index.esm.js
+
+
+
+
+var windowminimize_index_esm_script = {
+  name: 'WindowMinimizeIcon',
+  "extends": baseicon_esm_script,
+  computed: {
+    pathId: function pathId() {
+      return "pv_icon_clip_".concat(UniqueComponentId());
+    }
+  }
+};
+
+var windowminimize_index_esm_hoisted_1 = ["clipPath"];
+var windowminimize_index_esm_hoisted_2 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("path", {
+  "fill-rule": "evenodd",
+  "clip-rule": "evenodd",
+  d: "M11.8 0H2.2C1.61652 0 1.05694 0.231785 0.644365 0.644365C0.231785 1.05694 0 1.61652 0 2.2V7C0 7.15913 0.063214 7.31174 0.175736 7.42426C0.288258 7.53679 0.44087 7.6 0.6 7.6C0.75913 7.6 0.911742 7.53679 1.02426 7.42426C1.13679 7.31174 1.2 7.15913 1.2 7V2.2C1.2 1.93478 1.30536 1.68043 1.49289 1.49289C1.68043 1.30536 1.93478 1.2 2.2 1.2H11.8C12.0652 1.2 12.3196 1.30536 12.5071 1.49289C12.6946 1.68043 12.8 1.93478 12.8 2.2V11.8C12.8 12.0652 12.6946 12.3196 12.5071 12.5071C12.3196 12.6946 12.0652 12.8 11.8 12.8H7C6.84087 12.8 6.68826 12.8632 6.57574 12.9757C6.46321 13.0883 6.4 13.2409 6.4 13.4C6.4 13.5591 6.46321 13.7117 6.57574 13.8243C6.68826 13.9368 6.84087 14 7 14H11.8C12.3835 14 12.9431 13.7682 13.3556 13.3556C13.7682 12.9431 14 12.3835 14 11.8V2.2C14 1.61652 13.7682 1.05694 13.3556 0.644365C12.9431 0.231785 12.3835 0 11.8 0ZM6.368 7.952C6.44137 7.98326 6.52025 7.99958 6.6 8H9.8C9.95913 8 10.1117 7.93678 10.2243 7.82426C10.3368 7.71174 10.4 7.55913 10.4 7.4C10.4 7.24087 10.3368 7.08826 10.2243 6.97574C10.1117 6.86321 9.95913 6.8 9.8 6.8H8.048L10.624 4.224C10.73 4.11026 10.7877 3.95982 10.7849 3.80438C10.7822 3.64894 10.7192 3.50063 10.6093 3.3907C10.4994 3.28077 10.3511 3.2178 10.1956 3.21506C10.0402 3.21232 9.88974 3.27002 9.776 3.376L7.2 5.952V4.2C7.2 4.04087 7.13679 3.88826 7.02426 3.77574C6.91174 3.66321 6.75913 3.6 6.6 3.6C6.44087 3.6 6.28826 3.66321 6.17574 3.77574C6.06321 3.88826 6 4.04087 6 4.2V7.4C6.00042 7.47975 6.01674 7.55862 6.048 7.632C6.07656 7.70442 6.11971 7.7702 6.17475 7.82524C6.2298 7.88029 6.29558 7.92344 6.368 7.952ZM1.4 8.80005H3.8C4.17066 8.80215 4.52553 8.95032 4.78763 9.21242C5.04973 9.47452 5.1979 9.82939 5.2 10.2V12.6C5.1979 12.9707 5.04973 13.3256 4.78763 13.5877C4.52553 13.8498 4.17066 13.9979 3.8 14H1.4C1.02934 13.9979 0.674468 13.8498 0.412371 13.5877C0.150274 13.3256 0.00210008 12.9707 0 12.6V10.2C0.00210008 9.82939 0.150274 9.47452 0.412371 9.21242C0.674468 8.95032 1.02934 8.80215 1.4 8.80005ZM3.94142 12.7415C3.97893 12.704 4 12.6531 4 12.6V10.2C4 10.147 3.97893 10.0961 3.94142 10.0586C3.90391 10.0211 3.85304 10 3.8 10H1.4C1.34696 10 1.29609 10.0211 1.25858 10.0586C1.22107 10.0961 1.2 10.147 1.2 10.2V12.6C1.2 12.6531 1.22107 12.704 1.25858 12.7415C1.29609 12.779 1.34696 12.8 1.4 12.8H3.8C3.85304 12.8 3.90391 12.779 3.94142 12.7415Z",
+  fill: "currentColor"
+}, null, -1);
+var windowminimize_index_esm_hoisted_3 = [windowminimize_index_esm_hoisted_2];
+var windowminimize_index_esm_hoisted_4 = ["id"];
+var windowminimize_index_esm_hoisted_5 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("rect", {
+  width: "14",
+  height: "14",
+  fill: "white"
+}, null, -1);
+var windowminimize_index_esm_hoisted_6 = [windowminimize_index_esm_hoisted_5];
+function windowminimize_index_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("svg", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+    width: "14",
+    height: "14",
+    viewBox: "0 0 14 14",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+  }, _ctx.pti()), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("g", {
+    clipPath: "url(#".concat($options.pathId, ")")
+  }, windowminimize_index_esm_hoisted_3, 8, windowminimize_index_esm_hoisted_1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("defs", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("clipPath", {
+    id: "".concat($options.pathId)
+  }, windowminimize_index_esm_hoisted_6, 8, windowminimize_index_esm_hoisted_4)])], 16);
+}
+
+windowminimize_index_esm_script.render = windowminimize_index_esm_render;
+
+
+
+// CONCATENATED MODULE: ./node_modules/primevue/dialog/dialog.esm.js
 
 
 
 
 
-const crosierFormS_exports_ = /*#__PURE__*/exportHelper_default()(crosierFormSvue_type_script_lang_js, [['render',crosierFormSvue_type_template_id_4a49e948_render]])
 
-/* harmony default export */ var crosierFormS = (crosierFormS_exports_);
+
+
+
+
+
+var dialog_esm_styles = "\n.p-dialog-mask {\n    pointer-events: none;\n}\n\n.p-dialog-mask.p-component-overlay {\n    pointer-events: auto;\n}\n\n.p-dialog {\n    pointer-events: auto;\n    max-height: 90%;\n    transform: scale(1);\n}\n\n.p-dialog-content {\n    overflow-y: auto;\n}\n\n.p-dialog-header {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    flex-shrink: 0;\n}\n\n.p-dialog-footer {\n    flex-shrink: 0;\n}\n\n.p-dialog .p-dialog-header-icons {\n    display: flex;\n    align-items: center;\n}\n\n.p-dialog .p-dialog-header-icon {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    overflow: hidden;\n    position: relative;\n}\n\n/* Fluid */\n.p-fluid .p-dialog-footer .p-button {\n    width: auto;\n}\n\n/* Animation */\n/* Center */\n.p-dialog-enter-active {\n    transition: all 150ms cubic-bezier(0, 0, 0.2, 1);\n}\n.p-dialog-leave-active {\n    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.p-dialog-enter-from,\n.p-dialog-leave-to {\n    opacity: 0;\n    transform: scale(0.7);\n}\n\n/* Top, Bottom, Left, Right, Top* and Bottom* */\n.p-dialog-top .p-dialog,\n.p-dialog-bottom .p-dialog,\n.p-dialog-left .p-dialog,\n.p-dialog-right .p-dialog,\n.p-dialog-topleft .p-dialog,\n.p-dialog-topright .p-dialog,\n.p-dialog-bottomleft .p-dialog,\n.p-dialog-bottomright .p-dialog {\n    margin: 0.75rem;\n    transform: translate3d(0px, 0px, 0px);\n}\n.p-dialog-top .p-dialog-enter-active,\n.p-dialog-top .p-dialog-leave-active,\n.p-dialog-bottom .p-dialog-enter-active,\n.p-dialog-bottom .p-dialog-leave-active,\n.p-dialog-left .p-dialog-enter-active,\n.p-dialog-left .p-dialog-leave-active,\n.p-dialog-right .p-dialog-enter-active,\n.p-dialog-right .p-dialog-leave-active,\n.p-dialog-topleft .p-dialog-enter-active,\n.p-dialog-topleft .p-dialog-leave-active,\n.p-dialog-topright .p-dialog-enter-active,\n.p-dialog-topright .p-dialog-leave-active,\n.p-dialog-bottomleft .p-dialog-enter-active,\n.p-dialog-bottomleft .p-dialog-leave-active,\n.p-dialog-bottomright .p-dialog-enter-active,\n.p-dialog-bottomright .p-dialog-leave-active {\n    transition: all 0.3s ease-out;\n}\n.p-dialog-top .p-dialog-enter-from,\n.p-dialog-top .p-dialog-leave-to {\n    transform: translate3d(0px, -100%, 0px);\n}\n.p-dialog-bottom .p-dialog-enter-from,\n.p-dialog-bottom .p-dialog-leave-to {\n    transform: translate3d(0px, 100%, 0px);\n}\n.p-dialog-left .p-dialog-enter-from,\n.p-dialog-left .p-dialog-leave-to,\n.p-dialog-topleft .p-dialog-enter-from,\n.p-dialog-topleft .p-dialog-leave-to,\n.p-dialog-bottomleft .p-dialog-enter-from,\n.p-dialog-bottomleft .p-dialog-leave-to {\n    transform: translate3d(-100%, 0px, 0px);\n}\n.p-dialog-right .p-dialog-enter-from,\n.p-dialog-right .p-dialog-leave-to,\n.p-dialog-topright .p-dialog-enter-from,\n.p-dialog-topright .p-dialog-leave-to,\n.p-dialog-bottomright .p-dialog-enter-from,\n.p-dialog-bottomright .p-dialog-leave-to {\n    transform: translate3d(100%, 0px, 0px);\n}\n\n/* Maximize */\n.p-dialog-maximized {\n    -webkit-transition: none;\n    transition: none;\n    transform: none;\n    width: 100vw !important;\n    height: 100vh !important;\n    top: 0px !important;\n    left: 0px !important;\n    max-height: 100%;\n    height: 100%;\n}\n.p-dialog-maximized .p-dialog-content {\n    flex-grow: 1;\n}\n\n.p-confirm-dialog .p-dialog-content {\n    display: flex;\n    align-items: center;\n}\n";
+
+/* Position */
+var dialog_esm_inlineStyles = {
+  mask: function mask(_ref) {
+    var position = _ref.position,
+      modal = _ref.modal;
+    return {
+      position: 'fixed',
+      height: '100%',
+      width: '100%',
+      left: 0,
+      top: 0,
+      display: 'flex',
+      justifyContent: position === 'left' || position === 'topleft' || position === 'bottomleft' ? 'flex-start' : position === 'right' || position === 'topright' || position === 'bottomright' ? 'flex-end' : 'center',
+      alignItems: position === 'top' || position === 'topleft' || position === 'topright' ? 'flex-start' : position === 'bottom' || position === 'bottomleft' || position === 'bottomright' ? 'flex-end' : 'center',
+      pointerEvents: !modal && 'none'
+    };
+  },
+  root: {
+    display: 'flex',
+    flexDirection: 'column'
+  }
+};
+var dialog_esm_classes = {
+  mask: function mask(_ref2) {
+    var props = _ref2.props;
+    var positions = ['left', 'right', 'top', 'topleft', 'topright', 'bottom', 'bottomleft', 'bottomright'];
+    var pos = positions.find(function (item) {
+      return item === props.position;
+    });
+    return ['p-dialog-mask', {
+      'p-component-overlay p-component-overlay-enter': props.modal
+    }, pos ? "p-dialog-".concat(pos) : ''];
+  },
+  root: function root(_ref3) {
+    var props = _ref3.props,
+      instance = _ref3.instance;
+    return ['p-dialog p-component', {
+      'p-dialog-rtl': props.rtl,
+      'p-dialog-maximized': props.maximizable && instance.maximized,
+      'p-input-filled': instance.$primevue.config.inputStyle === 'filled',
+      'p-ripple-disabled': instance.$primevue.config.ripple === false
+    }];
+  },
+  header: 'p-dialog-header',
+  headerTitle: 'p-dialog-title',
+  headerIcons: 'p-dialog-header-icons',
+  maximizableButton: 'p-dialog-header-icon p-dialog-header-maximize p-link',
+  maximizableIcon: 'p-dialog-header-maximize-icon',
+  closeButton: 'p-dialog-header-icon p-dialog-header-close p-link',
+  closeButtonIcon: 'p-dialog-header-close-icon',
+  content: 'p-dialog-content',
+  footer: 'p-dialog-footer'
+};
+var dialog_esm_useStyle = useStyle(dialog_esm_styles, {
+    name: 'dialog',
+    manual: true
+  }),
+  dialog_esm_loadStyle = dialog_esm_useStyle.load;
+var dialog_esm_script$1 = {
+  name: 'BaseDialog',
+  "extends": script,
+  props: {
+    header: {
+      type: null,
+      "default": null
+    },
+    footer: {
+      type: null,
+      "default": null
+    },
+    visible: {
+      type: Boolean,
+      "default": false
+    },
+    modal: {
+      type: Boolean,
+      "default": null
+    },
+    contentStyle: {
+      type: null,
+      "default": null
+    },
+    contentClass: {
+      type: String,
+      "default": null
+    },
+    contentProps: {
+      type: null,
+      "default": null
+    },
+    rtl: {
+      type: Boolean,
+      "default": null
+    },
+    maximizable: {
+      type: Boolean,
+      "default": false
+    },
+    dismissableMask: {
+      type: Boolean,
+      "default": false
+    },
+    closable: {
+      type: Boolean,
+      "default": true
+    },
+    closeOnEscape: {
+      type: Boolean,
+      "default": true
+    },
+    showHeader: {
+      type: Boolean,
+      "default": true
+    },
+    baseZIndex: {
+      type: Number,
+      "default": 0
+    },
+    autoZIndex: {
+      type: Boolean,
+      "default": true
+    },
+    position: {
+      type: String,
+      "default": 'center'
+    },
+    breakpoints: {
+      type: Object,
+      "default": null
+    },
+    draggable: {
+      type: Boolean,
+      "default": true
+    },
+    keepInViewport: {
+      type: Boolean,
+      "default": true
+    },
+    minX: {
+      type: Number,
+      "default": 0
+    },
+    minY: {
+      type: Number,
+      "default": 0
+    },
+    appendTo: {
+      type: String,
+      "default": 'body'
+    },
+    closeIcon: {
+      type: String,
+      "default": undefined
+    },
+    maximizeIcon: {
+      type: String,
+      "default": undefined
+    },
+    minimizeIcon: {
+      type: String,
+      "default": undefined
+    },
+    closeButtonProps: {
+      type: null,
+      "default": null
+    },
+    _instance: null
+  },
+  css: {
+    classes: dialog_esm_classes,
+    inlineStyles: dialog_esm_inlineStyles,
+    loadStyle: dialog_esm_loadStyle
+  },
+  provide: function provide() {
+    return {
+      $parentInstance: this
+    };
+  }
+};
+
+var dialog_esm_script = {
+  name: 'Dialog',
+  "extends": dialog_esm_script$1,
+  inheritAttrs: false,
+  emits: ['update:visible', 'show', 'hide', 'after-hide', 'maximize', 'unmaximize', 'dragend'],
+  provide: function provide() {
+    var _this = this;
+    return {
+      dialogRef: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["computed"])(function () {
+        return _this._instance;
+      })
+    };
+  },
+  data: function data() {
+    return {
+      containerVisible: this.visible,
+      maximized: false,
+      focusableMax: null,
+      focusableClose: null
+    };
+  },
+  documentKeydownListener: null,
+  container: null,
+  mask: null,
+  content: null,
+  headerContainer: null,
+  footerContainer: null,
+  maximizableButton: null,
+  closeButton: null,
+  styleElement: null,
+  dragging: null,
+  documentDragListener: null,
+  documentDragEndListener: null,
+  lastPageX: null,
+  lastPageY: null,
+  updated: function updated() {
+    if (this.visible) {
+      this.containerVisible = this.visible;
+    }
+  },
+  beforeUnmount: function beforeUnmount() {
+    this.unbindDocumentState();
+    this.unbindGlobalListeners();
+    this.destroyStyle();
+    if (this.mask && this.autoZIndex) {
+      ZIndexUtils.clear(this.mask);
+    }
+    this.container = null;
+    this.mask = null;
+  },
+  mounted: function mounted() {
+    if (this.breakpoints) {
+      this.createStyle();
+    }
+  },
+  methods: {
+    close: function close() {
+      this.$emit('update:visible', false);
+    },
+    onBeforeEnter: function onBeforeEnter(el) {
+      el.setAttribute(this.attributeSelector, '');
+    },
+    onEnter: function onEnter() {
+      this.$emit('show');
+      this.focus();
+      this.enableDocumentSettings();
+      this.bindGlobalListeners();
+      if (this.autoZIndex) {
+        ZIndexUtils.set('modal', this.mask, this.baseZIndex + this.$primevue.config.zIndex.modal);
+      }
+    },
+    onBeforeLeave: function onBeforeLeave() {
+      if (this.modal) {
+        !this.isUnstyled && DomHandler.addClass(this.mask, 'p-component-overlay-leave');
+      }
+    },
+    onLeave: function onLeave() {
+      this.$emit('hide');
+      this.focusableClose = null;
+      this.focusableMax = null;
+    },
+    onAfterLeave: function onAfterLeave() {
+      if (this.autoZIndex) {
+        ZIndexUtils.clear(this.mask);
+      }
+      this.containerVisible = false;
+      this.unbindDocumentState();
+      this.unbindGlobalListeners();
+      this.$emit('after-hide');
+    },
+    onMaskClick: function onMaskClick(event) {
+      if (this.dismissableMask && this.modal && this.mask === event.target) {
+        this.close();
+      }
+    },
+    focus: function focus() {
+      var findFocusableElement = function findFocusableElement(container) {
+        return container.querySelector('[autofocus]');
+      };
+      var focusTarget = this.$slots.footer && findFocusableElement(this.footerContainer);
+      if (!focusTarget) {
+        focusTarget = this.$slots.header && findFocusableElement(this.headerContainer);
+        if (!focusTarget) {
+          focusTarget = this.$slots["default"] && findFocusableElement(this.content);
+          if (!focusTarget) {
+            if (this.maximizable) {
+              this.focusableMax = true;
+              focusTarget = this.maximizableButton;
+            } else {
+              this.focusableClose = true;
+              focusTarget = this.closeButton;
+            }
+          }
+        }
+      }
+      if (focusTarget) {
+        DomHandler.focus(focusTarget);
+      }
+    },
+    maximize: function maximize(event) {
+      if (this.maximized) {
+        this.maximized = false;
+        this.$emit('unmaximize', event);
+      } else {
+        this.maximized = true;
+        this.$emit('maximize', event);
+      }
+      if (!this.modal) {
+        if (this.maximized) {
+          DomHandler.addClass(document.body, 'p-overflow-hidden');
+        } else {
+          DomHandler.removeClass(document.body, 'p-overflow-hidden');
+        }
+      }
+    },
+    enableDocumentSettings: function enableDocumentSettings() {
+      if (this.modal || this.maximizable && this.maximized) {
+        DomHandler.addClass(document.body, 'p-overflow-hidden');
+      }
+    },
+    unbindDocumentState: function unbindDocumentState() {
+      if (this.modal || this.maximizable && this.maximized) {
+        DomHandler.removeClass(document.body, 'p-overflow-hidden');
+      }
+    },
+    onKeyDown: function onKeyDown(event) {
+      if (event.code === 'Escape' && this.closeOnEscape) {
+        this.close();
+      }
+    },
+    bindDocumentKeyDownListener: function bindDocumentKeyDownListener() {
+      if (!this.documentKeydownListener) {
+        this.documentKeydownListener = this.onKeyDown.bind(this);
+        window.document.addEventListener('keydown', this.documentKeydownListener);
+      }
+    },
+    unbindDocumentKeyDownListener: function unbindDocumentKeyDownListener() {
+      if (this.documentKeydownListener) {
+        window.document.removeEventListener('keydown', this.documentKeydownListener);
+        this.documentKeydownListener = null;
+      }
+    },
+    containerRef: function containerRef(el) {
+      this.container = el;
+    },
+    maskRef: function maskRef(el) {
+      this.mask = el;
+    },
+    contentRef: function contentRef(el) {
+      this.content = el;
+    },
+    headerContainerRef: function headerContainerRef(el) {
+      this.headerContainer = el;
+    },
+    footerContainerRef: function footerContainerRef(el) {
+      this.footerContainer = el;
+    },
+    maximizableRef: function maximizableRef(el) {
+      this.maximizableButton = el;
+    },
+    closeButtonRef: function closeButtonRef(el) {
+      this.closeButton = el;
+    },
+    createStyle: function createStyle() {
+      if (!this.styleElement && !this.isUnstyled) {
+        this.styleElement = document.createElement('style');
+        this.styleElement.type = 'text/css';
+        document.head.appendChild(this.styleElement);
+        var innerHTML = '';
+        for (var breakpoint in this.breakpoints) {
+          innerHTML += "\n                        @media screen and (max-width: ".concat(breakpoint, ") {\n                            .p-dialog[").concat(this.attributeSelector, "] {\n                                width: ").concat(this.breakpoints[breakpoint], " !important;\n                            }\n                        }\n                    ");
+        }
+        this.styleElement.innerHTML = innerHTML;
+      }
+    },
+    destroyStyle: function destroyStyle() {
+      if (this.styleElement) {
+        document.head.removeChild(this.styleElement);
+        this.styleElement = null;
+      }
+    },
+    initDrag: function initDrag(event) {
+      if (DomHandler.findSingle(event.target, '[data-pc-section="headeraction"]') || DomHandler.findSingle(event.target.parentElement, '[data-pc-section="headeraction"]')) {
+        return;
+      }
+      if (this.draggable) {
+        this.dragging = true;
+        this.lastPageX = event.pageX;
+        this.lastPageY = event.pageY;
+        this.container.style.margin = '0';
+        !this.isUnstyled && DomHandler.addClass(document.body, 'p-unselectable-text');
+      }
+    },
+    bindGlobalListeners: function bindGlobalListeners() {
+      if (this.draggable) {
+        this.bindDocumentDragListener();
+        this.bindDocumentDragEndListener();
+      }
+      if (this.closeOnEscape && this.closable) {
+        this.bindDocumentKeyDownListener();
+      }
+    },
+    unbindGlobalListeners: function unbindGlobalListeners() {
+      this.unbindDocumentDragListener();
+      this.unbindDocumentDragEndListener();
+      this.unbindDocumentKeyDownListener();
+    },
+    bindDocumentDragListener: function bindDocumentDragListener() {
+      var _this2 = this;
+      this.documentDragListener = function (event) {
+        if (_this2.dragging) {
+          var width = DomHandler.getOuterWidth(_this2.container);
+          var height = DomHandler.getOuterHeight(_this2.container);
+          var deltaX = event.pageX - _this2.lastPageX;
+          var deltaY = event.pageY - _this2.lastPageY;
+          var offset = _this2.container.getBoundingClientRect();
+          var leftPos = offset.left + deltaX;
+          var topPos = offset.top + deltaY;
+          var viewport = DomHandler.getViewport();
+          _this2.container.style.position = 'fixed';
+          if (_this2.keepInViewport) {
+            if (leftPos >= _this2.minX && leftPos + width < viewport.width) {
+              _this2.lastPageX = event.pageX;
+              _this2.container.style.left = leftPos + 'px';
+            }
+            if (topPos >= _this2.minY && topPos + height < viewport.height) {
+              _this2.lastPageY = event.pageY;
+              _this2.container.style.top = topPos + 'px';
+            }
+          } else {
+            _this2.lastPageX = event.pageX;
+            _this2.container.style.left = leftPos + 'px';
+            _this2.lastPageY = event.pageY;
+            _this2.container.style.top = topPos + 'px';
+          }
+        }
+      };
+      window.document.addEventListener('mousemove', this.documentDragListener);
+    },
+    unbindDocumentDragListener: function unbindDocumentDragListener() {
+      if (this.documentDragListener) {
+        window.document.removeEventListener('mousemove', this.documentDragListener);
+        this.documentDragListener = null;
+      }
+    },
+    bindDocumentDragEndListener: function bindDocumentDragEndListener() {
+      var _this3 = this;
+      this.documentDragEndListener = function (event) {
+        if (_this3.dragging) {
+          _this3.dragging = false;
+          !_this3.isUnstyled && DomHandler.removeClass(document.body, 'p-unselectable-text');
+          _this3.$emit('dragend', event);
+        }
+      };
+      window.document.addEventListener('mouseup', this.documentDragEndListener);
+    },
+    unbindDocumentDragEndListener: function unbindDocumentDragEndListener() {
+      if (this.documentDragEndListener) {
+        window.document.removeEventListener('mouseup', this.documentDragEndListener);
+        this.documentDragEndListener = null;
+      }
+    }
+  },
+  computed: {
+    maximizeIconComponent: function maximizeIconComponent() {
+      return this.maximized ? this.minimizeIcon ? 'span' : 'WindowMinimizeIcon' : this.maximizeIcon ? 'span' : 'WindowMaximizeIcon';
+    },
+    ariaId: function ariaId() {
+      return UniqueComponentId();
+    },
+    ariaLabelledById: function ariaLabelledById() {
+      return this.header != null || this.$attrs['aria-labelledby'] !== null ? this.ariaId + '_header' : null;
+    },
+    closeAriaLabel: function closeAriaLabel() {
+      return this.$primevue.config.locale.aria ? this.$primevue.config.locale.aria.close : undefined;
+    },
+    attributeSelector: function attributeSelector() {
+      return UniqueComponentId();
+    },
+    contentStyleClass: function contentStyleClass() {
+      return ['p-dialog-content', this.contentClass];
+    }
+  },
+  directives: {
+    ripple: Ripple,
+    focustrap: FocusTrap
+  },
+  components: {
+    Portal: portal_esm_script,
+    WindowMinimizeIcon: windowminimize_index_esm_script,
+    WindowMaximizeIcon: windowmaximize_index_esm_script,
+    TimesIcon: times_index_esm_script
+  }
+};
+
+function dialog_esm_typeof(obj) { "@babel/helpers - typeof"; return dialog_esm_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, dialog_esm_typeof(obj); }
+function dialog_esm_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function dialog_esm_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? dialog_esm_ownKeys(Object(source), !0).forEach(function (key) { dialog_esm_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : dialog_esm_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+function dialog_esm_defineProperty(obj, key, value) { key = dialog_esm_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function dialog_esm_toPropertyKey(arg) { var key = dialog_esm_toPrimitive(arg, "string"); return dialog_esm_typeof(key) === "symbol" ? key : String(key); }
+function dialog_esm_toPrimitive(input, hint) { if (dialog_esm_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (dialog_esm_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var dialog_esm_hoisted_1 = ["aria-labelledby", "aria-modal"];
+var dialog_esm_hoisted_2 = ["id"];
+var dialog_esm_hoisted_3 = ["autofocus", "tabindex"];
+var dialog_esm_hoisted_4 = ["autofocus", "aria-label"];
+function dialog_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_Portal = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Portal");
+  var _directive_ripple = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveDirective"])("ripple");
+  var _directive_focustrap = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveDirective"])("focustrap");
+  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_Portal, {
+    appendTo: _ctx.appendTo
+  }, {
+    "default": Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
+      return [$data.containerVisible ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+        key: 0,
+        ref: $options.maskRef,
+        "class": _ctx.cx('mask'),
+        style: _ctx.sx('mask', true, {
+          position: _ctx.position,
+          modal: _ctx.modal
+        }),
+        onClick: _cache[3] || (_cache[3] = function () {
+          return $options.onMaskClick && $options.onMaskClick.apply($options, arguments);
+        })
+      }, _ctx.ptm('mask')), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
+        name: "p-dialog",
+        onBeforeEnter: $options.onBeforeEnter,
+        onEnter: $options.onEnter,
+        onBeforeLeave: $options.onBeforeLeave,
+        onLeave: $options.onLeave,
+        onAfterLeave: $options.onAfterLeave,
+        appear: ""
+      }, {
+        "default": Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
+          return [_ctx.visible ? Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])((Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+            key: 0,
+            ref: $options.containerRef,
+            "class": _ctx.cx('root'),
+            style: _ctx.sx('root'),
+            role: "dialog",
+            "aria-labelledby": $options.ariaLabelledById,
+            "aria-modal": _ctx.modal
+          }, dialog_esm_objectSpread(dialog_esm_objectSpread({}, _ctx.$attrs), _ctx.ptm('root'))), [_ctx.showHeader ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+            key: 0,
+            ref: $options.headerContainerRef,
+            "class": _ctx.cx('header'),
+            onMousedown: _cache[2] || (_cache[2] = function () {
+              return $options.initDrag && $options.initDrag.apply($options, arguments);
+            })
+          }, _ctx.ptm('header')), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "header", {}, function () {
+            return [_ctx.header ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("span", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+              key: 0,
+              id: $options.ariaLabelledById,
+              "class": _ctx.cx('headerTitle')
+            }, _ctx.ptm('headerTitle')), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(_ctx.header), 17, dialog_esm_hoisted_2)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)];
+          }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+            "class": _ctx.cx('headerIcons')
+          }, _ctx.ptm('headerIcons')), [_ctx.maximizable ? Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])((Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+            key: 0,
+            ref: $options.maximizableRef,
+            autofocus: $data.focusableMax,
+            "class": _ctx.cx('maximizableButton'),
+            onClick: _cache[0] || (_cache[0] = function () {
+              return $options.maximize && $options.maximize.apply($options, arguments);
+            }),
+            type: "button",
+            tabindex: _ctx.maximizable ? '0' : '-1'
+          }, _ctx.ptm('maximizableButton')), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "maximizeicon", {
+            maximized: $data.maximized
+          }, function () {
+            return [(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveDynamicComponent"])($options.maximizeIconComponent), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+              "class": [_ctx.cx('maximizableIcon'), $data.maximized ? _ctx.minimizeIcon : _ctx.maximizeIcon]
+            }, _ctx.ptm('maximizableIcon')), null, 16, ["class"]))];
+          })], 16, dialog_esm_hoisted_3)), [[_directive_ripple]]) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), _ctx.closable ? Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])((Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+            key: 1,
+            ref: $options.closeButtonRef,
+            autofocus: $data.focusableClose,
+            "class": _ctx.cx('closeButton'),
+            onClick: _cache[1] || (_cache[1] = function () {
+              return $options.close && $options.close.apply($options, arguments);
+            }),
+            "aria-label": $options.closeAriaLabel,
+            type: "button"
+          }, dialog_esm_objectSpread(dialog_esm_objectSpread({}, _ctx.closeButtonProps), _ctx.ptm('closeButton'))), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "closeicon", {}, function () {
+            return [(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveDynamicComponent"])(_ctx.closeIcon ? 'span' : 'TimesIcon'), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+              "class": [_ctx.cx('closeButtonIcon'), _ctx.closeIcon]
+            }, _ctx.ptm('closeButtonIcon')), null, 16, ["class"]))];
+          })], 16, dialog_esm_hoisted_4)), [[_directive_ripple]]) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 16)], 16)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+            ref: $options.contentRef,
+            "class": [_ctx.cx('content'), _ctx.contentClass],
+            style: _ctx.contentStyle
+          }, dialog_esm_objectSpread(dialog_esm_objectSpread({}, _ctx.contentProps), _ctx.ptm('content'))), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")], 16), _ctx.footer || _ctx.$slots.footer ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
+            key: 1,
+            ref: $options.footerContainerRef,
+            "class": _ctx.cx('footer')
+          }, _ctx.ptm('footer')), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "footer", {}, function () {
+            return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(_ctx.footer), 1)];
+          })], 16)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 16, dialog_esm_hoisted_1)), [[_directive_focustrap, {
+            disabled: !_ctx.modal
+          }]]) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)];
+        }),
+        _: 3
+      }, 8, ["onBeforeEnter", "onEnter", "onBeforeLeave", "onLeave", "onAfterLeave"])], 16)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)];
+    }),
+    _: 3
+  }, 8, ["appendTo"]);
+}
+
+dialog_esm_script.render = dialog_esm_render;
+
+
+
+// CONCATENATED MODULE: ./node_modules/primevue/column/column.esm.js
+
+
+var column_esm_script$1 = {
+  name: 'BaseColumn',
+  "extends": script,
+  props: {
+    columnKey: {
+      type: null,
+      "default": null
+    },
+    field: {
+      type: [String, Function],
+      "default": null
+    },
+    sortField: {
+      type: [String, Function],
+      "default": null
+    },
+    filterField: {
+      type: [String, Function],
+      "default": null
+    },
+    dataType: {
+      type: String,
+      "default": 'text'
+    },
+    sortable: {
+      type: Boolean,
+      "default": false
+    },
+    header: {
+      type: null,
+      "default": null
+    },
+    footer: {
+      type: null,
+      "default": null
+    },
+    style: {
+      type: null,
+      "default": null
+    },
+    "class": {
+      type: String,
+      "default": null
+    },
+    headerStyle: {
+      type: null,
+      "default": null
+    },
+    headerClass: {
+      type: String,
+      "default": null
+    },
+    bodyStyle: {
+      type: null,
+      "default": null
+    },
+    bodyClass: {
+      type: String,
+      "default": null
+    },
+    footerStyle: {
+      type: null,
+      "default": null
+    },
+    footerClass: {
+      type: String,
+      "default": null
+    },
+    showFilterMenu: {
+      type: Boolean,
+      "default": true
+    },
+    showFilterOperator: {
+      type: Boolean,
+      "default": true
+    },
+    showClearButton: {
+      type: Boolean,
+      "default": true
+    },
+    showApplyButton: {
+      type: Boolean,
+      "default": true
+    },
+    showFilterMatchModes: {
+      type: Boolean,
+      "default": true
+    },
+    showAddButton: {
+      type: Boolean,
+      "default": true
+    },
+    filterMatchModeOptions: {
+      type: Array,
+      "default": null
+    },
+    maxConstraints: {
+      type: Number,
+      "default": 2
+    },
+    excludeGlobalFilter: {
+      type: Boolean,
+      "default": false
+    },
+    filterHeaderClass: {
+      type: String,
+      "default": null
+    },
+    filterHeaderStyle: {
+      type: null,
+      "default": null
+    },
+    filterMenuClass: {
+      type: String,
+      "default": null
+    },
+    filterMenuStyle: {
+      type: null,
+      "default": null
+    },
+    selectionMode: {
+      type: String,
+      "default": null
+    },
+    expander: {
+      type: Boolean,
+      "default": false
+    },
+    colspan: {
+      type: Number,
+      "default": null
+    },
+    rowspan: {
+      type: Number,
+      "default": null
+    },
+    rowReorder: {
+      type: Boolean,
+      "default": false
+    },
+    rowReorderIcon: {
+      type: String,
+      "default": undefined
+    },
+    reorderableColumn: {
+      type: Boolean,
+      "default": true
+    },
+    rowEditor: {
+      type: Boolean,
+      "default": false
+    },
+    frozen: {
+      type: Boolean,
+      "default": false
+    },
+    alignFrozen: {
+      type: String,
+      "default": 'left'
+    },
+    exportable: {
+      type: Boolean,
+      "default": true
+    },
+    exportHeader: {
+      type: String,
+      "default": null
+    },
+    exportFooter: {
+      type: String,
+      "default": null
+    },
+    filterMatchMode: {
+      type: String,
+      "default": null
+    },
+    hidden: {
+      type: Boolean,
+      "default": false
+    }
+  },
+  provide: function provide() {
+    return {
+      $parentInstance: this
+    };
+  }
+};
+
+var column_esm_script = {
+  name: 'Column',
+  "extends": column_esm_script$1,
+  render: function render() {
+    return null;
+  }
+};
+
+
+
+// EXTERNAL MODULE: ./node_modules/moment-timezone/index.js
+var moment_timezone = __webpack_require__("7f45");
+var moment_timezone_default = /*#__PURE__*/__webpack_require__.n(moment_timezone);
+
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/crosierListS.vue?vue&type=template&id=6e034a28
 
 const crosierListSvue_type_template_id_6e034a28_hoisted_1 = {
@@ -58568,132 +59657,6 @@ function pencil_index_esm_render(_ctx, _cache, $props, $setup, $data, $options) 
 }
 
 pencil_index_esm_script.render = pencil_index_esm_render;
-
-
-
-// CONCATENATED MODULE: ./node_modules/primevue/focustrap/focustrap.esm.js
-
-
-
-var BaseFocusTrap = BaseDirective.extend({});
-
-var FocusTrap = BaseFocusTrap.extend('focustrap', {
-  mounted: function mounted(el, binding) {
-    var _ref = binding.value || {},
-      disabled = _ref.disabled;
-    if (!disabled) {
-      this.createHiddenFocusableElements(el, binding);
-      this.bind(el, binding);
-      this.autoFocus(el, binding);
-    }
-    el.setAttribute('data-pd-focustrap', true);
-    this.$el = el;
-  },
-  updated: function updated(el, binding) {
-    var _ref2 = binding.value || {},
-      disabled = _ref2.disabled;
-    disabled && this.unbind(el);
-  },
-  unmounted: function unmounted(el) {
-    this.unbind(el);
-  },
-  methods: {
-    getComputedSelector: function getComputedSelector(selector) {
-      return ":not(.p-hidden-focusable):not([data-p-hidden-focusable=\"true\"])".concat(selector !== null && selector !== void 0 ? selector : '');
-    },
-    bind: function bind(el, binding) {
-      var _this = this;
-      var _ref3 = binding.value || {},
-        onFocusIn = _ref3.onFocusIn,
-        onFocusOut = _ref3.onFocusOut;
-      el.$_pfocustrap_mutationobserver = new MutationObserver(function (mutationList) {
-        mutationList.forEach(function (mutation) {
-          if (mutation.type === 'childList' && !el.contains(document.activeElement)) {
-            var findNextFocusableElement = function findNextFocusableElement(_el) {
-              var focusableElement = DomHandler.isFocusableElement(_el) ? DomHandler.isFocusableElement(_el, _this.getComputedSelector(el.$_pfocustrap_focusableselector)) ? _el : DomHandler.getFirstFocusableElement(el, _this.getComputedSelector(el.$_pfocustrap_focusableselector)) : DomHandler.getFirstFocusableElement(_el);
-              return ObjectUtils.isNotEmpty(focusableElement) ? focusableElement : findNextFocusableElement(_el.nextSibling);
-            };
-            DomHandler.focus(findNextFocusableElement(mutation.nextSibling));
-          }
-        });
-      });
-      el.$_pfocustrap_mutationobserver.disconnect();
-      el.$_pfocustrap_mutationobserver.observe(el, {
-        childList: true
-      });
-      el.$_pfocustrap_focusinlistener = function (event) {
-        return onFocusIn && onFocusIn(event);
-      };
-      el.$_pfocustrap_focusoutlistener = function (event) {
-        return onFocusOut && onFocusOut(event);
-      };
-      el.addEventListener('focusin', el.$_pfocustrap_focusinlistener);
-      el.addEventListener('focusout', el.$_pfocustrap_focusoutlistener);
-    },
-    unbind: function unbind(el) {
-      el.$_pfocustrap_mutationobserver && el.$_pfocustrap_mutationobserver.disconnect();
-      el.$_pfocustrap_focusinlistener && el.removeEventListener('focusin', el.$_pfocustrap_focusinlistener) && (el.$_pfocustrap_focusinlistener = null);
-      el.$_pfocustrap_focusoutlistener && el.removeEventListener('focusout', el.$_pfocustrap_focusoutlistener) && (el.$_pfocustrap_focusoutlistener = null);
-    },
-    autoFocus: function autoFocus(el, binding) {
-      var _ref4 = binding.value || {},
-        _ref4$autoFocusSelect = _ref4.autoFocusSelector,
-        autoFocusSelector = _ref4$autoFocusSelect === void 0 ? '' : _ref4$autoFocusSelect,
-        _ref4$firstFocusableS = _ref4.firstFocusableSelector,
-        firstFocusableSelector = _ref4$firstFocusableS === void 0 ? '' : _ref4$firstFocusableS,
-        _ref4$autoFocus = _ref4.autoFocus,
-        autoFocus = _ref4$autoFocus === void 0 ? false : _ref4$autoFocus;
-      var focusableElement = DomHandler.getFirstFocusableElement(el, "[autofocus]".concat(this.getComputedSelector(autoFocusSelector)));
-      autoFocus && !focusableElement && (focusableElement = DomHandler.getFirstFocusableElement(el, this.getComputedSelector(firstFocusableSelector)));
-      DomHandler.focus(focusableElement);
-    },
-    onFirstHiddenElementFocus: function onFirstHiddenElementFocus(event) {
-      var _this$$el;
-      var currentTarget = event.currentTarget,
-        relatedTarget = event.relatedTarget;
-      var focusableElement = relatedTarget === currentTarget.$_pfocustrap_lasthiddenfocusableelement || !((_this$$el = this.$el) !== null && _this$$el !== void 0 && _this$$el.contains(relatedTarget)) ? DomHandler.getFirstFocusableElement(currentTarget.parentElement, this.getComputedSelector(currentTarget.$_pfocustrap_focusableselector)) : currentTarget.$_pfocustrap_lasthiddenfocusableelement;
-      DomHandler.focus(focusableElement);
-    },
-    onLastHiddenElementFocus: function onLastHiddenElementFocus(event) {
-      var _this$$el2;
-      var currentTarget = event.currentTarget,
-        relatedTarget = event.relatedTarget;
-      var focusableElement = relatedTarget === currentTarget.$_pfocustrap_firsthiddenfocusableelement || !((_this$$el2 = this.$el) !== null && _this$$el2 !== void 0 && _this$$el2.contains(relatedTarget)) ? DomHandler.getLastFocusableElement(currentTarget.parentElement, this.getComputedSelector(currentTarget.$_pfocustrap_focusableselector)) : currentTarget.$_pfocustrap_firsthiddenfocusableelement;
-      DomHandler.focus(focusableElement);
-    },
-    createHiddenFocusableElements: function createHiddenFocusableElements(el, binding) {
-      var _this2 = this;
-      var _ref5 = binding.value || {},
-        _ref5$tabIndex = _ref5.tabIndex,
-        tabIndex = _ref5$tabIndex === void 0 ? 0 : _ref5$tabIndex,
-        _ref5$firstFocusableS = _ref5.firstFocusableSelector,
-        firstFocusableSelector = _ref5$firstFocusableS === void 0 ? '' : _ref5$firstFocusableS,
-        _ref5$lastFocusableSe = _ref5.lastFocusableSelector,
-        lastFocusableSelector = _ref5$lastFocusableSe === void 0 ? '' : _ref5$lastFocusableSe;
-      var createFocusableElement = function createFocusableElement(onFocus) {
-        return DomHandler.createElement('span', {
-          "class": 'p-hidden-accessible p-hidden-focusable',
-          tabIndex: tabIndex,
-          role: 'presentation',
-          'aria-hidden': true,
-          'data-p-hidden-accessible': true,
-          'data-p-hidden-focusable': true,
-          onFocus: onFocus === null || onFocus === void 0 ? void 0 : onFocus.bind(_this2)
-        });
-      };
-      var firstFocusableElement = createFocusableElement(this.onFirstHiddenElementFocus);
-      var lastFocusableElement = createFocusableElement(this.onLastHiddenElementFocus);
-      firstFocusableElement.$_pfocustrap_lasthiddenfocusableelement = lastFocusableElement;
-      firstFocusableElement.$_pfocustrap_focusableselector = firstFocusableSelector;
-      firstFocusableElement.setAttribute('data-pc-section', 'firstfocusableelement');
-      lastFocusableElement.$_pfocustrap_firsthiddenfocusableelement = firstFocusableElement;
-      lastFocusableElement.$_pfocustrap_focusableselector = lastFocusableSelector;
-      lastFocusableElement.setAttribute('data-pc-section', 'lastfocusableelement');
-      el.prepend(firstFocusableElement);
-      el.append(lastFocusableElement);
-    }
-  }
-});
 
 
 
@@ -65087,207 +66050,6 @@ datatable_esm_script.render = datatable_esm_render;
 
 
 
-// CONCATENATED MODULE: ./node_modules/primevue/column/column.esm.js
-
-
-var column_esm_script$1 = {
-  name: 'BaseColumn',
-  "extends": script,
-  props: {
-    columnKey: {
-      type: null,
-      "default": null
-    },
-    field: {
-      type: [String, Function],
-      "default": null
-    },
-    sortField: {
-      type: [String, Function],
-      "default": null
-    },
-    filterField: {
-      type: [String, Function],
-      "default": null
-    },
-    dataType: {
-      type: String,
-      "default": 'text'
-    },
-    sortable: {
-      type: Boolean,
-      "default": false
-    },
-    header: {
-      type: null,
-      "default": null
-    },
-    footer: {
-      type: null,
-      "default": null
-    },
-    style: {
-      type: null,
-      "default": null
-    },
-    "class": {
-      type: String,
-      "default": null
-    },
-    headerStyle: {
-      type: null,
-      "default": null
-    },
-    headerClass: {
-      type: String,
-      "default": null
-    },
-    bodyStyle: {
-      type: null,
-      "default": null
-    },
-    bodyClass: {
-      type: String,
-      "default": null
-    },
-    footerStyle: {
-      type: null,
-      "default": null
-    },
-    footerClass: {
-      type: String,
-      "default": null
-    },
-    showFilterMenu: {
-      type: Boolean,
-      "default": true
-    },
-    showFilterOperator: {
-      type: Boolean,
-      "default": true
-    },
-    showClearButton: {
-      type: Boolean,
-      "default": true
-    },
-    showApplyButton: {
-      type: Boolean,
-      "default": true
-    },
-    showFilterMatchModes: {
-      type: Boolean,
-      "default": true
-    },
-    showAddButton: {
-      type: Boolean,
-      "default": true
-    },
-    filterMatchModeOptions: {
-      type: Array,
-      "default": null
-    },
-    maxConstraints: {
-      type: Number,
-      "default": 2
-    },
-    excludeGlobalFilter: {
-      type: Boolean,
-      "default": false
-    },
-    filterHeaderClass: {
-      type: String,
-      "default": null
-    },
-    filterHeaderStyle: {
-      type: null,
-      "default": null
-    },
-    filterMenuClass: {
-      type: String,
-      "default": null
-    },
-    filterMenuStyle: {
-      type: null,
-      "default": null
-    },
-    selectionMode: {
-      type: String,
-      "default": null
-    },
-    expander: {
-      type: Boolean,
-      "default": false
-    },
-    colspan: {
-      type: Number,
-      "default": null
-    },
-    rowspan: {
-      type: Number,
-      "default": null
-    },
-    rowReorder: {
-      type: Boolean,
-      "default": false
-    },
-    rowReorderIcon: {
-      type: String,
-      "default": undefined
-    },
-    reorderableColumn: {
-      type: Boolean,
-      "default": true
-    },
-    rowEditor: {
-      type: Boolean,
-      "default": false
-    },
-    frozen: {
-      type: Boolean,
-      "default": false
-    },
-    alignFrozen: {
-      type: String,
-      "default": 'left'
-    },
-    exportable: {
-      type: Boolean,
-      "default": true
-    },
-    exportHeader: {
-      type: String,
-      "default": null
-    },
-    exportFooter: {
-      type: String,
-      "default": null
-    },
-    filterMatchMode: {
-      type: String,
-      "default": null
-    },
-    hidden: {
-      type: Boolean,
-      "default": false
-    }
-  },
-  provide: function provide() {
-    return {
-      $parentInstance: this
-    };
-  }
-};
-
-var column_esm_script = {
-  name: 'Column',
-  "extends": column_esm_script$1,
-  render: function render() {
-    return null;
-  }
-};
-
-
-
 // CONCATENATED MODULE: ./node_modules/primevue/toasteventbus/toasteventbus.esm.js
 
 
@@ -66246,728 +67008,6 @@ accordiontab_esm_script.render = accordiontab_esm_render;
 
 
 var ConfirmationEventBus = primebus();
-
-
-
-// CONCATENATED MODULE: ./node_modules/primevue/icons/windowmaximize/index.esm.js
-
-
-
-
-var windowmaximize_index_esm_script = {
-  name: 'WindowMaximizeIcon',
-  "extends": baseicon_esm_script,
-  computed: {
-    pathId: function pathId() {
-      return "pv_icon_clip_".concat(UniqueComponentId());
-    }
-  }
-};
-
-var windowmaximize_index_esm_hoisted_1 = ["clipPath"];
-var windowmaximize_index_esm_hoisted_2 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("path", {
-  "fill-rule": "evenodd",
-  "clip-rule": "evenodd",
-  d: "M7 14H11.8C12.3835 14 12.9431 13.7682 13.3556 13.3556C13.7682 12.9431 14 12.3835 14 11.8V2.2C14 1.61652 13.7682 1.05694 13.3556 0.644365C12.9431 0.231785 12.3835 0 11.8 0H2.2C1.61652 0 1.05694 0.231785 0.644365 0.644365C0.231785 1.05694 0 1.61652 0 2.2V7C0 7.15913 0.063214 7.31174 0.175736 7.42426C0.288258 7.53679 0.44087 7.6 0.6 7.6C0.75913 7.6 0.911742 7.53679 1.02426 7.42426C1.13679 7.31174 1.2 7.15913 1.2 7V2.2C1.2 1.93478 1.30536 1.68043 1.49289 1.49289C1.68043 1.30536 1.93478 1.2 2.2 1.2H11.8C12.0652 1.2 12.3196 1.30536 12.5071 1.49289C12.6946 1.68043 12.8 1.93478 12.8 2.2V11.8C12.8 12.0652 12.6946 12.3196 12.5071 12.5071C12.3196 12.6946 12.0652 12.8 11.8 12.8H7C6.84087 12.8 6.68826 12.8632 6.57574 12.9757C6.46321 13.0883 6.4 13.2409 6.4 13.4C6.4 13.5591 6.46321 13.7117 6.57574 13.8243C6.68826 13.9368 6.84087 14 7 14ZM9.77805 7.42192C9.89013 7.534 10.0415 7.59788 10.2 7.59995C10.3585 7.59788 10.5099 7.534 10.622 7.42192C10.7341 7.30985 10.798 7.15844 10.8 6.99995V3.94242C10.8066 3.90505 10.8096 3.86689 10.8089 3.82843C10.8079 3.77159 10.7988 3.7157 10.7824 3.6623C10.756 3.55552 10.701 3.45698 10.622 3.37798C10.5099 3.2659 10.3585 3.20202 10.2 3.19995H7.00002C6.84089 3.19995 6.68828 3.26317 6.57576 3.37569C6.46324 3.48821 6.40002 3.64082 6.40002 3.79995C6.40002 3.95908 6.46324 4.11169 6.57576 4.22422C6.68828 4.33674 6.84089 4.39995 7.00002 4.39995H8.80006L6.19997 7.00005C6.10158 7.11005 6.04718 7.25246 6.04718 7.40005C6.04718 7.54763 6.10158 7.69004 6.19997 7.80005C6.30202 7.91645 6.44561 7.98824 6.59997 8.00005C6.75432 7.98824 6.89791 7.91645 6.99997 7.80005L9.60002 5.26841V6.99995C9.6021 7.15844 9.66598 7.30985 9.77805 7.42192ZM1.4 14H3.8C4.17066 13.9979 4.52553 13.8498 4.78763 13.5877C5.04973 13.3256 5.1979 12.9707 5.2 12.6V10.2C5.1979 9.82939 5.04973 9.47452 4.78763 9.21242C4.52553 8.95032 4.17066 8.80215 3.8 8.80005H1.4C1.02934 8.80215 0.674468 8.95032 0.412371 9.21242C0.150274 9.47452 0.00210008 9.82939 0 10.2V12.6C0.00210008 12.9707 0.150274 13.3256 0.412371 13.5877C0.674468 13.8498 1.02934 13.9979 1.4 14ZM1.25858 10.0586C1.29609 10.0211 1.34696 10 1.4 10H3.8C3.85304 10 3.90391 10.0211 3.94142 10.0586C3.97893 10.0961 4 10.147 4 10.2V12.6C4 12.6531 3.97893 12.704 3.94142 12.7415C3.90391 12.779 3.85304 12.8 3.8 12.8H1.4C1.34696 12.8 1.29609 12.779 1.25858 12.7415C1.22107 12.704 1.2 12.6531 1.2 12.6V10.2C1.2 10.147 1.22107 10.0961 1.25858 10.0586Z",
-  fill: "currentColor"
-}, null, -1);
-var windowmaximize_index_esm_hoisted_3 = [windowmaximize_index_esm_hoisted_2];
-var windowmaximize_index_esm_hoisted_4 = ["id"];
-var windowmaximize_index_esm_hoisted_5 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("rect", {
-  width: "14",
-  height: "14",
-  fill: "white"
-}, null, -1);
-var windowmaximize_index_esm_hoisted_6 = [windowmaximize_index_esm_hoisted_5];
-function windowmaximize_index_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("svg", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
-    width: "14",
-    height: "14",
-    viewBox: "0 0 14 14",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, _ctx.pti()), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("g", {
-    clipPath: "url(#".concat($options.pathId, ")")
-  }, windowmaximize_index_esm_hoisted_3, 8, windowmaximize_index_esm_hoisted_1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("defs", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("clipPath", {
-    id: "".concat($options.pathId)
-  }, windowmaximize_index_esm_hoisted_6, 8, windowmaximize_index_esm_hoisted_4)])], 16);
-}
-
-windowmaximize_index_esm_script.render = windowmaximize_index_esm_render;
-
-
-
-// CONCATENATED MODULE: ./node_modules/primevue/icons/windowminimize/index.esm.js
-
-
-
-
-var windowminimize_index_esm_script = {
-  name: 'WindowMinimizeIcon',
-  "extends": baseicon_esm_script,
-  computed: {
-    pathId: function pathId() {
-      return "pv_icon_clip_".concat(UniqueComponentId());
-    }
-  }
-};
-
-var windowminimize_index_esm_hoisted_1 = ["clipPath"];
-var windowminimize_index_esm_hoisted_2 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("path", {
-  "fill-rule": "evenodd",
-  "clip-rule": "evenodd",
-  d: "M11.8 0H2.2C1.61652 0 1.05694 0.231785 0.644365 0.644365C0.231785 1.05694 0 1.61652 0 2.2V7C0 7.15913 0.063214 7.31174 0.175736 7.42426C0.288258 7.53679 0.44087 7.6 0.6 7.6C0.75913 7.6 0.911742 7.53679 1.02426 7.42426C1.13679 7.31174 1.2 7.15913 1.2 7V2.2C1.2 1.93478 1.30536 1.68043 1.49289 1.49289C1.68043 1.30536 1.93478 1.2 2.2 1.2H11.8C12.0652 1.2 12.3196 1.30536 12.5071 1.49289C12.6946 1.68043 12.8 1.93478 12.8 2.2V11.8C12.8 12.0652 12.6946 12.3196 12.5071 12.5071C12.3196 12.6946 12.0652 12.8 11.8 12.8H7C6.84087 12.8 6.68826 12.8632 6.57574 12.9757C6.46321 13.0883 6.4 13.2409 6.4 13.4C6.4 13.5591 6.46321 13.7117 6.57574 13.8243C6.68826 13.9368 6.84087 14 7 14H11.8C12.3835 14 12.9431 13.7682 13.3556 13.3556C13.7682 12.9431 14 12.3835 14 11.8V2.2C14 1.61652 13.7682 1.05694 13.3556 0.644365C12.9431 0.231785 12.3835 0 11.8 0ZM6.368 7.952C6.44137 7.98326 6.52025 7.99958 6.6 8H9.8C9.95913 8 10.1117 7.93678 10.2243 7.82426C10.3368 7.71174 10.4 7.55913 10.4 7.4C10.4 7.24087 10.3368 7.08826 10.2243 6.97574C10.1117 6.86321 9.95913 6.8 9.8 6.8H8.048L10.624 4.224C10.73 4.11026 10.7877 3.95982 10.7849 3.80438C10.7822 3.64894 10.7192 3.50063 10.6093 3.3907C10.4994 3.28077 10.3511 3.2178 10.1956 3.21506C10.0402 3.21232 9.88974 3.27002 9.776 3.376L7.2 5.952V4.2C7.2 4.04087 7.13679 3.88826 7.02426 3.77574C6.91174 3.66321 6.75913 3.6 6.6 3.6C6.44087 3.6 6.28826 3.66321 6.17574 3.77574C6.06321 3.88826 6 4.04087 6 4.2V7.4C6.00042 7.47975 6.01674 7.55862 6.048 7.632C6.07656 7.70442 6.11971 7.7702 6.17475 7.82524C6.2298 7.88029 6.29558 7.92344 6.368 7.952ZM1.4 8.80005H3.8C4.17066 8.80215 4.52553 8.95032 4.78763 9.21242C5.04973 9.47452 5.1979 9.82939 5.2 10.2V12.6C5.1979 12.9707 5.04973 13.3256 4.78763 13.5877C4.52553 13.8498 4.17066 13.9979 3.8 14H1.4C1.02934 13.9979 0.674468 13.8498 0.412371 13.5877C0.150274 13.3256 0.00210008 12.9707 0 12.6V10.2C0.00210008 9.82939 0.150274 9.47452 0.412371 9.21242C0.674468 8.95032 1.02934 8.80215 1.4 8.80005ZM3.94142 12.7415C3.97893 12.704 4 12.6531 4 12.6V10.2C4 10.147 3.97893 10.0961 3.94142 10.0586C3.90391 10.0211 3.85304 10 3.8 10H1.4C1.34696 10 1.29609 10.0211 1.25858 10.0586C1.22107 10.0961 1.2 10.147 1.2 10.2V12.6C1.2 12.6531 1.22107 12.704 1.25858 12.7415C1.29609 12.779 1.34696 12.8 1.4 12.8H3.8C3.85304 12.8 3.90391 12.779 3.94142 12.7415Z",
-  fill: "currentColor"
-}, null, -1);
-var windowminimize_index_esm_hoisted_3 = [windowminimize_index_esm_hoisted_2];
-var windowminimize_index_esm_hoisted_4 = ["id"];
-var windowminimize_index_esm_hoisted_5 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("rect", {
-  width: "14",
-  height: "14",
-  fill: "white"
-}, null, -1);
-var windowminimize_index_esm_hoisted_6 = [windowminimize_index_esm_hoisted_5];
-function windowminimize_index_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("svg", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
-    width: "14",
-    height: "14",
-    viewBox: "0 0 14 14",
-    fill: "none",
-    xmlns: "http://www.w3.org/2000/svg"
-  }, _ctx.pti()), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("g", {
-    clipPath: "url(#".concat($options.pathId, ")")
-  }, windowminimize_index_esm_hoisted_3, 8, windowminimize_index_esm_hoisted_1), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("defs", null, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("clipPath", {
-    id: "".concat($options.pathId)
-  }, windowminimize_index_esm_hoisted_6, 8, windowminimize_index_esm_hoisted_4)])], 16);
-}
-
-windowminimize_index_esm_script.render = windowminimize_index_esm_render;
-
-
-
-// CONCATENATED MODULE: ./node_modules/primevue/dialog/dialog.esm.js
-
-
-
-
-
-
-
-
-
-
-
-var dialog_esm_styles = "\n.p-dialog-mask {\n    pointer-events: none;\n}\n\n.p-dialog-mask.p-component-overlay {\n    pointer-events: auto;\n}\n\n.p-dialog {\n    pointer-events: auto;\n    max-height: 90%;\n    transform: scale(1);\n}\n\n.p-dialog-content {\n    overflow-y: auto;\n}\n\n.p-dialog-header {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    flex-shrink: 0;\n}\n\n.p-dialog-footer {\n    flex-shrink: 0;\n}\n\n.p-dialog .p-dialog-header-icons {\n    display: flex;\n    align-items: center;\n}\n\n.p-dialog .p-dialog-header-icon {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    overflow: hidden;\n    position: relative;\n}\n\n/* Fluid */\n.p-fluid .p-dialog-footer .p-button {\n    width: auto;\n}\n\n/* Animation */\n/* Center */\n.p-dialog-enter-active {\n    transition: all 150ms cubic-bezier(0, 0, 0.2, 1);\n}\n.p-dialog-leave-active {\n    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);\n}\n.p-dialog-enter-from,\n.p-dialog-leave-to {\n    opacity: 0;\n    transform: scale(0.7);\n}\n\n/* Top, Bottom, Left, Right, Top* and Bottom* */\n.p-dialog-top .p-dialog,\n.p-dialog-bottom .p-dialog,\n.p-dialog-left .p-dialog,\n.p-dialog-right .p-dialog,\n.p-dialog-topleft .p-dialog,\n.p-dialog-topright .p-dialog,\n.p-dialog-bottomleft .p-dialog,\n.p-dialog-bottomright .p-dialog {\n    margin: 0.75rem;\n    transform: translate3d(0px, 0px, 0px);\n}\n.p-dialog-top .p-dialog-enter-active,\n.p-dialog-top .p-dialog-leave-active,\n.p-dialog-bottom .p-dialog-enter-active,\n.p-dialog-bottom .p-dialog-leave-active,\n.p-dialog-left .p-dialog-enter-active,\n.p-dialog-left .p-dialog-leave-active,\n.p-dialog-right .p-dialog-enter-active,\n.p-dialog-right .p-dialog-leave-active,\n.p-dialog-topleft .p-dialog-enter-active,\n.p-dialog-topleft .p-dialog-leave-active,\n.p-dialog-topright .p-dialog-enter-active,\n.p-dialog-topright .p-dialog-leave-active,\n.p-dialog-bottomleft .p-dialog-enter-active,\n.p-dialog-bottomleft .p-dialog-leave-active,\n.p-dialog-bottomright .p-dialog-enter-active,\n.p-dialog-bottomright .p-dialog-leave-active {\n    transition: all 0.3s ease-out;\n}\n.p-dialog-top .p-dialog-enter-from,\n.p-dialog-top .p-dialog-leave-to {\n    transform: translate3d(0px, -100%, 0px);\n}\n.p-dialog-bottom .p-dialog-enter-from,\n.p-dialog-bottom .p-dialog-leave-to {\n    transform: translate3d(0px, 100%, 0px);\n}\n.p-dialog-left .p-dialog-enter-from,\n.p-dialog-left .p-dialog-leave-to,\n.p-dialog-topleft .p-dialog-enter-from,\n.p-dialog-topleft .p-dialog-leave-to,\n.p-dialog-bottomleft .p-dialog-enter-from,\n.p-dialog-bottomleft .p-dialog-leave-to {\n    transform: translate3d(-100%, 0px, 0px);\n}\n.p-dialog-right .p-dialog-enter-from,\n.p-dialog-right .p-dialog-leave-to,\n.p-dialog-topright .p-dialog-enter-from,\n.p-dialog-topright .p-dialog-leave-to,\n.p-dialog-bottomright .p-dialog-enter-from,\n.p-dialog-bottomright .p-dialog-leave-to {\n    transform: translate3d(100%, 0px, 0px);\n}\n\n/* Maximize */\n.p-dialog-maximized {\n    -webkit-transition: none;\n    transition: none;\n    transform: none;\n    width: 100vw !important;\n    height: 100vh !important;\n    top: 0px !important;\n    left: 0px !important;\n    max-height: 100%;\n    height: 100%;\n}\n.p-dialog-maximized .p-dialog-content {\n    flex-grow: 1;\n}\n\n.p-confirm-dialog .p-dialog-content {\n    display: flex;\n    align-items: center;\n}\n";
-
-/* Position */
-var dialog_esm_inlineStyles = {
-  mask: function mask(_ref) {
-    var position = _ref.position,
-      modal = _ref.modal;
-    return {
-      position: 'fixed',
-      height: '100%',
-      width: '100%',
-      left: 0,
-      top: 0,
-      display: 'flex',
-      justifyContent: position === 'left' || position === 'topleft' || position === 'bottomleft' ? 'flex-start' : position === 'right' || position === 'topright' || position === 'bottomright' ? 'flex-end' : 'center',
-      alignItems: position === 'top' || position === 'topleft' || position === 'topright' ? 'flex-start' : position === 'bottom' || position === 'bottomleft' || position === 'bottomright' ? 'flex-end' : 'center',
-      pointerEvents: !modal && 'none'
-    };
-  },
-  root: {
-    display: 'flex',
-    flexDirection: 'column'
-  }
-};
-var dialog_esm_classes = {
-  mask: function mask(_ref2) {
-    var props = _ref2.props;
-    var positions = ['left', 'right', 'top', 'topleft', 'topright', 'bottom', 'bottomleft', 'bottomright'];
-    var pos = positions.find(function (item) {
-      return item === props.position;
-    });
-    return ['p-dialog-mask', {
-      'p-component-overlay p-component-overlay-enter': props.modal
-    }, pos ? "p-dialog-".concat(pos) : ''];
-  },
-  root: function root(_ref3) {
-    var props = _ref3.props,
-      instance = _ref3.instance;
-    return ['p-dialog p-component', {
-      'p-dialog-rtl': props.rtl,
-      'p-dialog-maximized': props.maximizable && instance.maximized,
-      'p-input-filled': instance.$primevue.config.inputStyle === 'filled',
-      'p-ripple-disabled': instance.$primevue.config.ripple === false
-    }];
-  },
-  header: 'p-dialog-header',
-  headerTitle: 'p-dialog-title',
-  headerIcons: 'p-dialog-header-icons',
-  maximizableButton: 'p-dialog-header-icon p-dialog-header-maximize p-link',
-  maximizableIcon: 'p-dialog-header-maximize-icon',
-  closeButton: 'p-dialog-header-icon p-dialog-header-close p-link',
-  closeButtonIcon: 'p-dialog-header-close-icon',
-  content: 'p-dialog-content',
-  footer: 'p-dialog-footer'
-};
-var dialog_esm_useStyle = useStyle(dialog_esm_styles, {
-    name: 'dialog',
-    manual: true
-  }),
-  dialog_esm_loadStyle = dialog_esm_useStyle.load;
-var dialog_esm_script$1 = {
-  name: 'BaseDialog',
-  "extends": script,
-  props: {
-    header: {
-      type: null,
-      "default": null
-    },
-    footer: {
-      type: null,
-      "default": null
-    },
-    visible: {
-      type: Boolean,
-      "default": false
-    },
-    modal: {
-      type: Boolean,
-      "default": null
-    },
-    contentStyle: {
-      type: null,
-      "default": null
-    },
-    contentClass: {
-      type: String,
-      "default": null
-    },
-    contentProps: {
-      type: null,
-      "default": null
-    },
-    rtl: {
-      type: Boolean,
-      "default": null
-    },
-    maximizable: {
-      type: Boolean,
-      "default": false
-    },
-    dismissableMask: {
-      type: Boolean,
-      "default": false
-    },
-    closable: {
-      type: Boolean,
-      "default": true
-    },
-    closeOnEscape: {
-      type: Boolean,
-      "default": true
-    },
-    showHeader: {
-      type: Boolean,
-      "default": true
-    },
-    baseZIndex: {
-      type: Number,
-      "default": 0
-    },
-    autoZIndex: {
-      type: Boolean,
-      "default": true
-    },
-    position: {
-      type: String,
-      "default": 'center'
-    },
-    breakpoints: {
-      type: Object,
-      "default": null
-    },
-    draggable: {
-      type: Boolean,
-      "default": true
-    },
-    keepInViewport: {
-      type: Boolean,
-      "default": true
-    },
-    minX: {
-      type: Number,
-      "default": 0
-    },
-    minY: {
-      type: Number,
-      "default": 0
-    },
-    appendTo: {
-      type: String,
-      "default": 'body'
-    },
-    closeIcon: {
-      type: String,
-      "default": undefined
-    },
-    maximizeIcon: {
-      type: String,
-      "default": undefined
-    },
-    minimizeIcon: {
-      type: String,
-      "default": undefined
-    },
-    closeButtonProps: {
-      type: null,
-      "default": null
-    },
-    _instance: null
-  },
-  css: {
-    classes: dialog_esm_classes,
-    inlineStyles: dialog_esm_inlineStyles,
-    loadStyle: dialog_esm_loadStyle
-  },
-  provide: function provide() {
-    return {
-      $parentInstance: this
-    };
-  }
-};
-
-var dialog_esm_script = {
-  name: 'Dialog',
-  "extends": dialog_esm_script$1,
-  inheritAttrs: false,
-  emits: ['update:visible', 'show', 'hide', 'after-hide', 'maximize', 'unmaximize', 'dragend'],
-  provide: function provide() {
-    var _this = this;
-    return {
-      dialogRef: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["computed"])(function () {
-        return _this._instance;
-      })
-    };
-  },
-  data: function data() {
-    return {
-      containerVisible: this.visible,
-      maximized: false,
-      focusableMax: null,
-      focusableClose: null
-    };
-  },
-  documentKeydownListener: null,
-  container: null,
-  mask: null,
-  content: null,
-  headerContainer: null,
-  footerContainer: null,
-  maximizableButton: null,
-  closeButton: null,
-  styleElement: null,
-  dragging: null,
-  documentDragListener: null,
-  documentDragEndListener: null,
-  lastPageX: null,
-  lastPageY: null,
-  updated: function updated() {
-    if (this.visible) {
-      this.containerVisible = this.visible;
-    }
-  },
-  beforeUnmount: function beforeUnmount() {
-    this.unbindDocumentState();
-    this.unbindGlobalListeners();
-    this.destroyStyle();
-    if (this.mask && this.autoZIndex) {
-      ZIndexUtils.clear(this.mask);
-    }
-    this.container = null;
-    this.mask = null;
-  },
-  mounted: function mounted() {
-    if (this.breakpoints) {
-      this.createStyle();
-    }
-  },
-  methods: {
-    close: function close() {
-      this.$emit('update:visible', false);
-    },
-    onBeforeEnter: function onBeforeEnter(el) {
-      el.setAttribute(this.attributeSelector, '');
-    },
-    onEnter: function onEnter() {
-      this.$emit('show');
-      this.focus();
-      this.enableDocumentSettings();
-      this.bindGlobalListeners();
-      if (this.autoZIndex) {
-        ZIndexUtils.set('modal', this.mask, this.baseZIndex + this.$primevue.config.zIndex.modal);
-      }
-    },
-    onBeforeLeave: function onBeforeLeave() {
-      if (this.modal) {
-        !this.isUnstyled && DomHandler.addClass(this.mask, 'p-component-overlay-leave');
-      }
-    },
-    onLeave: function onLeave() {
-      this.$emit('hide');
-      this.focusableClose = null;
-      this.focusableMax = null;
-    },
-    onAfterLeave: function onAfterLeave() {
-      if (this.autoZIndex) {
-        ZIndexUtils.clear(this.mask);
-      }
-      this.containerVisible = false;
-      this.unbindDocumentState();
-      this.unbindGlobalListeners();
-      this.$emit('after-hide');
-    },
-    onMaskClick: function onMaskClick(event) {
-      if (this.dismissableMask && this.modal && this.mask === event.target) {
-        this.close();
-      }
-    },
-    focus: function focus() {
-      var findFocusableElement = function findFocusableElement(container) {
-        return container.querySelector('[autofocus]');
-      };
-      var focusTarget = this.$slots.footer && findFocusableElement(this.footerContainer);
-      if (!focusTarget) {
-        focusTarget = this.$slots.header && findFocusableElement(this.headerContainer);
-        if (!focusTarget) {
-          focusTarget = this.$slots["default"] && findFocusableElement(this.content);
-          if (!focusTarget) {
-            if (this.maximizable) {
-              this.focusableMax = true;
-              focusTarget = this.maximizableButton;
-            } else {
-              this.focusableClose = true;
-              focusTarget = this.closeButton;
-            }
-          }
-        }
-      }
-      if (focusTarget) {
-        DomHandler.focus(focusTarget);
-      }
-    },
-    maximize: function maximize(event) {
-      if (this.maximized) {
-        this.maximized = false;
-        this.$emit('unmaximize', event);
-      } else {
-        this.maximized = true;
-        this.$emit('maximize', event);
-      }
-      if (!this.modal) {
-        if (this.maximized) {
-          DomHandler.addClass(document.body, 'p-overflow-hidden');
-        } else {
-          DomHandler.removeClass(document.body, 'p-overflow-hidden');
-        }
-      }
-    },
-    enableDocumentSettings: function enableDocumentSettings() {
-      if (this.modal || this.maximizable && this.maximized) {
-        DomHandler.addClass(document.body, 'p-overflow-hidden');
-      }
-    },
-    unbindDocumentState: function unbindDocumentState() {
-      if (this.modal || this.maximizable && this.maximized) {
-        DomHandler.removeClass(document.body, 'p-overflow-hidden');
-      }
-    },
-    onKeyDown: function onKeyDown(event) {
-      if (event.code === 'Escape' && this.closeOnEscape) {
-        this.close();
-      }
-    },
-    bindDocumentKeyDownListener: function bindDocumentKeyDownListener() {
-      if (!this.documentKeydownListener) {
-        this.documentKeydownListener = this.onKeyDown.bind(this);
-        window.document.addEventListener('keydown', this.documentKeydownListener);
-      }
-    },
-    unbindDocumentKeyDownListener: function unbindDocumentKeyDownListener() {
-      if (this.documentKeydownListener) {
-        window.document.removeEventListener('keydown', this.documentKeydownListener);
-        this.documentKeydownListener = null;
-      }
-    },
-    containerRef: function containerRef(el) {
-      this.container = el;
-    },
-    maskRef: function maskRef(el) {
-      this.mask = el;
-    },
-    contentRef: function contentRef(el) {
-      this.content = el;
-    },
-    headerContainerRef: function headerContainerRef(el) {
-      this.headerContainer = el;
-    },
-    footerContainerRef: function footerContainerRef(el) {
-      this.footerContainer = el;
-    },
-    maximizableRef: function maximizableRef(el) {
-      this.maximizableButton = el;
-    },
-    closeButtonRef: function closeButtonRef(el) {
-      this.closeButton = el;
-    },
-    createStyle: function createStyle() {
-      if (!this.styleElement && !this.isUnstyled) {
-        this.styleElement = document.createElement('style');
-        this.styleElement.type = 'text/css';
-        document.head.appendChild(this.styleElement);
-        var innerHTML = '';
-        for (var breakpoint in this.breakpoints) {
-          innerHTML += "\n                        @media screen and (max-width: ".concat(breakpoint, ") {\n                            .p-dialog[").concat(this.attributeSelector, "] {\n                                width: ").concat(this.breakpoints[breakpoint], " !important;\n                            }\n                        }\n                    ");
-        }
-        this.styleElement.innerHTML = innerHTML;
-      }
-    },
-    destroyStyle: function destroyStyle() {
-      if (this.styleElement) {
-        document.head.removeChild(this.styleElement);
-        this.styleElement = null;
-      }
-    },
-    initDrag: function initDrag(event) {
-      if (DomHandler.findSingle(event.target, '[data-pc-section="headeraction"]') || DomHandler.findSingle(event.target.parentElement, '[data-pc-section="headeraction"]')) {
-        return;
-      }
-      if (this.draggable) {
-        this.dragging = true;
-        this.lastPageX = event.pageX;
-        this.lastPageY = event.pageY;
-        this.container.style.margin = '0';
-        !this.isUnstyled && DomHandler.addClass(document.body, 'p-unselectable-text');
-      }
-    },
-    bindGlobalListeners: function bindGlobalListeners() {
-      if (this.draggable) {
-        this.bindDocumentDragListener();
-        this.bindDocumentDragEndListener();
-      }
-      if (this.closeOnEscape && this.closable) {
-        this.bindDocumentKeyDownListener();
-      }
-    },
-    unbindGlobalListeners: function unbindGlobalListeners() {
-      this.unbindDocumentDragListener();
-      this.unbindDocumentDragEndListener();
-      this.unbindDocumentKeyDownListener();
-    },
-    bindDocumentDragListener: function bindDocumentDragListener() {
-      var _this2 = this;
-      this.documentDragListener = function (event) {
-        if (_this2.dragging) {
-          var width = DomHandler.getOuterWidth(_this2.container);
-          var height = DomHandler.getOuterHeight(_this2.container);
-          var deltaX = event.pageX - _this2.lastPageX;
-          var deltaY = event.pageY - _this2.lastPageY;
-          var offset = _this2.container.getBoundingClientRect();
-          var leftPos = offset.left + deltaX;
-          var topPos = offset.top + deltaY;
-          var viewport = DomHandler.getViewport();
-          _this2.container.style.position = 'fixed';
-          if (_this2.keepInViewport) {
-            if (leftPos >= _this2.minX && leftPos + width < viewport.width) {
-              _this2.lastPageX = event.pageX;
-              _this2.container.style.left = leftPos + 'px';
-            }
-            if (topPos >= _this2.minY && topPos + height < viewport.height) {
-              _this2.lastPageY = event.pageY;
-              _this2.container.style.top = topPos + 'px';
-            }
-          } else {
-            _this2.lastPageX = event.pageX;
-            _this2.container.style.left = leftPos + 'px';
-            _this2.lastPageY = event.pageY;
-            _this2.container.style.top = topPos + 'px';
-          }
-        }
-      };
-      window.document.addEventListener('mousemove', this.documentDragListener);
-    },
-    unbindDocumentDragListener: function unbindDocumentDragListener() {
-      if (this.documentDragListener) {
-        window.document.removeEventListener('mousemove', this.documentDragListener);
-        this.documentDragListener = null;
-      }
-    },
-    bindDocumentDragEndListener: function bindDocumentDragEndListener() {
-      var _this3 = this;
-      this.documentDragEndListener = function (event) {
-        if (_this3.dragging) {
-          _this3.dragging = false;
-          !_this3.isUnstyled && DomHandler.removeClass(document.body, 'p-unselectable-text');
-          _this3.$emit('dragend', event);
-        }
-      };
-      window.document.addEventListener('mouseup', this.documentDragEndListener);
-    },
-    unbindDocumentDragEndListener: function unbindDocumentDragEndListener() {
-      if (this.documentDragEndListener) {
-        window.document.removeEventListener('mouseup', this.documentDragEndListener);
-        this.documentDragEndListener = null;
-      }
-    }
-  },
-  computed: {
-    maximizeIconComponent: function maximizeIconComponent() {
-      return this.maximized ? this.minimizeIcon ? 'span' : 'WindowMinimizeIcon' : this.maximizeIcon ? 'span' : 'WindowMaximizeIcon';
-    },
-    ariaId: function ariaId() {
-      return UniqueComponentId();
-    },
-    ariaLabelledById: function ariaLabelledById() {
-      return this.header != null || this.$attrs['aria-labelledby'] !== null ? this.ariaId + '_header' : null;
-    },
-    closeAriaLabel: function closeAriaLabel() {
-      return this.$primevue.config.locale.aria ? this.$primevue.config.locale.aria.close : undefined;
-    },
-    attributeSelector: function attributeSelector() {
-      return UniqueComponentId();
-    },
-    contentStyleClass: function contentStyleClass() {
-      return ['p-dialog-content', this.contentClass];
-    }
-  },
-  directives: {
-    ripple: Ripple,
-    focustrap: FocusTrap
-  },
-  components: {
-    Portal: portal_esm_script,
-    WindowMinimizeIcon: windowminimize_index_esm_script,
-    WindowMaximizeIcon: windowmaximize_index_esm_script,
-    TimesIcon: times_index_esm_script
-  }
-};
-
-function dialog_esm_typeof(obj) { "@babel/helpers - typeof"; return dialog_esm_typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, dialog_esm_typeof(obj); }
-function dialog_esm_ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function dialog_esm_objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? dialog_esm_ownKeys(Object(source), !0).forEach(function (key) { dialog_esm_defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : dialog_esm_ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-function dialog_esm_defineProperty(obj, key, value) { key = dialog_esm_toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-function dialog_esm_toPropertyKey(arg) { var key = dialog_esm_toPrimitive(arg, "string"); return dialog_esm_typeof(key) === "symbol" ? key : String(key); }
-function dialog_esm_toPrimitive(input, hint) { if (dialog_esm_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (dialog_esm_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-var dialog_esm_hoisted_1 = ["aria-labelledby", "aria-modal"];
-var dialog_esm_hoisted_2 = ["id"];
-var dialog_esm_hoisted_3 = ["autofocus", "tabindex"];
-var dialog_esm_hoisted_4 = ["autofocus", "aria-label"];
-function dialog_esm_render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _component_Portal = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Portal");
-  var _directive_ripple = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveDirective"])("ripple");
-  var _directive_focustrap = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveDirective"])("focustrap");
-  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_Portal, {
-    appendTo: _ctx.appendTo
-  }, {
-    "default": Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-      return [$data.containerVisible ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
-        key: 0,
-        ref: $options.maskRef,
-        "class": _ctx.cx('mask'),
-        style: _ctx.sx('mask', true, {
-          position: _ctx.position,
-          modal: _ctx.modal
-        }),
-        onClick: _cache[3] || (_cache[3] = function () {
-          return $options.onMaskClick && $options.onMaskClick.apply($options, arguments);
-        })
-      }, _ctx.ptm('mask')), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
-        name: "p-dialog",
-        onBeforeEnter: $options.onBeforeEnter,
-        onEnter: $options.onEnter,
-        onBeforeLeave: $options.onBeforeLeave,
-        onLeave: $options.onLeave,
-        onAfterLeave: $options.onAfterLeave,
-        appear: ""
-      }, {
-        "default": Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(function () {
-          return [_ctx.visible ? Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])((Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
-            key: 0,
-            ref: $options.containerRef,
-            "class": _ctx.cx('root'),
-            style: _ctx.sx('root'),
-            role: "dialog",
-            "aria-labelledby": $options.ariaLabelledById,
-            "aria-modal": _ctx.modal
-          }, dialog_esm_objectSpread(dialog_esm_objectSpread({}, _ctx.$attrs), _ctx.ptm('root'))), [_ctx.showHeader ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
-            key: 0,
-            ref: $options.headerContainerRef,
-            "class": _ctx.cx('header'),
-            onMousedown: _cache[2] || (_cache[2] = function () {
-              return $options.initDrag && $options.initDrag.apply($options, arguments);
-            })
-          }, _ctx.ptm('header')), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "header", {}, function () {
-            return [_ctx.header ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("span", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
-              key: 0,
-              id: $options.ariaLabelledById,
-              "class": _ctx.cx('headerTitle')
-            }, _ctx.ptm('headerTitle')), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(_ctx.header), 17, dialog_esm_hoisted_2)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)];
-          }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
-            "class": _ctx.cx('headerIcons')
-          }, _ctx.ptm('headerIcons')), [_ctx.maximizable ? Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])((Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
-            key: 0,
-            ref: $options.maximizableRef,
-            autofocus: $data.focusableMax,
-            "class": _ctx.cx('maximizableButton'),
-            onClick: _cache[0] || (_cache[0] = function () {
-              return $options.maximize && $options.maximize.apply($options, arguments);
-            }),
-            type: "button",
-            tabindex: _ctx.maximizable ? '0' : '-1'
-          }, _ctx.ptm('maximizableButton')), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "maximizeicon", {
-            maximized: $data.maximized
-          }, function () {
-            return [(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveDynamicComponent"])($options.maximizeIconComponent), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
-              "class": [_ctx.cx('maximizableIcon'), $data.maximized ? _ctx.minimizeIcon : _ctx.maximizeIcon]
-            }, _ctx.ptm('maximizableIcon')), null, 16, ["class"]))];
-          })], 16, dialog_esm_hoisted_3)), [[_directive_ripple]]) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), _ctx.closable ? Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withDirectives"])((Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("button", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
-            key: 1,
-            ref: $options.closeButtonRef,
-            autofocus: $data.focusableClose,
-            "class": _ctx.cx('closeButton'),
-            onClick: _cache[1] || (_cache[1] = function () {
-              return $options.close && $options.close.apply($options, arguments);
-            }),
-            "aria-label": $options.closeAriaLabel,
-            type: "button"
-          }, dialog_esm_objectSpread(dialog_esm_objectSpread({}, _ctx.closeButtonProps), _ctx.ptm('closeButton'))), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "closeicon", {}, function () {
-            return [(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveDynamicComponent"])(_ctx.closeIcon ? 'span' : 'TimesIcon'), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
-              "class": [_ctx.cx('closeButtonIcon'), _ctx.closeIcon]
-            }, _ctx.ptm('closeButtonIcon')), null, 16, ["class"]))];
-          })], 16, dialog_esm_hoisted_4)), [[_directive_ripple]]) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 16)], 16)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
-            ref: $options.contentRef,
-            "class": [_ctx.cx('content'), _ctx.contentClass],
-            style: _ctx.contentStyle
-          }, dialog_esm_objectSpread(dialog_esm_objectSpread({}, _ctx.contentProps), _ctx.ptm('content'))), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "default")], 16), _ctx.footer || _ctx.$slots.footer ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementBlock"])("div", Object(external_commonjs_vue_commonjs2_vue_root_Vue_["mergeProps"])({
-            key: 1,
-            ref: $options.footerContainerRef,
-            "class": _ctx.cx('footer')
-          }, _ctx.ptm('footer')), [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["renderSlot"])(_ctx.$slots, "footer", {}, function () {
-            return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(_ctx.footer), 1)];
-          })], 16)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)], 16, dialog_esm_hoisted_1)), [[_directive_focustrap, {
-            disabled: !_ctx.modal
-          }]]) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)];
-        }),
-        _: 3
-      }, 8, ["onBeforeEnter", "onEnter", "onBeforeLeave", "onLeave", "onAfterLeave"])], 16)) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)];
-    }),
-    _: 3
-  }, 8, ["appendTo"]);
-}
-
-dialog_esm_script.render = dialog_esm_render;
 
 
 
@@ -68157,96 +68197,7 @@ sidebar_esm_script.render = sidebar_esm_render;
 const crosierListS_exports_ = /*#__PURE__*/exportHelper_default()(crosierListSvue_type_script_lang_js, [['render',crosierListSvue_type_template_id_6e034a28_render]])
 
 /* harmony default export */ var crosierListS = (crosierListS_exports_);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/entityChanges.vue?vue&type=template&id=60f67467
-
-const entityChangesvue_type_template_id_60f67467_hoisted_1 = {
-  class: "row"
-};
-function entityChangesvue_type_template_id_60f67467_render(_ctx, _cache, $props, $setup, $data, $options) {
-  var _this$$store$state$en;
-  const _component_CrosierInputText = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("CrosierInputText");
-  const _component_Column = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Column");
-  const _component_CrosierListS = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("CrosierListS");
-  const _component_Dialog = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("Dialog");
-  return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_Dialog, {
-    key: this.$store.state.entityChangesClass + '_' + ((_this$$store$state$en = this.$store.state.entityChangesData) === null || _this$$store$state$en === void 0 ? void 0 : _this$$store$state$en.id),
-    header: "Alterações",
-    visible: this.$store.state.entityChangesExibir,
-    "onUpdate:visible": _cache[2] || (_cache[2] = $event => this.$store.state.entityChangesExibir = $event),
-    style: {
-      width: '55vw'
-    },
-    modal: "",
-    ref: "dialog",
-    breakpoints: {
-      '960px': '75vw',
-      '640px': '100vw'
-    },
-    autoZIndex: false
-  }, {
-    default: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(() => {
-      var _this$$store$state$en2;
-      return [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("div", entityChangesvue_type_template_id_60f67467_hoisted_1, [this.dadosCriacao ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_CrosierInputText, {
-        key: 0,
-        id: "dadosCriacao",
-        label: "Criação",
-        col: "6",
-        modelValue: this.dadosCriacao,
-        "onUpdate:modelValue": _cache[0] || (_cache[0] = $event => this.dadosCriacao = $event),
-        disabled: "",
-        inputClass: "notuppercase"
-      }, null, 8, ["modelValue"])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true), this.dadosAlteracao ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_CrosierInputText, {
-        key: 1,
-        id: "dadosAlteracao",
-        label: "Alteração",
-        col: "6",
-        modelValue: this.dadosAlteracao,
-        "onUpdate:modelValue": _cache[1] || (_cache[1] = $event => this.dadosAlteracao = $event),
-        disabled: "",
-        inputClass: "notuppercase"
-      }, null, 8, ["modelValue"])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)]), this.$store.state.entityChangesClass && (_this$$store$state$en2 = this.$store.state.entityChangesData) !== null && _this$$store$state$en2 !== void 0 && _this$$store$state$en2.id ? (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])(_component_CrosierListS, {
-        key: 0,
-        withoutCard: "",
-        comFiltragem: false,
-        apiResource: "/api/core/config/entityChange/",
-        staticFilters: {
-          entityClass: this.$store.state.entityChangesClass,
-          entityId: this.$store.state.entityChangesData.id
-        },
-        onAfterFilter: this.loadUserById
-      }, {
-        columns: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(() => [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Column, {
-          field: "obs",
-          header: "Alterações"
-        }, {
-          body: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(r => [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createElementVNode"])("pre", null, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(r.data.obs), 1)]),
-          _: 1
-        }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Column, {
-          field: "changedAt",
-          header: "Em",
-          sortable: true
-        }, {
-          body: Object(external_commonjs_vue_commonjs2_vue_root_Vue_["withCtx"])(r => [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["toDisplayString"])(r.data.changedAt ? this.moment(r.data.changedAt).format("DD/MM/YYYY HH:mm:ss") : ""), 1)]),
-          _: 1
-        }), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(_component_Column, {
-          field: "changingUserNome",
-          header: "Por",
-          sortable: true
-        })]),
-        _: 1
-      }, 8, ["staticFilters", "onAfterFilter"])) : Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createCommentVNode"])("", true)];
-    }),
-    _: 1
-  }, 8, ["visible"]);
-}
-// CONCATENATED MODULE: ./src/components/entityChanges.vue?vue&type=template&id=60f67467
-
-// EXTERNAL MODULE: ./node_modules/moment-timezone/index.js
-var moment_timezone = __webpack_require__("7f45");
-var moment_timezone_default = /*#__PURE__*/__webpack_require__.n(moment_timezone);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/entityChanges.vue?vue&type=script&lang=js
-
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/ModalEntityChanges.vue?vue&type=script&lang=js
 
 
 
@@ -68255,13 +68206,24 @@ var moment_timezone_default = /*#__PURE__*/__webpack_require__.n(moment_timezone
 
 // import { CrosierInputText, CrosierListS } from "crosier-vue";
 
-/* harmony default export */ var entityChangesvue_type_script_lang_js = ({
+/* harmony default export */ var ModalEntityChangesvue_type_script_lang_js = ({
   name: "ModalEntityChanges",
   components: {
     Dialog: dialog_esm_script,
     CrosierListS: crosierListS,
     Column: column_esm_script,
     CrosierInputText: CrosierInputText
+  },
+  props: {
+    entityClass: {
+      type: String,
+      required: true
+    },
+    storeFieldsName: {
+      type: String,
+      required: false,
+      default: "fields"
+    }
   },
   data() {
     return {
@@ -68274,64 +68236,111 @@ var moment_timezone_default = /*#__PURE__*/__webpack_require__.n(moment_timezone
     moment(date) {
       return moment_timezone_default()(date);
     },
-    async loadUserById() {
-      var _this$$store$state, _this$$store$state$en, _this$$store$state2, _this$$store$state2$e;
-      const userInsertedId = (_this$$store$state = this.$store.state) === null || _this$$store$state === void 0 ? void 0 : (_this$$store$state$en = _this$$store$state.entityChangesData) === null || _this$$store$state$en === void 0 ? void 0 : _this$$store$state$en.userInsertedId;
-      this.dadosCriacao = `Em ${this.fInserted}`;
-      if (userInsertedId) {
-        const criadoPor = await this.getUserById(userInsertedId);
-        this.dadosCriacao += ` por ${criadoPor || "n/d"}`;
+    async loadInsertedUpdated() {
+      var _this$$refs$crosierLi, _this$$refs$crosierLi2;
+      console.log("loadInsertedUpdated");
+      console.log((_this$$refs$crosierLi = this.$refs.crosierListS_entityChanges) === null || _this$$refs$crosierLi === void 0 ? void 0 : _this$$refs$crosierLi.tableData);
+      if ((_this$$refs$crosierLi2 = this.$refs.crosierListS_entityChanges) !== null && _this$$refs$crosierLi2 !== void 0 && _this$$refs$crosierLi2.tableData) {
+        const tableData = this.$refs.crosierListS_entityChanges.tableData;
+        const inserido = tableData.find(e => e.changes === "INSERIDO");
+        this.dadosCriacao = `${this.moment(inserido.changedAt).format("DD/MM/YYYY HH:mm:ss")} por ${inserido.changingUserUsername}`;
+        this.dadosAlteracao = `${this.moment(tableData[0].changedAt).format("DD/MM/YYYY HH:mm:ss")} por ${tableData[0].changingUserUsername}`;
       }
-      const userUpdatedId = (_this$$store$state2 = this.$store.state) === null || _this$$store$state2 === void 0 ? void 0 : (_this$$store$state2$e = _this$$store$state2.entityChangesData) === null || _this$$store$state2$e === void 0 ? void 0 : _this$$store$state2$e.userUpdatedId;
-      this.dadosAlteracao = `Em ${this.fUpdated}`;
-      if (userUpdatedId) {
-        const alteradoPor = await this.getUserById(userUpdatedId);
-        this.dadosAlteracao += ` por ${alteradoPor || "n/d"}`;
-      }
-    },
-    async getUserById(id) {
-      try {
-        this.setLoading(true);
-        const rs = await axios_default.a.get(`/api/getUserById/${id}`, {
-          validateStatus(status) {
-            return status < 500;
-          },
-          responseType: "json"
-        });
-        if ([200, 201].includes(rs === null || rs === void 0 ? void 0 : rs.status)) {
-          var _rs$data;
-          return rs === null || rs === void 0 ? void 0 : (_rs$data = rs.data) === null || _rs$data === void 0 ? void 0 : _rs$data.nome;
-        }
-      } catch (e) {
-        console.error(e);
-      } finally {
-        this.setLoading(false);
-      }
-      return null;
     }
   },
   computed: {
-    fInserted() {
-      var _this$$store$state$en2, _this$$store$state3, _this$$store$state3$e;
-      return (_this$$store$state$en2 = this.$store.state.entityChangesData) !== null && _this$$store$state$en2 !== void 0 && _this$$store$state$en2.inserted ? this.moment((_this$$store$state3 = this.$store.state) === null || _this$$store$state3 === void 0 ? void 0 : (_this$$store$state3$e = _this$$store$state3.entityChangesData) === null || _this$$store$state3$e === void 0 ? void 0 : _this$$store$state3$e.inserted).format("DD/MM/YYYY HH:mm:ss") : null;
-    },
-    fUpdated() {
-      var _this$$store$state$en3, _this$$store$state4, _this$$store$state4$e;
-      return (_this$$store$state$en3 = this.$store.state.entityChangesData) !== null && _this$$store$state$en3 !== void 0 && _this$$store$state$en3.updated ? this.moment((_this$$store$state4 = this.$store.state) === null || _this$$store$state4 === void 0 ? void 0 : (_this$$store$state4$e = _this$$store$state4.entityChangesData) === null || _this$$store$state4$e === void 0 ? void 0 : _this$$store$state4$e.updated).format("DD/MM/YYYY HH:mm:ss") : null;
+    entityId() {
+      var _this$$store$state, _this$$store$state$th;
+      return (_this$$store$state = this.$store.state) === null || _this$$store$state === void 0 ? void 0 : (_this$$store$state$th = _this$$store$state[this.storeFieldsName]) === null || _this$$store$state$th === void 0 ? void 0 : _this$$store$state$th.id;
     }
   }
 });
-// CONCATENATED MODULE: ./src/components/entityChanges.vue?vue&type=script&lang=js
+// CONCATENATED MODULE: ./src/components/ModalEntityChanges.vue?vue&type=script&lang=js
  
-// CONCATENATED MODULE: ./src/components/entityChanges.vue
+// CONCATENATED MODULE: ./src/components/ModalEntityChanges.vue
 
 
 
 
 
-const entityChanges_exports_ = /*#__PURE__*/exportHelper_default()(entityChangesvue_type_script_lang_js, [['render',entityChangesvue_type_template_id_60f67467_render]])
+const ModalEntityChanges_exports_ = /*#__PURE__*/exportHelper_default()(ModalEntityChangesvue_type_script_lang_js, [['render',ModalEntityChangesvue_type_template_id_a1181a2a_render]])
 
-/* harmony default export */ var entityChanges = (entityChanges_exports_);
+/* harmony default export */ var ModalEntityChanges = (ModalEntityChanges_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader-v16/dist??ref--1-1!./src/components/crosierFormS.vue?vue&type=script&lang=js
+
+// import { CrosierBlock } from "crosier-vue";
+
+/* harmony default export */ var crosierFormSvue_type_script_lang_js = ({
+  name: "CrosierFormS",
+  components: {
+    CrosierBlock: crosierBlock,
+    ModalEntityChanges: ModalEntityChanges
+  },
+  emits: ["submitForm"],
+  props: {
+    titulo: {
+      type: String
+    },
+    subtitulo: {
+      type: String
+    },
+    listUrl: {
+      type: String,
+      required: false,
+      default: "list"
+    },
+    formUrl: {
+      type: String,
+      required: false,
+      default: "form"
+    },
+    withoutCard: {
+      type: Boolean,
+      default: false
+    },
+    semBotaoSalvar: {
+      type: Boolean,
+      default: false
+    },
+    disabledSubmit: {
+      type: Boolean,
+      default: false
+    },
+    parentLoad: {
+      type: Boolean,
+      default: false
+    },
+    storeFieldsName: {
+      type: String,
+      required: false,
+      default: "fields"
+    },
+    entityClass: {
+      type: String,
+      required: false
+    },
+    entityChanges: {
+      type: Boolean,
+      default: false
+    }
+  },
+  computed: {
+    loading() {
+      return this.$store.getters.isLoading || this.parentLoad;
+    }
+  }
+});
+// CONCATENATED MODULE: ./src/components/crosierFormS.vue?vue&type=script&lang=js
+ 
+// CONCATENATED MODULE: ./src/components/crosierFormS.vue
+
+
+
+
+
+const crosierFormS_exports_ = /*#__PURE__*/exportHelper_default()(crosierFormSvue_type_script_lang_js, [['render',crosierFormSvue_type_template_id_a5d6abae_render]])
+
+/* harmony default export */ var crosierFormS = (crosierFormS_exports_);
 // CONCATENATED MODULE: ./src/services/ValidateFormData.js
 function validateFormData({
   $store,
@@ -68595,7 +68604,7 @@ async function SetFocus(componentId, tMax = 20) {
   CrosierBlock: crosierBlock,
   CrosierFormS: crosierFormS,
   CrosierListS: crosierListS,
-  ModalEntityChanges: entityChanges,
+  ModalEntityChanges: ModalEntityChanges,
   api: api,
   submitForm: submitForm,
   validateFormData: validateFormData,
